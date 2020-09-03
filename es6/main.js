@@ -10,38 +10,27 @@ window.onload = function(){
 // onload
 
 
-window.addEventListener('DOMContentLoaded', function(){ 
+window.addEventListener('DOMContentLoaded', () => { 
 
     //리로드시 최상단으로
-    window.onbeforeunload = function () {
-        //window.scrollTo(0, 0);
-        //console.clear(); 
-    }
+    //window.onbeforeunload = function () {
+    //    //window.scrollTo(0, 0);
+    //    //console.clear(); 
+    //}
 
     const ctrl = new ScrollMagic.Controller();
 
-
-    const target = { a: 1, b: 2 };
-    const source = { b: 4, c: 5 };
-
-    const returnedTarget = Object.assign(target, source);
-
-    console.log(target);
-    // expected output: Object { a: 1, b: 4, c: 5 }
-
-    console.log(returnedTarget);
-    // expected output: Object { a: 1, b: 4, c: 5 } 
-
-    // ES6
-    const arr = [1, 2, 3];
-    const pow = arr.map(x => x * x);
-
-    console.log(pow); // [ 1, 4, 9 ]
+    // default setting
+    const defaultSet = () => {
+        console.log('default set');
+    }
 
 
-    document.querySelector('.test').innerHTML = 'test';
 
 
+    
+
+    defaultSet(); // 기본 셋팅 실행
 
 })
 

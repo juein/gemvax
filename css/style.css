@@ -55,6 +55,30 @@
   src: url("../fonts/NotoSansCJKkr-Black.woff") format("woff"), url("../fonts/NotoSansCJKkr-Black.otf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 500;
+  src: url("../fonts/NotoSerifKR-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 500;
+  src: url("../fonts/NotoSerifKR-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 600;
+  src: url("../fonts/NotoSerifKR-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 700;
+  src: url("../fonts/NotoSerifKR-Black.otf") format("truetype");
+}
+
 .joins_gnb {
   height: 32px;
 }
@@ -265,41 +289,131 @@ i {
   opacity: 1;
 }
 
-.content {
+.intro-news {
+  position: relative;
   width: 100%;
+  height: 1640px;
+  min-height: calc(100vh - 45px);
+  background: #000;
+}
+
+.intro-news__paper {
+  width: calc(1100px + 10%);
+  height: 100%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.intro-news__paper--panel {
+  position: absolute;
+  width: 1100px;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -550px;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.intro-news__paper--headline-ad {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/intro_headline_1.png") no-repeat;
+  width: 315px;
+  height: 51px;
+  margin: 120px auto 0 auto;
+}
+
+.intro-news__paper--headline-dd {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/intro_headline_2.png") no-repeat;
+  width: 50px;
+  height: 300px;
+  position: absolute;
+  right: 25px;
+  top: 570px;
+}
+
+.intro-news__paper--headline-title {
+  margin-top: 160px;
+}
+
+.intro-news__paper--headline-title-default {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/intro_news_title_1.png") no-repeat;
+  width: 615px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+.intro-news__paper--headline-title-strong {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/intro_news_title_2.png") no-repeat;
+  width: 615px;
+  height: 114px;
+  margin: 40px auto 0 auto;
+}
+
+.intro-news__paper--headline-sub-title {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/intro_news_title_3.png") no-repeat;
+  width: 812px;
+  height: 72px;
+  margin: 330px auto 60px auto;
+}
+
+.intro-news__paper--content {
+  width: 1080px;
+  margin: 0 auto;
+  border-bottom: 2px solid #000;
+  padding: 50px 0;
+}
+
+.intro-news__paper--content-list {
+  height: 420px;
+  width: 100%;
+}
+
+.intro-news__paper--content-list-item {
+  text-align: justify;
+  float: left;
+  width: 315px;
+  height: 420px;
+  margin: 0 20px;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 37px;
+  letter-spacing: -0.05em;
+}
+
+.intro-news__paper--content-list-item:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.intro-news__paper--annexed {
+  padding: 25px 30px;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: normal;
+  letter-spacing: -0.05em;
+}
+
+.alzheimer {
+  width: 100%;
+  height: 1240px;
+  position: relative;
   overflow: hidden;
-  /*
-    &--first{
-        height: 200px;
-        background: #ddd;
-    }
-    &--second{
-        height: 100px;
-        background: #eee;
-    }
-    &--box{
-        @include box_container();
-    }
-    &--title{
-        &__main{
-            @include fontInfo(14px, normal, 0);
-        }
-        &__sub{
-            @include fontInfo(10px, normal, 0);
-        }
-    }
-    &--text{
-        color: rgb(67, 29, 129);
-    }
-    */
+  background: #fff;
 }
 
-.content__area--index {
-  background: #f0f0f0;
-  height: calc(100vh - 78px);
-}
-
-.content__area--index .pannel__box {
+.alzheimer__panel {
   position: absolute;
   width: 1200px;
   top: 0;
@@ -308,25 +422,387 @@ i {
   outline: 1px solid #ddd;
 }
 
-.content__area--second {
-  background: #badc58;
-  height: 300px;
+.alzheimer__headline {
+  width: 1100px;
+  height: 510px;
+  margin: 0 auto;
+  border-top: 1px solid #000;
+  padding-top: 60px;
+  margin-top: 60px;
 }
 
-.content__area--three {
-  background: #7ed6df;
-  height: 500px;
-}
-
-.content__area .panel__area ul li {
+.alzheimer__headline--title {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/alzheimer-title.png") no-repeat;
+  width: 420px;
+  height: 110px;
+  margin-top: 10px;
   float: left;
-  outline: 1px solid;
 }
 
-.content__area .panel__area ul li:after {
+.alzheimer__headline--title:after {
   clear: both;
   display: table;
   content: '';
+}
+
+.alzheimer__headline--info {
+  float: right;
+  width: 510px;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 37px;
+  letter-spacing: -0.06em;
+}
+
+.alzheimer__headline--info:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer__card {
+  width: 100%;
+  height: 630px;
+}
+
+.alzheimer__card--item {
+  width: 100%;
+  height: 100%;
+}
+
+.alzheimer__card--item-news {
+  outline: 1px solid #ddd;
+  float: left;
+  width: 224px;
+  height: 100%;
+}
+
+.alzheimer__card--item-news.active {
+  width: 525px;
+}
+
+.alzheimer__card--item-news:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer-hope {
+  width: 100%;
+  height: 1135px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.alzheimer-hope__panel {
+  position: absolute;
+  width: 1200px;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.alzheimer-hope__comment {
+  margin-left: 50px;
+  margin-top: 110px;
+  float: left;
+}
+
+.alzheimer-hope__comment-text {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/alzheimer-hope__comment.png") no-repeat;
+  width: 400px;
+  height: 1000px;
+}
+
+.alzheimer-hope__comment:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer-hope__text {
+  width: 575px;
+  margin-right: 50px;
+  float: right;
+}
+
+.alzheimer-hope__text-title {
+  margin-top: 125px;
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/alzheimer-hope__title.png") no-repeat;
+  width: 503px;
+  height: 176px;
+}
+
+.alzheimer-hope__text-explain {
+  width: 400px;
+  margin-left: 170px;
+  margin-top: 55px;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 37px;
+  letter-spacing: -0.02em;
+}
+
+.alzheimer-hope__text:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer-hope__person {
+  position: absolute;
+  bottom: 0px;
+  height: 580px;
+  overflow: hidden;
+  width: 150%;
+  left: 220px;
+  border-bottom: 2px solid #000;
+}
+
+.alzheimer-hope__person--img {
+  background: url("../img/alzheimer-hope-person.png") no-repeat;
+  width: 508px;
+  height: 651px;
+  display: inline-block;
+  position: absolute;
+  bottom: -100px;
+  left: 100px;
+}
+
+.alzheimer-hope__person--annexed {
+  position: absolute;
+  bottom: 0;
+  width: 310px;
+  border-top: 1px solid #000;
+  text-align: center;
+  padding-top: 2px;
+  height: 60px;
+  left: 575px;
+}
+
+.alzheimer-hope__person--annexed-text {
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 37px;
+  letter-spacing: -0.02em;
+}
+
+.conversion {
+  width: 100%;
+  height: 1940px;
+  position: relative;
+  overflow: hidden;
+}
+
+.conversion__panel {
+  position: absolute;
+  width: 1200px;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.conversion__panel--flip {
+  width: 265px;
+  height: 265px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  outline: 1px solid #fff;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #0600ff;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  -webkit-transform-origin: right bottom;
+          transform-origin: right bottom;
+}
+
+.conversion__panel--flip-line {
+  width: 150%;
+  height: 50%;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg) translateY(-50%) translateX(-25%);
+          transform: rotate(-45deg) translateY(-50%) translateX(-25%);
+  position: absolute;
+}
+
+.conversion__block {
+  width: 100%;
+  height: 100%;
+}
+
+.conversion__block--before {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  float: left;
+  left: -50%;
+}
+
+.conversion__block--before:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.conversion__block--after {
+  position: absolute;
+  background: #0600ff;
+  width: 100%;
+  height: 100%;
+  float: right;
+  left: 50%;
+}
+
+.conversion__block--after:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.conversion__content--before {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.conversion__content--before:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.conversion__content--after {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+.conversion__content--after:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.rooftop {
+  height: 45px;
+  background: #222222;
+}
+
+#container {
+  padding-top: 45px;
+}
+
+.brandsolution-logo a {
+  display: inline-block;
+  width: 62px;
+  height: 15px;
+  background: url(https://images.joins.com/newsroom/common/logo_svg_new.svg) no-repeat;
+  background-size: contain;
+  text-indent: -9999px;
+}
+
+.forehead .sns-share-box a.sns-fb {
+  background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat;
+}
+
+.forehead .sns-share-box a.sns-tw {
+  background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -25px 0;
+}
+
+.forehead .sns-share-box a.kakao {
+  background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -51px 0;
+}
+
+.forehead .sns-share-box a.sns-fb:hover {
+  background-position: 0 0px;
+}
+
+.forehead .sns-share-box a.sns-tw:hover {
+  background-position: -25px 0px;
+}
+
+.copyright_box {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0;
+  background: #222222;
+}
+
+.copyright_box .copyright {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 16px 0 10px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+  color: #fff;
+  background: #222222;
+}
+
+.copyright_box .copyright .copyright_credit {
+  position: relative;
+  width: 795px;
+  margin: 0 auto;
+  bottom: 0px;
+  color: #808080;
+  font-size: 12px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.copyright_box .copyright .copyright_credit span {
+  color: #dddddd;
+  font-weight: 300;
+}
+
+.copyright_box .copyright .copy_left {
+  width: 25%;
+  text-align: left;
+  float: left;
+  height: 46px;
+  background: url("../img/j_logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 83px 23px;
+}
+
+.copyright_box .copyright .copy_right {
+  width: 75%;
+  text-align: left;
+  float: right;
+  padding-top: 12px;
+}
+
+.copyright_box .copyright .copy_right p.p-text {
+  font-weight: 400;
+  letter-spacing: 0px;
+  font-size: 11px;
+  line-height: 5px;
 }
 
 @-webkit-keyframes test {

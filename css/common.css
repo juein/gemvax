@@ -54,6 +54,30 @@
   src: url("../fonts/NotoSansCJKkr-Black.woff") format("woff"), url("../fonts/NotoSansCJKkr-Black.otf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 500;
+  src: url("../fonts/NotoSerifKR-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 500;
+  src: url("../fonts/NotoSerifKR-Medium.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 600;
+  src: url("../fonts/NotoSerifKR-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 700;
+  src: url("../fonts/NotoSerifKR-Black.otf") format("truetype");
+}
+
 .joins_gnb {
   height: 32px;
 }

@@ -36,64 +36,391 @@ $white : #fff;
     letter-spacing: $ls;
 }
 
-.content{
+@mixin textToImage($imgName, $w:0, $h:0){
+    text-indent: -99999px;
+    display: block;
+    background: url($imgPath + $imgName) no-repeat;
+    width: $w;
+    height: $h;
+}
+
+.intro-news{
+    position: relative;
     width: 100%;
-    overflow: hidden;
-    &__area{
-        &--index{
-            background: #f0f0f0;
-            height: calc(100vh - 78px);
-            .pannel__box{
-                @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+    height: 1640px;
+    min-height: calc(100vh - 45px);
+    background: #000;
+    &__paper{
+        width: calc(1100px + 10%);
+        height: 100%;
+        margin: 0 auto;
+        background: #fff;
+        &--panel{
+            @include box_container(1100px, 0, 0, 0, -550px, 0, 50%);
+            height: 100%;
+        }
+        &--headline{
+            &-ad{
+                @include textToImage('intro_headline_1.png', 315px, 51px);
+                margin: 120px auto 0 auto;
+            }
+            &-dd{
+                @include textToImage('intro_headline_2.png', 50px, 300px);
+                position: absolute;
+                right: 25px;
+                top: 570px;
+            }
+            &-title{
+                margin-top: 160px;
+                &-default{
+                    @include textToImage('intro_news_title_1.png', 615px, 70px);
+                    margin: 0 auto;
+                }
+                &-strong{
+                    @include textToImage('intro_news_title_2.png', 615px, 114px);
+                    margin: 40px auto 0 auto;
+                }
+            }
+            &-sub-title{
+                @include textToImage('intro_news_title_3.png', 812px, 72px);
+                margin: 330px auto 60px auto;
             }
         }
-        &--second{
-            background: #badc58;
-            height: 300px;
-        }
-        &--three{
-            background: #7ed6df;
-            height: 500px;
-        }
-
-        .panel__area{
-            ul{
-                li{
+        &--content{
+            width: 1080px;
+            margin: 0 auto;
+            border-bottom: 2px solid #000;
+            padding: 50px 0;
+            &-list{
+                height: 420px;
+                width: 100%;
+                &-item{
+                    text-align: justify;
                     float: left;
-                    outline: 1px solid;
+                    width: 315px;
+                    height: 420px;
+                    margin: 0 20px;
+                    @include serif-regular;
+                    @include fontInfo(20px, 37px, -0.05em);
                     &:after{
                         @include clear;
                     }
                 }
             }
         }
+        &--annexed{
+            padding: 25px 30px;
+            @include serif-regular;
+            @include fontInfo(13px, normal, -0.05em);
+        }
+    }
+}
+
+.alzheimer{
+    width: 100%;
+    height: 1240px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    &__panel{
+        @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+    }
+    &__headline{
+        width: 1100px;
+        height: 510px;
+        margin: 0 auto;
+        border-top: 1px solid #000;
+        padding-top: 60px;
+        margin-top: 60px;
+        &--title{
+            @include textToImage('alzheimer-title.png', 420px, 110px);
+            margin-top: 10px;
+            float: left;
+            &:after{
+                @include clear;
+            }
+        }
+        &--info{
+            float: right;
+            width: 510px;
+            @include serif-regular;
+            @include fontInfo(21px, 37px, -0.06em);
+            &:after{
+                @include clear;
+            }
+        }
+        
+    }
+    &__card{
+        width: 100%;
+        height: 630px;
+        &--item{
+            width: 100%;
+            height: 100%;
+            &-news{
+                outline: 1px solid #ddd;
+                float: left;
+                width: 224px;
+                height: 100%;
+                &.active{
+                    width: 525px;
+                }
+                &:after{
+                    @include clear;
+                }
+            }
+        }
+    }
+}
+
+.alzheimer-hope{
+    width: 100%;
+    height: 1135px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    &__panel{
+        @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+        height: 100%;
+    }
+    &__comment{
+        margin-left: 50px;
+        margin-top: 110px;
+        float: left;
+        &-text{
+            @include textToImage('alzheimer-hope__comment.png', 400px, 1000px);
+        }
+        &:after{
+            @include clear;
+        }
+    }
+    &__text{
+        width: 575px;
+        margin-right: 50px;
+        float: right;
+        &-title{
+            margin-top: 125px;
+            @include textToImage('alzheimer-hope__title.png', 503px, 176px);
+        }
+        &-explain{
+            width: 400px;
+            margin-left: 170px;
+            margin-top: 55px;
+            @include serif-regular;
+            @include fontInfo(21px, 37px, -0.02em);
+        }
+        &:after{
+            @include clear;
+        }
+    }
+    &__person{
+        position: absolute;
+        bottom: 0px;
+        height: 580px;
+        overflow: hidden;
+        width: 150%;
+        left: 220px;
+        border-bottom: 2px solid #000;
+        &--img{
+            background: url($imgPath + 'alzheimer-hope-person.png') no-repeat;
+            width: 508px;
+            height: 651px;
+            display: inline-block;
+            position: absolute;
+            bottom: -100px;
+            left: 100px;
+        }
+        &--annexed{
+            position: absolute;
+            bottom: 0;
+            width: 310px;
+            border-top: 1px solid #000;
+            text-align: center;
+            padding-top: 2px;
+            height: 60px;
+            left: 575px;
+            &-text{
+                @include serif-regular;
+                @include fontInfo(13px, 37px, -0.02em);
+            }
+        }
+    }
+}
+
+.conversion{
+    width: 100%;
+    height: 1940px;
+    position: relative;
+    overflow: hidden;
+    &__panel{
+        @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+        height: 100%;
+        &--flip{
+            width: 265px;
+            height: 265px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            outline: 1px solid #fff;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            background: #0600ff;
+
+            transition: all 2s;
+            transform-origin: right bottom;
+            //transform: scale(3.5);
+
+            &-line{
+                width: 150%;
+                height: 50%;
+                border-bottom: 1px solid #fff;
+                transform: rotate(-45deg) translateY(-50%) translateX(-25%);
+                position: absolute;
+            }
+        }
+    }
+    &__block{
+        width: 100%;
+        height: 100%;
+        &--before{
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            float: left;
+            left: -50%;
+            &:after{
+                @include clear;
+            }
+        }
+        &--after{
+            position: absolute;
+            background: #0600ff;
+            width: 100%;
+            height: 100%;
+            float: right;
+            left: 50%;
+            &:after{
+                @include clear;
+            }
+        }
+    }
+    &__content{
+        &--before{
+            width: 50%;
+            height: 100%;
+            float: left;
+            &:after{
+                @include clear;
+            }
+        }
+        &--after{
+            width: 50%;
+            height: 100%;
+            float: right;
+            &:after{
+                @include clear;
+            }
+        }
     }
     
-    /*
-    &--first{
-        height: 200px;
-        background: #ddd;
-    }
-    &--second{
-        height: 100px;
-        background: #eee;
-    }
-    &--box{
-        @include box_container();
-    }
-    &--title{
-        &__main{
-            @include fontInfo(14px, normal, 0);
-        }
-        &__sub{
-            @include fontInfo(10px, normal, 0);
-        }
-    }
-    &--text{
-        color: rgb(67, 29, 129);
-    }
-    */
+}
 
+
+.rooftop{
+    height: 45px;
+    background: #222222;
+}
+#container{
+    padding-top: 45px;
+}
+.brandsolution-logo{
+    a{
+        display: inline-block;
+        width: 62px;
+        height: 15px;
+        background: url(https://images.joins.com/newsroom/common/logo_svg_new.svg) no-repeat;
+        background-size: contain;
+        text-indent: -9999px;
+    }
+}
+.forehead{
+    .sns-share-box a.sns-fb{
+        background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat;
+    }
+    .sns-share-box a.sns-tw{
+        background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -25px 0;
+    }
+    .sns-share-box a.kakao{
+        background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -51px 0;
+    }
+    .sns-share-box a.sns-fb:hover{
+        background-position: 0 0px;
+    }
+    .sns-share-box a.sns-tw:hover{
+        background-position: -25px 0px;
+    }
+    
+}
+.copyright_box {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 0;
+    background: #222222;
+    .copyright {
+        position: relative;
+        width: 1000px;
+        margin: 0 auto;
+        padding: 16px 0 10px 0;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 200;
+        color: #fff;
+        background: #222222;
+        .copyright_credit {
+            position: relative;
+            width: 795px;
+            margin: 0 auto;
+            bottom: 0px;
+            color: #808080;
+            font-size: 12px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            font-weight: 300;
+            line-height: 24px;
+            letter-spacing: 0;
+            span{
+                color: #dddddd;
+                font-weight: 300;
+            }
+        }
+        .copy_left{
+            width: 25%;
+            text-align: left;
+            float: left;
+            height: 46px;
+            background: url($imgPath + 'j_logo.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 83px 23px;
+        }
+        .copy_right{
+            width: 75%;
+            text-align: left;
+            float: right;
+            padding-top: 12px;
+            p.p-text{
+                font-weight: 400;
+                letter-spacing: 0px;
+                font-size: 11px;
+                line-height: 5px;
+            }
+        }
+    }
 }
 
 @keyframes test{
