@@ -342,8 +342,8 @@ i {
   text-indent: -99999px;
   display: block;
   background: url("../img/intro_news_title_1.png") no-repeat;
-  width: 615px;
-  height: 70px;
+  width: 738px;
+  height: 74px;
   margin: 0 auto;
 }
 
@@ -351,8 +351,8 @@ i {
   text-indent: -99999px;
   display: block;
   background: url("../img/intro_news_title_2.png") no-repeat;
-  width: 615px;
-  height: 114px;
+  width: 738px;
+  height: 122px;
   margin: 40px auto 0 auto;
 }
 
@@ -435,8 +435,8 @@ i {
   text-indent: -99999px;
   display: block;
   background: url("../img/alzheimer-title.png") no-repeat;
-  width: 420px;
-  height: 110px;
+  width: 411px;
+  height: 143px;
   margin-top: 10px;
   float: left;
 }
@@ -449,7 +449,9 @@ i {
 
 .alzheimer__headline--info {
   float: right;
-  width: 510px;
+  text-align: justify;
+  width: 500px;
+  margin-right: 40px;
   font-family: 'Noto Serif CJK KR', sans-serif;
   font-weight: 400;
   font-size: 21px;
@@ -566,7 +568,8 @@ i {
   height: 580px;
   overflow: hidden;
   width: 150%;
-  left: 220px;
+  left: 50%;
+  margin-left: -420px;
   border-bottom: 2px solid #000;
 }
 
@@ -626,7 +629,7 @@ i {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  background: #0600ff;
+  background: #0400b8;
   -webkit-transition: all 2s;
   transition: all 2s;
   -webkit-transform-origin: right bottom;
@@ -664,7 +667,7 @@ i {
 
 .conversion__block--after {
   position: absolute;
-  background: #0600ff;
+  background: #0400b8;
   width: 100%;
   height: 100%;
   float: right;
@@ -683,6 +686,34 @@ i {
   float: left;
 }
 
+.conversion__content--before-title {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/conversion_2.png") no-repeat;
+  width: 400px;
+  height: 347px;
+}
+
+.conversion__content--before-graph {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/conversion_before_graph.png") no-repeat;
+  width: 317px;
+  height: 272px;
+}
+
+.conversion__content--before-detail {
+  color: #0600ff;
+  font-size: 21px;
+  line-height: 36px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  outline: 1px solid;
+  width: 420px;
+  text-align: justify;
+}
+
 .conversion__content--before:after {
   clear: both;
   display: table;
@@ -695,10 +726,508 @@ i {
   float: right;
 }
 
+.conversion__content--after-title {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/conversion_1.png") no-repeat;
+  width: 400px;
+  height: 347px;
+}
+
+.conversion__content--after-graph {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/conversion_after_graph.png") no-repeat;
+  width: 440px;
+  height: 404px;
+}
+
+.conversion__content--after-detail {
+  color: #fff;
+  font-size: 21px;
+  line-height: 36px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  outline: 1px solid;
+  width: 420px;
+  text-align: justify;
+}
+
 .conversion__content--after:after {
   clear: both;
   display: table;
   content: '';
+}
+
+.drug-spec {
+  width: 100%;
+  height: 880px;
+  overflow: hidden;
+  position: relative;
+  outline: 1px solid red;
+  background: #0400b8;
+}
+
+.drug-spec__panel {
+  position: absolute;
+  width: 1200px;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.drug-spec__panel--title {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/drug-spec-title.png") no-repeat;
+  width: 698px;
+  height: 166px;
+  outline: 1px solid red;
+  margin-top: 130px;
+  margin-left: 50px;
+}
+
+.drug-spec__panel--inner {
+  height: 580px;
+  outline: 1px solid #fff;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.meterial {
+  width: 100%;
+  height: 1580px;
+  overflow: hidden;
+  position: relative;
+  outline: 1px solid red;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(30%), color-stop(#1e00ff), to(transparent));
+  background: linear-gradient(black, 30%, #1e00ff, transparent);
+}
+
+.meterial__panel {
+  position: absolute;
+  width: 1200px;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.meterial__panel--title {
+  margin: 200px auto;
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/meterial-title.png") no-repeat;
+  width: 761px;
+  height: 172px;
+}
+
+.meterial__panel--inner-list-item {
+  width: 385px;
+  height: 385px;
+  float: left;
+  color: #1e00ff;
+  font-size: 30px;
+  line-height: 43px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff3f53), to(#ff3f9a));
+  background: linear-gradient(#ff3f53, #ff3f9a);
+  border-radius: 50%;
+}
+
+.meterial__panel--inner-list-item:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.meterial__panel--inner-detail {
+  color: #fff;
+}
+
+.meterial__panel--inner-detail-text {
+  text-align: center;
+  font-size: 30px;
+  line-height: 55px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+}
+
+.meterial__panel--inner-detail-hide {
+  font-size: 30px;
+  line-height: 55px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 600;
+  padding: 2px 20px;
+  background: #000;
+}
+
+.gv-1001 {
+  width: 100%;
+  height: 1420px;
+  z-index: 0;
+  position: relative;
+  outline: 1px solid red;
+  background: #000;
+}
+
+.gv-1001__bg {
+  background: url("../img/gv1001-bg.png") no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -550px;
+  background-size: 100% 100%;
+  width: 1600px;
+  height: 1170px;
+  left: 50%;
+  margin-left: -800px;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.gv-1001__panel {
+  position: absolute;
+  width: 1200px;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.gv-1001__panel--title {
+  margin-left: 50px;
+  margin-top: 500px;
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/gv1001-title.png") no-repeat;
+  width: 389px;
+  height: 267px;
+}
+
+.gv-1001__panel--content {
+  color: #fff;
+}
+
+.gv-1001__panel--content-comment {
+  position: absolute;
+  top: 870px;
+  left: 80px;
+}
+
+.gv-1001__panel--content-comment .quotation-left {
+  background: url("../img/quotation-left.png") no-repeat;
+  width: 61px;
+  height: 42px;
+  position: absolute;
+  top: 45px;
+  left: -45px;
+  z-index: -1;
+}
+
+.gv-1001__panel--content-comment .quotation-right {
+  background: url("../img/quotation-right.png") no-repeat;
+  width: 61px;
+  height: 42px;
+  position: absolute;
+  top: 210px;
+  left: 270px;
+}
+
+.gv-1001__panel--content-text {
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 48px;
+  letter-spacing: -0.08em;
+  z-index: 1;
+  position: relative;
+}
+
+.gv-1001__panel--content-image {
+  background: url("../img/gv-1001-content-image.jpg") no-repeat;
+  width: 392px;
+  height: 220px;
+  position: absolute;
+  left: 50%;
+  top: 955px;
+  margin-left: -245px;
+}
+
+.gv-1001__panel--content-detail {
+  position: absolute;
+  right: 50px;
+  width: 500px;
+  text-align: justify;
+  margin-top: 40px;
+}
+
+.gv-1001__panel--content-detail-text {
+  color: #fff;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 36px;
+  letter-spacing: -0.08em;
+}
+
+.gv-1001__panel--content .underline {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 6px;
+}
+
+.meterial-hope {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  outline: 1px solid red;
+  background: #000;
+  z-index: auto;
+}
+
+.meterial-hope__panel {
+  position: absolute;
+  width: 1200px;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
+  height: 100%;
+  z-index: 10;
+}
+
+.meterial-hope__panel--title {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/meterial-hope-title.png") no-repeat;
+  width: 377px;
+  height: 256px;
+  margin: 95px 0px 95px 50px;
+}
+
+.meterial-hope__panel .table__background {
+  position: absolute;
+  z-index: -1;
+  top: 235px;
+}
+
+.meterial-hope__panel .table__background li {
+  height: 50px;
+  width: 150vw;
+  margin: 15px 0;
+  background: #0c0066;
+}
+
+.meterial-hope__panel .table__background li.active {
+  background: #1e00ff;
+}
+
+.meterial-hope__panel--table {
+  position: absolute;
+  right: 50px;
+  top: 200px;
+}
+
+.meterial-hope__panel--table-cell {
+  width: 835px;
+  text-align: center;
+  color: #fff;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  font-size: 19px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+}
+
+.meterial-hope__panel--table-cell .table-group-1 {
+  width: 128px;
+}
+
+.meterial-hope__panel--table-cell .table-group-2 {
+  width: 166px;
+}
+
+.meterial-hope__panel--table-cell .table-group-3 {
+  width: 310px;
+}
+
+.meterial-hope__panel--table-cell .table-group-4 {
+  width: 85px;
+}
+
+.meterial-hope__panel--table-cell .table-group-5 {
+  width: 110px;
+}
+
+.meterial-hope__panel--table-cell th {
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 500;
+  padding: 1px 0;
+}
+
+.meterial-hope__panel--table-cell tr {
+  border-bottom: 1px solid #fff;
+}
+
+.meterial-hope__panel--table-cell td {
+  padding: 14px 0;
+}
+
+.meterial-hope__panel--table-cell td.line {
+  position: relative;
+}
+
+.meterial-hope__panel--table-cell td.line .block {
+  display: block;
+  position: absolute;
+  width: 170px;
+  top: 5px;
+}
+
+.meterial-hope__panel--table-cell td.line .block span {
+  font-size: 14px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.meterial-hope__panel--explain {
+  position: absolute;
+  right: 50px;
+  margin-top: 20px;
+}
+
+.meterial-hope__panel--text {
+  color: #fff;
+  width: 500px;
+  text-align: justify;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 36px;
+  letter-spacing: -0.08em;
+}
+
+.outro {
+  width: 100%;
+  height: 2370px;
+  position: relative;
+  outline: 1px solid red;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(#0600ff), color-stop(50%), to(#000));
+  background: linear-gradient(#000, #0600ff, 50%, #000);
+}
+
+.outro__bg {
+  background: url("../img/outro-bg.png") no-repeat;
+  background-position: center;
+  position: absolute;
+  background-size: 100% 100%;
+  top: -350px;
+  left: 50%;
+  width: 2166px;
+  height: 1268px;
+  margin-left: -1083px;
+}
+
+.outro__panel {
+  position: absolute;
+  width: 1200px;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.outro__panel--title {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/outro-title.png") no-repeat;
+  width: 669px;
+  height: 194px;
+  margin: 860px auto 85px auto;
+}
+
+.outro__panel--content {
+  color: #fff;
+}
+
+.outro__panel--content-text {
+  font-size: 21px;
+  line-height: 36px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.outro__panel--content-strong {
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+  margin-top: 35px;
+}
+
+.outro__panel--content-comment {
+  position: relative;
+  text-align: center;
+  display: block;
+  font-size: 35px;
+  line-height: 55px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+}
+
+.outro__panel--content-comment .underline {
+  font-size: 26px;
+  line-height: 54px;
+  letter-spacing: -0.08em;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 6px;
+}
+
+.outro__panel--content-person {
+  background: url("../img/jorgen-winroth.png") no-repeat;
+  width: 233px;
+  height: 199px;
+  margin: 0 auto;
+  margin: 140px auto 35px auto;
+}
+
+.outro__panel--content .quotation-left {
+  position: absolute;
+  top: -60px;
+  left: 150px;
+  width: 74px;
+  height: 49px;
+  background: url("../img/quotation-left-white.png") no-repeat;
+}
+
+.outro__panel--content .quotation-right {
+  position: absolute;
+  bottom: -50px;
+  right: 130px;
+  width: 74px;
+  height: 49px;
+  background: url("../img/quotation-right-white.png") no-repeat;
 }
 
 .rooftop {
@@ -826,6 +1355,17 @@ i {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media all and (min-width: 1921px) {
+  .gv-1001__bg {
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+  .outro__bg {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 /*# sourceMappingURL=style.css.map */

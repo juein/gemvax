@@ -73,11 +73,11 @@ $white : #fff;
             &-title{
                 margin-top: 160px;
                 &-default{
-                    @include textToImage('intro_news_title_1.png', 615px, 70px);
+                    @include textToImage('intro_news_title_1.png', 738px, 74px);
                     margin: 0 auto;
                 }
                 &-strong{
-                    @include textToImage('intro_news_title_2.png', 615px, 114px);
+                    @include textToImage('intro_news_title_2.png', 738px, 122px);
                     margin: 40px auto 0 auto;
                 }
             }
@@ -133,7 +133,7 @@ $white : #fff;
         padding-top: 60px;
         margin-top: 60px;
         &--title{
-            @include textToImage('alzheimer-title.png', 420px, 110px);
+            @include textToImage('alzheimer-title.png', 411px, 143px);
             margin-top: 10px;
             float: left;
             &:after{
@@ -142,7 +142,9 @@ $white : #fff;
         }
         &--info{
             float: right;
-            width: 510px;
+            text-align: justify;
+            width: 500px;
+            margin-right: 40px;
             @include serif-regular;
             @include fontInfo(21px, 37px, -0.06em);
             &:after{
@@ -219,7 +221,8 @@ $white : #fff;
         height: 580px;
         overflow: hidden;
         width: 150%;
-        left: 220px;
+        left: 50%;
+        margin-left: -420px;
         border-bottom: 2px solid #000;
         &--img{
             background: url($imgPath + 'alzheimer-hope-person.png') no-repeat;
@@ -265,7 +268,8 @@ $white : #fff;
             padding: 0;
             margin: 0;
             overflow: hidden;
-            background: #0600ff;
+            //background: #0600ff;
+            background: #0400b8;
 
             transition: all 2s;
             transform-origin: right bottom;
@@ -296,7 +300,8 @@ $white : #fff;
         }
         &--after{
             position: absolute;
-            background: #0600ff;
+            //background: #0600ff;
+            background: #0400b8;
             width: 100%;
             height: 100%;
             float: right;
@@ -311,6 +316,21 @@ $white : #fff;
             width: 50%;
             height: 100%;
             float: left;
+            &-title{
+                @include textToImage('conversion_2.png', 400px, 347px);
+            }
+            &-graph{
+                @include textToImage('conversion_before_graph.png', 317px, 272px);
+            }
+            &-detail{
+                color: #0600ff;
+                @include fontInfo(21px, 36px, -0.08em);
+                @include serif-regular;
+                outline: 1px solid;
+                width: 420px;
+                text-align: justify;
+            }
+
             &:after{
                 @include clear;
             }
@@ -319,12 +339,367 @@ $white : #fff;
             width: 50%;
             height: 100%;
             float: right;
+            &-title{
+                @include textToImage('conversion_1.png', 400px, 347px);
+            }
+            &-graph{
+                @include textToImage('conversion_after_graph.png', 440px, 404px);
+            }
+            &-detail{
+                color: #fff;
+                @include fontInfo(21px, 36px, -0.08em);
+                @include serif-regular;
+                outline: 1px solid;
+                width: 420px;
+                text-align: justify;
+            }
             &:after{
                 @include clear;
             }
         }
     }
-    
+}
+
+.drug-spec{
+    width: 100%;
+    height: 880px;
+    overflow: hidden;
+    position: relative;
+    outline: 1px solid red;
+    background: #0400b8;
+    &__panel{
+        @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage('drug-spec-title.png', 698px, 166px);
+            outline: 1px solid red;
+            margin-top: 130px;
+            margin-left: 50px;
+        }
+        &--inner{
+            height: 580px;
+            outline: 1px solid #fff;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    }
+}
+
+.meterial{
+    width: 100%;
+    height: 1580px;
+    overflow: hidden;
+    position: relative;
+    outline: 1px solid red;
+    //background: linear-gradient( #000000, #1e00ff);
+    background: linear-gradient(black, 30%, rgba(30, 0, 255, 1), transparent);
+    &__panel{
+        @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+        height: 100%;
+        &--title{
+            margin: 200px auto;
+            @include textToImage('meterial-title.png', 761px, 172px);
+        }
+        &--inner{
+            &-list{
+                &-item{
+                    width: 385px;
+                    height: 385px;
+                    float: left;
+                    color: #1e00ff;
+                    @include fontInfo(30px, 43px, -0.08em);
+                    @include serif-regular;
+                    text-align: center;
+                    background: linear-gradient( #ff3f53, #ff3f9a);
+                    border-radius: 50%;
+                    &:after{
+                        @include clear;
+                    }
+                }
+            }
+            &-detail{
+                color: #fff;
+                &-text{
+                    text-align: center;
+                    @include fontInfo(30px, 55px, -0.08em);
+                    @include serif-regular;
+                }
+                &-hide{
+                    @include fontInfo(30px, 55px, -0.08em);
+                    @include serif-bold;
+                    padding: 2px 20px;
+                    background: #000;
+                }
+            }
+        }
+    }
+}
+
+.gv-1001{
+    width: 100%;
+    height: 1420px;
+    z-index: 0;
+    position: relative;
+    outline: 1px solid red;
+    background: #000;
+    &__bg{
+        background: url($imgPath + 'gv1001-bg.png') no-repeat;
+        background-position: center;
+        position: absolute;
+        top: -550px;
+        background-size: 100% 100%;
+        width: 1600px;
+        height: 1170px;
+        left: 50%;
+        margin-left: -800px;
+        transform: scale(1.2);
+    }
+    &__panel{
+        @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+        height: 100%;
+        &--title{
+            margin-left: 50px;
+            margin-top: 500px;
+            @include textToImage('gv1001-title.png', 389px, 267px);
+        }
+        &--content{
+            color: #fff;
+            &-comment{
+                position: absolute;
+                top: 870px;
+                left: 80px;
+                .quotation-left{
+                    background: url($imgPath + 'quotation-left.png') no-repeat;
+                    width: 61px;
+                    height: 42px;
+                    position: absolute;
+                    top: 45px;
+                    left: -45px;
+                    z-index: -1;
+                }
+                .quotation-right{
+                    background: url($imgPath + 'quotation-right.png') no-repeat;
+                    width: 61px;
+                    height: 42px;
+                    position: absolute;
+                    top: 210px;
+                    left: 270px;
+                }
+            }
+            &-text{
+                    @include serif-regular;
+                    @include fontInfo(30px, 48px, -0.08em);
+                    z-index: 1;
+                    position: relative;
+            }
+            &-image{
+                background: url($imgPath + 'gv-1001-content-image.jpg') no-repeat;
+                width: 392px;
+                height: 220px;
+                position: absolute;
+                left: 50%;
+                top: 955px;
+                margin-left: -245px;
+            }
+            &-detail{
+                position: absolute;
+                right: 50px;
+                width: 500px;
+                text-align: justify;
+                margin-top: 40px;
+                &-text{
+                    color: #fff;
+                    @include serif-regular;
+                    @include fontInfo(21px, 36px, -0.08em);
+                }
+            }
+            .underline{
+                border-bottom: 1px solid #fff;
+                padding-bottom: 6px;
+            }
+        }
+    }
+}
+
+.meterial-hope{
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    outline: 1px solid red;
+    background: #000;
+    z-index: auto;
+    &__panel{
+        @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+        height: 100%;
+        z-index: 10;
+        &--title{
+            @include textToImage('meterial-hope-title.png', 377px, 256px);
+            margin: 95px 0px 95px 50px;
+        }
+        .table__background{
+            position: absolute;
+            z-index: -1;
+            top: 235px;
+            li{
+                height: 50px;
+                width: 150vw;
+                margin: 15px 0;
+                background: #0c0066;
+                &.active{
+                    background: #1e00ff;
+                }
+            }
+        }
+        &--table{
+            position: absolute;
+            right: 50px;
+            top: 200px;
+            &-cell{
+                width: 835px;
+                text-align: center;
+                color: #fff;
+                border-top: 4px solid #fff;
+                border-bottom: 4px solid #fff;
+                @include fontInfo(19px, 36px, -0.02em);
+                @include fw-demilight;
+                .table-group{
+                    &-1{
+                        width: 128px;
+                    }
+                    &-2{
+                        width: 166px;
+                    }
+                    &-3{
+                        width: 310px;
+                    }
+                    &-4{
+                        width: 85px;
+                    }
+                    &-5{
+                        width: 110px;
+                    }
+                    
+                }
+                th{
+                    @include fw-medium;
+                    padding: 1px 0;
+                }
+                tr{
+                    border-bottom: 1px solid #fff;
+                }
+                td{
+                    padding: 14px 0;
+                    &.line{
+                        position: relative;
+                        .block{
+                            display: block;
+                            position: absolute;
+                            width: 170px;
+                            top: 5px;
+                            span{
+                                font-size: 14px;
+                                display: block;
+                                position: absolute;
+                                top: 20px;
+                                left: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &--explain{
+            position: absolute;
+            right: 50px;
+            margin-top: 20px;
+        }
+        &--text{
+            color: #fff;
+            width: 500px;
+            text-align: justify;
+            @include serif-regular;
+            @include fontInfo(21px, 36px, -0.08em);
+        }
+    }
+}
+
+.outro{
+    width: 100%;
+    height: 2370px;
+    position: relative;
+    outline: 1px solid red;
+    //background: linear-gradient(#0600ff, 65%, black);
+    background: linear-gradient(#000, #0600ff, 50%, #000);
+    &__bg{
+        background: url($imgPath + 'outro-bg.png') no-repeat;
+        background-position: center;
+        position: absolute;
+        background-size: 100% 100%;
+        top: -350px;
+        left: 50%;
+        width: 2166px;
+        height: 1268px;
+        margin-left: -1083px;
+    }
+    &__panel{
+        @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage('outro-title.png', 669px, 194px);
+            margin: 860px auto 85px auto;
+        }
+        &--content{
+            color: #fff;
+            &-text{
+                @include fontInfo(21px, 36px, -0.08em);
+                @include serif-regular;
+                text-align: center;
+            }
+            &-strong{
+                @include fontInfo(30px, 36px, -0.08em);
+                @include serif-bold;
+                text-align: center;
+                display: block;
+                margin-top: 35px;
+            }
+            &-comment{
+                position: relative;
+                text-align: center;
+                display: block;
+                @include fontInfo(35px, 55px, -0.08em);
+                @include serif-regular;
+                .underline{
+                    @include fontInfo(26px, 54px, -0.08em);
+                    border-bottom: 1px solid #fff;
+                    padding-bottom: 6px;
+                }
+            }
+            &-person{
+                background: url($imgPath + 'jorgen-winroth.png') no-repeat;
+                width: 233px;
+                height: 199px;
+                margin: 0 auto;
+                margin: 140px auto 35px auto;
+            }
+            .quotation-left{
+                position: absolute;
+                top: -60px;
+                left: 150px;
+                width: 74px;
+                height: 49px;
+                background: url($imgPath + 'quotation-left-white.png') no-repeat;
+            }
+            .quotation-right{
+                position: absolute;
+                bottom: -50px;
+                right: 130px;
+                width: 74px;
+                height: 49px;
+                background: url($imgPath + 'quotation-right-white.png') no-repeat;
+            }
+        }
+    }
 }
 
 
@@ -431,4 +806,13 @@ $white : #fff;
 
 @media all and (max-width: 1024px) and (max-height: 768px){
     
+}
+
+@media all and (min-width: 1921px){
+    .gv-1001__bg{
+        transform: scale(1.8);
+    }
+    .outro__bg{
+        transform: scale(1.2);
+    }
 }
