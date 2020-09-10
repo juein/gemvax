@@ -44,6 +44,10 @@ $white : #fff;
     height: $h;
 }
 
+#container{
+    overflow: hidden;
+}
+
 .intro-news{
     position: relative;
     width: 100%;
@@ -51,9 +55,16 @@ $white : #fff;
     min-height: calc(100vh - 45px);
     background: #000;
     &__paper{
+        position: absolute;
         width: calc(1100px + 10%);
-        height: 100%;
-        margin: 0 auto;
+        //height: 100%;
+        //margin: 0 auto;
+        height: 1640px;
+        top: -490px;
+        //top: 50%;
+        left: 50%;
+        margin-left: -635px;
+        //margin-top: -820px;
         background: #fff;
         &--panel{
             @include box_container(1100px, 0, 0, 0, -550px, 0, 50%);
@@ -100,8 +111,8 @@ $white : #fff;
                     width: 315px;
                     height: 420px;
                     margin: 0 20px;
-                    @include serif-regular;
                     @include fontInfo(20px, 37px, -0.05em);
+                    @include serif-regular;
                     &:after{
                         @include clear;
                     }
@@ -110,8 +121,8 @@ $white : #fff;
         }
         &--annexed{
             padding: 25px 30px;
-            @include serif-regular;
             @include fontInfo(13px, normal, -0.05em);
+            @include serif-regular;
         }
     }
 }
@@ -145,8 +156,8 @@ $white : #fff;
             text-align: justify;
             width: 500px;
             margin-right: 40px;
-            @include serif-regular;
             @include fontInfo(21px, 37px, -0.06em);
+            @include serif-regular;
             &:after{
                 @include clear;
             }
@@ -164,8 +175,123 @@ $white : #fff;
                 float: left;
                 width: 224px;
                 height: 100%;
+                transition: all 0.6s;
+
+                .explain{
+                    color: #000;
+                    @include serif-regular;
+                    @include fontInfo(18px, 26px, -0.06em);
+                    display: block;
+                    width: 100%;
+                    margin: 20px 30px;
+                }
+                $numImgWidth: (
+                    one: 485,
+                    two: 365,
+                    three: 240,
+                    four: 390
+                );
+                $numImgHeight: (
+                    one: 199,
+                    two: 197, 
+                    three: 196, 
+                    four: 262
+                );
+                $contentWidth:(
+                    one: 464,
+                    two: 401, 
+                    three: 401, 
+                    four: 382 
+                );
+                $contentHeight:(
+                    one: 248,
+                    two: 317, 
+                    three: 319, 
+                    four: 202
+                );
+                $contentTop:(
+                    one: 355,
+                    two: 270, 
+                    three: 270, 
+                    four: 110
+                );
+                $contentLeft:(
+                    one: 20,
+                    two: 80, 
+                    three: 75, 
+                    four: 85
+                );
+
+                @each $numberring in one, two, three, four {
+                    &.#{$numberring}{
+                        .contents{
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            background: #fff;
+                            overflow: hidden;
+                            outline: 1px solid #ddd;
+                            .numberring{
+                                background: url($imgPath + 'alzheimer__card-#{$numberring}-num.png') no-repeat;
+                                background-size: 100% 100%;
+                                width: #{map-get( $numImgWidth, $numberring )}px;
+                                height: #{map-get( $numImgHeight, $numberring )}px;
+                                text-indent: -99999px;
+                                position: absolute;
+                                top: 145px;
+                                left: 30px;
+                                z-index: 1;
+                                @if $numberring == 'four'{
+                                    top: 90px;
+                                    left: 50px;
+                                    z-index: 0;
+                                    &:nth-of-type(2){
+                                        background: url($imgPath + 'alzheimer__card-four-num2.png') no-repeat;
+                                        background-size: 100% 100%;
+                                        width: 421px;
+                                        height: 251px;
+                                        top: 335px;
+                                        left: 20px;
+                                        opacity: 1;
+                                        &.on{
+                                            background: url($imgPath + 'alzheimer__card-four-num3.png') no-repeat;
+                                            background-size: 100% 100%;
+                                            width: 427px;
+                                            height: 257px;
+                                        }
+                                    }
+                                }
+                            }
+                            .graph{
+                                background: url($imgPath + 'alzheimer__card-#{$numberring}-content.png') no-repeat;
+                                background-size: 100% 100%;
+                                width: #{map-get( $contentWidth, $numberring )}px;
+                                height: #{map-get( $contentHeight, $numberring )}px;
+                                top: #{map-get( $contentTop, $numberring )}px;
+                                left: #{map-get( $contentLeft, $numberring )}px;
+                                position: absolute;
+                                opacity: 0;
+                                transition: all 0.8s;
+                                transition-delay: 0.3s;
+                            }
+                        }
+                    }
+                }
+                .numberring{
+                    opacity: 0.2;
+                    transition: all 0.6s;
+                }
+
                 &.active{
                     width: 525px;
+                    .numberring{
+                        opacity: 1;
+                    }
+                    .contents{
+                        .graph{
+                            opacity: 1;
+                        }
+                    }
                 }
                 &:after{
                     @include clear;
