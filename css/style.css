@@ -303,11 +303,13 @@ i {
 
 .intro-news__paper {
   position: absolute;
-  width: calc(1100px + 10%);
-  height: 1640px;
-  top: -490px;
+  height: calc(1640px + 15vh);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  top: -535px;
+  width: 1300px;
   left: 50%;
-  margin-left: -635px;
+  margin-left: -650px;
   background: #fff;
 }
 
@@ -317,7 +319,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -550px;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -404,6 +405,7 @@ i {
 }
 
 .intro-news__paper--annexed {
+  opacity: 0;
   padding: 25px 30px;
   font-size: 13px;
   line-height: normal;
@@ -426,7 +428,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
-  outline: 1px solid #ddd;
 }
 
 .alzheimer__headline {
@@ -705,7 +706,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -814,7 +814,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -822,26 +821,27 @@ i {
   width: 265px;
   height: 265px;
   position: absolute;
-  bottom: 0;
   right: 0;
-  outline: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
   padding: 0;
   margin: 0;
   overflow: hidden;
-  background: #0400b8;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  background: #000;
   -webkit-transform-origin: right bottom;
           transform-origin: right bottom;
+  bottom: -2px;
+  right: -2px;
 }
 
 .conversion__panel--flip-line {
   width: 150%;
-  height: 50%;
   border-bottom: 1px solid #fff;
-  -webkit-transform: rotate(-45deg) translateY(-50%) translateX(-25%);
-          transform: rotate(-45deg) translateY(-50%) translateX(-25%);
   position: absolute;
+  background: #0400b8;
+  height: 100%;
+  -webkit-transform: rotate(-45deg) translateY(-67.8%) translateX(-10%);
+          transform: rotate(-45deg) translateY(-67.8%) translateX(-10%);
 }
 
 .conversion__block {
@@ -891,6 +891,8 @@ i {
   background: url("../img/conversion_2.png") no-repeat;
   width: 400px;
   height: 347px;
+  margin-top: 150px;
+  margin-left: 135px;
 }
 
 .conversion__content--before-graph {
@@ -899,6 +901,9 @@ i {
   background: url("../img/conversion_before_graph.png") no-repeat;
   width: 317px;
   height: 272px;
+  margin-top: 115px;
+  margin-left: 215px;
+  opacity: 0;
 }
 
 .conversion__content--before-detail {
@@ -908,9 +913,11 @@ i {
   letter-spacing: -0.08em;
   font-family: 'Noto Serif CJK KR', sans-serif;
   font-weight: 400;
-  outline: 1px solid;
   width: 420px;
   text-align: justify;
+  position: absolute;
+  top: 1045px;
+  left: 120px;
 }
 
 .conversion__content--before:after {
@@ -925,12 +932,36 @@ i {
   float: right;
 }
 
+.conversion__content--after .drag__cover {
+  position: absolute;
+  width: 380px;
+  height: 100%;
+  left: 50%;
+  margin-left: -380px;
+  background: #0400b8;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+
+.conversion__content--after .drag__cover--btn {
+  text-indent: -99999px;
+  display: block;
+  background: url("../img/drag__cover--btn.png") no-repeat;
+  width: 157px;
+  height: 106px;
+  position: absolute;
+  top: 715px;
+  left: 25px;
+}
+
 .conversion__content--after-title {
   text-indent: -99999px;
   display: block;
   background: url("../img/conversion_1.png") no-repeat;
   width: 400px;
   height: 347px;
+  margin-top: 150px;
+  margin-left: 60px;
 }
 
 .conversion__content--after-graph {
@@ -939,6 +970,9 @@ i {
   background: url("../img/conversion_after_graph.png") no-repeat;
   width: 440px;
   height: 404px;
+  margin-top: 70px;
+  margin-left: 60px;
+  opacity: 0;
 }
 
 .conversion__content--after-detail {
@@ -948,9 +982,11 @@ i {
   letter-spacing: -0.08em;
   font-family: 'Noto Serif CJK KR', sans-serif;
   font-weight: 400;
-  outline: 1px solid;
   width: 420px;
   text-align: justify;
+  position: absolute;
+  top: 1045px;
+  right: 110px;
 }
 
 .conversion__content--after:after {
@@ -962,10 +998,17 @@ i {
 .drug-spec {
   width: 100%;
   height: 880px;
-  overflow: hidden;
   position: relative;
-  outline: 1px solid red;
-  background: #0400b8;
+  background: #000;
+}
+
+.drug-spec__background {
+  background: url("../img/drug-spec-background.png") no-repeat;
+  position: absolute;
+  width: 958px;
+  height: 865px;
+  right: -100px;
+  top: -50px;
 }
 
 .drug-spec__panel {
@@ -974,7 +1017,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -984,17 +1026,31 @@ i {
   background: url("../img/drug-spec-title.png") no-repeat;
   width: 698px;
   height: 166px;
-  outline: 1px solid red;
   margin-top: 130px;
   margin-left: 50px;
 }
 
 .drug-spec__panel--inner {
   height: 580px;
-  outline: 1px solid #fff;
   position: absolute;
   width: 100%;
   bottom: 0;
+  color: #fff;
+}
+
+.drug-spec__panel--inner .explain-text {
+  text-align: justify;
+  width: 400px;
+  outline: 1px solid;
+  font-size: 21px;
+  line-height: 36px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+}
+
+.drug-spec__panel--inner .step_2, .drug-spec__panel--inner .step_3 {
+  opacity: 0;
 }
 
 .meterial {
@@ -1013,7 +1069,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -1100,7 +1155,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -1200,7 +1254,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
-  outline: 1px solid #ddd;
   height: 100%;
   z-index: 10;
 }
@@ -1347,7 +1400,6 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
