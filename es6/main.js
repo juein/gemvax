@@ -162,12 +162,18 @@ window.addEventListener('DOMContentLoaded', () => {
     
 
     // drug-spec
-    var test = new ScrollMagic.Scene({
-        triggerElement: ".test",
+    
+    //let drguMg = (window.innerHeight - 880) / 2;
+    //let drugOffset = 1920 - drguMg;
+
+    console.log('drugOffset = ' + drugOffset);
+    var drugSpecScene = new ScrollMagic.Scene({
+        triggerElement: ".drug-spec__pin",
         triggerHook: "onLeave",
-        duration: "2000",
-        offset: -45
-      }).setPin(".test")
+        duration: "3000",
+        //offset: -200
+        offset: drugOffset
+      }).setPin(".drug-spec__pin")
       .addTo(ctrl).on("progress", function (e) {
 
         let test = e.progress.toFixed(1);
