@@ -319,6 +319,7 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -550px;
+  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -428,6 +429,7 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
 }
 
 .alzheimer__headline {
@@ -484,6 +486,7 @@ i {
 }
 
 .alzheimer__card--item-news {
+  opacity: 0;
   outline: 1px solid #ddd;
   float: left;
   width: 224px;
@@ -706,6 +709,7 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -716,6 +720,7 @@ i {
 }
 
 .alzheimer-hope__comment-text {
+  opacity: 0;
   text-indent: -99999px;
   display: block;
   background: url("../img/alzheimer-hope__comment.png") no-repeat;
@@ -736,6 +741,9 @@ i {
 }
 
 .alzheimer-hope__text-title {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   margin-top: 125px;
   text-indent: -99999px;
   display: block;
@@ -745,6 +753,9 @@ i {
 }
 
 .alzheimer-hope__text-explain {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   width: 400px;
   margin-left: 170px;
   margin-top: 55px;
@@ -770,6 +781,9 @@ i {
   left: 50%;
   margin-left: -420px;
   border-bottom: 2px solid #000;
+  opacity: 0;
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
 }
 
 .alzheimer-hope__person--img {
@@ -814,6 +828,7 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -893,6 +908,7 @@ i {
   height: 347px;
   margin-top: 150px;
   margin-left: 135px;
+  opacity: 0;
 }
 
 .conversion__content--before-graph {
@@ -962,6 +978,7 @@ i {
   height: 347px;
   margin-top: 150px;
   margin-left: 60px;
+  opacity: 0;
 }
 
 .conversion__content--after-graph {
@@ -1017,6 +1034,7 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -1028,6 +1046,13 @@ i {
   height: 166px;
   margin-top: 130px;
   margin-left: 50px;
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+}
+
+.drug-spec__panel--cover {
+  opacity: 0;
 }
 
 .drug-spec__panel--inner {
@@ -1041,7 +1066,6 @@ i {
 .drug-spec__panel--inner .explain-text {
   text-align: justify;
   width: 400px;
-  outline: 1px solid;
   font-size: 21px;
   line-height: 36px;
   letter-spacing: -0.08em;
@@ -1049,8 +1073,139 @@ i {
   font-weight: 400;
 }
 
-.drug-spec__panel--inner .step_2, .drug-spec__panel--inner .step_3 {
+.drug-spec__panel--inner .explain-text span {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 2px;
+  display: inline-block;
+  position: relative;
+}
+
+.drug-spec__panel--inner .explain-text span i {
+  background: #ff00ff;
+  display: inline-block;
+  width: 100%;
+  height: 26px;
+  z-index: -1;
+  top: 8px;
+  position: absolute;
   opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.drug-spec__panel--inner .explain-text span.active i {
+  opacity: 1;
+}
+
+.drug-spec__panel--inner .step_1, .drug-spec__panel--inner .step_2, .drug-spec__panel--inner .step_3 {
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.drug-spec__panel--inner .step_1.active, .drug-spec__panel--inner .step_2.active, .drug-spec__panel--inner .step_3.active {
+  opacity: 1;
+}
+
+.drug-spec__panel--inner .step_1 .explain-text {
+  margin-top: 110px;
+  margin-left: 60px;
+}
+
+.drug-spec__panel--inner .step_2 .explain-text {
+  width: 440px;
+  margin-top: 115px;
+  margin-left: 60px;
+}
+
+.drug-spec__panel--inner .step_2 .chart-1 {
+  position: absolute;
+  top: -360px;
+  right: 125px;
+  background: url("../img/drug-step1__chart-1.png") no-repeat;
+  width: 397px;
+  height: 433px;
+}
+
+.drug-spec__panel--inner .step_2 .chart-2 {
+  position: absolute;
+  top: -360px;
+  right: 125px;
+  background: url("../img/drug-step1__chart-2.png") no-repeat;
+  width: 397px;
+  height: 433px;
+}
+
+.drug-spec__panel--inner .step_2 .chart-3 {
+  position: absolute;
+  top: -360px;
+  right: 125px;
+  background: url("../img/drug-step1__chart-3.png") no-repeat;
+  width: 397px;
+  height: 433px;
+}
+
+.drug-spec__panel--inner .step_3 .explain-text {
+  width: 440px;
+  margin-top: 115px;
+  margin-left: 60px;
+}
+
+.drug-spec__panel--inner .step_3 .chart-1 {
+  position: absolute;
+  top: -360px;
+  right: 125px;
+  background: url("../img/drug-step2__chart-1.png") no-repeat;
+  width: 517px;
+  height: 413px;
+}
+
+.drug-spec__panel--inner .step_3 .chart-2 {
+  position: absolute;
+  top: -360px;
+  right: 125px;
+  background: url("../img/drug-step2__chart-2.png") no-repeat;
+  width: 517px;
+  height: 413px;
+}
+
+.drug-spec__panel .buttonArea {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  z-index: 3;
+  left: 75px;
+  top: 415px;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  margin-right: 35px;
+  background: #ff00ff;
+  opacity: 1;
+  position: absolute;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet:nth-of-type(2) {
+  left: 58px;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet:nth-of-type(3) {
+  left: 115px;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
+  content: '';
+  display: inline-block;
+  border: 1px solid #ff00ff;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  pointer-events: none;
+  position: relative;
+  margin-top: -20px;
+  margin-left: -20px;
 }
 
 .meterial {
@@ -1069,10 +1224,14 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
   height: 100%;
 }
 
 .meterial__panel--title {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   margin: 200px auto;
   text-indent: -99999px;
   display: block;
@@ -1085,6 +1244,14 @@ i {
   width: 385px;
   height: 385px;
   float: left;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff3f53), to(#ff3f9a));
+  background: linear-gradient(#ff3f53, #ff3f9a);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.meterial__panel--inner-list-item p {
   color: #1e00ff;
   font-size: 30px;
   line-height: 43px;
@@ -1092,9 +1259,71 @@ i {
   font-family: 'Noto Serif CJK KR', sans-serif;
   font-weight: 400;
   text-align: center;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff3f53), to(#ff3f9a));
-  background: linear-gradient(#ff3f53, #ff3f9a);
-  border-radius: 50%;
+  margin-top: 155px;
+  width: 100%;
+  position: absolute;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.meterial__panel--inner-list-item .on, .meterial__panel--inner-list-item .inner-content {
+  opacity: 0;
+}
+
+.meterial__panel--inner-list-item .inner-content {
+  -webkit-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+  z-index: 1;
+  position: absolute;
+  width: 420px;
+  height: 447px;
+  pointer-events: none;
+}
+
+.meterial__panel--inner-list-item .inner-content.left {
+  background: url("../img/inner-content-left.jpg") no-repeat;
+  top: 268px;
+  left: 71px;
+}
+
+.meterial__panel--inner-list-item .inner-content.right {
+  background: url("../img/inner-content-right.jpg") no-repeat;
+  top: 253px;
+  left: -91px;
+}
+
+.meterial__panel--inner-list-item .inner-content p {
+  color: #1e00ff;
+  font-size: 21px;
+  line-height: 36px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 40px 30px;
+  text-align: left;
+  mix-blend-mode: darken;
+}
+
+.meterial__panel--inner-list-item.active {
+  background: #e13f00;
+}
+
+.meterial__panel--inner-list-item.active .before {
+  opacity: 0;
+}
+
+.meterial__panel--inner-list-item.active .on {
+  opacity: 1;
+  color: #fff;
+}
+
+.meterial__panel--inner-list-item.active .inner-content {
+  opacity: 1;
+}
+
+.meterial__panel--inner-list-item:nth-of-type(2) {
+  margin: 0 12px;
 }
 
 .meterial__panel--inner-list-item:after {
@@ -1105,6 +1334,8 @@ i {
 
 .meterial__panel--inner-detail {
   color: #fff;
+  position: absolute;
+  top: 1020px;
 }
 
 .meterial__panel--inner-detail-text {
@@ -1155,10 +1386,14 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
   height: 100%;
 }
 
 .gv-1001__panel--title {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   margin-left: 50px;
   margin-top: 500px;
   text-indent: -99999px;
@@ -1186,6 +1421,7 @@ i {
   top: 45px;
   left: -45px;
   z-index: -1;
+  opacity: 0;
 }
 
 .gv-1001__panel--content-comment .quotation-right {
@@ -1195,9 +1431,11 @@ i {
   position: absolute;
   top: 210px;
   left: 270px;
+  opacity: 0;
 }
 
 .gv-1001__panel--content-text {
+  opacity: 0;
   font-family: 'Noto Serif CJK KR', sans-serif;
   font-weight: 400;
   font-size: 30px;
@@ -1215,9 +1453,13 @@ i {
   left: 50%;
   top: 955px;
   margin-left: -245px;
+  opacity: 0;
 }
 
 .gv-1001__panel--content-detail {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   position: absolute;
   right: 50px;
   width: 500px;
@@ -1254,6 +1496,7 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
   height: 100%;
   z-index: 10;
 }
@@ -1265,9 +1508,13 @@ i {
   width: 377px;
   height: 256px;
   margin: 95px 0px 95px 50px;
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
 }
 
 .meterial-hope__panel .table__background {
+  opacity: 0;
   position: absolute;
   z-index: -1;
   top: 235px;
@@ -1280,11 +1527,8 @@ i {
   background: #0c0066;
 }
 
-.meterial-hope__panel .table__background li.active {
-  background: #1e00ff;
-}
-
 .meterial-hope__panel--table {
+  opacity: 0;
   position: absolute;
   right: 50px;
   top: 200px;
@@ -1357,6 +1601,9 @@ i {
 }
 
 .meterial-hope__panel--explain {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   position: absolute;
   right: 50px;
   margin-top: 20px;
@@ -1400,10 +1647,14 @@ i {
   top: 0;
   left: 50%;
   margin: 0 0 0 -600px;
+  outline: 1px solid #ddd;
   height: 100%;
 }
 
 .outro__panel--title {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   text-indent: -99999px;
   display: block;
   background: url("../img/outro-title.png") no-repeat;
@@ -1417,6 +1668,9 @@ i {
 }
 
 .outro__panel--content-text {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   font-size: 21px;
   line-height: 36px;
   letter-spacing: -0.08em;
@@ -1426,6 +1680,9 @@ i {
 }
 
 .outro__panel--content-strong {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
   font-size: 30px;
   line-height: 36px;
   letter-spacing: -0.08em;
@@ -1437,6 +1694,7 @@ i {
 }
 
 .outro__panel--content-comment {
+  opacity: 0;
   position: relative;
   text-align: center;
   display: block;
@@ -1456,6 +1714,7 @@ i {
 }
 
 .outro__panel--content-person {
+  opacity: 0;
   background: url("../img/jorgen-winroth.png") no-repeat;
   width: 233px;
   height: 199px;
@@ -1618,5 +1877,13 @@ i {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
   }
+}
+
+body.ie11 .meterial {
+  background: #000;
+}
+
+body.ie11 .outro {
+  background: #000;
 }
 /*# sourceMappingURL=style.css.map */

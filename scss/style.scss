@@ -19,7 +19,7 @@ $white : #fff;
     top: $top;
     left: $left;
     margin: $mgTop $mgRight $mgBottom $mgLeft;
-    //outline: 1px solid #ddd;
+    outline: 1px solid #ddd;
 }
 
 @mixin coverBg($imgName){
@@ -56,12 +56,7 @@ $white : #fff;
     background: #000;
     &__paper{
         position: absolute;
-        //width: calc(1100px + 10%);
-        //height: 1640px;
         height: calc(1640px + 15vh);
-        //top: -490px;
-        //top: -535px;
-
         transform-origin: center;
         top: -535px;
         width: 1300px;
@@ -174,6 +169,7 @@ $white : #fff;
             width: 100%;
             height: 100%;
             &-news{
+                opacity: 0;
                 outline: 1px solid #ddd;
                 float: left;
                 width: 224px;
@@ -319,6 +315,7 @@ $white : #fff;
         margin-top: 110px;
         float: left;
         &-text{
+            opacity: 0;
             @include textToImage('alzheimer-hope__comment.png', 400px, 1000px);
         }
         &:after{
@@ -330,10 +327,14 @@ $white : #fff;
         margin-right: 50px;
         float: right;
         &-title{
+            opacity: 0;
+            transform: translateY(40px);
             margin-top: 125px;
             @include textToImage('alzheimer-hope__title.png', 503px, 176px);
         }
         &-explain{
+            opacity: 0;
+            transform: translateY(40px);
             width: 400px;
             margin-left: 170px;
             margin-top: 55px;
@@ -353,6 +354,8 @@ $white : #fff;
         left: 50%;
         margin-left: -420px;
         border-bottom: 2px solid #000;
+        opacity: 0;
+        transform: translateX(40px);
         &--img{
             background: url($imgPath + 'alzheimer-hope-person.png') no-repeat;
             width: 508px;
@@ -388,12 +391,10 @@ $white : #fff;
     &__panel{
         @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
         height: 100%;
-        //border-bottom: 1px solid #fff;
         &--flip{
             width: 265px;
             height: 265px;
             position: absolute;
-            //bottom: 0;
             right: 0;
             border-top: 1px solid #fff;
             border-left: 1px solid #fff;
@@ -401,15 +402,12 @@ $white : #fff;
             margin: 0;
             overflow: hidden;
             background: #000;
-            //background: #0400b8;
             transform-origin: right bottom;
             bottom: -2px;
             right: -2px;
             &-line{
                 width: 150%;
                 border-bottom: 1px solid #fff;
-                //height: 50%;
-                //transform: rotate(-45deg) translateY(-50%) translateX(-25%);
                 position: absolute;
                 background: #0400b8;
                 height: 100%;
@@ -454,6 +452,7 @@ $white : #fff;
                 @include textToImage('conversion_2.png', 400px, 347px);
                 margin-top: 150px;
                 margin-left: 135px;
+                opacity: 0;
             }
             &-graph{
                 @include textToImage('conversion_before_graph.png', 317px, 272px);
@@ -501,6 +500,7 @@ $white : #fff;
                 @include textToImage('conversion_1.png', 400px, 347px);
                 margin-top: 150px;
                 margin-left: 60px;
+                opacity: 0;
             }
             &-graph{
                 @include textToImage('conversion_after_graph.png', 440px, 404px);
@@ -528,11 +528,7 @@ $white : #fff;
 .drug-spec{
     width: 100%;
     height: 880px;
-    //overflow: hidden;
     position: relative;
-    //outline: 1px solid red;
-    //background: #0400b8;
-    //border-top: 1px solid #fff;
     background: #000;
     &__background{
         background: url($imgPath + 'drug-spec-background.png') no-repeat;
@@ -545,16 +541,18 @@ $white : #fff;
     &__panel{
         @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
         height: 100%;
-        //
         &--title{
             @include textToImage('drug-spec-title.png', 698px, 166px);
-            //outline: 1px solid red;
             margin-top: 130px;
             margin-left: 50px;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        &--cover{
+            opacity: 0;
         }
         &--inner{
             height: 580px;
-            //outline: 1px solid #fff;
             position: absolute;
             width: 100%;
             bottom: 0;
@@ -562,12 +560,114 @@ $white : #fff;
             .explain-text{
                 text-align: justify;
                 width: 400px;
-                outline: 1px solid;
                 @include fontInfo(21px, 36px, -0.08em);
                 @include serif-regular;
+                span{
+                    border-bottom: 1px solid #fff;
+                    padding-bottom: 2px;
+                    display: inline-block;
+                    position: relative;
+                    i{
+                        background: #ff00ff;
+                        display: inline-block;
+                        width: 100%;
+                        height: 26px;
+                        z-index: -1;
+                        top: 8px;
+                        position: absolute;
+                        opacity: 0;
+                        transition: all 0.3s;
+                    }
+                    &.active{
+                        i{
+                            opacity: 1;
+                        }
+                    }
+                }
             }
-            .step_2, .step_3{
-                opacity: 0;
+            
+            .step_1, .step_2, .step_3{
+                opacity: 0;    
+                transition: all 0.5s;
+                &.active{
+                    opacity: 1;
+                }
+            }
+            .step_1{
+                .explain-text{
+                    margin-top: 110px;
+                    margin-left: 60px;
+                }
+            }
+            .step_2{
+                .explain-text{
+                    width: 440px;
+                    margin-top: 115px;
+                    margin-left: 60px;
+                }
+                @each $chartStep2 in chart-1, chart-2, chart-3 {
+                    .#{$chartStep2}{
+                        position: absolute;
+                        top: -360px;
+                        right: 125px;
+                        background: url($imgPath + 'drug-step1__#{$chartStep2}.png') no-repeat;
+                        width: 397px;
+                        height: 433px;
+                    }
+                }
+            }
+            .step_3{
+                .explain-text{
+                    width: 440px;
+                    margin-top: 115px;
+                    margin-left: 60px;
+                }
+                @each $chartStep3 in chart-1, chart-2{
+                    .#{$chartStep3}{
+                        position: absolute;
+                        top: -360px;
+                        right: 125px;
+                        background: url($imgPath + 'drug-step2__#{$chartStep3}.png') no-repeat;
+                        width: 517px;
+                        height: 413px;
+                    }
+                }
+            }
+        }
+        .buttonArea{
+            position: absolute;
+            bottom: 100px;
+            width: 100%;
+            z-index: 3;
+            left: 75px;
+            top: 415px;
+            .swiper-pagination-bullet{
+                width: 15px;
+                height: 15px;
+                margin-right: 35px;
+                background: #ff00ff;
+                opacity: 1;
+                position: absolute;
+                &:nth-of-type(2){
+                    left: 58px;
+                }
+                &:nth-of-type(3){
+                    left: 115px;
+                }
+                &.swiper-pagination-bullet-active{
+                    &:after{
+                        content: '';
+                        display: inline-block;
+                        border: 1px solid #ff00ff;
+                        width: 54px;
+                        height: 54px;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        position: relative;
+                        margin-top: -20px;
+                        margin-left: -20px;
+                    }
+                }
             }
         }
     }
@@ -585,6 +685,8 @@ $white : #fff;
         @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
         height: 100%;
         &--title{
+            opacity: 0;
+            transform: translateY(40px);
             margin: 200px auto;
             @include textToImage('meterial-title.png', 761px, 172px);
         }
@@ -594,12 +696,66 @@ $white : #fff;
                     width: 385px;
                     height: 385px;
                     float: left;
-                    color: #1e00ff;
-                    @include fontInfo(30px, 43px, -0.08em);
-                    @include serif-regular;
-                    text-align: center;
                     background: linear-gradient( #ff3f53, #ff3f9a);
                     border-radius: 50%;
+                    position: relative;
+                    cursor: pointer;
+                    p{
+                        color: #1e00ff;
+                        @include fontInfo(30px, 43px, -0.08em);
+                        @include serif-regular;
+                        text-align: center;
+                        margin-top: 155px;
+                        width: 100%;
+                        position: absolute;
+                        transition: color 0.4s;
+                    }
+                    .on, .inner-content{
+                        opacity: 0;
+                    }
+                    .inner-content{
+                        transition: opacity 0.6s; 
+                        z-index: 1;
+                        position: absolute;
+                        width: 420px;
+                        height: 447px;
+                        pointer-events: none;
+                        &.left{
+                            background: url($imgPath + 'inner-content-left.jpg') no-repeat;
+                            top: 268px;
+                            left: 71px;
+                        }
+                        &.right{
+                            background: url($imgPath + 'inner-content-right.jpg') no-repeat;
+                            top: 253px;
+                            left: -91px;
+                        }
+                        p{
+                            color: #1e00ff;
+                            @include fontInfo(21px, 36px, -0.08em);
+                            @include serif-regular;
+                            margin: 0;
+                            padding: 40px 30px;
+                            text-align: left;
+                            mix-blend-mode: darken;
+                        }
+                    }
+                    &.active{
+                        background: #e13f00;
+                        .before{
+                            opacity: 0;
+                        }
+                        .on{
+                            opacity: 1;
+                            color: #fff;
+                        }
+                        .inner-content{
+                            opacity: 1;
+                        }
+                    }
+                    &:nth-of-type(2){
+                        margin: 0 12px;
+                    }
                     &:after{
                         @include clear;
                     }
@@ -607,6 +763,8 @@ $white : #fff;
             }
             &-detail{
                 color: #fff;
+                position: absolute;
+                top: 1020px;
                 &-text{
                     text-align: center;
                     @include fontInfo(30px, 55px, -0.08em);
@@ -646,6 +804,8 @@ $white : #fff;
         @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
         height: 100%;
         &--title{
+            opacity: 0;
+            transform: translateY(40px);
             margin-left: 50px;
             margin-top: 500px;
             @include textToImage('gv1001-title.png', 389px, 267px);
@@ -664,6 +824,7 @@ $white : #fff;
                     top: 45px;
                     left: -45px;
                     z-index: -1;
+                    opacity: 0;
                 }
                 .quotation-right{
                     background: url($imgPath + 'quotation-right.png') no-repeat;
@@ -672,9 +833,11 @@ $white : #fff;
                     position: absolute;
                     top: 210px;
                     left: 270px;
+                    opacity: 0;
                 }
             }
             &-text{
+                    opacity: 0;
                     @include serif-regular;
                     @include fontInfo(30px, 48px, -0.08em);
                     z-index: 1;
@@ -688,8 +851,11 @@ $white : #fff;
                 left: 50%;
                 top: 955px;
                 margin-left: -245px;
+                opacity: 0;
             }
             &-detail{
+                opacity: 0;
+                transform: translateY(40px);
                 position: absolute;
                 right: 50px;
                 width: 500px;
@@ -723,8 +889,11 @@ $white : #fff;
         &--title{
             @include textToImage('meterial-hope-title.png', 377px, 256px);
             margin: 95px 0px 95px 50px;
+            opacity: 0;
+            transform: translateY(40px);
         }
         .table__background{
+            opacity: 0;
             position: absolute;
             z-index: -1;
             top: 235px;
@@ -733,12 +902,13 @@ $white : #fff;
                 width: 150vw;
                 margin: 15px 0;
                 background: #0c0066;
-                &.active{
-                    background: #1e00ff;
-                }
+                //&.active{
+                //    background: #1e00ff;
+                //}
             }
         }
         &--table{
+            opacity: 0;
             position: absolute;
             right: 50px;
             top: 200px;
@@ -797,6 +967,8 @@ $white : #fff;
             }
         }
         &--explain{
+            opacity: 0;
+            transform: translateY(40px);
             position: absolute;
             right: 50px;
             margin-top: 20px;
@@ -833,17 +1005,23 @@ $white : #fff;
         @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
         height: 100%;
         &--title{
+            opacity: 0;
+            transform: translateY(40px);
             @include textToImage('outro-title.png', 669px, 194px);
             margin: 860px auto 85px auto;
         }
         &--content{
             color: #fff;
             &-text{
+                opacity: 0;
+                transform: translateY(40px);
                 @include fontInfo(21px, 36px, -0.08em);
                 @include serif-regular;
                 text-align: center;
             }
             &-strong{
+                opacity: 0;
+                transform: translateY(40px);
                 @include fontInfo(30px, 36px, -0.08em);
                 @include serif-bold;
                 text-align: center;
@@ -851,6 +1029,7 @@ $white : #fff;
                 margin-top: 35px;
             }
             &-comment{
+                opacity: 0;
                 position: relative;
                 text-align: center;
                 display: block;
@@ -863,6 +1042,7 @@ $white : #fff;
                 }
             }
             &-person{
+                opacity: 0;
                 background: url($imgPath + 'jorgen-winroth.png') no-repeat;
                 width: 233px;
                 height: 199px;
@@ -1001,5 +1181,19 @@ $white : #fff;
     }
     .outro__bg{
         transform: scale(1.2);
+    }
+}
+
+body{
+    &.ie11{
+        .meterial{
+            background: #000;
+            //background: url($imgPath + 't.png') repeat;
+            //width: 100%;
+            //height: 1580px;
+        }
+        .outro{
+            background: #000;
+        }
     }
 }
