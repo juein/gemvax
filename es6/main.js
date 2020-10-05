@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //리로드시 최상단으로
     window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0);
         //console.clear(); 
     }
 
@@ -120,8 +120,9 @@ window.addEventListener('DOMContentLoaded', () => {
     var alzheimerHopeAction =  new TimelineLite()
     .to('.alzheimer-hope__text-title', 0.8, {opacity: 1, y: 0}, 0.2)
     .to('.alzheimer-hope__comment-text', 0.6, {opacity: 1}, 0.4)
-    .to('.alzheimer-hope__text-explain', 0.8, {opacity: 1, y: 0}, 0.6)
-    .to('.alzheimer-hope__person', 1, {opacity: 1, x: 0}, 0.5)
+    .to('.alzheimer-hope__text-explain', 1, {opacity: 1, y: 0}, 0.6)
+    .to('.alzheimer-hope__comment-copylight', 0.8, {opacity: 1}, 1)
+    //.to('.alzheimer-hope__person', 1, {opacity: 1, x: 0}, 0.5)
 
     var alzheimerHopeScene = new ScrollMagic.Scene({
         triggerElement: ".alzheimer-hope",
@@ -140,12 +141,15 @@ window.addEventListener('DOMContentLoaded', () => {
         triggerHook: 0.6
     }).setTween(conversionHopeAction).addTo(ctrl);
 
+    
     $('.drag__cover--btn').hover(function(){
-        gsap.to('.drag__cover--btn', 0.5, {opacity: 0, delay: 0.1});
+        //gsap.to('.drag__cover--btn', 0.5, {opacity: 0, delay: 0.1});
         gsap.to('.drag__cover', 0.8, {scaleX: 0, delay: 0.4});
         gsap.to('.conversion__content--before-graph', 0.6, {opacity: 1, delay: 0.6});
         gsap.to('.conversion__content--after-graph', 0.6, {opacity: 1, delay: 0.8});
+        gsap.to('.conversion__now', 0.8, {opacity: 1, delay: 0.8});
     });
+    
 
     var introNewsScene = new ScrollMagic.Scene({
         triggerElement: ".drug-spec",
@@ -204,6 +208,7 @@ window.addEventListener('DOMContentLoaded', () => {
     var drugSpecAction =  new TimelineLite()
     .to('.drug-spec__panel--title', 0.6, {opacity: 1, y: 0}, 0.2)
     .to('.drug-spec__panel--cover', 0.6, {opacity: 1}, 0.4)
+    .to('.drug-spec__panel--navigation', 0.6, {opacity: 1}, 0.6)
 
     var drugSpecScene = new ScrollMagic.Scene({
         triggerElement: ".drug-spec",
@@ -215,15 +220,27 @@ window.addEventListener('DOMContentLoaded', () => {
             $('.drug-spec__panel--inner').removeClass('active');
             $('.drug-spec__panel--inner.step_1').addClass('active');
             gsap.to('.drug-spec__background', 0.6, {opacity: 1});
+            $('.navigation__second').removeClass('active');
+            $('.navigation__thrid').removeClass('active');
+            $('.navigation__first').addClass('active');
+
+            
         },
         step2(){
             $('.drug-spec__panel--inner').removeClass('active');
             $('.drug-spec__panel--inner.step_2').addClass('active');
+            $('.navigation__first').removeClass('active');
+            $('.navigation__thrid').removeClass('active');
+            $('.navigation__second').addClass('active');
             gsap.to('.drug-spec__background', 0.6, {opacity: 0});
+
         },
         step3(){
             $('.drug-spec__panel--inner').removeClass('active');
             $('.drug-spec__panel--inner.step_3').addClass('active');
+            $('.navigation__first').removeClass('active');
+            $('.navigation__second').removeClass('active');
+            $('.navigation__thrid').addClass('active');
             gsap.to('.drug-spec__background', 0.6, {opacity: 0});
         }
     }
@@ -342,7 +359,8 @@ window.addEventListener('DOMContentLoaded', () => {
     .to('.gv-1001__panel--content-comment .quotation-right', 0.6, {opacity: 1}, 0.4)
     .to('.gv-1001__panel--content-text', 1, {opacity: 1}, 0.6)
     .to('.gv-1001__panel--content-detail', 0.6, {opacity: 1, y: 0}, 1)
-    .to('.gv-1001__panel--content-image', 1, {opacity: 1}, 1.2)
+    //.to('.gv-1001__panel--content-image', 1, {opacity: 1}, 1.2)
+    .to('.gv-1001__panel--content-video', 1, {opacity: 1}, 1.2)
 
     var gv1001Scene = new ScrollMagic.Scene({
         triggerElement: ".gv-1001",
@@ -356,14 +374,25 @@ window.addEventListener('DOMContentLoaded', () => {
     .to('.meterial-hope__panel--title', 0.6, {opacity: 1, y: 0}, 0.2)
     .to('.meterial-hope__panel--table', 1, {opacity: 1}, 0.4)
     .to('.table__background', 1.2, {opacity: 1}, 0.6)
-    .to('.meterial-hope__panel--explain', 0.6, {opacity: 1, y: 0}, 0.6)
+    //.to('.meterial-hope__panel--explain', 0.6, {opacity: 1, y: 0}, 0.6)
 
     var tableBgRotate = new TimelineLite({paused: true, repeat: -1})
+    /*
     .to('.table__background li:nth-of-type(1)', 2, {background: '#1e00ff'}, 0)
     .to('.table__background li:nth-of-type(2)', 2, {background: '#1e00ff'}, 2)
     .to('.table__background li:nth-of-type(1)', 0.5, {background: '#0c0066'}, 2)
     .to('.table__background li:nth-of-type(3)', 2, {background: '#1e00ff'}, 4)
     .to('.table__background li:nth-of-type(2)', 0.5, {background: '#0c0066'}, 4)
+    */
+    .to('.table__background li:nth-of-type(1)', 2, {background: '#1e00ff'}, 0)
+    .to('.table__background li:nth-of-type(2)', 2, {background: '#1e00ff'}, 2)
+    .to('.table__background li:nth-of-type(1)', 0.5, {background: '#0c0066'}, 2)
+
+    .to('.table__background li:nth-of-type(3)', 2, {background: '#1e00ff'}, 4)
+    .to('.table__background li:nth-of-type(2)', 0.5, {background: '#0c0066'}, 4)
+
+    .to('.table__background li:nth-of-type(4)', 2, {background: '#1e00ff'}, 6)
+    .to('.table__background li:nth-of-type(3)', 0.5, {background: '#0c0066'}, 6)
 
     var meterialhopeScene = new ScrollMagic.Scene({
         triggerElement: ".meterial-hope",
@@ -385,12 +414,10 @@ window.addEventListener('DOMContentLoaded', () => {
         if( $(this).hasClass('active') ) return false;
         hoverItem = $(this).attr('class').replace('alzheimer__card--item-news ', '');
 
-        $('.alzheimer__card--item-news.four .numberring:nth-of-type(2)').removeClass('on');
         $(".alzheimer__card--item-news").removeClass('active');
+        $(".alzheimer__card--item-news .explain").removeClass('active');
         $(".alzheimer__card--item-news."+hoverItem).addClass('active');
-        if( hoverItem == 'four' ){
-            $('.alzheimer__card--item-news.four .numberring:nth-of-type(2)').addClass('on');
-        }
+        $(".alzheimer__card--item-news."+hoverItem+' .explain').addClass('active');
     });
     // alzheimer__card
 
