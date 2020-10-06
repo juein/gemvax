@@ -72,15 +72,16 @@
     -->
     <!-- <script src="../js/TweenMax.min.js"></script> -->
     <script src="../js/gsap.min.js"></script>
-    <script src="../js/MorphSVGPlugin.min.js"></script>
-    <script src="../js/DrawSVGPlugin.min.js"></script>
+    <!-- <script src="../js/MorphSVGPlugin.min.js"></script> -->
+    <!-- <script src="../js/DrawSVGPlugin.min.js"></script> -->
     <script src="../js/ScrollMagic.min.js"></script>
     <script src="../js/ScrollToPlugin.min.3.3.4.js"></script>
     <script src="../js/animation.gsap.min.js"></script>
-    <script src="../js/debug.addIndicators.min.js"></script>
-    <script src="../js/jquery.rwdImageMaps.min.js"></script>
+    <!-- <script src="../js/debug.addIndicators.min.js"></script> -->
+    <!-- <script src="../js/jquery.rwdImageMaps.min.js"></script> -->
     <script src="../js/swiper.min.js"></script>
     <script src="../mobile/js/functions.js"></script>
+    <script src="../mobile/js/main.js"></script>
     <!-- // Custom JS -->
 
     <!-- Default(SNS, Analytics) JS -->
@@ -92,60 +93,38 @@
     <!-- 상단공통 -->
     <div id="roof" class="rooftop on">
         <div class="forehead">
-            <div class="brandsolution-logo"><a href="/" title="Innovation Lab"></a></div>
-            <div class="brand-identity">
-                    <a href="#viewport">
-                        <!-- <img src="../img/logo.png?2" alt="SIMMONS" width="55px" height="45px" /> -->
-                        logo
-                    </a>
-            </div>
+            <div class="brandsolution-logo"><a href="https://news.joins.com/">중앙일보</a></div>
+            <div class="brand-identity"></div>
             <div class="sns-share-box">
-                <a href="#snsMore" class="btn-sns-more">SNS공유</a>
-            </div>
-        </div>
-        <!-- SNS공유모달 -->
-        <div id="snsMore" class="sns-modal">
-            <div class="cover"></div>
-            <div class="sns-modal-inner">
-                <div class="modal-head">
-                    공유하기<button type="button" class="close-modal">닫기</button>
-                </div>
-                <ul class="sns-list">
-                    <li><a onclick="javascript:fnSendSns('facebook');" class="sns-fb" title="facebook"><i></i><span>페이스북</span></a></li>
-                    <li><a onclick="javascript:fnSendSns('twitter');" class="sns-tw" title="twitter"><i></i><span>트위터</span></a></li>
-                    <li><a onclick="javascript:fnSendSns('kakaotalk','','');"  ontouchend="javascript:fnSendSns('kakaotalk','','');" class="sns-kt"><i></i><span>카카오톡</span></a></li>
+                <ul>
+                    <li><a href="#" onclick="fnSendSns(&#39;facebook&#39;);return false;" class="sns-fb" title="페이스북"></a></li>
+                    <li><a href="#" onclick="fnSendSns(&#39;twitter&#39;);return false;" class="sns-tw" title="트위터"></a></li>
+                    <li><a href="javascript:fnSendSns('kakaostory');" class="kakao" title="카카오톡 공유"></a></li>
                 </ul>
             </div>
         </div>
-        <!-- //SNS공유모달 -->
+
     </div>
     <!-- //상단공통 -->
     <!-- 콘텐츠 -->
     <main id="container" class="content_wrap">
-        <section id="intro">
-            intro~
-        </section>
+        
 
-        <section id="feature1" class="ja_section_wrap" ja-section-title="섹션1">
-            <div class="box">
-                testtest
-            </div>
-        </section>
 
         <div class="copyright">
             <div class="wrap">
                 <div class="copy_left">
                     <p class="p-text">
-                        <span class="bold">기획/취재</span> |
-                        <span class="bold">디자인</span> |
-                        <span class="bold">웹개발</span>
+                        <span class="bold">글</span> 이정봉 기자, 김나현 기자 |
+                        <span class="bold">디자인</span> 안은정 |
+                        <span class="bold">개발</span> 주혜인
                     </p>
-                    <p>Copyright by JoongAng Ilbo Co.,Ltd. All Rights Reserved</p>
                 </div>
+                <div class="copy_logo"></div>
 
                 <div class="copy_right">
-                    <p class="p-text"><span class="">CONTACT</span></p>
-                    <p class="p_colnom"><a href="mailto:ilab@joongang.co.kr" id="btnContact" class="footer_mail"><i></i> ilab@joongang.co.kr</a></p>
+                    <p class="p-text">JoongAng Ilbo의 모든 콘텐트(기사)는 저작권법의 보호를 받은 바 무단 전재·복사·배포 등을 금합니다. </p>
+                    <p>Copyright by JoongAng Ilbo Co.,Ltd. All Rights Reserved</p>
                 </div>
             </div>
         </div>

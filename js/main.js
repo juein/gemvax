@@ -16,7 +16,7 @@ window.onload = function () {}
 
     //리로드시 최상단으로
     window.onbeforeunload = function () {
-        //window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
         //console.clear(); 
     };
 
@@ -39,6 +39,7 @@ window.onload = function () {}
         //paperY = 0;
         ////transform: translateY(20vh) scale(0.3);
         //gsap.set('.intro-news__paper', {scale: 0.35, y: paperY});
+        gsap.set('.intro-news', { width: '100%' });
         gsap.set('.intro-news__paper', { scale: 0.35, y: '20vh', rotate: 0, top: -535 });
     };
 
@@ -305,11 +306,11 @@ window.onload = function () {}
 
 
     // meterial
-    var meterialAction = new TimelineLite().to('.meterial__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2);
+    var meterialAction = new TimelineLite().to('.meterial__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.meterial__panel--inner-list-item.list1', 0.8, { opacity: 1 }, 0.4).to('.meterial__panel--inner-list-item.list2', 0.8, { opacity: 1 }, 0.6).to('.meterial__panel--inner-list-item.list3', 0.8, { opacity: 1 }, 0.8).to('.meterial__panel--inner-detail', 0.6, { opacity: 1 }, 1.2);
 
     var meterialScene = new ScrollMagic.Scene({
         triggerElement: ".meterial",
-        triggerHook: 0.6
+        triggerHook: 0.4
     }).setTween(meterialAction).addTo(ctrl);
 
     var meterialHover = void 0;
@@ -339,18 +340,10 @@ window.onload = function () {}
 
 
     // meterial-hope
-    var meterialhopeAction = new TimelineLite().to('.meterial-hope__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.meterial-hope__panel--table', 1, { opacity: 1 }, 0.4).to('.table__background', 1.2, { opacity: 1 }, 0.6);
+    var meterialhopeAction = new TimelineLite().to('.meterial-hope__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.meterial-hope__panel--table', 1, { opacity: 1 }, 0.4).to('.table__background', 1.2, { opacity: 1 }, 0.6).to('.solution--title', 0.8, { opacity: 1, y: 0 }, 0.8).to('.solution--item:nth-of-type(1)', 1, { opacity: 1 }, 1).to('.solution--item:nth-of-type(2)', 1, { opacity: 1 }, 1.4).to('.solution--item:nth-of-type(3)', 1, { opacity: 1 }, 1.8).to('.solution--explain', 0.8, { opacity: 1, y: 0 }, 2);
     //.to('.meterial-hope__panel--explain', 0.6, {opacity: 1, y: 0}, 0.6)
 
-    var tableBgRotate = new TimelineLite({ paused: true, repeat: -1 })
-    /*
-    .to('.table__background li:nth-of-type(1)', 2, {background: '#1e00ff'}, 0)
-    .to('.table__background li:nth-of-type(2)', 2, {background: '#1e00ff'}, 2)
-    .to('.table__background li:nth-of-type(1)', 0.5, {background: '#0c0066'}, 2)
-    .to('.table__background li:nth-of-type(3)', 2, {background: '#1e00ff'}, 4)
-    .to('.table__background li:nth-of-type(2)', 0.5, {background: '#0c0066'}, 4)
-    */
-    .to('.table__background li:nth-of-type(1)', 2, { background: '#1e00ff' }, 0).to('.table__background li:nth-of-type(2)', 2, { background: '#1e00ff' }, 2).to('.table__background li:nth-of-type(1)', 0.5, { background: '#0c0066' }, 2).to('.table__background li:nth-of-type(3)', 2, { background: '#1e00ff' }, 4).to('.table__background li:nth-of-type(2)', 0.5, { background: '#0c0066' }, 4).to('.table__background li:nth-of-type(4)', 2, { background: '#1e00ff' }, 6).to('.table__background li:nth-of-type(3)', 0.5, { background: '#0c0066' }, 6);
+    var tableBgRotate = new TimelineLite({ paused: true, repeat: -1 }).to('.table__background li:nth-of-type(1)', 2, { background: '#1e00ff' }, 0).to('.table__background li:nth-of-type(2)', 2, { background: '#1e00ff' }, 2).to('.table__background li:nth-of-type(1)', 0.5, { background: '#0c0066' }, 2).to('.table__background li:nth-of-type(3)', 2, { background: '#1e00ff' }, 4).to('.table__background li:nth-of-type(2)', 0.5, { background: '#0c0066' }, 4).to('.table__background li:nth-of-type(4)', 2, { background: '#1e00ff' }, 6).to('.table__background li:nth-of-type(3)', 0.5, { background: '#0c0066' }, 6);
 
     var meterialhopeScene = new ScrollMagic.Scene({
         triggerElement: ".meterial-hope",
@@ -381,6 +374,10 @@ window.onload = function () {}
 
     // outro
     var outroAction = new TimelineLite().to('.outro__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.outro__panel--content-text', 0.6, { opacity: 1, y: 0 }, 0.4).to('.outro__panel--content-strong', 0.6, { opacity: 1, y: 0 }, 0.6).to('.outro__panel--content-person', 1, { opacity: 1 }, 1).to('.outro__panel--content-comment', 1, { opacity: 1 }, 1.4);
+    //.outro__panel--content .quotation-left
+    //.to('.outro__panel--content .quotation-left', 0.8, {opacity: 1}, 0.8)
+    //.to('.outro__panel--content .quotation-right', 0.8, {opacity: 1}, 0.8)
+
 
     var outroScene = new ScrollMagic.Scene({
         triggerElement: ".outro",

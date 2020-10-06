@@ -51,3 +51,75 @@ $white : #fff;
     //top: 2px;
 }
 
+.brandsolution-logo a{
+    display: inline-block;
+    width: 62px;
+    height: 15px;
+    background: url(https://images.joins.com/newsroom/common/logo_svg_new.svg) no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+}
+.rooftop{
+    background: #222;
+}
+.sns-share-box{
+    margin: 5px 14px;
+    position: absolute;
+    top: 7px;
+    right: 0px;
+    width: 95px;
+    height: 36px;
+    li{
+        display: inline-block;
+        position: relative;
+        margin-right: 3px;
+        width: 25px;
+        height: 25px;
+        a{
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+        }
+    }
+}
+.sns-share-box a.sns-fb{
+    background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat 0 -41px;
+    background-size: 200px 200px;
+}
+.sns-share-box a.sns-tw{
+    background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -25px 0;
+}
+.sns-share-box a.kakao{
+    background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -51px 0;
+}
+.sns-share-box a.sns-fb:hover{
+    background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat 0 -41px;
+    background-size: 200px 200px;
+}
+.sns-share-box a.sns-tw:hover{
+    background-position: -25px 0px;
+}
+
+.copyright{
+    background: #222;
+}
+.copyright p .bold{
+    color: #ddd;
+}
+.copyright p.p-text{
+    padding: 0 8px;
+}
+.copyright p{
+    margin-top: 20px;
+}
+.copyright .copy_logo{
+    width: 25%;
+    height: 46px;
+    background: url($imgPath + 'j_logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 83px 23px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
