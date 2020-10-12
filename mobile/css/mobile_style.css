@@ -55,6 +55,12 @@
   src: url("../../fonts/NotoSansCJKkr-Black.woff") format("woff"), url("../../fonts/NotoSansCJKkr-Black.otf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Noto Serif CJK KR';
+  font-weight: 400;
+  src: url("../../fonts/NotoSerifKR-Regular.otf") format("truetype");
+}
+
 body {
   height: 100vh;
   font-family: 'Noto Sans CJK KR', sans-serif;
@@ -264,31 +270,772 @@ video {
 }
 
 /* 하단 카피라이트 관련 클레스 영역 끝 */
-#intro {
-  min-height: 100vh;
-  padding: 0;
-  width: 100%;
+#container {
   overflow: hidden;
 }
 
-#feature1 {
+.intro-news {
+  position: relative;
   width: 100%;
-  height: 10vw;
+  min-height: calc(100vh - 50px);
+  top: 50px;
   padding: 0;
-  background: #c8c8c8;
+  background: #000;
+  height: 200vw;
+  overflow: hidden;
 }
 
-#feature1 .box {
+.intro-news__paper {
   position: absolute;
-  width: 84vw;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  background: #fff;
+  width: 100%;
+  min-height: calc(100vh - 50px);
+}
+
+.intro-news__paper--panel {
+  position: absolute;
+  width: 88vw;
   top: 0;
   left: 50%;
-  margin: 0 0 0 -40vw;
+  margin: 0 0 0 -44vw;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.intro-news__paper--headline-ad {
+  text-indent: -99999px;
+  display: block;
+  width: 315px;
+  height: 51px;
+  background: url("../../img/intro_headline_1.png") no-repeat;
+}
+
+.intro-news__paper--headline-dd {
+  text-indent: -99999px;
+  display: block;
+  width: 50px;
+  height: 300px;
+  background: url("../../img/intro_headline_2.png") no-repeat;
+}
+
+.intro-news__paper--headline-title {
+  text-indent: -99999px;
+  display: block;
+  width: 449px;
+  height: 143px;
+  background: url("../img/intro_news_title_1.png") no-repeat;
+}
+
+.intro-news__paper--headline-sub-title {
+  text-indent: -99999px;
+  display: block;
+  width: 490px;
+  height: 50px;
+  background: url("../img/intro_news_title_2.png") no-repeat;
+}
+
+.intro-news__paper--content {
+  border-bottom: 2px solid #000;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+}
+
+.intro-news__paper--annexed {
+  font-size: 18px;
+  line-height: 17px;
+  letter-spacing: -0.05em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+}
+
+.alzheimer {
+  width: 100%;
+  height: 250vw;
+  position: relative;
+  background: #fff;
+  padding: 0;
+}
+
+.alzheimer__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 8vw 0 0 -44vw;
   outline: 1px solid #ddd;
 }
 
-.feature1_pin {
+.alzheimer__headline--title {
+  text-indent: -99999px;
+  display: block;
+  width: 27vw;
+  height: 43vw;
+  background: url("../img/alzheimer-title.png") no-repeat;
+  background-size: 100% 100%;
+  float: left;
+}
+
+.alzheimer__headline--title:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer__headline--info {
+  color: #535353;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  text-align: justify;
+  word-break: break-all;
+  float: right;
+  width: 53vw;
+}
+
+.alzheimer__headline--info:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer__card--item {
+  top: 10vw;
+}
+
+.alzheimer__card--item-news {
+  outline: 1px solid #c9c9c9;
+  height: 118vw;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.alzheimer__card--item-news.swiper-slide-active {
+  -webkit-box-shadow: 1.5vw 1.5vw 2vw #c9c9c9;
+          box-shadow: 1.5vw 1.5vw 2vw #c9c9c9;
+}
+
+.alzheimer__card--item-news.swiper-slide-prev, .alzheimer__card--item-news.swiper-slide-next {
+  margin-top: 9vw;
+  height: 100vw;
+}
+
+.alzheimer__card--item-news .explain {
+  color: #000;
+  font-size: 3.9vw;
+  line-height: 6.4vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: 5vw;
+  left: 6vw;
+}
+
+.alzheimer__card--item-news.one .contents .page-number {
+  text-indent: -99999px;
+  background: url("../img/alzheimer__card--page-one.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 8vw;
+  height: 2.2vw;
+  position: absolute;
+  top: 6vw;
+  right: 5vw;
+}
+
+.alzheimer__card--item-news.one .contents .numberring {
+  background: url("../img/alzheimer__card-one-num.png") no-repeat;
+  background-size: 100% 100%;
+  width: 72vw;
+  height: 23vw;
+  text-indent: -99999px;
+  z-index: 1;
+  display: block;
+  margin: 22vw auto 0 auto;
+}
+
+.alzheimer__card--item-news.one .contents .graph {
+  background: url("../img/alzheimer__card-one-content.png") no-repeat;
+  background-size: 100% 100%;
+  width: 72vw;
+  height: 59vw;
+  top: 54vw;
+  left: 8vw;
+  position: absolute;
+}
+
+.alzheimer__card--item-news.two .contents .page-number {
+  text-indent: -99999px;
+  background: url("../img/alzheimer__card--page-two.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 8vw;
+  height: 2.2vw;
+  position: absolute;
+  top: 6vw;
+  right: 5vw;
+}
+
+.alzheimer__card--item-news.two .contents .numberring {
+  background: url("../img/alzheimer__card-two-num.png") no-repeat;
+  background-size: 100% 100%;
+  width: 58vw;
+  height: 23vw;
+  text-indent: -99999px;
+  z-index: 1;
+  display: block;
+  margin: 22vw auto 0 auto;
+}
+
+.alzheimer__card--item-news.two .contents .graph {
+  background: url("../img/alzheimer__card-two-content.png") no-repeat;
+  background-size: 100% 100%;
+  width: 69vw;
+  height: 54vw;
+  top: 55vw;
+  left: 9vw;
+  position: absolute;
+}
+
+.alzheimer__card--item-news.three .contents .page-number {
+  text-indent: -99999px;
+  background: url("../img/alzheimer__card--page-three.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 8vw;
+  height: 2.2vw;
+  position: absolute;
+  top: 6vw;
+  right: 5vw;
+}
+
+.alzheimer__card--item-news.three .contents .numberring {
+  background: url("../img/alzheimer__card-three-num.png") no-repeat;
+  background-size: 100% 100%;
+  width: 42vw;
+  height: 23vw;
+  text-indent: -99999px;
+  z-index: 1;
+  display: block;
+  margin: 22vw auto 0 auto;
+}
+
+.alzheimer__card--item-news.three .contents .graph {
+  background: url("../img/alzheimer__card-three-content.png") no-repeat;
+  background-size: 100% 100%;
+  width: 69vw;
+  height: 55vw;
+  top: 56vw;
+  left: 9vw;
+  position: absolute;
+}
+
+.alzheimer__card--item-news.four .contents .page-number {
+  text-indent: -99999px;
+  background: url("../img/alzheimer__card--page-four.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 8vw;
+  height: 2.2vw;
+  position: absolute;
+  top: 6vw;
+  right: 5vw;
+}
+
+.alzheimer__card--item-news.four .contents .numberring {
+  background: url("../img/alzheimer__card-four-num.png") no-repeat;
+  background-size: 100% 100%;
+  width: 68vw;
+  height: 84vw;
+  text-indent: -99999px;
+  z-index: 1;
+  display: block;
+  margin: 22vw auto 0 auto;
+  margin-top: 28vw;
+  margin-left: 10vw;
+}
+
+.alzheimer__card--item-news.four .contents .graph {
+  background: url("../img/alzheimer__card-four-content.png") no-repeat;
+  background-size: 100% 100%;
+  width: 58vw;
+  height: 54vw;
+  top: 37vw;
+  left: 24vw;
+  position: absolute;
+}
+
+.alzheimer-hope {
+  width: 100%;
+  height: 200vw;
+  position: relative;
+  background: #fff;
+  padding: 0;
+}
+
+.alzheimer-hope__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 8vw 0 0 -44vw;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.alzheimer-hope__text-title {
+  text-indent: -99999px;
+  display: block;
+  width: 80vw;
+  height: 28vw;
+  background: url("../img/alzheimer-hope__title.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.alzheimer-hope__text-explain {
+  width: 53vw;
+  margin-top: 6vw;
+  float: right;
+  color: #535353;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  text-align: justify;
+  word-break: break-all;
+}
+
+.alzheimer-hope__text-explain:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer-hope__comment-text {
+  color: #000;
+  font-size: 4.1vw;
+  line-height: 6.7vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 85vw;
+}
+
+.alzheimer-hope__comment .quotation-left {
+  background: url("../img/quotation-left.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  margin-top: -6vw;
+  margin-left: -2vw;
+}
+
+.alzheimer-hope__comment .quotation-right {
+  background: url("../img/quotation-right.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  margin-top: -5vw;
+  margin-left: 20vw;
+}
+
+.alzheimer-hope__comment .underline {
+  height: 1px;
+  width: 24vw;
+  display: inline-block;
   background: #000;
+  margin-top: 4vw;
+}
+
+.alzheimer-hope__comment-copylight {
+  color: #000;
+  font-size: 3.2vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 400;
+}
+
+.alzheimer-hope__comment-copylight-s {
+  display: block;
+  font-size: 2.8vw;
+}
+
+.conversion {
+  width: 100%;
+  height: 235vw;
+  position: relative;
+  padding: 0;
+}
+
+.conversion__content--before {
+  left: 6vw;
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  background: #03007b;
+  color: #fff;
+  padding-bottom: 20vw;
+}
+
+.conversion__content--before-box {
+  width: 76vw;
+  left: 6vw;
+  position: relative;
+}
+
+.conversion__content--before-title {
+  text-indent: -99999px;
+  display: block;
+  width: 60vw;
+  height: 30vw;
+  background: url("../img/conversion_1.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-top: 17vw;
+  margin-bottom: 10vw;
+}
+
+.conversion__content--before-graph {
+  background: url("../../img/conversion_after_graph.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  width: 70vw;
+  height: 62vw;
+}
+
+.conversion__content--before .cover-btn__before {
+  text-indent: -99999px;
+  display: block;
+  width: 13vw;
+  height: 3.2vw;
+  background: url("../img/cover-btn__before.png") no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-top: 9vw;
+}
+
+.conversion__content--before .conversion__now {
+  right: 0;
+  margin-top: 8vw;
+}
+
+.conversion__content--before-detail {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  text-align: justify;
+  word-break: break-all;
+  margin-top: 7vw;
+}
+
+.conversion__content--after {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: #e5e5e5;
+  color: #0400b3;
+  padding-bottom: 20vw;
+}
+
+.conversion__content--after-box {
+  width: 76vw;
+  left: 12vw;
+  position: relative;
+}
+
+.conversion__content--after-title {
+  text-indent: -99999px;
+  display: block;
+  width: 60vw;
+  height: 30vw;
+  background: url("../img/conversion_2.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-top: 17vw;
+  margin-bottom: 10vw;
+}
+
+.conversion__content--after-graph {
+  background: url("../../img/conversion_before_graph.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  width: 62vw;
+  height: 62vw;
+}
+
+.conversion__content--after-detail {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  text-align: justify;
+  word-break: break-all;
+  margin-top: 19vw;
+}
+
+.conversion__content--after .conversion__now {
+  margin-top: 8vw;
+}
+
+.conversion__content--after .cover-btn__after {
+  text-indent: -99999px;
+  display: block;
+  width: 13.5vw;
+  height: 3.2vw;
+  background: url("../img/cover-btn__after.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0;
+  margin-top: 10vw;
+}
+
+.conversion .conversion__now {
+  font-size: 3.7vw;
+  line-height: 5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+  border-bottom: 1px solid;
+  padding-bottom: 1vw;
+  position: absolute;
+}
+
+.drug-spec {
+  background: #000;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 200vw;
+}
+
+.drug-spec__background {
+  background: url("../../img/drug-spec-background.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 140vw;
+  height: 128vw;
+}
+
+.drug-spec__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 18vw 0 0 -44vw;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.drug-spec__panel--title {
+  text-indent: -99999px;
+  display: block;
+  width: 51vw;
+  height: 31vw;
+  background: url("../img/drug-spec-title.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.drug-spec__panel--inner {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.drug-spec__panel--inner.step_1 {
+  top: 88vw;
+}
+
+.drug-spec__panel--inner .explain-text {
+  position: absolute;
+  color: #eee;
+  text-align: justify;
+  word-break: break-all;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 400;
+}
+
+.drug-spec__panel--inner .explain-text span {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.4vw;
+  display: inline-block;
+  position: relative;
+}
+
+.drug-spec__panel--inner .explain-text span i {
+  background: #bb2bbb;
+  display: inline-block;
+  width: 100%;
+  height: 4vw;
+  z-index: -1;
+  top: 1.2vw;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.drug-spec__panel--inner .explain-text span.active i {
+  opacity: 1;
+}
+
+.drug-spec__panel--inner .step_1, .drug-spec__panel--inner .step_2, .drug-spec__panel--inner .step_3 {
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.drug-spec__panel--inner .step_1.active, .drug-spec__panel--inner .step_2.active, .drug-spec__panel--inner .step_3.active {
+  opacity: 1;
+}
+
+.drug-spec__panel--inner .step_2 {
+  top: 12vw;
+}
+
+.drug-spec__panel--inner .step_2 .explain-text {
+  padding: 0 6vw;
+  top: 85vw;
+}
+
+.drug-spec__panel--inner .step_2 .chart-1 {
+  background: url("../../img/drug-step1__chart-1.png") no-repeat;
+  background-size: 100% 100%;
+  width: 62vw;
+  height: 68vw;
+  margin: 0 auto;
+}
+
+.drug-spec__panel--inner .step_2 .chart-2 {
+  background: url("../../img/drug-step1__chart-2.png") no-repeat;
+  background-size: 100% 100%;
+  width: 62vw;
+  height: 68vw;
+  margin: 0 auto;
+}
+
+.drug-spec__panel--inner .step_2 .chart-3 {
+  background: url("../../img/drug-step1__chart-3.png") no-repeat;
+  background-size: 100% 100%;
+  width: 62vw;
+  height: 68vw;
+  margin: 0 auto;
+}
+
+.drug-spec__panel--inner .step_3 .chart-1 {
+  margin: 0 auto;
+  background: url("../../img/drug-step2__chart-1.png") no-repeat;
+  width: 518px;
+  height: 396px;
+  top: 0px;
+  left: 0px;
+}
+
+.drug-spec__panel--inner .step_3 .chart-2 {
+  margin: 0 auto;
+  background: url("../../img/drug-step2__chart-2.png") no-repeat;
+  width: 521px;
+  height: 414px;
+  top: 0px;
+  left: 0px;
+}
+
+.drug-spec__panel--navigation {
+  position: absolute;
+  top: 50vw;
+  left: 9vw;
+}
+
+.drug-spec__panel--navigation .navigation--item {
+  border: 1px solid #fff;
+  background: none;
+  display: inline-block;
+  text-indent: -99999px;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+}
+
+.drug-spec__panel--navigation .navigation--line {
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  height: 1px;
+  top: -1.4vw;
+  width: 20vw;
+  left: -22vw;
+}
+
+.drug-spec__panel--navigation .navigation__first, .drug-spec__panel--navigation .navigation__second, .drug-spec__panel--navigation .navigation__thrid {
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  margin: 3vw 0;
+}
+
+.drug-spec__panel--navigation .navigation__first.active .navigation--item, .drug-spec__panel--navigation .navigation__second.active .navigation--item, .drug-spec__panel--navigation .navigation__thrid.active .navigation--item {
+  background: #fff;
+}
+
+.drug-spec__panel--navigation .navigation__first.active .navigation--line, .drug-spec__panel--navigation .navigation__second.active .navigation--line, .drug-spec__panel--navigation .navigation__thrid.active .navigation--line {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.drug-spec__panel .buttonArea {
+  position: absolute;
+  width: 100%;
+  margin-top: 7vw;
+  left: 2vw;
+  z-index: 3;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet {
+  width: 2.5vw;
+  height: 2.5vw;
+  background: #ff00ff;
+  opacity: 1;
+  position: absolute;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet:nth-of-type(2) {
+  left: 8vw;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet:nth-of-type(3) {
+  left: 16vw;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
+  content: '';
+  display: inline-block;
+  border: 1px solid #ff00ff;
+  width: 7vw;
+  height: 7vw;
+  border-radius: 50%;
+  pointer-events: none;
+  position: relative;
+  margin-top: -2.4vw;
+  margin-left: -2.4vw;
 }
 
 .brandsolution-logo a {

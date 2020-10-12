@@ -26,26 +26,602 @@ $white : #fff;
     letter-spacing: $ls;
 }
 
-#intro{
-    min-height:100vh;
-    padding:0;
-    width: 100%;
-    overflow:hidden;
-}
-#feature1{
-    width: 100%;
-    height: 10vw;
-    padding: 0;
-    background: #c8c8c8;
-    .box{
-        @include box_container( 84vw, 0, 0, 0, -40vw );
-    }
-    
+@mixin textToImage($w:0, $h:0){
+    text-indent: -99999px;
+    display: block;
+    width: $w;
+    height: $h;
 }
 
-.feature1_pin{
-    background: #000;
+#container{
+    overflow: hidden;
 }
+
+.intro-news{
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    top: 50px;
+    padding: 0;
+    background: #000;
+
+    height: 200vw;
+    overflow: hidden;
+    &__paper{
+        position: absolute;
+        transform-origin: center;
+        background: #fff;
+        //transform: scale(0.4);
+        width: 100%;
+        min-height: calc(100vh - 50px);
+        &--panel{
+            @include box_container(88vw, 0, 0, 0, -44vw, 0, 50%);
+            height: 100%;
+        }
+        &--headline{
+            &-ad{
+                @include textToImage(315px, 51px);
+                background: url($imgPath + 'intro_headline_1.png') no-repeat;
+            }
+            &-dd{
+                @include textToImage(50px, 300px);
+                background: url($imgPath + 'intro_headline_2.png') no-repeat;
+            }
+            &-title{
+                @include textToImage(449px, 143px);
+                background: url($mimgPath + 'intro_news_title_1.png') no-repeat;
+            }
+            &-sub-title{
+                @include textToImage(490px, 50px);
+                background: url($mimgPath + 'intro_news_title_2.png') no-repeat;
+            }
+        }
+        &--content{
+            border-bottom: 2px solid #000;
+            @include serif-regular;
+        }
+        &--annexed{
+            @include fontInfo(18px, 17px, -0.05em);
+            @include serif-regular;
+        }
+    }
+}
+
+.alzheimer{
+    width: 100%;
+    height: 250vw;
+    position: relative;
+    background: #fff;
+    padding: 0;
+    &__panel{
+        @include box_container(88vw, 8vw, 0, 0, -44vw, 0, 50%);
+    }
+    &__headline{
+        &--title{
+            @include textToImage(27vw, 43vw);
+            background: url($mimgPath + 'alzheimer-title.png') no-repeat;
+            background-size: 100% 100%;
+            float: left;
+            &:after{
+                @include clear;
+            }
+        }
+        &--info{
+            color: #535353;
+            @include fontInfo(3.8vw, 6.5vw, -0.06em);
+            @include fw-demilight;
+            text-align: justify;
+            word-break: break-all;
+            float: right;
+            width: 53vw;
+            &:after{
+                @include clear;
+            }
+        }
+    }
+    &__card{
+
+        &--item{
+            top: 10vw;
+            &-news{
+                outline: 1px solid #c9c9c9;
+                height: 118vw;
+                transition: all 0.6s;
+                
+                &.swiper-slide-active{
+                    box-shadow: 1.5vw 1.5vw 2vw #c9c9c9;
+                }
+                &.swiper-slide-prev, &.swiper-slide-next{
+                    margin-top: 9vw;
+                    height: 100vw;
+                    
+                }
+
+                .explain{
+                    color: #000;
+                    @include fontInfo(3.9vw, 6.4vw, -0.06em);
+                    @include fw-bold;
+                    position: absolute;
+                    top: 5vw;
+                    left: 6vw;
+                }
+
+                $numImgWidth: (
+                    one: 72,
+                    two: 58,
+                    three: 42,
+                    four: 68
+                );
+                $numImgHeight: (
+                    one: 23,
+                    two: 23, 
+                    three: 23, 
+                    four: 84
+                );
+                $contentWidth:(
+                    one: 72,
+                    two: 69, 
+                    three: 69, 
+                    four: 58 
+                );
+                $contentHeight:(
+                    one: 59,
+                    two: 54, 
+                    three: 55, 
+                    four: 54
+                );
+                $contentTop:(
+                    one: 54,
+                    two: 55, 
+                    three: 56, 
+                    four: 37
+                );
+                $contentLeft:(
+                    one: 8,
+                    two: 9, 
+                    three: 9, 
+                    four: 24
+                );
+
+                @each $numberring in one, two, three, four {
+                    &.#{$numberring}{
+                        .contents{
+                            .page-number{
+                                text-indent: -99999px;
+                                background: url($mimgPath + 'alzheimer__card--page-#{$numberring}.jpg') no-repeat;
+                                background-size: 100% 100%;
+                                width: 8vw;
+                                height: 2.2vw;
+                                position: absolute;
+                                top: 6vw;
+                                right: 5vw;
+                            }
+                            .numberring{
+                                background: url($mimgPath + 'alzheimer__card-#{$numberring}-num.png') no-repeat;
+                                background-size: 100% 100%;
+                                width: #{map-get( $numImgWidth, $numberring )}vw;
+                                height: #{map-get( $numImgHeight, $numberring )}vw;
+                                text-indent: -99999px;
+                                z-index: 1;
+                                display: block;
+                                margin: 22vw auto 0 auto;
+                                @if $numberring == 'four'{
+                                    margin-top: 28vw;
+                                    margin-left: 10vw;
+                                }
+                            }
+                            .graph{
+                                background: url($mimgPath + 'alzheimer__card-#{$numberring}-content.png') no-repeat;
+                                background-size: 100% 100%;
+                                width: #{map-get( $contentWidth, $numberring )}vw;
+                                height: #{map-get( $contentHeight, $numberring )}vw;
+                                top: #{map-get( $contentTop, $numberring )}vw;
+                                left: #{map-get( $contentLeft, $numberring )}vw;
+                                //opacity: 0;
+                                //transition: all 0.8s;
+                                //transition-delay: 0.3s;
+                                position: absolute;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.alzheimer-hope{
+    width: 100%;
+    height: 200vw;
+    position: relative;
+    background: #fff;
+    padding: 0;
+    &__panel{
+        @include box_container(88vw, 8vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+    }
+    &__text{
+        &-title{
+            @include textToImage(80vw, 28vw);
+            background: url($mimgPath + 'alzheimer-hope__title.jpg') no-repeat;
+            background-size: 100% 100%;
+        }
+        &-explain{
+            width: 53vw;
+            margin-top: 6vw;
+            float: right;
+            color: #535353;
+            @include fontInfo(3.8vw, 6.5vw, -0.06em);
+            @include fw-demilight;
+            text-align: justify;
+            word-break: break-all;
+            &:after{
+                @include clear;
+            }
+        }
+       
+    }
+    &__comment{
+        &-text{
+            color: #000;
+            @include fontInfo(4.1vw, 6.7vw, -0.08em);
+            @include fw-bold;
+            font-style: italic;
+            margin-top: 85vw;
+        }
+        .quotation-left{
+            background: url($mimgPath + 'quotation-left.png') no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            width: 9vw;
+            height: 6.5vw;
+            margin-top: -6vw;
+            margin-left: -2vw;
+        }
+        .quotation-right{
+            background: url($mimgPath + 'quotation-right.png') no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            width: 9vw;
+            height: 6.5vw;
+            margin-top: -5vw;
+            margin-left: 20vw;
+        }
+        .underline{
+            height: 1px;
+            width: 24vw;
+            display: inline-block;
+            background: #000;
+            margin-top: 4vw;
+        }
+        &-copylight{
+            color: #000;
+            @include fontInfo(3.2vw, 4.5vw, -0.06em);
+            @include fw-regular;
+            &-s{
+                display: block;
+                font-size: 2.8vw;
+            }
+        }
+    }
+}
+
+.conversion{
+    width: 100%;
+    height: 235vw;
+    position: relative;
+    padding: 0;
+
+    &__content{
+        &--before{
+            left: 6vw;
+            //transform: translateX(88vw);
+            width: 100%;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            background: #03007b;
+            color: #fff;
+            padding-bottom: 20vw;
+            &-box{
+                width: 76vw;
+                left: 6vw;
+                position: relative;
+            }
+            
+            &-title{
+                @include textToImage(60vw, 30vw);
+                background: url($mimgPath + 'conversion_1.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                margin-top: 17vw;
+                margin-bottom: 10vw;
+            }
+            &-graph{
+                background: url($imgPath + 'conversion_after_graph.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                width: 70vw;
+                height: 62vw;
+            }
+            
+            .cover-btn__before{
+                @include textToImage(13vw, 3.2vw);
+                background: url($mimgPath + 'cover-btn__before.png') no-repeat;
+                background-size: 100% 100%;
+                display: inline-block;
+                margin-top: 9vw;
+            }
+            .conversion__now{
+                right: 0;
+                margin-top: 8vw;
+            }
+            &-detail{
+                @include fontInfo(3.8vw, 6.5vw, -0.06em);
+                @include fw-demilight;
+                text-align: justify;
+                word-break: break-all;
+                margin-top: 7vw;
+            }
+        }
+        &--after{
+            width: 100%;
+            position: absolute;
+            top: 0;
+            background: #e5e5e5;
+            color: #0400b3;
+            padding-bottom: 20vw;
+            &-box{
+                width: 76vw;
+                left: 12vw;
+                position: relative;
+            }
+            
+            &-title{
+                @include textToImage(60vw, 30vw);
+                background: url($mimgPath + 'conversion_2.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                margin-top: 17vw;
+                margin-bottom: 10vw;
+            }
+            &-graph{
+                background: url($imgPath + 'conversion_before_graph.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                width: 62vw;
+                height: 62vw;
+            }
+            &-detail{
+                @include fontInfo(3.8vw, 6.5vw, -0.06em);
+                @include fw-demilight;
+                text-align: justify;
+                word-break: break-all;
+                margin-top: 19vw;
+            }
+            .conversion__now{
+                margin-top: 8vw;
+            }
+            .cover-btn__after{
+                @include textToImage(13.5vw, 3.2vw);
+                background: url($mimgPath + 'cover-btn__after.png') no-repeat;
+                background-size: 100% 100%;
+                position: absolute;
+                right: 0;
+                margin-top: 10vw;
+            }
+        }
+
+    }
+    .conversion__now{
+        @include fontInfo(3.7vw, 5vw, -0.08em);
+        @include fw-bold;
+        //text-decoration: underline;
+        border-bottom: 1px solid;
+        padding-bottom: 1vw;
+        position: absolute;
+    }
+}
+
+.drug-spec{
+    background: #000;
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 200vw;
+    &__background{
+        background: url($imgPath + 'drug-spec-background.png') no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        width: 140vw;
+        height: 128vw;
+    }
+    &__panel{
+        @include box_container(88vw, 18vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage(51vw, 31vw);
+            background: url($mimgPath + 'drug-spec-title.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        &--cover{
+            //opacity: 0;
+        }
+        &--inner{
+            color: #fff;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+            &.step_1{
+                top: 88vw;
+            }
+            .explain-text{
+                position: absolute;
+                color: #eee;
+                text-align: justify;
+                word-break: break-all;
+                @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                @include fw-regular;
+                span{
+                    border-bottom: 1px solid #fff;
+                    padding-bottom: 0.4vw;
+                    display: inline-block;
+                    position: relative;
+                    i{
+                        background: #bb2bbb;
+                        display: inline-block;
+                        width: 100%;
+                        height: 4vw;
+                        z-index: -1;
+                        top: 1.2vw;
+                        position: absolute;
+                        opacity: 0;
+                        transition: all 0.3s;
+                    }
+                    &.active{
+                        i{
+                            opacity: 1;
+                        }
+                    }
+                }
+                
+            }
+            .step_1, .step_2, .step_3{
+                opacity: 0;    
+                transition: all 0.5s;
+                &.active{
+                    opacity: 1;
+                }
+            }
+            .step_2{
+                top: 12vw;
+                .explain-text{
+                    padding: 0 6vw;
+                    top: 85vw;
+                }
+                @each $chartStep2 in chart-1, chart-2, chart-3 {
+                    .#{$chartStep2}{
+                        background: url($imgPath + 'drug-step1__#{$chartStep2}.png') no-repeat;
+                        background-size: 100% 100%;
+                        width: 62vw;
+                        height: 68vw;
+                        margin: 0 auto;
+
+                    }
+                }
+            }
+            .step_3{
+                $cs3Width: (
+                    chart-1: 518,
+                    chart-2: 521
+                );
+
+                $cs3Height: (
+                    chart-1: 396,
+                    chart-2: 414
+                );
+
+                $cs3Top: (
+                    chart-1: 0,
+                    chart-2: 0
+                );
+                $cs3Left: (
+                    chart-1: 0,
+                    chart-2: 0
+                );
+                @each $chartStep3 in chart-1, chart-2{
+                    .#{$chartStep3}{
+                        //position: absolute;
+                        margin: 0 auto;
+                        background: url($imgPath + 'drug-step2__#{$chartStep3}.png') no-repeat;
+                        width: #{map-get( $cs3Width, $chartStep3 )}px;
+                        height: #{map-get( $cs3Height, $chartStep3 )}px;
+                        top: #{map-get( $cs3Top, $chartStep3 )}px;
+                        left: #{map-get( $cs3Left, $chartStep3 )}px;
+                    }
+                }
+            }
+        }
+        &--navigation{
+            position: absolute;
+            top: 50vw;
+            left: 9vw;
+            .navigation--item{
+                border: 1px solid #fff;
+                background: none;
+                display: inline-block;
+                text-indent: -99999px;
+                width: 2.5vw;
+                height: 2.5vw;
+                border-radius: 50%;
+                
+            }
+            .navigation--line{
+                transition: all 0.6s;
+                transform: scaleX(0);
+                transform-origin: right;
+                display: inline-block;
+                position: relative;
+                background: #fff;
+                height: 1px;
+                top: -1.4vw;
+                width: 20vw;
+                left: -22vw;
+            }
+            .navigation__first, .navigation__second, .navigation__thrid{
+                transition: all 0.6s;
+                margin: 3vw 0;
+                &.active{
+                    .navigation--item{
+                        background: #fff;
+                    }
+                    .navigation--line{
+                        transform: scaleX(1);
+                        transition-delay: 0.3s;
+                    }
+                }
+            }
+        }
+        .buttonArea{
+            position: absolute;
+            width: 100%;
+            margin-top: 7vw;
+            left: 2vw;
+            z-index: 3;
+            .swiper-pagination-bullet{
+                width: 2.5vw;
+                height: 2.5vw;
+                background: #ff00ff;
+                opacity: 1;
+                position: absolute;
+                &:nth-of-type(2){
+                    left: 8vw;
+                }
+                &:nth-of-type(3){
+                    left: 16vw;
+                }
+                &.swiper-pagination-bullet-active{
+                    &:after{
+                        content: '';
+                        display: inline-block;
+                        border: 1px solid #ff00ff;
+                        width: 7vw;
+                        height: 7vw;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        position: relative;
+                        margin-top: -2.4vw;
+                        margin-left: -2.4vw;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+
+
 
 .brand-identity img{
     //top: 2px;
