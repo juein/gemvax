@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // alzheimer__card
-    var swiper = new Swiper('.alzheimer__card', {
+    var alzheimerSwiper = new Swiper('.alzheimer__card', {
         slidesPerView: 1,
         spaceBetween: 0,
       });
@@ -75,5 +75,36 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
     // drug-spec
+
+
+    // meterial
+    var meterialSwiper = new Swiper('.meterial__panel--inner', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+      });
+    // meterial
+
+
+    // meterial-hope
+    $('.table-more').click( ()=>{
+        gsap.to('.table-more', 0.8, {opacity: 0, pointerEvents: 'none'});
+        gsap.to('.table-hide', 0.8, {opacity: 1, pointerEvents: 'visible', delay: 0.4});
+        gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 1, pointerEvents: 'visible'});
+        gsap.to('.meterial-hope__panel .solution--list', 0.6, {opacity: 0.2});
+    });
+
+    $('.table-hide').click( ()=>{
+        console.log('tttttt');
+        gsap.to('.table-hide', 0.8, {opacity: 0, pointerEvents: 'none'});
+        gsap.to('.table-more', 0.8, {opacity: 1, pointerEvents: 'visible', delay: 0.4});
+        gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 0, pointerEvents: 'none'});
+        gsap.to('.meterial-hope__panel .solution--list', 0.6, {opacity: 1});
+    });
+    // meterial-hope
+
 
 });

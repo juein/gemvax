@@ -45,7 +45,7 @@ $white : #fff;
     padding: 0;
     background: #000;
 
-    height: 200vw;
+    height: 240vw;
     overflow: hidden;
     &__paper{
         position: absolute;
@@ -54,35 +54,79 @@ $white : #fff;
         //transform: scale(0.4);
         width: 100%;
         min-height: calc(100vh - 50px);
+        height: 240vw;
         &--panel{
             @include box_container(88vw, 0, 0, 0, -44vw, 0, 50%);
             height: 100%;
         }
         &--headline{
             &-ad{
-                @include textToImage(315px, 51px);
+                @include textToImage(25vw, 4vw);
                 background: url($imgPath + 'intro_headline_1.png') no-repeat;
+                background-size: 100% 100%;
+                position: relative;
+                margin: 0 auto;
+                top: 15vw;
             }
             &-dd{
-                @include textToImage(50px, 300px);
+                @include textToImage(4vw, 26vw);
                 background: url($imgPath + 'intro_headline_2.png') no-repeat;
+                background-size: 100% 100%;
+                position: absolute;
+                top: 56vw;
+                right: -2vw;
             }
             &-title{
-                @include textToImage(449px, 143px);
+                @include textToImage(70vw, 22vw);
                 background: url($mimgPath + 'intro_news_title_1.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                position: relative;
+                top: 26vw;
             }
             &-sub-title{
-                @include textToImage(490px, 50px);
+                @include textToImage(77vw, 8vw);
                 background: url($mimgPath + 'intro_news_title_2.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                position: relative;
+                top: 60vw;
             }
         }
         &--content{
-            border-bottom: 2px solid #000;
-            @include serif-regular;
+            position: absolute;
+            width: 78vw;
+            left: 7vw;
+            top: 100vw;
+            p{
+                @include fontInfo(3.8vw, 6.5vw, -0.11em);
+                padding-right: 8vw;
+                height: 82vw;
+                overflow: hidden;
+                overflow-y: scroll;
+                text-align: justify;
+                word-break: break-all;
+                @include serif-regular;
+
+            }
+            strong{
+                @include fontInfo(4.1vw, 6.5vw, -0.11em);
+                @include serif-regular;
+                position: relative;
+                top: 5vw;
+                
+            }
+
         }
         &--annexed{
-            @include fontInfo(18px, 17px, -0.05em);
+            @include fontInfo(2.8vw, 4vw, -0.05em);
             @include serif-regular;
+            border-top: 2px solid #000;
+            border-bottom: 1px solid #000;
+            padding-top: 4vw;
+            padding-bottom: 12vw;
+            position: relative;
+            top: 170vw;
         }
     }
 }
@@ -507,24 +551,27 @@ $white : #fff;
                         width: 62vw;
                         height: 68vw;
                         margin: 0 auto;
-
                     }
                 }
             }
             .step_3{
+                top: 15vw;
+                .explain-text{
+                    top: 82vw;
+                }
                 $cs3Width: (
-                    chart-1: 518,
-                    chart-2: 521
+                    chart-1: 80,
+                    chart-2: 82
                 );
 
                 $cs3Height: (
-                    chart-1: 396,
-                    chart-2: 414
+                    chart-1: 62,
+                    chart-2: 65
                 );
 
                 $cs3Top: (
                     chart-1: 0,
-                    chart-2: 0
+                    chart-2: -3
                 );
                 $cs3Left: (
                     chart-1: 0,
@@ -535,10 +582,11 @@ $white : #fff;
                         //position: absolute;
                         margin: 0 auto;
                         background: url($imgPath + 'drug-step2__#{$chartStep3}.png') no-repeat;
-                        width: #{map-get( $cs3Width, $chartStep3 )}px;
-                        height: #{map-get( $cs3Height, $chartStep3 )}px;
-                        top: #{map-get( $cs3Top, $chartStep3 )}px;
-                        left: #{map-get( $cs3Left, $chartStep3 )}px;
+                        background-size: 100% 100%;
+                        width: #{map-get( $cs3Width, $chartStep3 )}vw;
+                        height: #{map-get( $cs3Height, $chartStep3 )}vw;
+                        margin-top: #{map-get( $cs3Top, $chartStep3 )}vw;
+                        left: #{map-get( $cs3Left, $chartStep3 )}vw;
                     }
                 }
             }
@@ -620,6 +668,527 @@ $white : #fff;
     }
    
 }
+
+.meterial{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 330vw;
+    z-index: 2;
+    background: linear-gradient(black, 50%, rgba(3, 0, 123, 1), transparent);
+    &__panel{
+        @include box_container(88vw, 24vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage(78vw, 21vw);
+            background: url($mimgPath + 'meterial-title.png') no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            margin-bottom: 15vw;
+        }
+        &--inner{
+            &-list{
+                &-item{
+                    .round{
+                        //background: #03007b;
+                        border-radius: 50%;
+                        width: 60vw;
+                        height: 60vw;
+                        background: rgba(7, 0, 195, 0.8);
+                        margin: 0 auto;
+                        text-align: center;
+                        .before{
+                            color: #06ff7b;
+                            @include fontInfo(4.3vw, 6.7vw, -0.08em);
+                            @include fw-bold;
+                            position: relative;
+                            top: 19vw;
+                            &.two{
+                                top: 12vw;
+                            }
+                        }
+                        .on{
+                            color: #fff;
+                            @include fontInfo(4vw, 6.5vw, -0.08em);
+                            @include fw-regular;
+                            position: absolute;
+                            width: 60vw;
+                            top: 32vw;
+                        }
+                        i{
+                           background: #fff;
+                            height: 1px;
+                            width: 43vw;
+                            display: inline-block;
+                            transform-origin: left;
+                            position: absolute;
+                            left: 23vw;
+                            top: 29vw;
+                        }
+                    }
+                    .inner-content{
+                        background: #fff;
+                        color: #03007b;
+                        text-align: justify;
+                        word-break: break-all;
+                        width: 64vw;
+                        margin-left: 12vw;
+                        margin-top: 5vw;
+                        padding: 5vw;
+                        height: 78vw;
+                        p{
+                            @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                            @include fw-demilight;
+                            word-break: break-all;
+                        }
+                    }
+                }
+            }
+            &-detail{
+                color: #fff;
+                text-align: center;
+                margin-top: 10vw;
+                &-text{
+                    @include fontInfo(3.9vw, 6.8vw, -0.08em);
+                    @include fw-demilight;
+                    margin: 2vw 0;
+                }
+                &-hide{
+                    @include fontInfo(4.8vw, 9vw, -0.08em);
+                    @include fw-bold;
+                    background: #000;
+                    position: relative;
+                    display: inline-block;
+                    box-shadow: 0.6vw 0.6vw 0vw #06ff7b;
+                    margin: 0.6vw 0;
+                    padding: 0 2vw;
+                }
+            }
+        }
+        .swiper-button-prev, .swiper-button-next{
+            background: url($mimgPath + 'swiper-arrow-btn.png') no-repeat;
+            background-size: 100% 100%;
+            transition: all 0.6s;
+            width: 6vw;
+            height: 11.5vw;
+            top: 135vw;
+        }
+        .swiper-button-next{
+            transform: rotate(180deg);
+        }
+        .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+            opacity: 0;
+        }
+    }
+}
+
+.gv-1001{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 266vw;
+    background: #000;
+    z-index: 0;
+    &__bg{
+        background: url($imgPath + 'gv1001-bg.png') no-repeat;
+        background-position: center;
+        position: absolute;
+        background-size: 100% 100%;
+        width: 150vw;
+        height: 150vw;
+        top: -85vw;
+        left: -18vw;
+    }
+    &__panel{
+        @include box_container(88vw, 0vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage(43vw, 29vw);
+            background: url($mimgPath + 'gv1001-title.png') no-repeat;
+            background-size: 100% 100%;
+            margin-top: 28vw;
+        }
+        &--content{
+            border-top: 2px solid #fff;
+            color: #fff;
+            margin-top: 3vw;
+            padding-top: 3vw;
+            &-detail{
+                &-text{
+                    @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                    @include fw-demilight;
+                    word-break: break-all;
+                    text-align: justify;
+                    width: 52vw;
+                    position: absolute;
+                    right: 0;
+                    z-index: 2;
+                    //float: right;
+                    //&:after{
+                    //    @include clear;
+                    //}
+                    .underline{
+                        border-bottom: 1px solid #fff;
+                        padding-bottom: 0.5vw;
+                        display: inline-block;
+                        position: relative;
+                        i{
+                            position: absolute;
+                            background: #03007b;
+                            display: inline-block;
+                            width: 100%;
+                            z-index: -1;
+                            height: 5vw;
+                            top: 1vw;
+                        }
+                    }
+                }
+            }
+            &-video{
+                position: absolute;
+                width: 68vw;
+                height: 38vw;
+                left: -6vw;
+                top: 95vw;
+            }
+            &-comment{
+                position: absolute;
+                top: 180vw;
+                left: 4vw;
+                @include fontInfo(4.1vw, 6.7vw, -0.08em);
+                @include fw-bold;
+                font-style: italic;
+                .quotation-left{
+                    background: url($mimgPath + 'quotation-left-s.png') no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    width: 9vw;
+                    height: 6.5vw;
+                    top: -2vw;
+                    left: -5vw;
+                    z-index: -1;
+                }
+                .quotation-right{
+                    background: url($mimgPath + 'quotation-right-s.png') no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    width: 9vw;
+                    height: 6.5vw;
+                    left: 19vw;
+                    margin-top: -7vw;
+                    z-index: -1;
+                }
+                .border{
+                    background: #fff;
+                    height: 1px;
+                    width: 22vw;
+                    display: inline-block;
+                    position: relative;
+                    top: -2vw;
+                }
+
+            }
+            &-copylight{
+                margin-top: -1vw;
+                font-style: normal;
+                @include fontInfo(3.2vw, 4.5vw, -0.06em);
+                @include fw-regular;
+                &-s{
+                    font-size: 2.8vw;
+                    display: block;
+                }
+                
+            }
+            
+        }
+    }
+}
+
+.meterial-hope{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 250vw;
+    background: #000;
+    &__panel{
+        @include box_container(88vw, 0vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage(59vw, 20vw);
+            background: url($mimgPath + 'meterial-hope-title.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        .solution--title{
+            color: #fff;
+            @include fontInfo(3.8vw, 6.5vw, -0.08em);
+            @include fw-regular;
+            margin-top: 7vw;
+        }
+        .solution--list{
+            position: relative;
+            top: 32vw;
+            .solution--item{
+                position: absolute;
+                color: #fff;
+                text-align: justify;
+                word-break: break-all;
+                &-head{
+                    @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                    @include fw-bold;
+                    display: block;
+                    //width: 60vw;
+                    background: #03007b;
+                    position: absolute;
+                    width: 80vw;
+                }
+                &-text{
+                    @include fw-regular;
+                    @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                    width: 52vw;
+                    word-break: break-all;
+                    margin-top: 7vw;
+                }
+                &.one{
+                    right: 3vw;
+                    i{
+                        position: absolute;
+                        border-bottom: 1px solid #fff;
+                        width: 54vw;
+                        top: 7.5vw;
+                    }
+                }
+                &.two{
+                    top: 40vw;
+                    left: 3vw;
+                    .solution--item-head{
+                        text-align: right;
+                        left: -46vw;
+                    }
+                    i{
+                        position: absolute;
+                        border-bottom: 1px solid #fff;
+                        width: 34vw;
+                        top: 7.5vw;
+                    }
+                }
+                &.three{
+                    top: 80vw;
+                    right: 3vw;
+                    i{
+                        position: absolute;
+                        border-bottom: 1px solid #fff;
+                        width: 57vw;
+                        top: 7.5vw;
+                    }
+                }
+            }
+        }
+        .solution--explain{
+            color: #fff;
+            @include fontInfo(3.8vw, 6.5vw, -0.08em);
+            @include fw-demilight;
+            position: relative;
+            top: 165vw;
+            z-index: 2;
+            .underline{
+                border-bottom: 1px solid #fff;
+                padding-bottom: 0.5vw;
+                display: inline-block;
+                position: relative;
+            }
+        }
+        &--table{
+            position: absolute;
+            width: 100%;
+            color: #fff;
+            //border: 1px solid #fff;
+            text-align: center;
+            z-index: 2;
+            top: 48vw;
+            &-cell{
+                border-top: 3px solid #fff;
+                border-bottom: 3px solid #fff;
+            }
+            .table-group{
+                &-1{
+                    width: 25%;
+                }
+                &-2{
+                    width: 25%;
+                }
+                &-3{
+                    width: 20%;
+                }
+                &-4{
+                    width: 30%;
+                }
+            }
+            th{
+                color: #06ff7b;
+                @include fontInfo(3.6vw, 6vw, -0.06em);
+                @include fw-medium;
+                border: 1px solid #fff;
+            }
+            td{
+                color: #fff;
+                border: 1px solid #fff;
+                padding: 2vw 0;
+                span{
+                    display: block;
+                    font-size: 2.2vw;
+                }
+            }
+            tr{
+                @include fontInfo(3vw, 4.5vw, -0.06em);
+                @include fw-demilight;
+            }
+            .block{
+                @include fw-medium;
+                td{
+                    padding: 0;
+                    line-height: 5vw;
+                }
+            }
+            .bdl-n{
+                border-left: 0;
+            }
+            .bdr-n{
+                border-right: 0;
+            }
+            .table-more{
+                background: url($mimgPath + 'table-controls.png') no-repeat;
+                background-size: 100% 100%;
+                width: 4vw;
+                height: 4vw;
+                position: absolute;
+                text-indent: -99999px;
+                left: 3vw;
+                top: 10vw;
+            }
+            .table-hide{
+                background: url($mimgPath + 'table-controls.png') no-repeat;
+                background-size: 100% 100%;
+                width: 4vw;
+                height: 4vw;
+                position: absolute;
+                text-indent: -99999px;
+                left: 3vw;
+                top: 50vw;
+                transform: rotate(45deg);
+                opacity: 0;
+                pointer-events: none;
+
+            }
+            tbody{
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.outro{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 320vw;
+    background: linear-gradient(#000, #03007b, 50%, #000);
+    &__bg{
+        background: url($mimgPath + 'outro-bg.png') no-repeat;
+        background-position: center;
+        position: absolute;
+        background-size: 100% 100%;
+        width: 100vw;
+        height: 150vw;
+        top: -35vw;
+
+    }
+    &__panel{
+        @include box_container(88vw, 64vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage(64vw, 35vw);
+            background: url($mimgPath + 'outro-title.png') no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+        }
+        &--content{
+            color: #fff;
+            text-align: center;
+            &-text{
+                @include fontInfo(3.8vw, 6.7vw, -0.06em);
+                @include fw-demilight;
+                margin-top: 10vw;
+                margin-bottom: 6vw;
+            }
+            &-strong{
+                @include fontInfo(4.3vw, 6.5vw, -0.08em);
+                @include fw-bold;
+            }
+            &-comment{
+                position: absolute;
+                left: 0;
+                text-align: left;
+                color: #fff;
+                font-style: italic;
+                @include fontInfo(4.3vw, 7.5vw, -0.08em);
+                @include fw-bold;
+                top: 150vw;
+                padding-left: 5vw;
+                padding-bottom: 3vw;
+
+                width: 95vw;
+                border-bottom: 2px solid;
+
+                .quotation-left{
+                    background: url($mimgPath + 'quotation-left-s.png') no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    width: 9vw;
+                    height: 6.5vw;
+                    top: -12vw;
+                    left: 0;
+                }
+                .quotation-right{
+                    background: url($mimgPath + 'quotation-right-s.png') no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    width: 9vw;
+                    height: 6.5vw;
+                    margin-top: -20vw;
+                    left: 0;
+                }
+                .underline{
+                    border-top: 1px solid #fff;
+                    font-style: normal;
+                    @include fontInfo(3.2vw, 4.5vw, -0.06em);
+                    @include fw-regular;
+                    width: 40vw;
+                    margin-top: 14vw;
+                    margin-left: -5vw;
+                    padding-top: 2vw;
+                    padding-left: 1vw;
+                    span{
+                        display: block;
+                        font-size: 2.8vw;
+                    }
+                }
+                
+            }
+            &-person{
+                background: url($mimgPath + 'jorgen-winroth.png') no-repeat;
+                position: absolute;
+                bottom: 0;
+                background-size: 100% 100%;
+                width: 36vw;
+                height: 31vw;
+                right: 7vw;
+            }
+        }
+    }
+}
+
+
 
 
 

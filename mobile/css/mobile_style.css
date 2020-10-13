@@ -281,7 +281,7 @@ video {
   top: 50px;
   padding: 0;
   background: #000;
-  height: 200vw;
+  height: 240vw;
   overflow: hidden;
 }
 
@@ -292,6 +292,7 @@ video {
   background: #fff;
   width: 100%;
   min-height: calc(100vh - 50px);
+  height: 240vw;
 }
 
 .intro-news__paper--panel {
@@ -307,47 +308,94 @@ video {
 .intro-news__paper--headline-ad {
   text-indent: -99999px;
   display: block;
-  width: 315px;
-  height: 51px;
+  width: 25vw;
+  height: 4vw;
   background: url("../../img/intro_headline_1.png") no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  margin: 0 auto;
+  top: 15vw;
 }
 
 .intro-news__paper--headline-dd {
   text-indent: -99999px;
   display: block;
-  width: 50px;
-  height: 300px;
+  width: 4vw;
+  height: 26vw;
   background: url("../../img/intro_headline_2.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 56vw;
+  right: -2vw;
 }
 
 .intro-news__paper--headline-title {
   text-indent: -99999px;
   display: block;
-  width: 449px;
-  height: 143px;
+  width: 70vw;
+  height: 22vw;
   background: url("../img/intro_news_title_1.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 26vw;
 }
 
 .intro-news__paper--headline-sub-title {
   text-indent: -99999px;
   display: block;
-  width: 490px;
-  height: 50px;
+  width: 77vw;
+  height: 8vw;
   background: url("../img/intro_news_title_2.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 60vw;
 }
 
 .intro-news__paper--content {
-  border-bottom: 2px solid #000;
+  position: absolute;
+  width: 78vw;
+  left: 7vw;
+  top: 100vw;
+}
+
+.intro-news__paper--content p {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.11em;
+  padding-right: 8vw;
+  height: 82vw;
+  overflow: hidden;
+  overflow-y: scroll;
+  text-align: justify;
+  word-break: break-all;
   font-family: 'Noto Serif CJK KR', sans-serif;
   font-weight: 400;
 }
 
+.intro-news__paper--content strong {
+  font-size: 4.1vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.11em;
+  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-weight: 400;
+  position: relative;
+  top: 5vw;
+}
+
 .intro-news__paper--annexed {
-  font-size: 18px;
-  line-height: 17px;
+  font-size: 2.8vw;
+  line-height: 4vw;
   letter-spacing: -0.05em;
   font-family: 'Noto Serif CJK KR', sans-serif;
   font-weight: 400;
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #000;
+  padding-top: 4vw;
+  padding-bottom: 12vw;
+  position: relative;
+  top: 170vw;
 }
 
 .alzheimer {
@@ -934,22 +982,32 @@ video {
   margin: 0 auto;
 }
 
+.drug-spec__panel--inner .step_3 {
+  top: 15vw;
+}
+
+.drug-spec__panel--inner .step_3 .explain-text {
+  top: 82vw;
+}
+
 .drug-spec__panel--inner .step_3 .chart-1 {
   margin: 0 auto;
   background: url("../../img/drug-step2__chart-1.png") no-repeat;
-  width: 518px;
-  height: 396px;
-  top: 0px;
-  left: 0px;
+  background-size: 100% 100%;
+  width: 80vw;
+  height: 62vw;
+  margin-top: 0vw;
+  left: 0vw;
 }
 
 .drug-spec__panel--inner .step_3 .chart-2 {
   margin: 0 auto;
   background: url("../../img/drug-step2__chart-2.png") no-repeat;
-  width: 521px;
-  height: 414px;
-  top: 0px;
-  left: 0px;
+  background-size: 100% 100%;
+  width: 82vw;
+  height: 65vw;
+  margin-top: -3vw;
+  left: 0vw;
 }
 
 .drug-spec__panel--navigation {
@@ -1036,6 +1094,668 @@ video {
   position: relative;
   margin-top: -2.4vw;
   margin-left: -2.4vw;
+}
+
+.meterial {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 330vw;
+  z-index: 2;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(50%), color-stop(#03007b), to(transparent));
+  background: linear-gradient(black, 50%, #03007b, transparent);
+}
+
+.meterial__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 24vw 0 0 -44vw;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.meterial__panel--title {
+  text-indent: -99999px;
+  display: block;
+  width: 78vw;
+  height: 21vw;
+  background: url("../img/meterial-title.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-bottom: 15vw;
+}
+
+.meterial__panel--inner-list-item .round {
+  border-radius: 50%;
+  width: 60vw;
+  height: 60vw;
+  background: rgba(7, 0, 195, 0.8);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.meterial__panel--inner-list-item .round .before {
+  color: #06ff7b;
+  font-size: 4.3vw;
+  line-height: 6.7vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+  position: relative;
+  top: 19vw;
+}
+
+.meterial__panel--inner-list-item .round .before.two {
+  top: 12vw;
+}
+
+.meterial__panel--inner-list-item .round .on {
+  color: #fff;
+  font-size: 4vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 400;
+  position: absolute;
+  width: 60vw;
+  top: 32vw;
+}
+
+.meterial__panel--inner-list-item .round i {
+  background: #fff;
+  height: 1px;
+  width: 43vw;
+  display: inline-block;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  position: absolute;
+  left: 23vw;
+  top: 29vw;
+}
+
+.meterial__panel--inner-list-item .inner-content {
+  background: #fff;
+  color: #03007b;
+  text-align: justify;
+  word-break: break-all;
+  width: 64vw;
+  margin-left: 12vw;
+  margin-top: 5vw;
+  padding: 5vw;
+  height: 78vw;
+}
+
+.meterial__panel--inner-list-item .inner-content p {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  word-break: break-all;
+}
+
+.meterial__panel--inner-detail {
+  color: #fff;
+  text-align: center;
+  margin-top: 10vw;
+}
+
+.meterial__panel--inner-detail-text {
+  font-size: 3.9vw;
+  line-height: 6.8vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  margin: 2vw 0;
+}
+
+.meterial__panel--inner-detail-hide {
+  font-size: 4.8vw;
+  line-height: 9vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+  background: #000;
+  position: relative;
+  display: inline-block;
+  -webkit-box-shadow: 0.6vw 0.6vw 0vw #06ff7b;
+          box-shadow: 0.6vw 0.6vw 0vw #06ff7b;
+  margin: 0.6vw 0;
+  padding: 0 2vw;
+}
+
+.meterial__panel .swiper-button-prev, .meterial__panel .swiper-button-next {
+  background: url("../img/swiper-arrow-btn.png") no-repeat;
+  background-size: 100% 100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  width: 6vw;
+  height: 11.5vw;
+  top: 135vw;
+}
+
+.meterial__panel .swiper-button-next {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.meterial__panel .swiper-button-next.swiper-button-disabled, .meterial__panel .swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
+
+.gv-1001 {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 266vw;
+  background: #000;
+  z-index: 0;
+}
+
+.gv-1001__bg {
+  background: url("../../img/gv1001-bg.png") no-repeat;
+  background-position: center;
+  position: absolute;
+  background-size: 100% 100%;
+  width: 150vw;
+  height: 150vw;
+  top: -85vw;
+  left: -18vw;
+}
+
+.gv-1001__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 0vw 0 0 -44vw;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.gv-1001__panel--title {
+  text-indent: -99999px;
+  display: block;
+  width: 43vw;
+  height: 29vw;
+  background: url("../img/gv1001-title.png") no-repeat;
+  background-size: 100% 100%;
+  margin-top: 28vw;
+}
+
+.gv-1001__panel--content {
+  border-top: 2px solid #fff;
+  color: #fff;
+  margin-top: 3vw;
+  padding-top: 3vw;
+}
+
+.gv-1001__panel--content-detail-text {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  word-break: break-all;
+  text-align: justify;
+  width: 52vw;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.gv-1001__panel--content-detail-text .underline {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.5vw;
+  display: inline-block;
+  position: relative;
+}
+
+.gv-1001__panel--content-detail-text .underline i {
+  position: absolute;
+  background: #03007b;
+  display: inline-block;
+  width: 100%;
+  z-index: -1;
+  height: 5vw;
+  top: 1vw;
+}
+
+.gv-1001__panel--content-video {
+  position: absolute;
+  width: 68vw;
+  height: 38vw;
+  left: -6vw;
+  top: 95vw;
+}
+
+.gv-1001__panel--content-comment {
+  position: absolute;
+  top: 180vw;
+  left: 4vw;
+  font-size: 4.1vw;
+  line-height: 6.7vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.gv-1001__panel--content-comment .quotation-left {
+  background: url("../img/quotation-left-s.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  top: -2vw;
+  left: -5vw;
+  z-index: -1;
+}
+
+.gv-1001__panel--content-comment .quotation-right {
+  background: url("../img/quotation-right-s.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  left: 19vw;
+  margin-top: -7vw;
+  z-index: -1;
+}
+
+.gv-1001__panel--content-comment .border {
+  background: #fff;
+  height: 1px;
+  width: 22vw;
+  display: inline-block;
+  position: relative;
+  top: -2vw;
+}
+
+.gv-1001__panel--content-copylight {
+  margin-top: -1vw;
+  font-style: normal;
+  font-size: 3.2vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 400;
+}
+
+.gv-1001__panel--content-copylight-s {
+  font-size: 2.8vw;
+  display: block;
+}
+
+.meterial-hope {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 250vw;
+  background: #000;
+}
+
+.meterial-hope__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 0vw 0 0 -44vw;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.meterial-hope__panel--title {
+  text-indent: -99999px;
+  display: block;
+  width: 59vw;
+  height: 20vw;
+  background: url("../img/meterial-hope-title.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.meterial-hope__panel .solution--title {
+  color: #fff;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 400;
+  margin-top: 7vw;
+}
+
+.meterial-hope__panel .solution--list {
+  position: relative;
+  top: 32vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item {
+  position: absolute;
+  color: #fff;
+  text-align: justify;
+  word-break: break-all;
+}
+
+.meterial-hope__panel .solution--list .solution--item-head {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+  display: block;
+  background: #03007b;
+  position: absolute;
+  width: 80vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item-text {
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 400;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  width: 52vw;
+  word-break: break-all;
+  margin-top: 7vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.one {
+  right: 3vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.one i {
+  position: absolute;
+  border-bottom: 1px solid #fff;
+  width: 54vw;
+  top: 7.5vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.two {
+  top: 40vw;
+  left: 3vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.two .solution--item-head {
+  text-align: right;
+  left: -46vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.two i {
+  position: absolute;
+  border-bottom: 1px solid #fff;
+  width: 34vw;
+  top: 7.5vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.three {
+  top: 80vw;
+  right: 3vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.three i {
+  position: absolute;
+  border-bottom: 1px solid #fff;
+  width: 57vw;
+  top: 7.5vw;
+}
+
+.meterial-hope__panel .solution--explain {
+  color: #fff;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  position: relative;
+  top: 165vw;
+  z-index: 2;
+}
+
+.meterial-hope__panel .solution--explain .underline {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.5vw;
+  display: inline-block;
+  position: relative;
+}
+
+.meterial-hope__panel--table {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  top: 48vw;
+}
+
+.meterial-hope__panel--table-cell {
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.meterial-hope__panel--table .table-group-1 {
+  width: 25%;
+}
+
+.meterial-hope__panel--table .table-group-2 {
+  width: 25%;
+}
+
+.meterial-hope__panel--table .table-group-3 {
+  width: 20%;
+}
+
+.meterial-hope__panel--table .table-group-4 {
+  width: 30%;
+}
+
+.meterial-hope__panel--table th {
+  color: #06ff7b;
+  font-size: 3.6vw;
+  line-height: 6vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 500;
+  border: 1px solid #fff;
+}
+
+.meterial-hope__panel--table td {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 2vw 0;
+}
+
+.meterial-hope__panel--table td span {
+  display: block;
+  font-size: 2.2vw;
+}
+
+.meterial-hope__panel--table tr {
+  font-size: 3vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+}
+
+.meterial-hope__panel--table .block {
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 500;
+}
+
+.meterial-hope__panel--table .block td {
+  padding: 0;
+  line-height: 5vw;
+}
+
+.meterial-hope__panel--table .bdl-n {
+  border-left: 0;
+}
+
+.meterial-hope__panel--table .bdr-n {
+  border-right: 0;
+}
+
+.meterial-hope__panel--table .table-more {
+  background: url("../img/table-controls.png") no-repeat;
+  background-size: 100% 100%;
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  text-indent: -99999px;
+  left: 3vw;
+  top: 10vw;
+}
+
+.meterial-hope__panel--table .table-hide {
+  background: url("../img/table-controls.png") no-repeat;
+  background-size: 100% 100%;
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  text-indent: -99999px;
+  left: 3vw;
+  top: 50vw;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.meterial-hope__panel--table tbody {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.outro {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 320vw;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(#03007b), color-stop(50%), to(#000));
+  background: linear-gradient(#000, #03007b, 50%, #000);
+}
+
+.outro__bg {
+  background: url("../img/outro-bg.png") no-repeat;
+  background-position: center;
+  position: absolute;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 150vw;
+  top: -35vw;
+}
+
+.outro__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 64vw 0 0 -44vw;
+  outline: 1px solid #ddd;
+  height: 100%;
+}
+
+.outro__panel--title {
+  text-indent: -99999px;
+  display: block;
+  width: 64vw;
+  height: 35vw;
+  background: url("../img/outro-title.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+
+.outro__panel--content {
+  color: #fff;
+  text-align: center;
+}
+
+.outro__panel--content-text {
+  font-size: 3.8vw;
+  line-height: 6.7vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 300;
+  margin-top: 10vw;
+  margin-bottom: 6vw;
+}
+
+.outro__panel--content-strong {
+  font-size: 4.3vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+}
+
+.outro__panel--content-comment {
+  position: absolute;
+  left: 0;
+  text-align: left;
+  color: #fff;
+  font-style: italic;
+  font-size: 4.3vw;
+  line-height: 7.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 600;
+  top: 150vw;
+  padding-left: 5vw;
+  padding-bottom: 3vw;
+  width: 95vw;
+  border-bottom: 2px solid;
+}
+
+.outro__panel--content-comment .quotation-left {
+  background: url("../img/quotation-left-s.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  top: -12vw;
+  left: 0;
+}
+
+.outro__panel--content-comment .quotation-right {
+  background: url("../img/quotation-right-s.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  margin-top: -20vw;
+  left: 0;
+}
+
+.outro__panel--content-comment .underline {
+  border-top: 1px solid #fff;
+  font-style: normal;
+  font-size: 3.2vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-weight: 400;
+  width: 40vw;
+  margin-top: 14vw;
+  margin-left: -5vw;
+  padding-top: 2vw;
+  padding-left: 1vw;
+}
+
+.outro__panel--content-comment .underline span {
+  display: block;
+  font-size: 2.8vw;
+}
+
+.outro__panel--content-person {
+  background: url("../img/jorgen-winroth.png") no-repeat;
+  position: absolute;
+  bottom: 0;
+  background-size: 100% 100%;
+  width: 36vw;
+  height: 31vw;
+  right: 7vw;
 }
 
 .brandsolution-logo a {
