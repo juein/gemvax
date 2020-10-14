@@ -1,26 +1,5 @@
 @charset "UTF-8";
 @font-face {
-  font-family: 'Noto Serif';
-  font-weight: 400;
-  src: url("../../fonts/NotoSerifKR-Regular.eot");
-  src: url("../../fonts/NotoSerifKR-Regular.woff") format("woff"), url("../../fonts/NotoSerifKR-Regular.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 100;
-  src: url("../../fonts/NotoSansCJKkr-Thin.eot");
-  src: url("../../fonts/NotoSansCJKkr-Thin.woff") format("woff"), url("../../fonts/NotoSansCJKkr-Thin.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 200;
-  src: url("../../fonts/NotoSansCJKkr-Light.eot");
-  src: url("../../fonts/NotoSansCJKkr-Light.woff") format("woff"), url("../../fonts/NotoSansCJKkr-Light.otf") format("truetype");
-}
-
-@font-face {
   font-family: 'Noto Sans CJK KR';
   font-weight: 300;
   src: url("../../fonts/NotoSansCJKkr-DemiLight.eot");
@@ -46,13 +25,6 @@
   font-weight: 600;
   src: url("../../fonts/NotoSansCJKkr-Bold.eot");
   src: url("../../fonts/NotoSansCJKkr-Bold.woff") format("woff"), url("../../fonts/NotoSansCJKkr-Bold.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 700;
-  src: url("../../fonts/NotoSansCJKkr-Black.eot");
-  src: url("../../fonts/NotoSansCJKkr-Black.woff") format("woff"), url("../../fonts/NotoSansCJKkr-Black.otf") format("truetype");
 }
 
 @font-face {
@@ -278,10 +250,10 @@ video {
   position: relative;
   width: 100%;
   min-height: calc(100vh - 50px);
+  height: 100vh;
   top: 50px;
   padding: 0;
   background: #000;
-  height: 240vw;
   overflow: hidden;
 }
 
@@ -289,10 +261,22 @@ video {
   position: absolute;
   -webkit-transform-origin: center;
           transform-origin: center;
-  background: #fff;
   width: 100%;
   min-height: calc(100vh - 50px);
-  height: 240vw;
+  height: 250vw;
+  -webkit-transform: scale(0.3);
+          transform: scale(0.3);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  left: 50%;
+}
+
+.intro-news__paper--box {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  background: #fff;
+  width: 100%;
+  height: 100%;
 }
 
 .intro-news__paper--panel {
@@ -301,7 +285,6 @@ video {
   top: 0;
   left: 50%;
   margin: 0 0 0 -44vw;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -367,7 +350,6 @@ video {
   padding-right: 8vw;
   height: 82vw;
   overflow: hidden;
-  overflow-y: scroll;
   text-align: justify;
   word-break: break-all;
   font-family: 'Noto Serif CJK KR', sans-serif;
@@ -412,7 +394,6 @@ video {
   top: 0;
   left: 50%;
   margin: 8vw 0 0 -44vw;
-  outline: 1px solid #ddd;
 }
 
 .alzheimer__headline--title {
@@ -627,7 +608,6 @@ video {
   top: 0;
   left: 50%;
   margin: 8vw 0 0 -44vw;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -879,7 +859,6 @@ video {
   top: 0;
   left: 50%;
   margin: 18vw 0 0 -44vw;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -1112,7 +1091,6 @@ video {
   top: 0;
   left: 50%;
   margin: 24vw 0 0 -44vw;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -1271,7 +1249,6 @@ video {
   top: 0;
   left: 50%;
   margin: 0vw 0 0 -44vw;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -1403,7 +1380,6 @@ video {
   top: 0;
   left: 50%;
   margin: 0vw 0 0 -44vw;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 
@@ -1653,7 +1629,6 @@ video {
   top: 0;
   left: 50%;
   margin: 64vw 0 0 -44vw;
-  outline: 1px solid #ddd;
   height: 100%;
 }
 

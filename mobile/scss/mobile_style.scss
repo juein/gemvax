@@ -17,7 +17,7 @@ $white : #fff;
     top: $top;
     left: $left;
     margin: $mgTop $mgRight $mgBottom $mgLeft;
-    outline: 1px solid #ddd;
+    //outline: 1px solid #ddd;
 }
 
 @mixin fontInfo($size, $lh, $ls){
@@ -41,20 +41,37 @@ $white : #fff;
     position: relative;
     width: 100%;
     min-height: calc(100vh - 50px);
+    height: 100vh;
     top: 50px;
     padding: 0;
     background: #000;
 
-    height: 240vw;
+    //height: 240vw;
     overflow: hidden;
     &__paper{
         position: absolute;
         transform-origin: center;
-        background: #fff;
+        //background: #fff;
         //transform: scale(0.4);
         width: 100%;
         min-height: calc(100vh - 50px);
-        height: 240vw;
+        height: 250vw;
+
+
+        transform: scale(0.3);
+        transform-origin: top;
+        //transform-origin: center;
+        left: 50%;
+        //width: 160%;
+        //margin-left: -80%;
+        //top: 50%;
+        //top: -50%;
+        &--box{
+            transform-origin: center;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+        }
         &--panel{
             @include box_container(88vw, 0, 0, 0, -44vw, 0, 50%);
             height: 100%;
@@ -103,7 +120,7 @@ $white : #fff;
                 padding-right: 8vw;
                 height: 82vw;
                 overflow: hidden;
-                overflow-y: scroll;
+                //overflow-y: scroll;
                 text-align: justify;
                 word-break: break-all;
                 @include serif-regular;
