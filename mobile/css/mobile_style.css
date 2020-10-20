@@ -1,47 +1,14 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 300;
-  src: url("../../fonts/NotoSansCJKkr-DemiLight.eot");
-  src: url("../../fonts/NotoSansCJKkr-DemiLight.woff") format("woff"), url("../../fonts/NotoSansCJKkr-DemiLight.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 400;
-  src: url("../../fonts/NotoSansCJKkr-Regular.eot");
-  src: url("../../fonts/NotoSansCJKkr-Regular.woff") format("woff"), url("../../fonts/NotoSansCJKkr-Regular.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 500;
-  src: url("../../fonts/NotoSansCJKkr-Medium.eot");
-  src: url("../../fonts/NotoSansCJKkr-Medium.woff") format("woff"), url("../../fonts/NotoSansCJKkr-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 600;
-  src: url("../../fonts/NotoSansCJKkr-Bold.eot");
-  src: url("../../fonts/NotoSansCJKkr-Bold.woff") format("woff"), url("../../fonts/NotoSansCJKkr-Bold.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Serif CJK KR';
-  font-weight: 400;
-  src: url("../../fonts/NotoSerifKR-Regular.otf") format("truetype");
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@500;600&display=swap");
 body {
   height: 100vh;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.4;
   letter-spacing: -0.08em;
 }
 
 h2, h3 {
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 h2 {
@@ -250,7 +217,6 @@ video {
   position: relative;
   width: 100%;
   min-height: calc(100vh - 50px);
-  height: 100vh;
   top: 50px;
   padding: 0;
   background: #000;
@@ -264,8 +230,6 @@ video {
   width: 100%;
   min-height: calc(100vh - 50px);
   height: 250vw;
-  -webkit-transform: scale(0.3);
-          transform: scale(0.3);
   -webkit-transform-origin: top;
           transform-origin: top;
   left: 50%;
@@ -352,7 +316,7 @@ video {
   overflow: hidden;
   text-align: justify;
   word-break: break-all;
-  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-family: 'Noto Serif KR', sans-serif;
   font-weight: 400;
 }
 
@@ -360,7 +324,7 @@ video {
   font-size: 4.1vw;
   line-height: 6.5vw;
   letter-spacing: -0.11em;
-  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-family: 'Noto Serif KR', sans-serif;
   font-weight: 400;
   position: relative;
   top: 5vw;
@@ -370,7 +334,7 @@ video {
   font-size: 2.8vw;
   line-height: 4vw;
   letter-spacing: -0.05em;
-  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-family: 'Noto Serif KR', sans-serif;
   font-weight: 400;
   border-top: 2px solid #000;
   border-bottom: 1px solid #000;
@@ -404,6 +368,9 @@ video {
   background: url("../img/alzheimer-title.png") no-repeat;
   background-size: 100% 100%;
   float: left;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
 }
 
 .alzheimer__headline--title:after {
@@ -417,12 +384,15 @@ video {
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   text-align: justify;
   word-break: break-all;
   float: right;
   width: 53vw;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
 }
 
 .alzheimer__headline--info:after {
@@ -457,8 +427,8 @@ video {
   font-size: 3.9vw;
   line-height: 6.4vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   position: absolute;
   top: 5vw;
   left: 6vw;
@@ -484,6 +454,9 @@ video {
   z-index: 1;
   display: block;
   margin: 22vw auto 0 auto;
+  opacity: 0.4;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
 }
 
 .alzheimer__card--item-news.one .contents .graph {
@@ -493,6 +466,11 @@ video {
   height: 59vw;
   top: 54vw;
   left: 8vw;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
   position: absolute;
 }
 
@@ -516,6 +494,9 @@ video {
   z-index: 1;
   display: block;
   margin: 22vw auto 0 auto;
+  opacity: 0.4;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
 }
 
 .alzheimer__card--item-news.two .contents .graph {
@@ -525,6 +506,11 @@ video {
   height: 54vw;
   top: 55vw;
   left: 9vw;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
   position: absolute;
 }
 
@@ -548,6 +534,9 @@ video {
   z-index: 1;
   display: block;
   margin: 22vw auto 0 auto;
+  opacity: 0.4;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
 }
 
 .alzheimer__card--item-news.three .contents .graph {
@@ -557,6 +546,11 @@ video {
   height: 55vw;
   top: 56vw;
   left: 9vw;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
   position: absolute;
 }
 
@@ -580,6 +574,9 @@ video {
   z-index: 1;
   display: block;
   margin: 22vw auto 0 auto;
+  opacity: 0.4;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
   margin-top: 28vw;
   margin-left: 10vw;
 }
@@ -591,7 +588,54 @@ video {
   height: 54vw;
   top: 37vw;
   left: 24vw;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
   position: absolute;
+}
+
+.alzheimer__card--item-news.swiper-slide-active {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.alzheimer__card--item-news.swiper-slide-active .explain {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.one .contents .numberring {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.one .contents .graph {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.two .contents .numberring {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.two .contents .graph {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.three .contents .numberring {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.three .contents .graph {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.four .contents .numberring {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.four .contents .graph {
+  opacity: 1;
 }
 
 .alzheimer-hope {
@@ -618,6 +662,9 @@ video {
   height: 28vw;
   background: url("../img/alzheimer-hope__title.jpg") no-repeat;
   background-size: 100% 100%;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
 }
 
 .alzheimer-hope__text-explain {
@@ -628,10 +675,13 @@ video {
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   text-align: justify;
   word-break: break-all;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
 }
 
 .alzheimer-hope__text-explain:after {
@@ -645,10 +695,12 @@ video {
   font-size: 4.1vw;
   line-height: 6.7vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
   font-style: italic;
   margin-top: 85vw;
+  opacity: 0;
 }
 
 .alzheimer-hope__comment .quotation-left {
@@ -659,6 +711,7 @@ video {
   height: 6.5vw;
   margin-top: -6vw;
   margin-left: -2vw;
+  opacity: 0;
 }
 
 .alzheimer-hope__comment .quotation-right {
@@ -669,6 +722,7 @@ video {
   height: 6.5vw;
   margin-top: -5vw;
   margin-left: 20vw;
+  opacity: 0;
 }
 
 .alzheimer-hope__comment .underline {
@@ -677,14 +731,19 @@ video {
   display: inline-block;
   background: #000;
   margin-top: 4vw;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .alzheimer-hope__comment-copylight {
+  opacity: 0;
   color: #000;
   font-size: 3.2vw;
   line-height: 4.5vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -700,24 +759,31 @@ video {
   padding: 0;
 }
 
+.conversion__swiper {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 2;
+}
+
 .conversion__content--before {
-  left: 6vw;
   width: 100%;
   z-index: 2;
-  position: absolute;
-  top: 0;
   background: #03007b;
   color: #fff;
-  padding-bottom: 20vw;
+  position: relative;
 }
 
 .conversion__content--before-box {
   width: 76vw;
-  left: 6vw;
+  left: 12vw;
   position: relative;
 }
 
 .conversion__content--before-title {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
   text-indent: -99999px;
   display: block;
   width: 60vw;
@@ -730,14 +796,65 @@ video {
 }
 
 .conversion__content--before-graph {
-  background: url("../../img/conversion_after_graph.png") no-repeat;
   background-size: 100% 100%;
   margin: 0 auto;
-  width: 70vw;
+  width: 68vw;
   height: 62vw;
+  position: relative;
+}
+
+.conversion__content--before-graph .round {
+  position: absolute;
+  width: 36vw;
+  height: 36vw;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.conversion__content--before-graph .round i {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.7;
+  display: inline-block;
+}
+
+.conversion__content--before-graph .round span {
+  opacity: 0;
+  color: #03007b;
+  font-size: 4.1vw;
+  line-height: 5.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 12vw;
+  left: 0;
+  text-align: center;
+}
+
+.conversion__content--before-graph .round.first {
+  left: 16vw;
+}
+
+.conversion__content--before-graph .round.second {
+  bottom: 0;
+}
+
+.conversion__content--before-graph .round.third {
+  bottom: 0;
+  right: 0;
+}
+
+.conversion__content--before-graph .round.third span {
+  top: 15vw;
 }
 
 .conversion__content--before .cover-btn__before {
+  opacity: 0;
   text-indent: -99999px;
   display: block;
   width: 13vw;
@@ -749,16 +866,18 @@ video {
 }
 
 .conversion__content--before .conversion__now {
+  opacity: 0;
   right: 0;
   margin-top: 8vw;
 }
 
 .conversion__content--before-detail {
+  opacity: 0;
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   text-align: justify;
   word-break: break-all;
   margin-top: 7vw;
@@ -766,11 +885,9 @@ video {
 
 .conversion__content--after {
   width: 100%;
-  position: absolute;
-  top: 0;
   background: #e5e5e5;
   color: #0400b3;
-  padding-bottom: 20vw;
+  position: relative;
 }
 
 .conversion__content--after-box {
@@ -792,19 +909,33 @@ video {
 }
 
 .conversion__content--after-graph {
-  background: url("../../img/conversion_before_graph.png") no-repeat;
-  background-size: 100% 100%;
+  background: #03007b;
+  border-radius: 50%;
   margin: 0 auto;
   width: 62vw;
   height: 62vw;
+  position: relative;
+}
+
+.conversion__content--after-graph span {
+  font-size: 4.1vw;
+  line-height: 5.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  top: 27vw;
+  text-align: center;
 }
 
 .conversion__content--after-detail {
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   text-align: justify;
   word-break: break-all;
   margin-top: 19vw;
@@ -830,8 +961,8 @@ video {
   font-size: 3.7vw;
   line-height: 5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
   border-bottom: 1px solid;
   padding-bottom: 1vw;
   position: absolute;
@@ -843,6 +974,11 @@ video {
   padding: 0;
   width: 100%;
   height: 200vw;
+}
+
+.drug-spec__offset {
+  position: absolute;
+  height: 52vw;
 }
 
 .drug-spec__background {
@@ -863,12 +999,19 @@ video {
 }
 
 .drug-spec__panel--title {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
   text-indent: -99999px;
   display: block;
   width: 51vw;
   height: 31vw;
   background: url("../img/drug-spec-title.png") no-repeat;
   background-size: 100% 100%;
+}
+
+.drug-spec__panel--cover {
+  opacity: 0;
 }
 
 .drug-spec__panel--inner {
@@ -890,7 +1033,7 @@ video {
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -914,6 +1057,10 @@ video {
   transition: all 0.3s;
 }
 
+.drug-spec__panel--inner .explain-text span.re-ls {
+  letter-spacing: -0.06em;
+}
+
 .drug-spec__panel--inner .explain-text span.active i {
   opacity: 1;
 }
@@ -922,10 +1069,14 @@ video {
   opacity: 0;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .drug-spec__panel--inner .step_1.active, .drug-spec__panel--inner .step_2.active, .drug-spec__panel--inner .step_3.active {
   opacity: 1;
+  pointer-events: visible;
+  z-index: 10;
 }
 
 .drug-spec__panel--inner .step_2 {
@@ -993,6 +1144,7 @@ video {
   position: absolute;
   top: 50vw;
   left: 9vw;
+  opacity: 0;
 }
 
 .drug-spec__panel--navigation .navigation--item {
@@ -1005,22 +1157,6 @@ video {
   border-radius: 50%;
 }
 
-.drug-spec__panel--navigation .navigation--line {
-  -webkit-transition: all 0.6s;
-  transition: all 0.6s;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  display: inline-block;
-  position: relative;
-  background: #fff;
-  height: 1px;
-  top: -1.4vw;
-  width: 20vw;
-  left: -22vw;
-}
-
 .drug-spec__panel--navigation .navigation__first, .drug-spec__panel--navigation .navigation__second, .drug-spec__panel--navigation .navigation__thrid {
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
@@ -1029,13 +1165,6 @@ video {
 
 .drug-spec__panel--navigation .navigation__first.active .navigation--item, .drug-spec__panel--navigation .navigation__second.active .navigation--item, .drug-spec__panel--navigation .navigation__thrid.active .navigation--item {
   background: #fff;
-}
-
-.drug-spec__panel--navigation .navigation__first.active .navigation--line, .drug-spec__panel--navigation .navigation__second.active .navigation--line, .drug-spec__panel--navigation .navigation__thrid.active .navigation--line {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transition-delay: 0.3s;
-          transition-delay: 0.3s;
 }
 
 .drug-spec__panel .buttonArea {
@@ -1095,6 +1224,7 @@ video {
 }
 
 .meterial__panel--title {
+  opacity: 0;
   text-indent: -99999px;
   display: block;
   width: 78vw;
@@ -1106,6 +1236,7 @@ video {
 }
 
 .meterial__panel--inner-list-item .round {
+  opacity: 0;
   border-radius: 50%;
   width: 60vw;
   height: 60vw;
@@ -1119,8 +1250,8 @@ video {
   font-size: 4.3vw;
   line-height: 6.7vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
   position: relative;
   top: 19vw;
 }
@@ -1134,7 +1265,7 @@ video {
   font-size: 4vw;
   line-height: 6.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   position: absolute;
   width: 60vw;
@@ -1154,6 +1285,7 @@ video {
 }
 
 .meterial__panel--inner-list-item .inner-content {
+  opacity: 0;
   background: #fff;
   color: #03007b;
   text-align: justify;
@@ -1169,12 +1301,13 @@ video {
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   word-break: break-all;
 }
 
 .meterial__panel--inner-detail {
+  opacity: 0;
   color: #fff;
   text-align: center;
   margin-top: 10vw;
@@ -1184,8 +1317,8 @@ video {
   font-size: 3.9vw;
   line-height: 6.8vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   margin: 2vw 0;
 }
 
@@ -1193,8 +1326,8 @@ video {
   font-size: 4.8vw;
   line-height: 9vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
   background: #000;
   position: relative;
   display: inline-block;
@@ -1260,6 +1393,9 @@ video {
   background: url("../img/gv1001-title.png") no-repeat;
   background-size: 100% 100%;
   margin-top: 28vw;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
 }
 
 .gv-1001__panel--content {
@@ -1270,11 +1406,13 @@ video {
 }
 
 .gv-1001__panel--content-detail-text {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   word-break: break-all;
   text-align: justify;
   width: 52vw;
@@ -1300,12 +1438,17 @@ video {
   top: 1vw;
 }
 
+.gv-1001__panel--content-text {
+  opacity: 0;
+}
+
 .gv-1001__panel--content-video {
   position: absolute;
   width: 68vw;
   height: 38vw;
   left: -6vw;
   top: 95vw;
+  opacity: 0;
 }
 
 .gv-1001__panel--content-comment {
@@ -1315,8 +1458,8 @@ video {
   font-size: 4.1vw;
   line-height: 6.7vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
   font-style: italic;
 }
 
@@ -1329,6 +1472,7 @@ video {
   top: -2vw;
   left: -5vw;
   z-index: -1;
+  opacity: 0;
 }
 
 .gv-1001__panel--content-comment .quotation-right {
@@ -1340,6 +1484,7 @@ video {
   left: 19vw;
   margin-top: -7vw;
   z-index: -1;
+  opacity: 0;
 }
 
 .gv-1001__panel--content-comment .border {
@@ -1349,15 +1494,17 @@ video {
   display: inline-block;
   position: relative;
   top: -2vw;
+  opacity: 0;
 }
 
 .gv-1001__panel--content-copylight {
+  opacity: 0;
   margin-top: -1vw;
   font-style: normal;
   font-size: 3.2vw;
   line-height: 4.5vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -1384,20 +1531,27 @@ video {
 }
 
 .meterial-hope__panel--title {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  position: relative;
   text-indent: -99999px;
   display: block;
   width: 59vw;
-  height: 20vw;
+  height: 21vw;
   background: url("../img/meterial-hope-title.png") no-repeat;
   background-size: 100% 100%;
 }
 
 .meterial-hope__panel .solution--title {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
   color: #fff;
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   margin-top: 7vw;
 }
@@ -1408,6 +1562,7 @@ video {
 }
 
 .meterial-hope__panel .solution--list .solution--item {
+  opacity: 0;
   position: absolute;
   color: #fff;
   text-align: justify;
@@ -1418,8 +1573,8 @@ video {
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
   display: block;
   background: #03007b;
   position: absolute;
@@ -1427,7 +1582,7 @@ video {
 }
 
 .meterial-hope__panel .solution--list .solution--item-text {
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   font-size: 3.8vw;
   line-height: 6.5vw;
@@ -1478,12 +1633,15 @@ video {
 }
 
 .meterial-hope__panel .solution--explain {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
   color: #fff;
   font-size: 3.8vw;
   line-height: 6.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   position: relative;
   top: 165vw;
   z-index: 2;
@@ -1497,6 +1655,7 @@ video {
 }
 
 .meterial-hope__panel--table {
+  opacity: 0;
   position: absolute;
   width: 100%;
   color: #fff;
@@ -1507,6 +1666,16 @@ video {
 
 .meterial-hope__panel--table-cell {
   border-top: 3px solid #fff;
+}
+
+.meterial-hope__panel--table-cell.before {
+  border-bottom: 0;
+}
+
+.meterial-hope__panel--table-cell.more {
+  opacity: 0;
+  pointer-events: none;
+  border-top: 0;
   border-bottom: 3px solid #fff;
 }
 
@@ -1531,7 +1700,7 @@ video {
   font-size: 3.6vw;
   line-height: 6vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
   border: 1px solid #fff;
 }
@@ -1551,12 +1720,12 @@ video {
   font-size: 3vw;
   line-height: 4.5vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
 }
 
 .meterial-hope__panel--table .block {
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
 }
 
@@ -1599,11 +1768,6 @@ video {
   pointer-events: none;
 }
 
-.meterial-hope__panel--table tbody {
-  opacity: 0;
-  pointer-events: none;
-}
-
 .outro {
   position: relative;
   padding: 0;
@@ -1640,6 +1804,9 @@ video {
   background: url("../img/outro-title.png") no-repeat;
   background-size: 100% 100%;
   margin: 0 auto;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
 }
 
 .outro__panel--content {
@@ -1648,21 +1815,25 @@ video {
 }
 
 .outro__panel--content-text {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
   font-size: 3.8vw;
   line-height: 6.7vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   margin-top: 10vw;
   margin-bottom: 6vw;
 }
 
 .outro__panel--content-strong {
+  opacity: 0;
   font-size: 4.3vw;
   line-height: 6.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
 }
 
 .outro__panel--content-comment {
@@ -1674,8 +1845,6 @@ video {
   font-size: 4.3vw;
   line-height: 7.5vw;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
   top: 150vw;
   padding-left: 5vw;
   padding-bottom: 3vw;
@@ -1683,7 +1852,14 @@ video {
   border-bottom: 2px solid;
 }
 
+.outro__panel--content-comment span {
+  opacity: 0;
+  font-weight: 400;
+  display: block;
+}
+
 .outro__panel--content-comment .quotation-left {
+  opacity: 0;
   background: url("../img/quotation-left-s.png") no-repeat;
   background-size: 100% 100%;
   position: absolute;
@@ -1694,6 +1870,7 @@ video {
 }
 
 .outro__panel--content-comment .quotation-right {
+  opacity: 0;
   background: url("../img/quotation-right-s.png") no-repeat;
   background-size: 100% 100%;
   position: absolute;
@@ -1704,12 +1881,13 @@ video {
 }
 
 .outro__panel--content-comment .underline {
+  opacity: 0;
   border-top: 1px solid #fff;
   font-style: normal;
   font-size: 3.2vw;
   line-height: 4.5vw;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   width: 40vw;
   margin-top: 14vw;
@@ -1724,6 +1902,7 @@ video {
 }
 
 .outro__panel--content-person {
+  opacity: 0;
   background: url("../img/jorgen-winroth.png") no-repeat;
   position: absolute;
   bottom: 0;

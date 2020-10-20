@@ -35,12 +35,10 @@ window.onload = function () {}
         var h = window.innerHeight;
         // ((브라우저높이 - paper) / 2 ) - gnb
         paperY = ~~((h - 574) / 2) - 45;
-        console.log('paperY = ' + paperY);
-        //paperY = 0;
-        ////transform: translateY(20vh) scale(0.3);
-        //gsap.set('.intro-news__paper', {scale: 0.35, y: paperY});
-        gsap.set('.intro-news', { width: '100%' });
-        gsap.set('.intro-news__paper', { scale: 0.35, y: '20vh', rotate: 0, top: -535 });
+        //console.log('paperY = ' + paperY);
+
+        //gsap.set('.intro-news', {width: '100%'});
+        //gsap.set('.intro-news__paper', {scale: 0.35, y: '20vh', rotate: 0, top: -535});
     };
 
     contentResize();
@@ -110,16 +108,35 @@ window.onload = function () {}
         triggerElement: ".alzheimer",
         triggerHook: 0.6
     }).setTween(alzheimerAction).addTo(ctrl);
+
     // alzheimer 
 
     // alzheimer-hope
-    var alzheimerHopeAction = new TimelineLite().to('.alzheimer-hope__text-title', 0.8, { opacity: 1, y: 0 }, 0.2).to('.alzheimer-hope__comment-text', 0.6, { opacity: 1 }, 0.4).to('.alzheimer-hope__text-explain', 1, { opacity: 1, y: 0 }, 0.6).to('.alzheimer-hope__comment-copylight', 0.8, { opacity: 1 }, 1);
-    //.to('.alzheimer-hope__person', 1, {opacity: 1, x: 0}, 0.5)
+    var alzheimerHopeAction = new TimelineLite().to('.alzheimer-hope__text-title', 0.8, { opacity: 1, y: 0 }, 0.2).to('.alzheimer-hope__comment .quotation-left', 0.6, { opacity: 1 }, 0.4).to('.alzheimer-hope__comment .quotation-right', 0.6, { opacity: 1 }, 0.4).to('.alzheimer-hope__comment-text', 0.6, { opacity: 1 }, 0.8).to('.alzheimer-hope__text-explain', 1, { opacity: 1, y: 0 }, 1).to('.alzheimer-hope__comment-copylight', 0.8, { opacity: 1 }, 1.2);
 
     var alzheimerHopeScene = new ScrollMagic.Scene({
         triggerElement: ".alzheimer-hope",
         triggerHook: 0.6
     }).setTween(alzheimerHopeAction).addTo(ctrl);
+
+    gsap.set('.alzheimer-hope__comment-text', { fontWeight: '400', scale: 0.9 });
+    var alzheimerHopeTextScene = new ScrollMagic.Scene({
+        triggerElement: ".alzheimer-hope__comment-text",
+        triggerHook: 0.8,
+        duration: 500
+    }).addTo(ctrl).on("progress", function (e) {
+        var textProgress1 = e.progress.toFixed(1);
+        if (textProgress1 >= 0.3) {
+            gsap.to('.alzheimer-hope__comment-text', 1, { fontWeight: '400', scale: 0.9 });
+        }
+        if (textProgress1 >= 0.6) {
+            gsap.to('.alzheimer-hope__comment-text', 1, { fontWeight: '500', scale: 0.95 });
+        }
+        if (textProgress1 >= 0.9) {
+            gsap.to('.alzheimer-hope__comment-text', 1, { fontWeight: '700', scale: 1 });
+        }
+    });
+
     // alzheimer-hope
 
 
@@ -132,10 +149,20 @@ window.onload = function () {}
     }).setTween(conversionHopeAction).addTo(ctrl);
 
     $('.drag__cover--btn').hover(function () {
-        //gsap.to('.drag__cover--btn', 0.5, {opacity: 0, delay: 0.1});
+        gsap.to('.drag__cover--btn', 0.4, { opacity: 0, delay: 0.3 });
         gsap.to('.drag__cover', 0.8, { scaleX: 0, delay: 0.4 });
-        gsap.to('.conversion__content--before-graph', 0.6, { opacity: 1, delay: 0.6 });
-        gsap.to('.conversion__content--after-graph', 0.6, { opacity: 1, delay: 0.8 });
+        //gsap.to('.conversion__content--after-graph', 0.6, {opacity: 1, delay: 0.8});
+
+        gsap.to('.conversion__content--before-graph span', 0.8, { opacity: 1, delay: 0.8 });
+
+        gsap.to('.conversion__content--after-graph .round.first', 1, { scale: 1, delay: 0.8 });
+        gsap.to('.conversion__content--after-graph .round.second', 1, { scale: 1, delay: 1 });
+        gsap.to('.conversion__content--after-graph .round.third', 1, { scale: 1, delay: 1.2 });
+
+        gsap.to('.conversion__content--after-graph .round.first span', 0.8, { opacity: 1, delay: 1.4 });
+        gsap.to('.conversion__content--after-graph .round.second span', 0.8, { opacity: 1, delay: 1.6 });
+        gsap.to('.conversion__content--after-graph .round.third span', 0.8, { opacity: 1, delay: 1.8 });
+
         gsap.to('.conversion__now', 0.8, { opacity: 1, delay: 0.8 });
     });
 
@@ -324,6 +351,32 @@ window.onload = function () {}
         console.log('leave');
         $(".meterial__panel--inner-list-item").removeClass('active');
     });
+
+    /*
+    gsap.set('.meterial__panel--inner-detail-hide', {fontWeight: '400', scale:0.9});
+    var meterialTextScene = new ScrollMagic.Scene({
+        triggerElement: ".meterial__panel--inner-detail-text",
+        triggerHook: 0.8,
+        duration: 500
+    }).addTo(ctrl).on("progress", function (e) {
+          var textProgress1 = e.progress.toFixed(1);
+        if( textProgress1 >= 0.3){
+            gsap.to('.meterial__panel--inner-detail-hide', 1, {fontWeight: '400', scale:0.9});
+        }
+        if( textProgress1 >= 0.6){
+            gsap.to('.meterial__panel--inner-detail-hide', 1, {fontWeight: '500', scale:0.95});
+        }
+        if( textProgress1 >= 0.9){
+            gsap.to('.meterial__panel--inner-detail-hide', 1, {fontWeight: '700', scale:1});
+        }
+      })
+    .addIndicators({
+        colorTrigger: "red", //트리거 팁 색상
+        colorStart: "red", //스타트 팁 색상
+        colorEnd: "red", //종료 팁 색상
+        indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
+     });
+     */
     // meterial
 
 
@@ -336,11 +389,34 @@ window.onload = function () {}
         triggerElement: ".gv-1001",
         triggerHook: 0.4
     }).setTween(gv1001Action).addTo(ctrl);
+
+    gsap.set('.gv-1001__panel--content-text', { fontWeight: '400', scale: 0.9 });
+    var gv1001TextScene = new ScrollMagic.Scene({
+        triggerElement: ".gv-1001__panel--content-text",
+        triggerHook: 0.8,
+        duration: 500
+    }).addTo(ctrl).on("progress", function (e) {
+
+        var textProgress1 = e.progress.toFixed(1);
+        if (textProgress1 >= 0.3) {
+            gsap.to('.gv-1001__panel--content-text', 1, { fontWeight: '400', scale: 0.9 });
+        }
+        if (textProgress1 >= 0.6) {
+            gsap.to('.gv-1001__panel--content-text', 1, { fontWeight: '500', scale: 0.95 });
+        }
+        if (textProgress1 >= 0.9) {
+            gsap.to('.gv-1001__panel--content-text', 1, { fontWeight: '700', scale: 1 });
+        }
+    });
     // gv-1001
 
 
     // meterial-hope
-    var meterialhopeAction = new TimelineLite().to('.meterial-hope__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.meterial-hope__panel--table', 1, { opacity: 1 }, 0.4).to('.table__background', 1.2, { opacity: 1 }, 0.6).to('.solution--title', 0.8, { opacity: 1, y: 0 }, 0.8).to('.solution--item:nth-of-type(1)', 1, { opacity: 1 }, 1).to('.solution--item:nth-of-type(2)', 1, { opacity: 1 }, 1.4).to('.solution--item:nth-of-type(3)', 1, { opacity: 1 }, 1.8).to('.solution--explain', 0.8, { opacity: 1, y: 0 }, 2);
+    var meterialhopeAction = new TimelineLite().to('.meterial-hope__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.meterial-hope__panel--table', 1, { opacity: 1 }, 0.4).to('.table__background', 1.2, { opacity: 1 }, 0.6).to('.solution--title', 0.8, { opacity: 1, y: 0 }, 0.8)
+    //.to('.solution--item:nth-of-type(1)', 1, {opacity: 0.3}, 1)
+    //.to('.solution--item:nth-of-type(2)', 1, {opacity: 0.3}, 1.4)
+    //.to('.solution--item:nth-of-type(3)', 1, {opacity: 0.3}, 1.8)
+    .to('.solution--explain', 0.8, { opacity: 1, y: 0 }, 2);
     //.to('.meterial-hope__panel--explain', 0.6, {opacity: 1, y: 0}, 0.6)
 
     var tableBgRotate = new TimelineLite({ paused: true, repeat: -1 }).to('.table__background li:nth-of-type(1)', 2, { background: '#1e00ff' }, 0).to('.table__background li:nth-of-type(2)', 2, { background: '#1e00ff' }, 2).to('.table__background li:nth-of-type(1)', 0.5, { background: '#0c0066' }, 2).to('.table__background li:nth-of-type(3)', 2, { background: '#1e00ff' }, 4).to('.table__background li:nth-of-type(2)', 0.5, { background: '#0c0066' }, 4).to('.table__background li:nth-of-type(4)', 2, { background: '#1e00ff' }, 6).to('.table__background li:nth-of-type(3)', 0.5, { background: '#0c0066' }, 6);
@@ -381,7 +457,7 @@ window.onload = function () {}
 
     var outroScene = new ScrollMagic.Scene({
         triggerElement: ".outro",
-        triggerHook: 0.1,
+        triggerHook: 0.4,
         offset: 400
     }).setTween(outroAction).addTo(ctrl);
     //.addIndicators({
@@ -390,6 +466,26 @@ window.onload = function () {}
     //    colorEnd: "white", //종료 팁 색상
     //    indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
     //  });
+
+
+    gsap.set('.outro__panel--content-comment .textMotion', { fontWeight: '400', scale: 0.9 });
+    var outroTextScene = new ScrollMagic.Scene({
+        triggerElement: ".outro__panel--content-comment",
+        triggerHook: 0.8,
+        duration: 500
+    }).addTo(ctrl).on("progress", function (e) {
+
+        var textProgress1 = e.progress.toFixed(1);
+        if (textProgress1 >= 0.3) {
+            gsap.to('.outro__panel--content-comment .textMotion', 1, { fontWeight: '400', scale: 0.9 });
+        }
+        if (textProgress1 >= 0.6) {
+            gsap.to('.outro__panel--content-comment .textMotion', 1, { fontWeight: '500', scale: 0.95 });
+        }
+        if (textProgress1 >= 0.9) {
+            gsap.to('.outro__panel--content-comment .textMotion', 1, { fontWeight: '700', scale: 1 });
+        }
+    });
     // outro
 
 

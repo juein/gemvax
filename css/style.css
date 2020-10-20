@@ -1,84 +1,5 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'Noto Serif';
-  font-weight: 400;
-  src: url("../fonts/NotoSerifKR-Regular.eot");
-  src: url("../fonts/NotoSerifKR-Regular.woff") format("woff"), url("../fonts/NotoSerifKR-Regular.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 100;
-  src: url("../fonts/NotoSansCJKkr-Thin.eot");
-  src: url("../fonts/NotoSansCJKkr-Thin.woff") format("woff"), url("../fonts/NotoSansCJKkr-Thin.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 200;
-  src: url("../fonts/NotoSansCJKkr-Light.eot");
-  src: url("../fonts/NotoSansCJKkr-Light.woff") format("woff"), url("../fonts/NotoSansCJKkr-Light.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 300;
-  src: url("../fonts/NotoSansCJKkr-DemiLight.eot");
-  src: url("../fonts/NotoSansCJKkr-DemiLight.woff") format("woff"), url("../fonts/NotoSansCJKkr-DemiLight.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 400;
-  src: url("../fonts/NotoSansCJKkr-Regular.eot");
-  src: url("../fonts/NotoSansCJKkr-Regular.woff") format("woff"), url("../fonts/NotoSansCJKkr-Regular.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 500;
-  src: url("../fonts/NotoSansCJKkr-Medium.eot");
-  src: url("../fonts/NotoSansCJKkr-Medium.woff") format("woff"), url("../fonts/NotoSansCJKkr-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 600;
-  src: url("../fonts/NotoSansCJKkr-Bold.eot");
-  src: url("../fonts/NotoSansCJKkr-Bold.woff") format("woff"), url("../fonts/NotoSansCJKkr-Bold.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 700;
-  src: url("../fonts/NotoSansCJKkr-Black.eot");
-  src: url("../fonts/NotoSansCJKkr-Black.woff") format("woff"), url("../fonts/NotoSansCJKkr-Black.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Serif CJK KR';
-  font-weight: 500;
-  src: url("../fonts/NotoSerifKR-Regular.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Serif CJK KR';
-  font-weight: 500;
-  src: url("../fonts/NotoSerifKR-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Serif CJK KR';
-  font-weight: 600;
-  src: url("../fonts/NotoSerifKR-Bold.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Serif CJK KR';
-  font-weight: 700;
-  src: url("../fonts/NotoSerifKR-Black.otf") format("truetype");
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@500;600&display=swap");
 .joins_gnb {
   height: 32px;
 }
@@ -103,7 +24,7 @@ video {
 }
 
 body {
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.4;
   letter-spacing: -0.075em;
   background: #fff;
@@ -311,6 +232,8 @@ i {
   left: 50%;
   margin-left: -650px;
   background: #fff;
+  -webkit-transform: scale(0.35) translateY(20vh) rotate(0);
+          transform: scale(0.35) translateY(20vh) rotate(0);
 }
 
 .intro-news__paper--panel {
@@ -370,14 +293,14 @@ i {
   background: url("../img/intro_news_title_3.png") no-repeat;
   width: 775px;
   height: 75px;
-  margin: 330px auto 60px auto;
+  margin: 400px auto 60px auto;
 }
 
 .intro-news__paper--content {
-  width: 1080px;
+  width: 1120px;
   margin: 0 auto;
   border-bottom: 2px solid #000;
-  padding: 50px 0;
+  padding: 50px 0 60px 0;
 }
 
 .intro-news__paper--content-list {
@@ -388,13 +311,13 @@ i {
 .intro-news__paper--content-list-item {
   text-align: justify;
   float: left;
-  width: 315px;
+  width: 328px;
   height: 420px;
   margin: 0 20px;
   font-size: 21px;
   line-height: 37px;
   letter-spacing: -0.07em;
-  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-family: 'Noto Serif KR', sans-serif;
   font-weight: 400;
 }
 
@@ -410,16 +333,17 @@ i {
   font-size: 18px;
   line-height: 17px;
   letter-spacing: -0.05em;
-  font-family: 'Noto Serif CJK KR', sans-serif;
+  font-family: 'Noto Serif KR', sans-serif;
   font-weight: 400;
 }
 
 .alzheimer {
   width: 100%;
-  height: 1240px;
+  height: 1340px;
   position: relative;
   overflow: hidden;
   background: #fff;
+  top: 80px;
 }
 
 .alzheimer__panel {
@@ -465,8 +389,8 @@ i {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
 }
 
 .alzheimer__headline--info:after {
@@ -501,7 +425,7 @@ i {
   font-size: 21px;
   line-height: 29px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   display: block;
   width: 100%;
@@ -516,8 +440,8 @@ i {
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
 }
 
 .alzheimer__card--item-news.one .contents {
@@ -546,7 +470,7 @@ i {
   background-size: 100% 100%;
   width: 475px;
   height: 295px;
-  top: 330px;
+  top: 320px;
   left: 20px;
   position: absolute;
   opacity: 0;
@@ -582,7 +506,7 @@ i {
   background-size: 100% 100%;
   width: 401px;
   height: 318px;
-  top: 295px;
+  top: 290px;
   left: 80px;
   position: absolute;
   opacity: 0;
@@ -618,7 +542,7 @@ i {
   background-size: 100% 100%;
   width: 401px;
   height: 317px;
-  top: 295px;
+  top: 290px;
   left: 85px;
   position: absolute;
   opacity: 0;
@@ -654,14 +578,16 @@ i {
   background-size: 100% 100%;
   width: 331px;
   height: 325px;
-  top: 285px;
-  left: 140px;
+  top: 275px;
+  left: 130px;
   position: absolute;
   opacity: 0;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .alzheimer__card--item-news .numberring {
@@ -713,11 +639,33 @@ i {
 
 .alzheimer-hope__comment-text {
   opacity: 0;
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/alzheimer-hope__comment.png") no-repeat;
-  width: 375px;
-  height: 464px;
+  font-size: 28px;
+  line-height: 48px;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+  color: #000;
+  font-style: italic;
+  padding-left: 70px;
+}
+
+.alzheimer-hope__comment .quotation-left {
+  opacity: 0;
+  background: url("../img/quotation-left-s.png") no-repeat;
+  width: 61px;
+  height: 42px;
+  position: absolute;
+  margin-top: -60px;
+  margin-left: 40px;
+}
+
+.alzheimer-hope__comment .quotation-right {
+  opacity: 0;
+  background: url("../img/quotation-right-s.png") no-repeat;
+  width: 61px;
+  height: 42px;
+  position: absolute;
+  margin-top: 210px;
+  margin-left: 310px;
 }
 
 .alzheimer-hope__comment-copylight {
@@ -725,13 +673,13 @@ i {
   font-size: 21px;
   line-height: 29px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   color: #000;
   border-top: 2px solid #000;
   margin-left: 70px;
   width: 300px;
-  margin-top: 20px;
+  margin-top: 40px;
   padding-top: 15px;
   padding: 15px 2px;
 }
@@ -779,8 +727,8 @@ i {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.02em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
 }
 
 .alzheimer-hope__text:after {
@@ -810,8 +758,8 @@ i {
   height: 265px;
   position: absolute;
   right: 0;
-  border-top: 1px solid #fff;
-  border-left: 1px solid #fff;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -824,7 +772,6 @@ i {
 
 .conversion__panel--flip-line {
   width: 150%;
-  border-bottom: 1px solid #fff;
   position: absolute;
   background: #03007b;
   height: 100%;
@@ -895,13 +842,26 @@ i {
 }
 
 .conversion__content--before-graph {
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/conversion_before_graph.png") no-repeat;
   width: 400px;
   height: 400px;
+  border-radius: 50%;
+  background: #03007b;
   margin-top: 70px;
   margin-left: 130px;
+  position: relative;
+}
+
+.conversion__content--before-graph span {
+  color: #fff;
+  font-size: 26px;
+  line-height: 35px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 165px;
   opacity: 0;
 }
 
@@ -911,8 +871,8 @@ i {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
   width: 400px;
   text-align: justify;
   word-break: break-all;
@@ -946,9 +906,8 @@ i {
 
 .conversion__content--after .drag__cover--btn {
   position: absolute;
-  top: 715px;
-  background: #03007b;
-  border-radius: 50%;
+  top: 675px;
+  background: none;
   width: 200px;
   height: 200px;
   left: -60px;
@@ -975,14 +934,61 @@ i {
 }
 
 .conversion__content--after-graph {
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/conversion_after_graph.png") no-repeat;
-  width: 440px;
-  height: 404px;
   margin-top: 70px;
   margin-left: 60px;
+  width: 440px;
+  height: 404px;
+  position: relative;
+}
+
+.conversion__content--after-graph .round {
+  position: absolute;
+  width: 234px;
+  height: 234px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.conversion__content--after-graph .round i {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.7;
+  display: inline-block;
+}
+
+.conversion__content--after-graph .round span {
   opacity: 0;
+  color: #03007b;
+  font-size: 26px;
+  line-height: 35px;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 80px;
+  left: 0;
+  text-align: center;
+}
+
+.conversion__content--after-graph .round.first {
+  left: 110px;
+}
+
+.conversion__content--after-graph .round.second {
+  bottom: 0;
+}
+
+.conversion__content--after-graph .round.third {
+  bottom: 0;
+  right: 0;
+}
+
+.conversion__content--after-graph .round.third span {
+  top: 95px;
 }
 
 .conversion__content--after-detail {
@@ -990,7 +996,7 @@ i {
   font-size: 21px;
   line-height: 39px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   width: 400px;
   text-align: justify;
@@ -1068,7 +1074,7 @@ i {
   font-size: 21px;
   line-height: 38px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -1117,13 +1123,13 @@ i {
 
 .drug-spec__panel--inner .step_2 .explain-text {
   width: 400px;
-  margin-top: 115px;
+  margin-top: 210px;
   margin-left: 60px;
 }
 
 .drug-spec__panel--inner .step_2 .chart-1 {
   position: absolute;
-  top: -360px;
+  top: -410px;
   right: 125px;
   background: url("../img/drug-step1__chart-1.png") no-repeat;
   width: 397px;
@@ -1132,7 +1138,7 @@ i {
 
 .drug-spec__panel--inner .step_2 .chart-2 {
   position: absolute;
-  top: -360px;
+  top: -410px;
   right: 125px;
   background: url("../img/drug-step1__chart-2.png") no-repeat;
   width: 397px;
@@ -1141,7 +1147,7 @@ i {
 
 .drug-spec__panel--inner .step_2 .chart-3 {
   position: absolute;
-  top: -360px;
+  top: -410px;
   right: 125px;
   background: url("../img/drug-step1__chart-3.png") no-repeat;
   width: 397px;
@@ -1150,7 +1156,7 @@ i {
 
 .drug-spec__panel--inner .step_3 .explain-text {
   width: 400px;
-  margin-top: 115px;
+  margin-top: 210px;
   margin-left: 60px;
 }
 
@@ -1159,8 +1165,8 @@ i {
   background: url("../img/drug-step2__chart-1.png") no-repeat;
   width: 518px;
   height: 396px;
-  top: -360px;
-  right: 125px;
+  top: -392px;
+  right: 60px;
 }
 
 .drug-spec__panel--inner .step_3 .chart-2 {
@@ -1168,8 +1174,8 @@ i {
   background: url("../img/drug-step2__chart-2.png") no-repeat;
   width: 521px;
   height: 414px;
-  top: -380px;
-  right: 120px;
+  top: -410px;
+  right: 55px;
 }
 
 .drug-spec__panel--navigation {
@@ -1230,14 +1236,14 @@ i {
   width: 100%;
   z-index: 3;
   left: 75px;
-  top: 415px;
+  top: 165px;
 }
 
 .drug-spec__panel .buttonArea .swiper-pagination-bullet {
   width: 15px;
   height: 15px;
   margin-right: 35px;
-  background: #ff00ff;
+  background: #bb2bbb;
   opacity: 1;
   position: absolute;
 }
@@ -1253,7 +1259,7 @@ i {
 .drug-spec__panel .buttonArea .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
   content: '';
   display: inline-block;
-  border: 1px solid #ff00ff;
+  border: 1px solid #bb2bbb;
   width: 54px;
   height: 54px;
   border-radius: 50%;
@@ -1311,7 +1317,7 @@ i {
   font-size: 30px;
   line-height: 38px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
   text-align: center;
   margin-top: 144px;
@@ -1356,7 +1362,7 @@ i {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   margin: 0;
   text-align: left;
@@ -1377,6 +1383,8 @@ i {
 .meterial__panel--inner-list-item.active .on {
   opacity: 1;
   color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
 }
 
 .meterial__panel--inner-list-item.active .inner-content {
@@ -1405,7 +1413,7 @@ i {
   font-size: 26px;
   line-height: 55px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -1413,8 +1421,8 @@ i {
   font-size: 30px;
   line-height: 50px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
   padding: 2px 20px;
   background: #000;
   position: relative;
@@ -1520,11 +1528,10 @@ i {
 .gv-1001__panel--content-text {
   opacity: 0;
   font-style: italic;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 48px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   z-index: 1;
   position: relative;
 }
@@ -1537,7 +1544,7 @@ i {
   font-size: 21px;
   line-height: 29px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -1578,7 +1585,7 @@ i {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   word-break: break-all;
 }
@@ -1660,8 +1667,8 @@ i {
   font-size: 19px;
   line-height: 36px;
   letter-spacing: -0.02em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
 }
 
 .meterial-hope__panel--table-cell .table-group-1 {
@@ -1676,16 +1683,8 @@ i {
   width: 310px;
 }
 
-.meterial-hope__panel--table-cell .table-group-4 {
-  width: 85px;
-}
-
-.meterial-hope__panel--table-cell .table-group-5 {
-  width: 110px;
-}
-
 .meterial-hope__panel--table-cell th {
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
   padding: 1px 0;
 }
@@ -1700,8 +1699,8 @@ i {
 
 .meterial-hope__panel--table-cell td.matter-name {
   color: #06ff7b;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
 }
 
 .meterial-hope__panel--table-cell td.line {
@@ -1711,7 +1710,7 @@ i {
 .meterial-hope__panel--table-cell td.line .block {
   display: block;
   position: absolute;
-  width: 170px;
+  width: 228px;
   top: 5px;
 }
 
@@ -1720,7 +1719,8 @@ i {
   display: block;
   position: absolute;
   top: 20px;
-  left: 30px;
+  left: 0px;
+  width: 100%;
 }
 
 .meterial-hope__panel--solution {
@@ -1739,7 +1739,7 @@ i {
   font-size: 26px;
   line-height: 38px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -1753,7 +1753,11 @@ i {
   float: left;
   width: 375px;
   text-align: center;
-  opacity: 0;
+  opacity: 0.3;
+  z-index: 5;
+  position: relative;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .meterial-hope__panel--solution .solution--item-head {
@@ -1762,20 +1766,26 @@ i {
   font-size: 24px;
   line-height: 38px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
 }
 
 .meterial-hope__panel--solution .solution--item-text {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
 .meterial-hope__panel--solution .solution--item:nth-of-type(2) {
   margin: 0 35px;
+}
+
+.meterial-hope__panel--solution .solution--item:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .meterial-hope__panel--solution .solution--item:after {
@@ -1795,7 +1805,7 @@ i {
   font-size: 26px;
   line-height: 49px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
 }
 
@@ -1855,7 +1865,7 @@ i {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -1867,8 +1877,7 @@ i {
   font-size: 26px;
   line-height: 38px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   display: block;
   margin-top: 35px;
@@ -1879,12 +1888,6 @@ i {
   position: absolute;
   text-align: left;
   display: block;
-  font-size: 30px;
-  line-height: 55px;
-  letter-spacing: -0.08em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
-  font-weight: 600;
-  font-style: italic;
   width: 740px;
   left: 50%;
   margin-left: -370px;
@@ -1893,16 +1896,25 @@ i {
   border-bottom: 2px solid;
 }
 
+.outro__panel--content-comment .textMotion {
+  font-size: 28px;
+  line-height: 48px;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+}
+
 .outro__panel--content-comment .underline {
   font-size: 24px;
   line-height: 35px;
   letter-spacing: -0.04em;
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   border-bottom: 1px solid #fff;
   padding-bottom: 6px;
   font-style: normal;
-  width: 300px;
+  width: 320px;
   border-top: 1px solid;
   border-bottom: 0;
   text-align: left;

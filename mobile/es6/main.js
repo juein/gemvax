@@ -1,118 +1,88 @@
 // onload
 window.onload = function(){
-    //console.log('onload');
+
 }
 // onload
+
 
 
 window.addEventListener('DOMContentLoaded', () => { 
 
     //리로드시 최상단으로
     window.onbeforeunload = function () {
-        //window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
         //console.clear(); 
     }
 
     const ctrl = new ScrollMagic.Controller();
 
     // default setting
-    const defaultSet = () => {
-        console.log('default set');
-        //gsap.set('.alzheimer__headline--title', {opacity: 0, y: -40});
-        //gsap.set('.alzheimer__headline--info', {opacity: 0, y: -40});
-    }
-
-
-    // intro-news
     let introHeight, paperSize;
-    const contentResize = () => {
+    const defaultSet = () => {
+        //console.log('default set');
         let h = window.innerHeight;
         paperSize = ~~( $('.intro-news__paper').height() * 0.3);
-        introHeight = ~~( $('.intro-news').height() * 2 );
-        gsap.set('.intro-news', {width: '100%' });
-        gsap.set('.intro-news__paper', {marginTop: -(paperSize / 2), width: '160%', marginLeft: '-80%', top: '50%'});
+        introHeight = ~~( $('.intro-news').height() );
+        
+        gsap.set('.intro-news', {width: '100%', height: '100vh' });
+        gsap.set('.intro-news__paper',  {scale: 0.3, top: '50%', width: '160%', marginLeft: '-80%', marginTop: -(paperSize / 2)});
+        gsap.set('.intro-news__paper--box', {rotate: 0});
+        gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
+        
     }
-    contentResize();
-    window.addEventListener("resize", contentResize);
 
-    var introNewsScene = new ScrollMagic.Scene({
-        triggerElement: ".intro-news",
-        triggerHook: "onLeave",
-        duration: introHeight,
-        offset: -50
-      }).setPin(".intro-news")
-      .addTo(ctrl).on("progress", function (e) {
-
-        let paperScalePoint = e.progress.toFixed(1);
-        let paperScaleUnit = 0.065;
-
-        console.log('paperScalePoint = ' + paperScalePoint);
-        
-        if( paperScalePoint == 0 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.3, top: '50%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: 0});
-        }else if( paperScalePoint <= 0.1 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.415, top: '40%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -45});
-            gsap.to('.intro-news', 0.5, {height: '100vh'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        }else if( paperScalePoint <= 0.2 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.48, top: '30%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -90});
-            gsap.to('.intro-news', 0.5, {height: '100vh'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        }else if( paperScalePoint <= 0.3 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.545, top: '30%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -135});
-            gsap.to('.intro-news', 0.5, {height: '100vh'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        }else if( paperScalePoint <= 0.4 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.61, top: '30%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -180});
-            gsap.to('.intro-news', 0.5, {height: '100vh'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        }else if( paperScalePoint <= 0.5 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.675, top: '25%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -225});
-            gsap.to('.intro-news', 0.5, {height: '100vh'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        }else if( paperScalePoint <= 0.6 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.74, top: '20%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -270});
-            gsap.to('.intro-news', 0.5, {height: '100vh'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        }else if( paperScalePoint <= 0.7 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.805, top: '20%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -315});
-            gsap.to('.intro-news', 0.5, {height: '100vh'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        }else if( paperScalePoint <= 0.8 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 0.87, top: '15%', marginTop: -(paperSize / 2)});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -345});
-            gsap.to('.intro-news', 0.5, {height: '100vh'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        }else if( paperScalePoint <= 0.9 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 1, top: '0', marginTop: 0});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -360});
-            gsap.to('.intro-news', 0.5, {height: '250vw'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'scroll'});
-        }else if( paperScalePoint <= 1 ){
-            gsap.to('.intro-news__paper', 0.5, {scale: 1, top: '0', marginTop: 0});
-            gsap.to('.intro-news__paper--box', 0.5, {rotate: -360});
-            gsap.to('.intro-news', 0.5, {height: '250vw'});
-            gsap.set('.intro-news__paper--content p', {overflowY: 'scroll'});
-        }
-        
-      });
-      //.addIndicators({
-      //  colorTrigger: "red", //트리거 팁 색상
-      //  colorStart: "red", //스타트 팁 색상
-      //  colorEnd: "red", //종료 팁 색상
-      //  indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-      //});
 
     // intro-news
+    //let introHeight, paperSize;
+    //const contentResize = () => {
+    //    
+    //}
+    //contentResize();
+    //window.addEventListener("resize", contentResize);
 
+    
+    var introRotateAction = new TimelineLite({paused: true})
+    .set('body', {overflow: 'hidden'}, 0)
+    .to('.intro-news__paper', 1, {scale: 1, top: '0', marginTop: 0}, 0)
+    .to('.intro-news__paper--box', 1, {rotate: -360}, 0)
+    .set('.intro-news', {height: '250vw'}, 0.1)
+    .set('.intro-news__paper--content p', {overflowY: 'scroll'}, 0.9)
+    .set('body', {overflow: 'visible'}, 1.2)
+
+    
+   var introNewsScene = new ScrollMagic.Scene({
+        triggerElement: ".intro-news",
+        triggerHook: "onLeave",
+        duration: introHeight
+    })
+    .addTo(ctrl).on("enter leave progress", function (e) {
+        if(e.type == 'enter'){
+            introRotateAction.play();
+        }else if(e.type == 'leave'){
+            introRotateAction.reverse();
+        }
+    });
+    //.addIndicators({
+    //    colorTrigger: "yellow", //트리거 팁 색상
+    //    colorStart: "yellow", //스타트 팁 색상
+    //    colorEnd: "yellow", //종료 팁 색상
+    //    indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
+    //});
+       
+    // intro-news
+
+    // alzheimer 
+    
+
+    var alzheimerAction = new TimelineLite()
+    .to('.alzheimer__headline--title', 0.6, {opacity: 1, y: 0}, 0.2)
+    .to('.alzheimer__headline--info', 0.6, {opacity: 1, y: 0}, 0.5)
+
+    var alzheimerScene = new ScrollMagic.Scene({
+        triggerElement: ".alzheimer",
+        triggerHook: 0.6
+    }).setTween(alzheimerAction).addTo(ctrl);
+    // alzheimer 
 
     // alzheimer__card
     var alzheimerSwiper = new Swiper('.alzheimer__card', {
@@ -121,18 +91,130 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     // alzheimer__card
 
+    // alzheimer-hope
+    var alzheimerHopeAction =  new TimelineLite()
+    .to('.alzheimer-hope__text-title', 0.8, {opacity: 1, y: 0}, 0.2)
+    .to('.alzheimer-hope__comment .quotation-left', 0.6, {opacity: 1}, 0.7)
+    .to('.alzheimer-hope__comment .quotation-right', 0.6, {opacity: 1}, 0.7)
+    .to('.alzheimer-hope__comment-text', 0.6, {opacity: 1, y: 0}, 1.2)
+    .to('.alzheimer-hope__text-explain', 1, {opacity: 1, y: 0}, 0.8)
+    .to('.alzheimer-hope__comment .underline', 0.6, {scaleX: 1}, 1)
+    .to('.alzheimer-hope__comment-copylight', 0.8, {opacity: 1}, 1.4)
+
+    var alzheimerHopeScene = new ScrollMagic.Scene({
+        triggerElement: ".alzheimer-hope",
+        triggerHook: 0.6
+    }).setTween(alzheimerHopeAction).addTo(ctrl);
+
+    gsap.set('.alzheimer-hope__comment-text', {fontWeight: '400', scale:0.9});
+    var alzheimerHopeTextScene = new ScrollMagic.Scene({
+        triggerElement: ".alzheimer-hope__comment-text",
+        triggerHook: 0.6,
+        duration: Number($('.alzheimer-hope__comment-text').height())
+    }).addTo(ctrl).on("progress", function (e) {
+        var textProgress1 = e.progress.toFixed(1);
+        if( textProgress1 >= 0.3){
+            gsap.to('.alzheimer-hope__comment-text', 1, {fontWeight: '400', scale:0.9});
+        }
+        if( textProgress1 >= 0.6){
+            gsap.to('.alzheimer-hope__comment-text', 1, {fontWeight: '500', scale:0.95});
+        }
+        if( textProgress1 >= 0.9){
+            gsap.to('.alzheimer-hope__comment-text', 1, {fontWeight: '700', scale:1});
+        }
+    })
+
+    // alzheimer-hope
+
 
     // conversion
-    $(".cover-btn__before").click( () => {
-        gsap.to('.conversion__content--before', 0.8, {x: '88vw'});
-    })
-    $(".cover-btn__after").click( () => {
-        gsap.to('.conversion__content--before', 0.8, {x: '0vw'});
-    })
+    var conversionSetAction = new TimelineLite()
+    .to('.conversion__content--before-title', 0.6, {opacity: 1, y: 0}, 0)
+    .to('.conversion__content--before-graph', 0.6, {opacity: 1}, 0.4)
+    .to('.conversion__content--before-detail', 0.8, {opacity: 1}, 0.6)
+    .to('.conversion__content--before .conversion__now', 0.6, {opacity: 1}, 1)
+    .to('.conversion__content--before .cover-btn__before', 0.8, {opacity: 1}, 1.2)
+
+    .to('.conversion__content--before-graph .round.first', 1, {scale: 1}, 0.8)
+    .to('.conversion__content--before-graph .round.second', 1, {scale: 1}, 1)
+    .to('.conversion__content--before-graph .round.third', 1, {scale: 1}, 1.2)
+    .to('.conversion__content--before-graph .round.first span', 0.8, {opacity: 1}, 1.4)
+    .to('.conversion__content--before-graph .round.second span', 0.8, {opacity: 1}, 1.6)
+    .to('.conversion__content--before-graph .round.third span', 0.8, {opacity: 1}, 1.8)
+
+
+    var conversionrSwiper = new Swiper('.conversion__swiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        initialSlide : 1,
+        on: {
+            slideChangeTransitionStart: function(){
+                var idx = this.realIndex + 1;
+                gsap.set('.conversion__swiper', {x: '0'});
+                if(idx == 2){
+                    gsap.to('.conversion__swiper', 0.8, {x: '6vw', delay: 0.8});
+                }else {
+                    gsap.to('.conversion__swiper', 0.8, {x: '-6vw', delay: 0.8});
+                    //conversionBeforeHide();
+                }
+            }
+        }
+    });
+    $('.cover-btn__before').click( ()=> {
+        conversionrSwiper.slideTo(0, 600);
+    });
+    $('.cover-btn__after').click( ()=> {
+        conversionrSwiper.slideTo(1, 600);
+    });
+
+    var conversionScene = new ScrollMagic.Scene({
+        triggerElement: ".conversion",
+        triggerHook: 0.6
+    }).setTween(conversionSetAction).addTo(ctrl);
     // conversion
 
 
     // drug-spec
+    var drugSpecAction =  new TimelineLite()
+    .to('.drug-spec__panel--title', 0.6, {opacity: 1, y: 0}, 0.2)
+    .to('.drug-spec__panel--cover', 0.6, {opacity: 1}, 0.4)
+    .to('.drug-spec__panel--navigation', 0.6, {opacity: 1}, 0.6)
+
+    
+
+    var drugSpecScene = new ScrollMagic.Scene({
+        triggerElement: ".drug-spec",
+        triggerHook: 0.6
+    }).setTween(drugSpecAction).addTo(ctrl);
+
+    const drugSpecStep = {
+        step1(){
+            $('.drug-spec__panel--inner').removeClass('active');
+            $('.drug-spec__panel--inner.step_1').addClass('active');
+            gsap.to('.drug-spec__background', 0.6, {opacity: 1});
+            $('.navigation__second').removeClass('active');
+            $('.navigation__thrid').removeClass('active');
+            $('.navigation__first').addClass('active');            
+        },
+        step2(){
+            $('.drug-spec__panel--inner').removeClass('active');
+            $('.drug-spec__panel--inner.step_2').addClass('active');
+            $('.navigation__first').removeClass('active');
+            $('.navigation__thrid').removeClass('active');
+            $('.navigation__second').addClass('active');
+            gsap.to('.drug-spec__background', 0.6, {opacity: 0});
+
+        },
+        step3(){
+            $('.drug-spec__panel--inner').removeClass('active');
+            $('.drug-spec__panel--inner.step_3').addClass('active');
+            $('.navigation__first').removeClass('active');
+            $('.navigation__second').removeClass('active');
+            $('.navigation__thrid').addClass('active');
+            gsap.to('.drug-spec__background', 0.6, {opacity: 0});
+        }
+    }
+
     var drugSwite2 = new Swiper('.drug-swite--2', {
         effect: 'fade',
         fadeEffect: {
@@ -140,7 +222,8 @@ window.addEventListener('DOMContentLoaded', () => {
         },
         speed: 800,
         allowClick : false,
-        allowTouchMove: false,
+        //allowTouchMove: false,
+        allowTouchMove: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -148,7 +231,6 @@ window.addEventListener('DOMContentLoaded', () => {
         on: {
             slideChangeTransitionStart: function(){
                 var idx = this.realIndex + 1;
-                console.log('idx = ' + idx);
                 $('.drug-spec__panel--inner .step_2 .explain-text span').removeClass('active');
                 $('.drug-spec__panel--inner .step_2 .explain-text span.idx-'+idx).addClass('active');
             }
@@ -163,7 +245,8 @@ window.addEventListener('DOMContentLoaded', () => {
         //autoplay: { delay: 500, },
         speed: 500,
         allowClick : false,
-        allowTouchMove: false,
+        //allowTouchMove: false,
+        allowTouchMove : true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -171,16 +254,59 @@ window.addEventListener('DOMContentLoaded', () => {
         on: {
             slideChangeTransitionStart: function(){
                 var idx = this.realIndex + 1;
-                console.log('idx = ' + idx);
                 $('.drug-spec__panel--inner .step_3 .explain-text span').removeClass('active');
                 $('.drug-spec__panel--inner .step_3 .explain-text span.idx-'+idx).addClass('active');
             }
         }
     });
+
+    let drugOffset = $('.drug-spec__offset').height() - 50;
+    var drugSpecScene = new ScrollMagic.Scene({
+        triggerElement: ".drug-spec__pin",
+        triggerHook: "onLeave",
+        duration: ~~(window.innerHeight * 3),
+        offset : drugOffset,
+      }).setPin(".drug-spec__pin")
+      .addTo(ctrl).on("progress", function (e) {
+
+        let drugSpecStepPoint = e.progress.toFixed(1);
+
+            if(drugSpecStepPoint <= 0.3){
+                
+                drugSpecStep.step1();
+            }else if(drugSpecStepPoint <= 0.6){
+                
+                drugSpecStep.step2();
+            }else {
+                
+                drugSpecStep.step3();
+            }
+            
+    });
+    //.addIndicators({
+    //colorTrigger: "red", //트리거 팁 색상
+    //colorStart: "red", //스타트 팁 색상
+    //colorEnd: "red", //종료 팁 색상
+    //indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
+    //});
+
+    
     // drug-spec
 
 
     // meterial
+    var meterialAction =  new TimelineLite()
+    .set('.meterial__panel--title', {opacity: 0, y: 40}, 0)
+    .to('.meterial__panel--title', 0.6, {opacity: 1, y: 0}, 0.2)
+    .to('.meterial__panel--inner-list .round', 0.8, {opacity: 1}, 0.4)
+    .to('.meterial__panel--inner-list .inner-content', 0.8, {opacity: 1}, 0.8)
+    .to('.meterial__panel--inner-detail', 0.6, {opacity: 1}, 1.2)
+
+    var meterialScene = new ScrollMagic.Scene({
+        triggerElement: ".meterial",
+        triggerHook: 0.4
+    }).setTween(meterialAction).addTo(ctrl);
+
     var meterialSwiper = new Swiper('.meterial__panel--inner', {
         slidesPerView: 1,
         spaceBetween: 0,
@@ -192,22 +318,129 @@ window.addEventListener('DOMContentLoaded', () => {
     // meterial
 
 
+    // gv-1001
+    var gv1001Action =  new TimelineLite()
+    .to('.gv-1001__panel--title', 0.6, {opacity: 1, y: 0}, 0.2)
+    .to('.gv-1001__panel--content-video', 1, {opacity: 1}, 0.4)
+    .to('.gv-1001__panel--content-detail-text', 0.6, {opacity: 1, y: 0}, 0.6)
+    .to('.gv-1001__panel--content-comment .quotation-left', 0.6, {opacity: 1}, 1)
+    .to('.gv-1001__panel--content-comment .quotation-right', 0.6, {opacity: 1}, 1)
+    .to('.gv-1001__panel--content-text', 1, {opacity: 1}, 1.3)
+    .to('.gv-1001__panel--content-comment .border', 0.6, {opacity: 1}, 1.5)
+    .to('.gv-1001__panel--content-copylight', 0.6, {opacity: 1}, 1.8)
+
+    var gv1001Scene = new ScrollMagic.Scene({
+        triggerElement: ".gv-1001",
+        triggerHook: 0.5
+    }).setTween(gv1001Action).addTo(ctrl);
+
+    gsap.set('.gv-1001__panel--content-text', {fontWeight: '400', scale:0.9});
+    var gv1001TextScene = new ScrollMagic.Scene({
+        triggerElement: ".gv-1001__panel--content-text",
+        triggerHook: 0.6,
+        duration: Number($('.gv-1001__panel--content-text').height())
+    }).addTo(ctrl).on("progress", function (e) {
+
+        var textProgress1 = e.progress.toFixed(1);
+        if( textProgress1 >= 0.3){
+            gsap.to('.gv-1001__panel--content-text', 1, {fontWeight: '400', scale:0.9});
+        }
+        if( textProgress1 >= 0.6){
+            gsap.to('.gv-1001__panel--content-text', 1, {fontWeight: '500', scale:0.95});
+        }
+        if( textProgress1 >= 0.9){
+            gsap.to('.gv-1001__panel--content-text', 1, {fontWeight: '700', scale:1});
+        }
+
+    });
+    // gv-1001
+
+
     // meterial-hope
+    var meterialhopeAction =  new TimelineLite()
+    .to('.meterial-hope__panel--title', 0.6, {opacity: 1, transform: 'translateY(0)'}, 0.2)
+    .to('.meterial-hope__panel .solution--title', 0.6, {opacity: 1, y: 0}, 0.6)
+    .to('.meterial-hope__panel--table', 0.8, {opacity: 1}, 1)
+    .to('.meterial-hope__panel .solution--list .solution--item.one', 1, {opacity: 1}, 1.4)
+    .to('.meterial-hope__panel .solution--list .solution--item.two', 1, {opacity: 1}, 1.8)
+    .to('.meterial-hope__panel .solution--list .solution--item.three', 1, {opacity: 1}, 2.2)
+    .to('.meterial-hope__panel .solution--explain', 1, {opacity: 1}, 2.4)
+
+
+    var meterialhopeScene = new ScrollMagic.Scene({
+        triggerElement: ".meterial-hope",
+        triggerHook: 0.6,
+    }).setTween(meterialhopeAction).addTo(ctrl);
+
     $('.table-more').click( ()=>{
+        //$('.meterial-hope__panel--table-cell').removeClass('before');
+        //$('.meterial-hope__panel--table-cell').addClass('after');
+
+        gsap.to('.meterial-hope__panel--table-cell.more', {opacity: 1, pointerEvents: 'visible', delay: 0.4});
         gsap.to('.table-more', 0.8, {opacity: 0, pointerEvents: 'none'});
         gsap.to('.table-hide', 0.8, {opacity: 1, pointerEvents: 'visible', delay: 0.4});
-        gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 1, pointerEvents: 'visible'});
+        //gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 1, pointerEvents: 'visible'});
+        //gsap.to('.meterial-hope__panel--table .block-display', 0.6, {opacity: 1, pointerEvents: 'visible'});
         gsap.to('.meterial-hope__panel .solution--list', 0.6, {opacity: 0.2});
     });
 
     $('.table-hide').click( ()=>{
-        console.log('tttttt');
+        //$('.meterial-hope__panel--table-cell').removeClass('after');
+        //$('.meterial-hope__panel--table-cell').addClass('before');
+        gsap.to('.meterial-hope__panel--table-cell.more', {opacity: 0, pointerEvents: 'none'});
+
         gsap.to('.table-hide', 0.8, {opacity: 0, pointerEvents: 'none'});
         gsap.to('.table-more', 0.8, {opacity: 1, pointerEvents: 'visible', delay: 0.4});
-        gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 0, pointerEvents: 'none'});
+        //gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 0, pointerEvents: 'none'});
+        //gsap.to('.meterial-hope__panel--table .block-display', 0.6, {opacity: 0, pointerEvents: 'none'});
         gsap.to('.meterial-hope__panel .solution--list', 0.6, {opacity: 1});
     });
     // meterial-hope
+
+
+    // outro
+    var outroAction =  new TimelineLite()
+    .to('.outro__panel--title', 0.6, {opacity: 1, y: 0}, 0.2)
+    .to('.outro__panel--content-text', 0.6, {opacity: 1, y: 0}, 0.4)
+    .to('.outro__panel--content-strong', 0.8, {opacity: 1}, 0.6)
+    .to('.outro__panel--content-comment .quotation-left', 0.8, {opacity: 1}, 1.2)
+    .to('.outro__panel--content-comment .quotation-right', 0.8, {opacity: 1}, 1.2)
+    .to('.outro__panel--content-comment span', 0.8, {opacity: 1}, 1.4)
+    .to('.outro__panel--content-comment .underline', 0.6, {opacity: 1}, 1.8)
+    .to('.outro__panel--content-person', 1, {opacity: 1}, 1.8)
+    
+    
+
+
+
+    var outroScene = new ScrollMagic.Scene({
+        triggerElement: ".outro",
+        triggerHook: 0.6,
+    }).setTween(outroAction).addTo(ctrl);
+
+
+    gsap.set('.outro__panel--content-comment .weightFont', {fontWeight: '400', scale:0.9});
+    var outroTextScene = new ScrollMagic.Scene({
+        triggerElement: ".outro__panel--content-comment",
+        triggerHook: 0.5,
+        duration: Number($('.outro__panel--content-comment .weightFont').height())
+    }).addTo(ctrl).on("progress", function (e) {
+
+        var textProgress1 = e.progress.toFixed(1);
+        if( textProgress1 >= 0.3){
+            gsap.to('.outro__panel--content-comment .weightFont', 1, {fontWeight: '400', scale:0.9});
+        }
+        if( textProgress1 >= 0.6){
+            gsap.to('.outro__panel--content-comment .weightFont', 1, {fontWeight: '500', scale:0.95});
+        }
+        if( textProgress1 >= 0.9){
+            gsap.to('.outro__panel--content-comment .weightFont', 1, {fontWeight: '700', scale:1});
+        }
+
+    });
+    // outro
+
+
 
 
     defaultSet(); // 기본 셋팅 실행

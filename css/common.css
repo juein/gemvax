@@ -1,43 +1,4 @@
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 300;
-  src: url("../fonts/NotoSansCJKkr-DemiLight.eot");
-  src: url("../fonts/NotoSansCJKkr-DemiLight.woff") format("woff"), url("../fonts/NotoSansCJKkr-DemiLight.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 400;
-  src: url("../fonts/NotoSansCJKkr-Regular.eot");
-  src: url("../fonts/NotoSansCJKkr-Regular.woff") format("woff"), url("../fonts/NotoSansCJKkr-Regular.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 500;
-  src: url("../fonts/NotoSansCJKkr-Medium.eot");
-  src: url("../fonts/NotoSansCJKkr-Medium.woff") format("woff"), url("../fonts/NotoSansCJKkr-Medium.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Sans CJK KR';
-  font-weight: 600;
-  src: url("../fonts/NotoSansCJKkr-Bold.eot");
-  src: url("../fonts/NotoSansCJKkr-Bold.woff") format("woff"), url("../fonts/NotoSansCJKkr-Bold.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Serif CJK KR';
-  font-weight: 500;
-  src: url("../fonts/NotoSerifKR-Regular.otf") format("truetype");
-}
-
-@font-face {
-  font-family: 'Noto Serif CJK KR';
-  font-weight: 600;
-  src: url("../fonts/NotoSerifKR-Bold.otf") format("truetype");
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@500;600&display=swap");
 .joins_gnb {
   height: 32px;
 }
@@ -62,7 +23,7 @@ video {
 }
 
 body {
-  font-family: 'Noto Sans CJK KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.4;
   letter-spacing: -0.075em;
   background: #fff;
