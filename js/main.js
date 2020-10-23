@@ -2,29 +2,17 @@
 
 // 스크립트 시작
 
-//global
-//const pageIntroAction;
-
-// onload
-window.onload = function () {}
-//console.log('onload');
-
-// onload
-
-
-;window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', function () {
 
     //리로드시 최상단으로
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);
-        //console.clear(); 
     };
 
     var ctrl = new ScrollMagic.Controller();
 
     // default setting
     var defaultSet = function defaultSet() {
-        //console.log('default set');
         gsap.set('.alzheimer__headline--title', { opacity: 0, y: -40 });
         gsap.set('.alzheimer__headline--info', { opacity: 0, y: -40 });
     };
@@ -33,12 +21,7 @@ window.onload = function () {}
     var paperY = void 0;
     var contentResize = function contentResize() {
         var h = window.innerHeight;
-        // ((브라우저높이 - paper) / 2 ) - gnb
         paperY = ~~((h - 574) / 2) - 45;
-        //console.log('paperY = ' + paperY);
-
-        //gsap.set('.intro-news', {width: '100%'});
-        //gsap.set('.intro-news__paper', {scale: 0.35, y: '20vh', rotate: 0, top: -535});
     };
 
     contentResize();
@@ -55,51 +38,35 @@ window.onload = function () {}
         var paperScaleUnit = 0.065;
 
         if (paperScalePoint == 0) {
-            //console.log('000');
             gsap.to('.intro-news__paper--annexed', 0.2, { opacity: 0 });
             gsap.to('.intro-news__paper', 0.5, { scale: 0.35, y: '20vh', rotate: 0, top: -535, width: 1300, marginLeft: -650 });
         } else if (paperScalePoint <= 0.1) {
-            //console.log('1');
             gsap.to('.intro-news__paper', 0.5, { scale: 0.415, y: '20vh', rotate: -45, top: -475, width: 'calc(1300px + 10%)', marginLeft: 'calc(-650px - 5%)' });
         } else if (paperScalePoint <= 0.2) {
-            //console.log('2');
             gsap.to('.intro-news__paper', 0.5, { scale: 0.48, y: '15vh', rotate: -90, top: -415, width: 'calc(1300px + 10%)', marginLeft: 'calc(-650px - 5%)' });
         } else if (paperScalePoint <= 0.3) {
-            //console.log('3');
             gsap.to('.intro-news__paper', 0.5, { scale: 0.545, y: '15vh', rotate: -135, top: -355, width: 'calc(1300px + 20%)', marginLeft: 'calc(-650px - 10%)' });
         } else if (paperScalePoint <= 0.4) {
-            //console.log('4');
             gsap.to('.intro-news__paper', 0.5, { scale: 0.61, y: '10vh', rotate: -180, top: -295, width: 'calc(1300px + 20%)', marginLeft: 'calc(-650px - 10%)' });
         } else if (paperScalePoint <= 0.5) {
-            //console.log('5');
             gsap.to('.intro-news__paper', 0.5, { scale: 0.675, y: '10vh', rotate: -225, top: -235, width: 'calc(1300px + 30%)', marginLeft: 'calc(-650px - 15%)' });
         } else if (paperScalePoint <= 0.6) {
-            //console.log('6');
             gsap.to('.intro-news__paper', 0.5, { scale: 0.74, y: '5vh', rotate: -270, top: -175, width: 'calc(1300px + 30%)', marginLeft: 'calc(-650px - 15%)' });
         } else if (paperScalePoint <= 0.7) {
-            //console.log('7');
             gsap.to('.intro-news__paper', 0.5, { scale: 0.805, y: '5vh', rotate: -315, top: -140, width: 'calc(1300px + 40%)', marginLeft: 'calc(-650px - 20%)' });
         } else if (paperScalePoint <= 0.8) {
-            //console.log('8');
             gsap.to('.intro-news__paper', 0.5, { scale: 0.87, y: '2vh', rotate: -360, top: -50, width: 'calc(1300px + 40%)', marginLeft: 'calc(-650px - 20%)' });
         } else if (paperScalePoint <= 0.9) {
-            //console.log('9');
             gsap.to('.intro-news__paper--annexed', 0.2, { opacity: 0 });
             gsap.to('.intro-news__paper', 0.5, { scale: 1, y: 0, rotate: -360, top: -0, width: 'calc(1300px + 50%)', marginLeft: 'calc(-650px - 25%)' });
         } else if (paperScalePoint <= 1) {
-            //console.log('1');
             gsap.to('.intro-news__paper--annexed', 0.2, { opacity: 1 });
             gsap.to('.intro-news__paper', 0.5, { scale: 1, y: 0, rotate: -360, top: -0, width: 'calc(1300px + 50%)', marginLeft: 'calc(-650px - 25%)' });
         }
     });
-    //.addIndicators({
-    //  colorTrigger: "red", //트리거 팁 색상
-    //  colorStart: "red", //스타트 팁 색상
-    //  colorEnd: "red", //종료 팁 색상
-    //  indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-    //  });
 
     // intro-news
+
 
     // alzheimer 
     var alzheimerAction = new TimelineLite().to('.alzheimer__headline--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.alzheimer__headline--info', 0.6, { opacity: 1, y: 0 }, 0.5).to('.alzheimer__card--item-news.one', 0.5, { opacity: 1 }, 0.7).to('.alzheimer__card--item-news.two', 0.5, { opacity: 1 }, 0.8).to('.alzheimer__card--item-news.three', 0.5, { opacity: 1 }, 0.9).to('.alzheimer__card--item-news.four', 0.5, { opacity: 1 }, 1);
@@ -108,8 +75,8 @@ window.onload = function () {}
         triggerElement: ".alzheimer",
         triggerHook: 0.6
     }).setTween(alzheimerAction).addTo(ctrl);
-
     // alzheimer 
+
 
     // alzheimer-hope
     var alzheimerHopeAction = new TimelineLite().to('.alzheimer-hope__text-title', 0.8, { opacity: 1, y: 0 }, 0.2).to('.alzheimer-hope__comment .quotation-left', 0.6, { opacity: 1 }, 0.4).to('.alzheimer-hope__comment .quotation-right', 0.6, { opacity: 1 }, 0.4).to('.alzheimer-hope__comment-text', 0.6, { opacity: 1 }, 0.8).to('.alzheimer-hope__text-explain', 1, { opacity: 1, y: 0 }, 1).to('.alzheimer-hope__comment-copylight', 0.8, { opacity: 1 }, 1.2);
@@ -136,7 +103,6 @@ window.onload = function () {}
             gsap.to('.alzheimer-hope__comment-text', 1, { fontWeight: '700', scale: 1 });
         }
     });
-
     // alzheimer-hope
 
 
@@ -151,18 +117,13 @@ window.onload = function () {}
     $('.drag__cover--btn').hover(function () {
         gsap.to('.drag__cover--btn', 0.4, { opacity: 0, delay: 0.3 });
         gsap.to('.drag__cover', 0.8, { scaleX: 0, delay: 0.4 });
-        //gsap.to('.conversion__content--after-graph', 0.6, {opacity: 1, delay: 0.8});
-
         gsap.to('.conversion__content--before-graph span', 0.8, { opacity: 1, delay: 0.8 });
-
         gsap.to('.conversion__content--after-graph .round.first', 1, { scale: 1, delay: 0.8 });
         gsap.to('.conversion__content--after-graph .round.second', 1, { scale: 1, delay: 1 });
         gsap.to('.conversion__content--after-graph .round.third', 1, { scale: 1, delay: 1.2 });
-
         gsap.to('.conversion__content--after-graph .round.first span', 0.8, { opacity: 1, delay: 1.4 });
         gsap.to('.conversion__content--after-graph .round.second span', 0.8, { opacity: 1, delay: 1.6 });
         gsap.to('.conversion__content--after-graph .round.third span', 0.8, { opacity: 1, delay: 1.8 });
-
         gsap.to('.conversion__now', 0.8, { opacity: 1, delay: 0.8 });
     });
 
@@ -171,50 +132,31 @@ window.onload = function () {}
         duration: "1500",
         triggerHook: 0.99
     }).addTo(ctrl).on("progress", function (e) {
-
         var flipProgress = e.progress.toFixed(1);
-        //let paperScaleUnit = 0.065;
-        //console.log('flipProgress = ' + flipProgress);
         if (flipProgress == 0) {
             gsap.to('.conversion__panel--flip', 0.3, { scale: 1, ease: 'none' });
         } else if (flipProgress <= 0.1) {
-            //console.log('01');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 1.5, ease: 'none' });
         } else if (flipProgress <= 0.2) {
-            //console.log('2');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 2, ease: 'none' });
         } else if (flipProgress <= 0.3) {
-            //console.log('3');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 2.5, ease: 'none' });
         } else if (flipProgress <= 0.4) {
-            //console.log('4');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 3, ease: 'none' });
         } else if (flipProgress <= 0.5) {
-            //console.log('5');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 3.5, ease: 'none' });
         } else if (flipProgress <= 0.6) {
-            //console.log('6');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 4, ease: 'none' });
         } else if (flipProgress <= 0.7) {
-            //console.log('7');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 4.5, ease: 'none' });
         } else if (flipProgress <= 0.8) {
-            //console.log('8');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 5, ease: 'none' });
         } else if (flipProgress <= 0.9) {
-            //console.log('9');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 5.5, ease: 'none' });
         } else if (flipProgress <= 1) {
-            //console.log('1111');
             gsap.to('.conversion__panel--flip', 0.3, { scale: 6, ease: 'none' });
         }
     });
-    //.addIndicators({
-    //  colorTrigger: "red", //트리거 팁 색상
-    //  colorStart: "red", //스타트 팁 색상
-    //  colorEnd: "red", //종료 팁 색상
-    //  indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-    //});
     // conversion
 
 
@@ -259,7 +201,6 @@ window.onload = function () {}
         fadeEffect: {
             crossFade: true
         },
-        //autoplay: { delay: 1000, },
         speed: 800,
         allowClick: false,
         allowTouchMove: false,
@@ -282,7 +223,6 @@ window.onload = function () {}
         fadeEffect: {
             crossFade: true
         },
-        //autoplay: { delay: 500, },
         speed: 500,
         allowClick: false,
         allowTouchMove: false,
@@ -303,32 +243,37 @@ window.onload = function () {}
     var drugSpecScene = new ScrollMagic.Scene({
         triggerElement: ".drug-spec__pin",
         triggerHook: "onLeave",
-        duration: "2500",
+        duration: "4000",
         offset: -45
-        ////offset: -200
-        //offset: drugOffset
     }).setPin(".drug-spec__pin").addTo(ctrl).on("progress", function (e) {
 
-        var drugSpecStepPoint = e.progress.toFixed(1);
-        console.log(drugSpecStepPoint);
+        var drugSpecStepPoint = e.progress.toFixed(2);
 
         if (drugSpecStepPoint <= 0.3) {
-
             drugSpecStep.step1();
-        } else if (drugSpecStepPoint <= 0.6) {
-
+        }
+        if (drugSpecStepPoint > 0.3 && drugSpecStepPoint <= 0.45) {
             drugSpecStep.step2();
-        } else {
-
+            drugSwite2.slideTo(0, 600);
+        }
+        if (drugSpecStepPoint > 0.45 && drugSpecStepPoint <= 0.6) {
+            drugSpecStep.step2();
+            drugSwite2.slideTo(1, 600);
+        }
+        if (drugSpecStepPoint > 0.6 && drugSpecStepPoint <= 0.75) {
+            drugSpecStep.step2();
+            drugSwite2.slideTo(2, 600);
+        }
+        if (drugSpecStepPoint > 0.75 && drugSpecStepPoint <= 0.9) {
             drugSpecStep.step3();
+            drugSwite3.slideTo(0, 600);
+        }
+        if (drugSpecStepPoint > 0.9) {
+            drugSpecStep.step3();
+            drugSwite3.slideTo(1, 600);
         }
     });
-    //.addIndicators({
-    //  colorTrigger: "red", //트리거 팁 색상
-    //  colorStart: "red", //스타트 팁 색상
-    //  colorEnd: "red", //종료 팁 색상
-    //  indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-    //});
+
     // drug-spec
 
 
@@ -344,46 +289,17 @@ window.onload = function () {}
     $(".meterial__panel--inner-list-item").hover(function () {
         if ($(this).hasClass('active')) return false;
         meterialHover = $(this).attr('class').replace('meterial__panel--inner-list-item list', '');
-
         $(".meterial__panel--inner-list-item").removeClass('active');
         $(".meterial__panel--inner-list-item.list" + meterialHover).addClass('active');
     }, function () {
         console.log('leave');
         $(".meterial__panel--inner-list-item").removeClass('active');
     });
-
-    /*
-    gsap.set('.meterial__panel--inner-detail-hide', {fontWeight: '400', scale:0.9});
-    var meterialTextScene = new ScrollMagic.Scene({
-        triggerElement: ".meterial__panel--inner-detail-text",
-        triggerHook: 0.8,
-        duration: 500
-    }).addTo(ctrl).on("progress", function (e) {
-          var textProgress1 = e.progress.toFixed(1);
-        if( textProgress1 >= 0.3){
-            gsap.to('.meterial__panel--inner-detail-hide', 1, {fontWeight: '400', scale:0.9});
-        }
-        if( textProgress1 >= 0.6){
-            gsap.to('.meterial__panel--inner-detail-hide', 1, {fontWeight: '500', scale:0.95});
-        }
-        if( textProgress1 >= 0.9){
-            gsap.to('.meterial__panel--inner-detail-hide', 1, {fontWeight: '700', scale:1});
-        }
-      })
-    .addIndicators({
-        colorTrigger: "red", //트리거 팁 색상
-        colorStart: "red", //스타트 팁 색상
-        colorEnd: "red", //종료 팁 색상
-        indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-     });
-     */
     // meterial
 
 
     // gv-1001
-    var gv1001Action = new TimelineLite().to('.gv-1001__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.gv-1001__panel--content-comment .quotation-left', 0.6, { opacity: 1 }, 0.4).to('.gv-1001__panel--content-comment .quotation-right', 0.6, { opacity: 1 }, 0.4).to('.gv-1001__panel--content-text', 1, { opacity: 1 }, 0.6).to('.gv-1001__panel--content-detail', 0.6, { opacity: 1, y: 0 }, 1)
-    //.to('.gv-1001__panel--content-image', 1, {opacity: 1}, 1.2)
-    .to('.gv-1001__panel--content-video', 1, { opacity: 1 }, 1.2);
+    var gv1001Action = new TimelineLite().to('.gv-1001__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.gv-1001__panel--content-comment .quotation-left', 0.6, { opacity: 1 }, 0.4).to('.gv-1001__panel--content-comment .quotation-right', 0.6, { opacity: 1 }, 0.4).to('.gv-1001__panel--content-text', 1, { opacity: 1 }, 0.6).to('.gv-1001__panel--content-detail', 0.6, { opacity: 1, y: 0 }, 1).to('.gv-1001__panel--content-video', 1, { opacity: 1 }, 1.2);
 
     var gv1001Scene = new ScrollMagic.Scene({
         triggerElement: ".gv-1001",
@@ -396,7 +312,6 @@ window.onload = function () {}
         triggerHook: 0.8,
         duration: 500
     }).addTo(ctrl).on("progress", function (e) {
-
         var textProgress1 = e.progress.toFixed(1);
         if (textProgress1 >= 0.3) {
             gsap.to('.gv-1001__panel--content-text', 1, { fontWeight: '400', scale: 0.9 });
@@ -412,12 +327,7 @@ window.onload = function () {}
 
 
     // meterial-hope
-    var meterialhopeAction = new TimelineLite().to('.meterial-hope__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.meterial-hope__panel--table', 1, { opacity: 1 }, 0.4).to('.table__background', 1.2, { opacity: 1 }, 0.6).to('.solution--title', 0.8, { opacity: 1, y: 0 }, 0.8)
-    //.to('.solution--item:nth-of-type(1)', 1, {opacity: 0.3}, 1)
-    //.to('.solution--item:nth-of-type(2)', 1, {opacity: 0.3}, 1.4)
-    //.to('.solution--item:nth-of-type(3)', 1, {opacity: 0.3}, 1.8)
-    .to('.solution--explain', 0.8, { opacity: 1, y: 0 }, 2);
-    //.to('.meterial-hope__panel--explain', 0.6, {opacity: 1, y: 0}, 0.6)
+    var meterialhopeAction = new TimelineLite().to('.meterial-hope__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.meterial-hope__panel--table', 1, { opacity: 1 }, 0.4).to('.table__background', 1.2, { opacity: 1 }, 0.6).to('.solution--title', 0.8, { opacity: 1, y: 0 }, 0.8).to('.solution--explain', 0.8, { opacity: 1, y: 0 }, 2);
 
     var tableBgRotate = new TimelineLite({ paused: true, repeat: -1 }).to('.table__background li:nth-of-type(1)', 2, { background: '#1e00ff' }, 0).to('.table__background li:nth-of-type(2)', 2, { background: '#1e00ff' }, 2).to('.table__background li:nth-of-type(1)', 0.5, { background: '#0c0066' }, 2).to('.table__background li:nth-of-type(3)', 2, { background: '#1e00ff' }, 4).to('.table__background li:nth-of-type(2)', 0.5, { background: '#0c0066' }, 4).to('.table__background li:nth-of-type(4)', 2, { background: '#1e00ff' }, 6).to('.table__background li:nth-of-type(3)', 0.5, { background: '#0c0066' }, 6);
 
@@ -425,7 +335,6 @@ window.onload = function () {}
         triggerElement: ".meterial-hope",
         triggerHook: 0.6
     }).setTween(meterialhopeAction).addTo(ctrl).on('enter leave', function (e) {
-        //console.log(e);
         if (e.state == 'BEFORE') {
             tableBgRotate.pause();
         } else {
@@ -439,7 +348,6 @@ window.onload = function () {}
     $(".alzheimer__card--item-news").hover(function () {
         if ($(this).hasClass('active')) return false;
         hoverItem = $(this).attr('class').replace('alzheimer__card--item-news ', '');
-
         $(".alzheimer__card--item-news").removeClass('active');
         $(".alzheimer__card--item-news .explain").removeClass('active');
         $(".alzheimer__card--item-news." + hoverItem).addClass('active');
@@ -450,23 +358,12 @@ window.onload = function () {}
 
     // outro
     var outroAction = new TimelineLite().to('.outro__panel--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.outro__panel--content-text', 0.6, { opacity: 1, y: 0 }, 0.4).to('.outro__panel--content-strong', 0.6, { opacity: 1, y: 0 }, 0.6).to('.outro__panel--content-person', 1, { opacity: 1 }, 1).to('.outro__panel--content-comment', 1, { opacity: 1 }, 1.4);
-    //.outro__panel--content .quotation-left
-    //.to('.outro__panel--content .quotation-left', 0.8, {opacity: 1}, 0.8)
-    //.to('.outro__panel--content .quotation-right', 0.8, {opacity: 1}, 0.8)
-
 
     var outroScene = new ScrollMagic.Scene({
         triggerElement: ".outro",
         triggerHook: 0.4,
         offset: 400
     }).setTween(outroAction).addTo(ctrl);
-    //.addIndicators({
-    //    colorTrigger: "white", //트리거 팁 색상
-    //    colorStart: "white", //스타트 팁 색상
-    //    colorEnd: "white", //종료 팁 색상
-    //    indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-    //  });
-
 
     gsap.set('.outro__panel--content-comment .textMotion', { fontWeight: '400', scale: 0.9 });
     var outroTextScene = new ScrollMagic.Scene({
@@ -474,7 +371,6 @@ window.onload = function () {}
         triggerHook: 0.8,
         duration: 500
     }).addTo(ctrl).on("progress", function (e) {
-
         var textProgress1 = e.progress.toFixed(1);
         if (textProgress1 >= 0.3) {
             gsap.to('.outro__panel--content-comment .textMotion', 1, { fontWeight: '400', scale: 0.9 });
@@ -487,7 +383,6 @@ window.onload = function () {}
         }
     });
     // outro
-
 
     defaultSet(); // 기본 셋팅 실행
 });

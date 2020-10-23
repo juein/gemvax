@@ -1,17 +1,9 @@
-// onload
-window.onload = function(){
-
-}
-// onload
-
-
 
 window.addEventListener('DOMContentLoaded', () => { 
 
     //리로드시 최상단으로
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);
-        //console.clear(); 
     }
 
     const ctrl = new ScrollMagic.Controller();
@@ -19,28 +11,15 @@ window.addEventListener('DOMContentLoaded', () => {
     // default setting
     let introHeight, paperSize;
     const defaultSet = () => {
-        //console.log('default set');
         let h = window.innerHeight;
         paperSize = ~~( $('.intro-news__paper').height() * 0.3);
         introHeight = ~~( $('.intro-news').height() );
-        
         gsap.set('.intro-news', {width: '100%', height: '100vh' });
         gsap.set('.intro-news__paper',  {scale: 0.3, top: '50%', width: '160%', marginLeft: '-80%', marginTop: -(paperSize / 2)});
         gsap.set('.intro-news__paper--box', {rotate: 0});
         gsap.set('.intro-news__paper--content p', {overflowY: 'hidden'});
-        
     }
 
-
-    // intro-news
-    //let introHeight, paperSize;
-    //const contentResize = () => {
-    //    
-    //}
-    //contentResize();
-    //window.addEventListener("resize", contentResize);
-
-    
     var introRotateAction = new TimelineLite({paused: true})
     .set('body', {overflow: 'hidden'}, 0)
     .to('.intro-news__paper', 1, {scale: 1, top: '0', marginTop: 0}, 0)
@@ -48,7 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
     .set('.intro-news', {height: '250vw'}, 0.1)
     .set('.intro-news__paper--content p', {overflowY: 'scroll'}, 0.9)
     .set('body', {overflow: 'visible'}, 1.2)
-
     
    var introNewsScene = new ScrollMagic.Scene({
         triggerElement: ".intro-news",
@@ -62,18 +40,10 @@ window.addEventListener('DOMContentLoaded', () => {
             introRotateAction.reverse();
         }
     });
-    //.addIndicators({
-    //    colorTrigger: "yellow", //트리거 팁 색상
-    //    colorStart: "yellow", //스타트 팁 색상
-    //    colorEnd: "yellow", //종료 팁 색상
-    //    indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-    //});
-       
     // intro-news
 
-    // alzheimer 
-    
 
+    // alzheimer 
     var alzheimerAction = new TimelineLite()
     .to('.alzheimer__headline--title', 0.6, {opacity: 1, y: 0}, 0.2)
     .to('.alzheimer__headline--info', 0.6, {opacity: 1, y: 0}, 0.5)
@@ -84,12 +54,14 @@ window.addEventListener('DOMContentLoaded', () => {
     }).setTween(alzheimerAction).addTo(ctrl);
     // alzheimer 
 
+
     // alzheimer__card
     var alzheimerSwiper = new Swiper('.alzheimer__card', {
         slidesPerView: 1,
         spaceBetween: 0,
-      });
+    });
     // alzheimer__card
+
 
     // alzheimer-hope
     var alzheimerHopeAction =  new TimelineLite()
@@ -123,7 +95,6 @@ window.addEventListener('DOMContentLoaded', () => {
             gsap.to('.alzheimer-hope__comment-text', 1, {fontWeight: '700', scale:1});
         }
     })
-
     // alzheimer-hope
 
 
@@ -134,14 +105,12 @@ window.addEventListener('DOMContentLoaded', () => {
     .to('.conversion__content--before-detail', 0.8, {opacity: 1}, 0.6)
     .to('.conversion__content--before .conversion__now', 0.6, {opacity: 1}, 1)
     .to('.conversion__content--before .cover-btn__before', 0.8, {opacity: 1}, 1.2)
-
     .to('.conversion__content--before-graph .round.first', 1, {scale: 1}, 0.8)
     .to('.conversion__content--before-graph .round.second', 1, {scale: 1}, 1)
     .to('.conversion__content--before-graph .round.third', 1, {scale: 1}, 1.2)
     .to('.conversion__content--before-graph .round.first span', 0.8, {opacity: 1}, 1.4)
     .to('.conversion__content--before-graph .round.second span', 0.8, {opacity: 1}, 1.6)
     .to('.conversion__content--before-graph .round.third span', 0.8, {opacity: 1}, 1.8)
-
 
     var conversionrSwiper = new Swiper('.conversion__swiper', {
         slidesPerView: 1,
@@ -155,7 +124,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     gsap.to('.conversion__swiper', 0.8, {x: '6vw', delay: 0.8});
                 }else {
                     gsap.to('.conversion__swiper', 0.8, {x: '-6vw', delay: 0.8});
-                    //conversionBeforeHide();
                 }
             }
         }
@@ -180,8 +148,6 @@ window.addEventListener('DOMContentLoaded', () => {
     .to('.drug-spec__panel--cover', 0.6, {opacity: 1}, 0.4)
     .to('.drug-spec__panel--navigation', 0.6, {opacity: 1}, 0.6)
 
-    
-
     var drugSpecScene = new ScrollMagic.Scene({
         triggerElement: ".drug-spec",
         triggerHook: 0.6
@@ -203,7 +169,6 @@ window.addEventListener('DOMContentLoaded', () => {
             $('.navigation__thrid').removeClass('active');
             $('.navigation__second').addClass('active');
             gsap.to('.drug-spec__background', 0.6, {opacity: 0});
-
         },
         step3(){
             $('.drug-spec__panel--inner').removeClass('active');
@@ -222,7 +187,6 @@ window.addEventListener('DOMContentLoaded', () => {
         },
         speed: 800,
         allowClick : false,
-        //allowTouchMove: false,
         allowTouchMove: true,
         pagination: {
             el: '.swiper-pagination',
@@ -242,10 +206,8 @@ window.addEventListener('DOMContentLoaded', () => {
         fadeEffect: {
           crossFade: true
         },
-        //autoplay: { delay: 500, },
         speed: 500,
         allowClick : false,
-        //allowTouchMove: false,
         allowTouchMove : true,
         pagination: {
             el: '.swiper-pagination',
@@ -266,31 +228,34 @@ window.addEventListener('DOMContentLoaded', () => {
         triggerHook: "onLeave",
         duration: ~~(window.innerHeight * 3),
         offset : drugOffset,
-      }).setPin(".drug-spec__pin")
-      .addTo(ctrl).on("progress", function (e) {
+    }).setPin(".drug-spec__pin")
+    .addTo(ctrl).on("progress", function (e) {
+        let drugSpecStepPoint = e.progress.toFixed(2);
 
-        let drugSpecStepPoint = e.progress.toFixed(1);
-
-            if(drugSpecStepPoint <= 0.3){
-                
-                drugSpecStep.step1();
-            }else if(drugSpecStepPoint <= 0.6){
-                
-                drugSpecStep.step2();
-            }else {
-                
-                drugSpecStep.step3();
-            }
-            
+       if( drugSpecStepPoint <= 0.3 ){
+        drugSpecStep.step1();
+    }
+    if( drugSpecStepPoint > 0.3 && drugSpecStepPoint <= 0.45 ){
+        drugSpecStep.step2();
+        drugSwite2.slideTo(0, 600);
+    }
+    if( drugSpecStepPoint > 0.45 && drugSpecStepPoint <= 0.6 ){
+        drugSpecStep.step2();
+        drugSwite2.slideTo(1, 600);
+    }
+    if( drugSpecStepPoint > 0.6 && drugSpecStepPoint <= 0.75 ){
+        drugSpecStep.step2();
+        drugSwite2.slideTo(2, 600);
+    }
+    if( drugSpecStepPoint > 0.75 && drugSpecStepPoint <= 0.9 ){
+        drugSpecStep.step3();
+        drugSwite3.slideTo(0, 600);
+    }
+    if( drugSpecStepPoint > 0.9 ){
+        drugSpecStep.step3();
+        drugSwite3.slideTo(1, 600);
+    }
     });
-    //.addIndicators({
-    //colorTrigger: "red", //트리거 팁 색상
-    //colorStart: "red", //스타트 팁 색상
-    //colorEnd: "red", //종료 팁 색상
-    //indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-    //});
-
-    
     // drug-spec
 
 
@@ -340,7 +305,6 @@ window.addEventListener('DOMContentLoaded', () => {
         triggerHook: 0.6,
         duration: Number($('.gv-1001__panel--content-text').height())
     }).addTo(ctrl).on("progress", function (e) {
-
         var textProgress1 = e.progress.toFixed(1);
         if( textProgress1 >= 0.3){
             gsap.to('.gv-1001__panel--content-text', 1, {fontWeight: '400', scale:0.9});
@@ -351,7 +315,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if( textProgress1 >= 0.9){
             gsap.to('.gv-1001__panel--content-text', 1, {fontWeight: '700', scale:1});
         }
-
     });
     // gv-1001
 
@@ -366,33 +329,22 @@ window.addEventListener('DOMContentLoaded', () => {
     .to('.meterial-hope__panel .solution--list .solution--item.three', 1, {opacity: 1}, 2.2)
     .to('.meterial-hope__panel .solution--explain', 1, {opacity: 1}, 2.4)
 
-
     var meterialhopeScene = new ScrollMagic.Scene({
         triggerElement: ".meterial-hope",
         triggerHook: 0.6,
     }).setTween(meterialhopeAction).addTo(ctrl);
 
     $('.table-more').click( ()=>{
-        //$('.meterial-hope__panel--table-cell').removeClass('before');
-        //$('.meterial-hope__panel--table-cell').addClass('after');
-
         gsap.to('.meterial-hope__panel--table-cell.more', {opacity: 1, pointerEvents: 'visible', delay: 0.4});
         gsap.to('.table-more', 0.8, {opacity: 0, pointerEvents: 'none'});
         gsap.to('.table-hide', 0.8, {opacity: 1, pointerEvents: 'visible', delay: 0.4});
-        //gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 1, pointerEvents: 'visible'});
-        //gsap.to('.meterial-hope__panel--table .block-display', 0.6, {opacity: 1, pointerEvents: 'visible'});
         gsap.to('.meterial-hope__panel .solution--list', 0.6, {opacity: 0.2});
     });
 
     $('.table-hide').click( ()=>{
-        //$('.meterial-hope__panel--table-cell').removeClass('after');
-        //$('.meterial-hope__panel--table-cell').addClass('before');
         gsap.to('.meterial-hope__panel--table-cell.more', {opacity: 0, pointerEvents: 'none'});
-
         gsap.to('.table-hide', 0.8, {opacity: 0, pointerEvents: 'none'});
         gsap.to('.table-more', 0.8, {opacity: 1, pointerEvents: 'visible', delay: 0.4});
-        //gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 0, pointerEvents: 'none'});
-        //gsap.to('.meterial-hope__panel--table .block-display', 0.6, {opacity: 0, pointerEvents: 'none'});
         gsap.to('.meterial-hope__panel .solution--list', 0.6, {opacity: 1});
     });
     // meterial-hope
@@ -408,16 +360,11 @@ window.addEventListener('DOMContentLoaded', () => {
     .to('.outro__panel--content-comment span', 0.8, {opacity: 1}, 1.4)
     .to('.outro__panel--content-comment .underline', 0.6, {opacity: 1}, 1.8)
     .to('.outro__panel--content-person', 1, {opacity: 1}, 1.8)
-    
-    
-
-
 
     var outroScene = new ScrollMagic.Scene({
         triggerElement: ".outro",
         triggerHook: 0.6,
     }).setTween(outroAction).addTo(ctrl);
-
 
     gsap.set('.outro__panel--content-comment .weightFont', {fontWeight: '400', scale:0.9});
     var outroTextScene = new ScrollMagic.Scene({
@@ -425,7 +372,6 @@ window.addEventListener('DOMContentLoaded', () => {
         triggerHook: 0.5,
         duration: Number($('.outro__panel--content-comment .weightFont').height())
     }).addTo(ctrl).on("progress", function (e) {
-
         var textProgress1 = e.progress.toFixed(1);
         if( textProgress1 >= 0.3){
             gsap.to('.outro__panel--content-comment .weightFont', 1, {fontWeight: '400', scale:0.9});
@@ -436,12 +382,8 @@ window.addEventListener('DOMContentLoaded', () => {
         if( textProgress1 >= 0.9){
             gsap.to('.outro__panel--content-comment .weightFont', 1, {fontWeight: '700', scale:1});
         }
-
     });
     // outro
-
-
-
 
     defaultSet(); // 기본 셋팅 실행
 

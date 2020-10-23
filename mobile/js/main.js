@@ -1,16 +1,10 @@
 'use strict';
 
-// onload
-window.onload = function () {};
-// onload
-
-
 window.addEventListener('DOMContentLoaded', function () {
 
     //리로드시 최상단으로
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);
-        //console.clear(); 
     };
 
     var ctrl = new ScrollMagic.Controller();
@@ -19,25 +13,14 @@ window.addEventListener('DOMContentLoaded', function () {
     var introHeight = void 0,
         paperSize = void 0;
     var defaultSet = function defaultSet() {
-        //console.log('default set');
         var h = window.innerHeight;
         paperSize = ~~($('.intro-news__paper').height() * 0.3);
         introHeight = ~~$('.intro-news').height();
-
         gsap.set('.intro-news', { width: '100%', height: '100vh' });
         gsap.set('.intro-news__paper', { scale: 0.3, top: '50%', width: '160%', marginLeft: '-80%', marginTop: -(paperSize / 2) });
         gsap.set('.intro-news__paper--box', { rotate: 0 });
         gsap.set('.intro-news__paper--content p', { overflowY: 'hidden' });
     };
-
-    // intro-news
-    //let introHeight, paperSize;
-    //const contentResize = () => {
-    //    
-    //}
-    //contentResize();
-    //window.addEventListener("resize", contentResize);
-
 
     var introRotateAction = new TimelineLite({ paused: true }).set('body', { overflow: 'hidden' }, 0).to('.intro-news__paper', 1, { scale: 1, top: '0', marginTop: 0 }, 0).to('.intro-news__paper--box', 1, { rotate: -360 }, 0).set('.intro-news', { height: '250vw' }, 0.1).set('.intro-news__paper--content p', { overflowY: 'scroll' }, 0.9).set('body', { overflow: 'visible' }, 1.2);
 
@@ -52,18 +35,10 @@ window.addEventListener('DOMContentLoaded', function () {
             introRotateAction.reverse();
         }
     });
-    //.addIndicators({
-    //    colorTrigger: "yellow", //트리거 팁 색상
-    //    colorStart: "yellow", //스타트 팁 색상
-    //    colorEnd: "yellow", //종료 팁 색상
-    //    indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-    //});
-
     // intro-news
 
+
     // alzheimer 
-
-
     var alzheimerAction = new TimelineLite().to('.alzheimer__headline--title', 0.6, { opacity: 1, y: 0 }, 0.2).to('.alzheimer__headline--info', 0.6, { opacity: 1, y: 0 }, 0.5);
 
     var alzheimerScene = new ScrollMagic.Scene({
@@ -72,12 +47,14 @@ window.addEventListener('DOMContentLoaded', function () {
     }).setTween(alzheimerAction).addTo(ctrl);
     // alzheimer 
 
+
     // alzheimer__card
     var alzheimerSwiper = new Swiper('.alzheimer__card', {
         slidesPerView: 1,
         spaceBetween: 0
     });
     // alzheimer__card
+
 
     // alzheimer-hope
     var alzheimerHopeAction = new TimelineLite().to('.alzheimer-hope__text-title', 0.8, { opacity: 1, y: 0 }, 0.2).to('.alzheimer-hope__comment .quotation-left', 0.6, { opacity: 1 }, 0.7).to('.alzheimer-hope__comment .quotation-right', 0.6, { opacity: 1 }, 0.7).to('.alzheimer-hope__comment-text', 0.6, { opacity: 1, y: 0 }, 1.2).to('.alzheimer-hope__text-explain', 1, { opacity: 1, y: 0 }, 0.8).to('.alzheimer-hope__comment .underline', 0.6, { scaleX: 1 }, 1).to('.alzheimer-hope__comment-copylight', 0.8, { opacity: 1 }, 1.4);
@@ -104,7 +81,6 @@ window.addEventListener('DOMContentLoaded', function () {
             gsap.to('.alzheimer-hope__comment-text', 1, { fontWeight: '700', scale: 1 });
         }
     });
-
     // alzheimer-hope
 
 
@@ -123,7 +99,6 @@ window.addEventListener('DOMContentLoaded', function () {
                     gsap.to('.conversion__swiper', 0.8, { x: '6vw', delay: 0.8 });
                 } else {
                     gsap.to('.conversion__swiper', 0.8, { x: '-6vw', delay: 0.8 });
-                    //conversionBeforeHide();
                 }
             }
         }
@@ -184,7 +159,6 @@ window.addEventListener('DOMContentLoaded', function () {
         },
         speed: 800,
         allowClick: false,
-        //allowTouchMove: false,
         allowTouchMove: true,
         pagination: {
             el: '.swiper-pagination',
@@ -204,10 +178,8 @@ window.addEventListener('DOMContentLoaded', function () {
         fadeEffect: {
             crossFade: true
         },
-        //autoplay: { delay: 500, },
         speed: 500,
         allowClick: false,
-        //allowTouchMove: false,
         allowTouchMove: true,
         pagination: {
             el: '.swiper-pagination',
@@ -229,28 +201,32 @@ window.addEventListener('DOMContentLoaded', function () {
         duration: ~~(window.innerHeight * 3),
         offset: drugOffset
     }).setPin(".drug-spec__pin").addTo(ctrl).on("progress", function (e) {
-
-        var drugSpecStepPoint = e.progress.toFixed(1);
+        var drugSpecStepPoint = e.progress.toFixed(2);
 
         if (drugSpecStepPoint <= 0.3) {
-
             drugSpecStep.step1();
-        } else if (drugSpecStepPoint <= 0.6) {
-
+        }
+        if (drugSpecStepPoint > 0.3 && drugSpecStepPoint <= 0.45) {
             drugSpecStep.step2();
-        } else {
-
+            drugSwite2.slideTo(0, 600);
+        }
+        if (drugSpecStepPoint > 0.45 && drugSpecStepPoint <= 0.6) {
+            drugSpecStep.step2();
+            drugSwite2.slideTo(1, 600);
+        }
+        if (drugSpecStepPoint > 0.6 && drugSpecStepPoint <= 0.75) {
+            drugSpecStep.step2();
+            drugSwite2.slideTo(2, 600);
+        }
+        if (drugSpecStepPoint > 0.75 && drugSpecStepPoint <= 0.9) {
             drugSpecStep.step3();
+            drugSwite3.slideTo(0, 600);
+        }
+        if (drugSpecStepPoint > 0.9) {
+            drugSpecStep.step3();
+            drugSwite3.slideTo(1, 600);
         }
     });
-    //.addIndicators({
-    //colorTrigger: "red", //트리거 팁 색상
-    //colorStart: "red", //스타트 팁 색상
-    //colorEnd: "red", //종료 팁 색상
-    //indent: 40 //우측 스크롤바부터 얼마나 떨어뜨릴지
-    //});
-
-
     // drug-spec
 
 
@@ -287,7 +263,6 @@ window.addEventListener('DOMContentLoaded', function () {
         triggerHook: 0.6,
         duration: Number($('.gv-1001__panel--content-text').height())
     }).addTo(ctrl).on("progress", function (e) {
-
         var textProgress1 = e.progress.toFixed(1);
         if (textProgress1 >= 0.3) {
             gsap.to('.gv-1001__panel--content-text', 1, { fontWeight: '400', scale: 0.9 });
@@ -311,26 +286,16 @@ window.addEventListener('DOMContentLoaded', function () {
     }).setTween(meterialhopeAction).addTo(ctrl);
 
     $('.table-more').click(function () {
-        //$('.meterial-hope__panel--table-cell').removeClass('before');
-        //$('.meterial-hope__panel--table-cell').addClass('after');
-
         gsap.to('.meterial-hope__panel--table-cell.more', { opacity: 1, pointerEvents: 'visible', delay: 0.4 });
         gsap.to('.table-more', 0.8, { opacity: 0, pointerEvents: 'none' });
         gsap.to('.table-hide', 0.8, { opacity: 1, pointerEvents: 'visible', delay: 0.4 });
-        //gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 1, pointerEvents: 'visible'});
-        //gsap.to('.meterial-hope__panel--table .block-display', 0.6, {opacity: 1, pointerEvents: 'visible'});
         gsap.to('.meterial-hope__panel .solution--list', 0.6, { opacity: 0.2 });
     });
 
     $('.table-hide').click(function () {
-        //$('.meterial-hope__panel--table-cell').removeClass('after');
-        //$('.meterial-hope__panel--table-cell').addClass('before');
         gsap.to('.meterial-hope__panel--table-cell.more', { opacity: 0, pointerEvents: 'none' });
-
         gsap.to('.table-hide', 0.8, { opacity: 0, pointerEvents: 'none' });
         gsap.to('.table-more', 0.8, { opacity: 1, pointerEvents: 'visible', delay: 0.4 });
-        //gsap.to('.meterial-hope__panel--table tbody', 0.6, {opacity: 0, pointerEvents: 'none'});
-        //gsap.to('.meterial-hope__panel--table .block-display', 0.6, {opacity: 0, pointerEvents: 'none'});
         gsap.to('.meterial-hope__panel .solution--list', 0.6, { opacity: 1 });
     });
     // meterial-hope
@@ -350,7 +315,6 @@ window.addEventListener('DOMContentLoaded', function () {
         triggerHook: 0.5,
         duration: Number($('.outro__panel--content-comment .weightFont').height())
     }).addTo(ctrl).on("progress", function (e) {
-
         var textProgress1 = e.progress.toFixed(1);
         if (textProgress1 >= 0.3) {
             gsap.to('.outro__panel--content-comment .weightFont', 1, { fontWeight: '400', scale: 0.9 });
@@ -363,7 +327,6 @@ window.addEventListener('DOMContentLoaded', function () {
         }
     });
     // outro
-
 
     defaultSet(); // 기본 셋팅 실행
 });
