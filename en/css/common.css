@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+.joins_gnb {
+  height: 32px;
+}
+
+h2, h3, h4, h5 {
+  font-weight: 600;
+  word-break: keep-all;
+}
+
+strong {
+  font-weight: 600;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+video {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.4;
+  letter-spacing: -0.075em;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+#container {
+  min-width: 1200px;
+}
+
+h2 {
+  font-size: 50px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  color: #1d1d1d;
+}
+
+h2 span {
+  font-weight: 300;
+}
+
+h2 + p {
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+section {
+  position: relative;
+  background-color: #fff;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
+button {
+  padding: 0;
+  border: 0 none;
+  cursor: pointer;
+}
+
+p {
+  word-break: keep-all;
+}
+
+i {
+  font-style: normal;
+}
+
+.hide {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font: 0/0 Sans-serif;
+  visibility: hidden;
+}
+
+:focus {
+  outline: none;
+}
+
+#container {
+  padding-top: 78px;
+}
+/*# sourceMappingURL=common.css.map */

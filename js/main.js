@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //리로드시 최상단으로
     window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0);
     };
 
     var ctrl = new ScrollMagic.Controller();

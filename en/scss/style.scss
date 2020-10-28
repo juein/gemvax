@@ -37,7 +37,7 @@ $white : #fff;
 }
 
 @mixin textToImage($imgName, $w:0, $h:0){
-    text-indent: -99999px;
+    //text-indent: -99999px;
     display: block;
     background: url($imgPath + $imgName) no-repeat;
     width: $w;
@@ -70,29 +70,60 @@ $white : #fff;
         }
         &--headline{
             &-ad{
-                @include textToImage('intro_headline_1.png', 315px, 51px);
+                //@include textToImage('intro_headline_1.png', 315px, 51px);
+                text-indent: -99999px;
+                display: block;
+                background: url('../../img/intro_headline_1.png') no-repeat;
+                width: 315px;
+                height: 51px;
                 margin: 120px auto 0 auto;
             }
             &-dd{
-                @include textToImage('intro_headline_2.png', 50px, 300px);
+                //@include textToImage('intro_headline_2.png', 50px, 300px);
+                text-indent: -99999px;
+                display: block;
+                background: url('../../img/intro_headline_2.png') no-repeat;
+                width: 50px;
+                height: 300px;
                 position: absolute;
                 right: 25px;
                 top: 570px;
+                
             }
             &-title{
                 margin-top: 160px;
                 &-default{
-                    @include textToImage('intro_news_title_1.png', 674px, 75px);
-                    margin: 0 auto;
+                    //@include textToImage('intro_news_title_1.png', 674px, 75px);
+                    display: block;
+                    width: 100%;
+                    height: 75px;
+                    text-align: center;
+                    @include serif-regular;
+                    font-size: 45px;
+
                 }
                 &-strong{
-                    @include textToImage('intro_news_title_2.png', 674px, 122px);
-                    margin: 40px auto 0 auto;
+                    //@include textToImage('intro_news_title_2.png', 674px, 122px);
+                    display: block;
+                    width: 100%;
+                    height: 122px;
+                    text-align: center;
+                    //@include serif-bold;
+                    @include playfair;
+                    font-size: 120px;
+                    letter-spacing: -0.06em;
+
                 }
             }
             &-sub-title{
-                @include textToImage('intro_news_title_3.png', 775px, 75px);
+                //@include textToImage('intro_news_title_3.png', 775px, 75px);
+                display: block;
+                width: 100%;
+                height: 75px;
+                text-align: center;
                 margin: 400px auto 60px auto;
+                font-size: 44px;
+                @include serif-regular;
             }
         }
         &--content{
@@ -104,12 +135,14 @@ $white : #fff;
                 height: 420px;
                 width: 100%;
                 &-item{
-                    text-align: justify;
+                    //text-align: justify;
                     float: left;
                     width: 328px;
                     height: 420px;
                     margin: 0 20px;
-                    @include fontInfo(21px, 37px, -0.07em);
+                    //word-break: break-all;
+                    text-align: left;
+                    @include fontInfo(18px, 37px, -0.06em);
                     @include serif-regular;
                     &:after{
                         @include clear;
@@ -120,7 +153,7 @@ $white : #fff;
         &--annexed{
             opacity: 0;
             padding: 25px 30px;
-            @include fontInfo(18px, 17px, -0.05em);
+            @include fontInfo(15px, 17px, -0.05em);
             @include serif-regular;
         }
     }
@@ -128,7 +161,7 @@ $white : #fff;
 
 .alzheimer{
     width: 100%;
-    height: 1340px;
+    height: 1450px;
     position: relative;
     overflow: hidden;
     background: #fff;
@@ -145,8 +178,11 @@ $white : #fff;
         margin-top: 45px;
         &--title{
             @include textToImage('alzheimer-title.png', 451px, 182px);
+            display: block;
             margin-top: 10px;
             float: left;
+            font-size: 32px;
+            padding-top: 25px;
             &:after{
                 @include clear;
             }
@@ -154,12 +190,14 @@ $white : #fff;
         &--info{
             color: #535353;
             float: right;
-            text-align: justify;
-            word-break: break-all;
+            //text-align: justify;
+            //word-break: break-all;
+            text-align: left;
             width: 500px;
             margin-right: 40px;
             @include fontInfo(23px, 40px, -0.06em);
-            @include fw-demilight;
+            //@include fw-demilight;
+            @include fw-regular;
             &:after{
                 @include clear;
             }
@@ -168,7 +206,7 @@ $white : #fff;
     &__card{
         width: 100%;
         height: 630px;
-        margin-top: 50px;
+        margin-top: 150px;
         &--item{
             width: 100%;
             height: 100%;
@@ -317,7 +355,7 @@ $white : #fff;
         }
         .quotation-left{
             opacity: 0;
-            background: url($imgPath + 'quotation-left-s.png') no-repeat;
+            background: url('../'+$imgPath + 'quotation-left-s.png') no-repeat;
             width: 61px;
             height: 42px;
             position: absolute;
@@ -326,7 +364,7 @@ $white : #fff;
         }
         .quotation-right{
             opacity: 0;
-            background: url($imgPath + 'quotation-right-s.png') no-repeat;
+            background: url('../'+$imgPath + 'quotation-right-s.png') no-repeat;
             width: 61px;
             height: 42px;
             position: absolute;
@@ -362,19 +400,25 @@ $white : #fff;
             transform: translateY(40px);
             margin-top: 170px;
             margin-left: -205px;
-            @include textToImage('alzheimer-hope__title.png', 529px, 179px);
+            @include textToImage('alzheimer-hope__title.png', 600px, 180px);
+            @include serif-regular;
+            font-weight: 700;
+            font-size: 45px;
+            padding-left: 230px;
         }
         &-explain{
             opacity: 0;
             transform: translateY(40px);
-            width: 500px;
+            width: 550px;
             margin-left: 25px;
             margin-top: 55px;
             color: #535353;
-            text-align: justify;
-            word-break: break-all;
+            text-align: left;
+            //text-align: justify;
+            //word-break: break-all;
             @include fontInfo(23px, 40px, -0.02em);
-            @include fw-demilight;
+            //@include fw-demilight;
+            @include fw-regular;
         }
         &:after{
             @include clear;
@@ -454,10 +498,21 @@ $white : #fff;
             height: 100%;
             float: left;
             &-title{
-                @include textToImage('conversion_2.png', 379px, 353px);
+                //@include textToImage('conversion_2.png', 379px, 353px);
+                transform: perspective(500px) rotateY(180deg);
+                color: #03007b;
+                @include serif-regular;
+                font-weight: 400;
                 margin-top: 150px;
-                margin-left: 160px;
+                margin-left: 80px;
+                font-size: 45px;
+                margin-right: 60px;
+                letter-spacing: -0.06em;
+                line-height: 75px;
                 opacity: 0;
+                strong{
+                    font-weight: 700;
+                }
             }
             &-graph{
                 width: 400px;
@@ -479,16 +534,20 @@ $white : #fff;
                 }
             }
             &-detail{
-                color: #0600ff;
+                //color: #0600ff;
                 color: #03007b;
                 @include fontInfo(21px, 39px, -0.08em);
-                @include fw-demilight;
-                width: 400px;
+                //@include fw-demilight;
+                @include fw-regular;
+                width: 420px;
                 text-align: justify;
                 word-break: break-all;
                 position: absolute;
                 top: 1045px;
                 left: 120px;
+                text-align: left;
+                word-break: break-word;
+
             }
             &:after{
                 @include clear;
@@ -508,22 +567,34 @@ $white : #fff;
                 transform-origin: right;
                 &--btn{
                     position: absolute;
-                    top: 675px;
+                    //top: 675px;
+                    top: 620px;
                     background: none;
                     width: 200px;
                     height: 200px;
                     left: -60px;
                     &-inner{
                         @include textToImage('drag__cover--btn.png', 157px, 106px);
+                        text-indent: -99999px;
                         margin-left: 60px;
                     }
                 }
             }
             &-title{
-                @include textToImage('conversion_1.png', 378px, 353px);
+                //@include textToImage('conversion_1.png', 378px, 353px);
+                color: #fff;
+                @include serif-regular;
+                font-weight: 400;
                 margin-top: 150px;
-                margin-left: 60px;
+                margin-left: 80px;
+                font-size: 45px;
+                margin-right: 60px;
+                letter-spacing: -0.06em;
+                line-height: 75px;
                 opacity: 0;
+                strong{
+                    font-weight: 700;
+                }
             }
             &-graph{
                 margin-top: 70px;
@@ -547,12 +618,12 @@ $white : #fff;
                     span{
                         opacity: 0;
                         color: #03007b;
-                        @include fontInfo(26px, 35px, -0.08em);
+                        @include fontInfo(20px, 28px, -0.08em);
                         @include fw-bold;
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        top: 80px;
+                        top: 85px;
                         left: 0;
                         text-align: center;
                     }
@@ -566,7 +637,7 @@ $white : #fff;
                         bottom: 0;
                         right: 0;
                         span{
-                            top: 95px;
+                            top: 100px;
                         }
                     }
                 }
@@ -576,14 +647,17 @@ $white : #fff;
                 @include fontInfo(21px, 39px, -0.08em);
                 @include fw-regular;
                 width: 400px;
-                text-align: justify;
-                word-break: break-all;
+                //text-align: justify;
+                //word-break: break-all;
                 position: absolute;
                 top: 1045px;
                 right: 110px;
+                text-align: left;
+                word-break: break-word;
             }
             .conversion__now{
-                margin-left: 360px;
+                margin-left: 320px;
+                width: 80px;
             }
             &:after{
                 @include clear;
@@ -598,7 +672,7 @@ $white : #fff;
     position: relative;
     background: #000;
     &__background{
-        background: url($imgPath + 'drug-spec-background.png') no-repeat;
+        background: url('../'+$imgPath + 'drug-spec-background.png') no-repeat;
         position: absolute;
         width: 958px;
         height: 865px;
@@ -609,7 +683,12 @@ $white : #fff;
         @include box_container(1200px, 0, 0, 0, -600px, 0, 50%);
         height: 100%;
         &--title{
-            @include textToImage('drug-spec-title.png', 661px, 171px);
+            //@include textToImage('drug-spec-title.png', 661px, 171px);
+            color: #fff;
+            @include serif-regular;
+            font-size: 45px;
+            letter-spacing: -0.05em;
+            font-weight: 700;
             margin-top: 130px;
             margin-left: 50px;
             opacity: 0;
@@ -627,35 +706,37 @@ $white : #fff;
             .explain-text{
                 color: #eee;
                 width: 400px;
-                text-align: justify;
-                word-break: break-all;
+                //text-align: justify;
+                //word-break: break-all;
                 @include fontInfo(21px, 38px, -0.06em);
                 @include fw-regular;
-                span{
-                    border-bottom: 1px solid #fff;
-                    padding-bottom: 2px;
-                    display: inline-block;
-                    position: relative;
-                    i{
-                        background: #bb2bbb;
-                        display: inline-block;
-                        width: 100%;
-                        height: 26px;
-                        z-index: -1;
-                        top: 8px;
-                        position: absolute;
-                        opacity: 0;
-                        transition: all 0.3s;
-                    }
-                    &.re-ls{
-                        letter-spacing: -0.03em;
-                    }
-                    &.active{
-                        i{
-                            opacity: 1;
-                        }
-                    }
-                }
+                text-align: left;
+                word-break: break-word;
+                //span{
+                //    border-bottom: 1px solid #fff;
+                //    padding-bottom: 2px;
+                //    display: inline-block;
+                //    position: relative;
+                //    i{
+                //        background: #bb2bbb;
+                //        display: inline-block;
+                //        width: 100%;
+                //        height: 26px;
+                //        z-index: -1;
+                //        top: 8px;
+                //        position: absolute;
+                //        opacity: 0;
+                //        transition: all 0.3s;
+                //    }
+                //    &.re-ls{
+                //        letter-spacing: -0.03em;
+                //    }
+                //    &.active{
+                //        i{
+                //            opacity: 1;
+                //        }
+                //    }
+                //}
             }
             .step_1, .step_2, .step_3{
                 opacity: 0;    
@@ -666,6 +747,7 @@ $white : #fff;
             }
             .step_1{
                 .explain-text{
+                    
                     margin-top: 110px;
                     margin-left: 60px;
                 }
@@ -675,6 +757,8 @@ $white : #fff;
                     width: 400px;
                     margin-top: 210px;
                     margin-left: 60px;
+                    text-align: left;
+                    word-break: break-word;
                 }
                 @each $chartStep2 in chart-1, chart-2, chart-3 {
                     .#{$chartStep2}{
@@ -692,6 +776,8 @@ $white : #fff;
                     width: 400px;
                     margin-top: 210px;
                     margin-left: 60px;
+                    text-align: left;
+                    word-break: break-word;
                 }
                 $cs3Width: (
                     chart-1: 518,
@@ -712,7 +798,7 @@ $white : #fff;
                 @each $chartStep3 in chart-1, chart-2{
                     .#{$chartStep3}{
                         position: absolute;
-                        background: url($imgPath + 'drug-step2__#{$chartStep3}.png') no-repeat;
+                        background: url('../'+$imgPath + 'drug-step2__#{$chartStep3}.png') no-repeat;
                         width: #{map-get( $cs3Width, $chartStep3 )}px;
                         height: #{map-get( $cs3Height, $chartStep3 )}px;
                         top: #{map-get( $cs3Top, $chartStep3 )}px;
@@ -815,7 +901,17 @@ $white : #fff;
             opacity: 0;
             transform: translateY(40px);
             margin: 200px auto;
-            @include textToImage('meterial-title.png', 660px, 177px);
+            //@include textToImage('meterial-title.png', 660px, 177px);
+            @include serif-regular;
+            font-weight: 400;
+            color: #fff;
+            height: 117px;
+            font-size: 45px;
+            text-align: center;
+            display: block;
+            strong{
+                font-weight: 700;
+            }
         }
         &--inner{
             &-list{
@@ -832,15 +928,17 @@ $white : #fff;
                     p{
                         color: #06ff7b;
                         @include fontInfo(30px, 38px, -0.08em);
-                        @include fw-medium;
+                        //@include fw-medium;
+                        @include fw-bold;
                         text-align: center;
-                        margin-top: 144px;
+                        //margin-top: 144px;
                         width: 100%;
                         position: absolute;
                         transition: color 0.4s;
-                        &.line{
-                            margin-top: 168px;
-                        }
+                        margin-top: 168px;
+                        //&.line{
+                        //    //margin-top: 168px;
+                        //}
                     }
                     .on, .inner-content{
                         opacity: 0;
@@ -853,36 +951,53 @@ $white : #fff;
                         height: 480px;
                         pointer-events: none;
                         &.left{
-                            background: url($imgPath + 'inner-content-left.jpg') no-repeat;
+                            background: url('../'+$imgPath + 'inner-content-left.jpg') no-repeat;
                             top: 288px;
                             left: 121px;
                         }
                         &.right{
-                            background: url($imgPath + 'inner-content-right.jpg') no-repeat;
+                            background: url('../'+$imgPath + 'inner-content-right.jpg') no-repeat;
                             top: 253px;
                             left: -91px;
                         }
                         p{
                             color: #03007b;
-                            @include fontInfo(23px, 40px, -0.08em);
+                            @include fontInfo(19px, 32px, -0.08em);
                             @include fw-regular;
                             margin: 0;
                             text-align: left;
                             mix-blend-mode: darken;
-                            text-align: justify;
-                            word-break: break-all;
+                            text-align: left;
+                            word-break: break-word;
                             padding: 40px 40px 0 30px;
                         }
                     }
                     &.active{
                         background: #797886;
+                        &.list1{
+                            .on{
+                                margin-top: 125px;
+                            }
+                        }
+                        &.list2{
+                            .on{
+                                margin-top: 145px;
+                            }
+                        }
+                        &.list3{
+                            .on{
+                                margin-top: 155px;
+                            }
+                        }
                         .before{
                             opacity: 0;
                         }
                         .on{
                             opacity: 1;
                             color: #fff;
-                            @include fw-demilight;
+                            font-size: 25px;
+                            padding: 0 30px;
+                            //@include fw-demilight;
                         }
                         .inner-content{
                             opacity: 1;
@@ -903,16 +1018,20 @@ $white : #fff;
                 opacity: 0;
                 &-text{
                     text-align: center;
-                    @include fontInfo(26px, 55px, -0.08em);
+                    @include fontInfo(24px, 60px, -0.06em);
                     @include fw-regular;
                 }
+                span{
+                    margin: 0 20px;
+                }
                 &-hide{
-                    @include fontInfo(30px, 50px, -0.08em);
+                    @include fontInfo(30px, 50px, -0.06em);
                     @include fw-bold;
                     padding: 2px 20px;
                     background: #000;
                     position: relative;
                     display: inline-block;
+                    margin: 0 10px;
                     &.mg{
                         margin: 0 35px;
                     }
@@ -939,12 +1058,12 @@ $white : #fff;
 
 .gv-1001{
     width: 100%;
-    height: 1420px;
+    height: 1650px;
     z-index: 0;
     position: relative;
     background: #000;
     &__bg{
-        background: url($imgPath + 'gv1001-bg.png') no-repeat;
+        background: url('../'+$imgPath + 'gv1001-bg.png') no-repeat;
         background-position: center;
         position: absolute;
         top: -550px;
@@ -963,16 +1082,24 @@ $white : #fff;
             transform: translateY(40px);
             margin-left: 50px;
             margin-top: 500px;
-            @include textToImage('gv1001-title.png', 366px, 256px);
+            //@include textToImage('gv1001-title.png', 366px, 256px);
+            color: #fff;
+            @include serif-regular;
+            height: 256px;
+            font-size: 55px;
+            strong{
+                font-weight: 700;
+            }
         }
         &--content{
             color: #fff;
             &-comment{
                 position: absolute;
-                top: 870px;
+                //top: 870px;
+                top: 930px;
                 left: 80px;
                 .quotation-left{
-                    background: url($imgPath + 'quotation-left.png') no-repeat;
+                    background: url('../'+$imgPath + 'quotation-left.png') no-repeat;
                     width: 61px;
                     height: 42px;
                     position: absolute;
@@ -982,7 +1109,7 @@ $white : #fff;
                     opacity: 0;
                 }
                 .quotation-right{
-                    background: url($imgPath + 'quotation-right.png') no-repeat;
+                    background: url('../'+$imgPath + 'quotation-right.png') no-repeat;
                     width: 61px;
                     height: 42px;
                     position: absolute;
@@ -992,12 +1119,14 @@ $white : #fff;
                 }
             }
             &-text{
-                    opacity: 0;
-                    font-style: italic;
-                    @include fontInfo(28px, 48px, -0.08em);
-                    font-weight: 400;
-                    z-index: 1;
-                    position: relative;
+                opacity: 0;
+                font-style: italic;
+                @include fontInfo(28px, 41px, -0.06em);
+                @include fw-regular;
+                font-weight: 600 !important;
+                z-index: 1;
+                position: relative;
+                //font-weight: 700;
             }
             &-copylight{
                 border-top: 2px solid #fff;
@@ -1029,7 +1158,7 @@ $white : #fff;
                 transform: translateY(40px);
                 position: absolute;
                 right: 50px;
-                width: 500px;
+                width: 550px;
                 text-align: justify;
                 word-break: break-all;
                 margin-top: 40px;
@@ -1037,7 +1166,8 @@ $white : #fff;
                     color: #fff;
                     @include fontInfo(23px, 40px, -0.08em);
                     @include fw-regular;
-                    word-break: break-all;
+                    //word-break: break-all;                
+                    text-align: left;
                 }
             }
             .underline{
@@ -1070,10 +1200,17 @@ $white : #fff;
         height: 100%;
         z-index: 10;
         &--title{
-            @include textToImage('meterial-hope-title.png', 356px, 259px);
+            //@include textToImage('meterial-hope-title.png', 356px, 259px);
+            height: 259px;
+            color: #fff;
             margin: 95px 0px 95px 50px;
             opacity: 0;
             transform: translateY(40px);
+            @include serif-regular;
+            font-size: 55px;
+            strong{
+                font-weight: 700;
+            }
         }
         .table__background{
             opacity: 0;
@@ -1081,7 +1218,8 @@ $white : #fff;
             z-index: -1;
             top: 235px;
             li{
-                height: 50px;
+                //height: 50px;
+                height: 65px;
                 width: 150vw;
                 margin: 15px 0;
                 background: #0c0066;
@@ -1098,8 +1236,9 @@ $white : #fff;
                 color: #fff;
                 border-top: 4px solid #fff;
                 border-bottom: 4px solid #fff;
-                @include fontInfo(19px, 36px, -0.02em);
-                @include fw-demilight;
+                @include fontInfo(18px, 25px, -0.04em);
+                //@include fw-demilight;
+                @include fw-regular;
                 .table-group{
                     &-1{
                         width: 128px;
@@ -1112,14 +1251,18 @@ $white : #fff;
                     }
                 }
                 th{
-                    @include fw-medium;
+                    //@include fw-medium;
+                    @include fw-bold;
                     padding: 1px 0;
+                    font-size: 20px;
+                    line-height: 36px;
                 }
                 tr{
                     border-bottom: 1px solid #fff;
                 }
                 td{
                     padding: 14px 0;
+                    height: 80px;
                     &.matter-name{
                         color: #06ff7b;
                         @include fw-bold;
@@ -1130,7 +1273,7 @@ $white : #fff;
                             display: block;
                             position: absolute;
                             width: 228px;
-                            top: 5px;
+                            top: 15px;
                             span{
                                 font-size: 14px;
                                 display: block;
@@ -1148,7 +1291,8 @@ $white : #fff;
             color: #fff;
             position: absolute;
             width: 1200px;
-            top: 575px;
+            //top: 575px;
+            top: 620px;
             left: 50%;
             margin-left: -600px;
             .solution--title{
@@ -1173,12 +1317,13 @@ $white : #fff;
                 &-head{
                     color: #06ff7b;
                     border-bottom: 1px solid #06ff7b;
-                    @include fontInfo(24px, 38px, -0.06em);
+                    @include fontInfo(20px, 38px, -0.06em);
                     @include fw-bold;
                 }
                 &-text{
-                    @include fontInfo(23px, 40px, -0.08em);
+                    @include fontInfo(20px, 32px, -0.04em);
                     @include fw-regular;
+                    padding: 0 45px;
                 }
                 &:nth-of-type(2){
                     margin: 0 35px;
@@ -1192,13 +1337,14 @@ $white : #fff;
                 }
             }
             .solution--explain{
+                clear: both;
                 opacity: 0;
                 transform: translateY(40px);
                 position: relative;
                 top: 170px;
                 text-align: center;
                 display: block;
-                @include fontInfo(26px, 49px, -0.08em);
+                @include fontInfo(26px, 49px, -0.02em);
                 @include fw-regular;
                 .underline{
                     border-bottom: 1px solid #fff;
@@ -1214,7 +1360,7 @@ $white : #fff;
     position: relative;
     background: linear-gradient(#000, #03007b, 50%, #000);
     &__bg{
-        background: url($imgPath + 'outro-bg.png') no-repeat;
+        background: url('../'+$imgPath + 'outro-bg.png') no-repeat;
         background-position: center;
         position: absolute;
         background-size: 100% 100%;
@@ -1230,8 +1376,15 @@ $white : #fff;
         &--title{
             opacity: 0;
             transform: translateY(40px);
-            @include textToImage('outro-title.png', 630px, 186px);
-            margin: 860px auto 85px auto;
+            //@include textToImage('outro-title.png', 630px, 186px);
+            color: #fff;
+            height: 186px;
+            @include serif-regular;
+            text-align: center;
+            font-size: 55px;
+            margin-top: 860px;
+            margin-bottom: 85px;
+            //margin: 860px auto 85px auto;
         }
         &--content{
             color: #fff;
@@ -1256,9 +1409,11 @@ $white : #fff;
                 position: absolute;
                 text-align: left;
                 display: block;
-                width: 740px;
+                //width: 740px;
+                width: 900px;
                 left: 50%;
-                margin-left: -370px;
+                //margin-left: -370px;
+                margin-left: -450px;
                 top: 1680px;
                 padding-bottom: 15px;
                 border-bottom: 2px solid;
@@ -1274,7 +1429,8 @@ $white : #fff;
                     border-bottom: 1px solid #fff;
                     padding-bottom: 6px;
                     font-style: normal;
-                    width: 320px;
+                    //width: 320px;
+                    width: 450px;
                     border-top: 1px solid;
                     border-bottom: 0;
                     text-align: left;
@@ -1288,7 +1444,7 @@ $white : #fff;
             }
             &-person{
                 opacity: 0;
-                background: url($imgPath + 'jorgen-winroth.png') no-repeat;
+                background: url('../'+$imgPath + 'jorgen-winroth.png') no-repeat;
                 width: 233px;
                 height: 199px;
                 position: absolute;
@@ -1299,7 +1455,7 @@ $white : #fff;
                 position: absolute;
                 top: -10px;
                 left: -65px;
-                background: url($imgPath + 'quotation-left.png') no-repeat;
+                background: url('../'+$imgPath + 'quotation-left.png') no-repeat;
                 width: 61px;
                 height: 42px;
             }
@@ -1307,7 +1463,7 @@ $white : #fff;
                 position: absolute;
                 right: -60px;
                 top: 0;
-                background: url($imgPath + 'quotation-right.png') no-repeat;
+                background: url('../'+$imgPath + 'quotation-right.png') no-repeat;
                 width: 61px;
                 height: 42px;
             }
@@ -1326,10 +1482,16 @@ $white : #fff;
 .brandsolution-logo{
     a{
         display: inline-block;
-        width: 62px;
-        height: 15px;
-        background: url(https://images.joins.com/newsroom/common/logo_svg_new.svg) no-repeat;
-        background-size: contain;
+        width: 156px;
+        height: 23px;
+        //background: url(https://images.joins.com/newsroom/common/logo_svg_new.svg) no-repeat;
+        //background: url('j_logo.png') no-repeat;
+        background: url($imgPath + 'j_logo.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 156px 23px;
+        transform: scale(0.7) translateY(-5px);
+        //background-size: contain;
         text-indent: -9999px;
     }
 }
@@ -1353,7 +1515,7 @@ $white : #fff;
 .copyright_box {
     position: relative;
     width: 100%;
-    height: 100px;
+    height: 120px;
     margin: 0 auto;
     padding: 0;
     background: #222222;
@@ -1369,7 +1531,8 @@ $white : #fff;
         background: #222222;
         .copyright_credit {
             position: relative;
-            width: 795px;
+            //width: 795px;
+            width: 960px;
             margin: 0 auto;
             bottom: 0px;
             color: #808080;
@@ -1393,18 +1556,20 @@ $white : #fff;
             background: url($imgPath + 'j_logo.png');
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: 83px 23px;
+            background-size: 156px 23px;
         }
         .copy_right{
             width: 75%;
+            //width: 765px;
             text-align: left;
             float: right;
             padding-top: 12px;
+            font-size: 12px;
             p.p-text{
                 font-weight: 400;
                 letter-spacing: 0px;
                 font-size: 11px;
-                line-height: 5px;
+                line-height: 15px;
             }
         }
     }

@@ -1,5 +1,7 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 .joins_gnb {
   height: 32px;
 }
@@ -248,7 +250,7 @@ i {
 .intro-news__paper--headline-ad {
   text-indent: -99999px;
   display: block;
-  background: url("../img/intro_headline_1.png") no-repeat;
+  background: url("../../img/intro_headline_1.png") no-repeat;
   width: 315px;
   height: 51px;
   margin: 120px auto 0 auto;
@@ -257,7 +259,7 @@ i {
 .intro-news__paper--headline-dd {
   text-indent: -99999px;
   display: block;
-  background: url("../img/intro_headline_2.png") no-repeat;
+  background: url("../../img/intro_headline_2.png") no-repeat;
   width: 50px;
   height: 300px;
   position: absolute;
@@ -270,30 +272,35 @@ i {
 }
 
 .intro-news__paper--headline-title-default {
-  text-indent: -99999px;
   display: block;
-  background: url("../img/intro_news_title_1.png") no-repeat;
-  width: 674px;
+  width: 100%;
   height: 75px;
-  margin: 0 auto;
+  text-align: center;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 45px;
 }
 
 .intro-news__paper--headline-title-strong {
-  text-indent: -99999px;
   display: block;
-  background: url("../img/intro_news_title_2.png") no-repeat;
-  width: 674px;
+  width: 100%;
   height: 122px;
-  margin: 40px auto 0 auto;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 120px;
+  letter-spacing: -0.06em;
 }
 
 .intro-news__paper--headline-sub-title {
-  text-indent: -99999px;
   display: block;
-  background: url("../img/intro_news_title_3.png") no-repeat;
-  width: 775px;
+  width: 100%;
   height: 75px;
+  text-align: center;
   margin: 400px auto 60px auto;
+  font-size: 44px;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
 }
 
 .intro-news__paper--content {
@@ -309,15 +316,15 @@ i {
 }
 
 .intro-news__paper--content-list-item {
-  text-align: justify;
   float: left;
   width: 328px;
   height: 420px;
   margin: 0 20px;
-  font-size: 21px;
+  text-align: left;
+  font-size: 18px;
   line-height: 37px;
-  letter-spacing: -0.07em;
-  font-family: 'Noto Serif KR', sans-serif;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Serif', serif;
   font-weight: 400;
 }
 
@@ -330,16 +337,16 @@ i {
 .intro-news__paper--annexed {
   opacity: 0;
   padding: 25px 30px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 17px;
   letter-spacing: -0.05em;
-  font-family: 'Noto Serif KR', sans-serif;
+  font-family: 'Noto Serif', serif;
   font-weight: 400;
 }
 
 .alzheimer {
   width: 100%;
-  height: 1340px;
+  height: 1450px;
   position: relative;
   overflow: hidden;
   background: #fff;
@@ -364,13 +371,15 @@ i {
 }
 
 .alzheimer__headline--title {
-  text-indent: -99999px;
   display: block;
   background: url("../img/alzheimer-title.png") no-repeat;
   width: 451px;
   height: 182px;
+  display: block;
   margin-top: 10px;
   float: left;
+  font-size: 32px;
+  padding-top: 25px;
 }
 
 .alzheimer__headline--title:after {
@@ -382,14 +391,13 @@ i {
 .alzheimer__headline--info {
   color: #535353;
   float: right;
-  text-align: justify;
-  word-break: break-all;
+  text-align: left;
   width: 500px;
   margin-right: 40px;
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
@@ -402,7 +410,7 @@ i {
 .alzheimer__card {
   width: 100%;
   height: 630px;
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 .alzheimer__card--item {
@@ -425,7 +433,7 @@ i {
   font-size: 21px;
   line-height: 29px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   display: block;
   width: 100%;
@@ -440,7 +448,7 @@ i {
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
 }
 
@@ -650,7 +658,7 @@ i {
 
 .alzheimer-hope__comment .quotation-left {
   opacity: 0;
-  background: url("../img/quotation-left-s.png") no-repeat;
+  background: url("../../img/quotation-left-s.png") no-repeat;
   width: 61px;
   height: 42px;
   position: absolute;
@@ -660,7 +668,7 @@ i {
 
 .alzheimer-hope__comment .quotation-right {
   opacity: 0;
-  background: url("../img/quotation-right-s.png") no-repeat;
+  background: url("../../img/quotation-right-s.png") no-repeat;
   width: 61px;
   height: 42px;
   position: absolute;
@@ -673,7 +681,7 @@ i {
   font-size: 21px;
   line-height: 29px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   color: #000;
   border-top: 2px solid #000;
@@ -707,27 +715,30 @@ i {
           transform: translateY(40px);
   margin-top: 170px;
   margin-left: -205px;
-  text-indent: -99999px;
   display: block;
   background: url("../img/alzheimer-hope__title.png") no-repeat;
-  width: 529px;
-  height: 179px;
+  width: 600px;
+  height: 180px;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-weight: 700;
+  font-size: 45px;
+  padding-left: 230px;
 }
 
 .alzheimer-hope__text-explain {
   opacity: 0;
   -webkit-transform: translateY(40px);
           transform: translateY(40px);
-  width: 500px;
+  width: 550px;
   margin-left: 25px;
   margin-top: 55px;
   color: #535353;
-  text-align: justify;
-  word-break: break-all;
+  text-align: left;
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.02em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
@@ -831,14 +842,23 @@ i {
 }
 
 .conversion__content--before-title {
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/conversion_2.png") no-repeat;
-  width: 379px;
-  height: 353px;
+  -webkit-transform: perspective(500px) rotateY(180deg);
+          transform: perspective(500px) rotateY(180deg);
+  color: #03007b;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-weight: 400;
   margin-top: 150px;
-  margin-left: 160px;
+  margin-left: 80px;
+  font-size: 45px;
+  margin-right: 60px;
+  letter-spacing: -0.06em;
+  line-height: 75px;
   opacity: 0;
+}
+
+.conversion__content--before-title strong {
+  font-weight: 700;
 }
 
 .conversion__content--before-graph {
@@ -856,7 +876,7 @@ i {
   font-size: 26px;
   line-height: 35px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   position: absolute;
   width: 100%;
@@ -866,19 +886,20 @@ i {
 }
 
 .conversion__content--before-detail {
-  color: #0600ff;
   color: #03007b;
   font-size: 21px;
   line-height: 39px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  width: 400px;
+  width: 420px;
   text-align: justify;
   word-break: break-all;
   position: absolute;
   top: 1045px;
   left: 120px;
+  text-align: left;
+  word-break: break-word;
 }
 
 .conversion__content--before:after {
@@ -906,7 +927,7 @@ i {
 
 .conversion__content--after .drag__cover--btn {
   position: absolute;
-  top: 675px;
+  top: 620px;
   background: none;
   width: 200px;
   height: 200px;
@@ -914,23 +935,30 @@ i {
 }
 
 .conversion__content--after .drag__cover--btn-inner {
-  text-indent: -99999px;
   display: block;
   background: url("../img/drag__cover--btn.png") no-repeat;
   width: 157px;
   height: 106px;
+  text-indent: -99999px;
   margin-left: 60px;
 }
 
 .conversion__content--after-title {
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/conversion_1.png") no-repeat;
-  width: 378px;
-  height: 353px;
+  color: #fff;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-weight: 400;
   margin-top: 150px;
-  margin-left: 60px;
+  margin-left: 80px;
+  font-size: 45px;
+  margin-right: 60px;
+  letter-spacing: -0.06em;
+  line-height: 75px;
   opacity: 0;
+}
+
+.conversion__content--after-title strong {
+  font-weight: 700;
 }
 
 .conversion__content--after-graph {
@@ -961,15 +989,15 @@ i {
 .conversion__content--after-graph .round span {
   opacity: 0;
   color: #03007b;
-  font-size: 26px;
-  line-height: 35px;
+  font-size: 20px;
+  line-height: 28px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 80px;
+  top: 85px;
   left: 0;
   text-align: center;
 }
@@ -988,7 +1016,7 @@ i {
 }
 
 .conversion__content--after-graph .round.third span {
-  top: 95px;
+  top: 100px;
 }
 
 .conversion__content--after-detail {
@@ -996,18 +1024,19 @@ i {
   font-size: 21px;
   line-height: 39px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   width: 400px;
-  text-align: justify;
-  word-break: break-all;
   position: absolute;
   top: 1045px;
   right: 110px;
+  text-align: left;
+  word-break: break-word;
 }
 
 .conversion__content--after .conversion__now {
-  margin-left: 360px;
+  margin-left: 320px;
+  width: 80px;
 }
 
 .conversion__content--after:after {
@@ -1024,7 +1053,7 @@ i {
 }
 
 .drug-spec__background {
-  background: url("../img/drug-spec-background.png") no-repeat;
+  background: url("../../img/drug-spec-background.png") no-repeat;
   position: absolute;
   width: 958px;
   height: 865px;
@@ -1042,11 +1071,12 @@ i {
 }
 
 .drug-spec__panel--title {
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/drug-spec-title.png") no-repeat;
-  width: 661px;
-  height: 171px;
+  color: #fff;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 45px;
+  letter-spacing: -0.05em;
+  font-weight: 700;
   margin-top: 130px;
   margin-left: 50px;
   opacity: 0;
@@ -1069,41 +1099,13 @@ i {
 .drug-spec__panel--inner .explain-text {
   color: #eee;
   width: 400px;
-  text-align: justify;
-  word-break: break-all;
   font-size: 21px;
   line-height: 38px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-}
-
-.drug-spec__panel--inner .explain-text span {
-  border-bottom: 1px solid #fff;
-  padding-bottom: 2px;
-  display: inline-block;
-  position: relative;
-}
-
-.drug-spec__panel--inner .explain-text span i {
-  background: #bb2bbb;
-  display: inline-block;
-  width: 100%;
-  height: 26px;
-  z-index: -1;
-  top: 8px;
-  position: absolute;
-  opacity: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.drug-spec__panel--inner .explain-text span.re-ls {
-  letter-spacing: -0.03em;
-}
-
-.drug-spec__panel--inner .explain-text span.active i {
-  opacity: 1;
+  text-align: left;
+  word-break: break-word;
 }
 
 .drug-spec__panel--inner .step_1, .drug-spec__panel--inner .step_2, .drug-spec__panel--inner .step_3 {
@@ -1125,6 +1127,8 @@ i {
   width: 400px;
   margin-top: 210px;
   margin-left: 60px;
+  text-align: left;
+  word-break: break-word;
 }
 
 .drug-spec__panel--inner .step_2 .chart-1 {
@@ -1158,11 +1162,13 @@ i {
   width: 400px;
   margin-top: 210px;
   margin-left: 60px;
+  text-align: left;
+  word-break: break-word;
 }
 
 .drug-spec__panel--inner .step_3 .chart-1 {
   position: absolute;
-  background: url("../img/drug-step2__chart-1.png") no-repeat;
+  background: url("../../img/drug-step2__chart-1.png") no-repeat;
   width: 518px;
   height: 396px;
   top: -392px;
@@ -1171,7 +1177,7 @@ i {
 
 .drug-spec__panel--inner .step_3 .chart-2 {
   position: absolute;
-  background: url("../img/drug-step2__chart-2.png") no-repeat;
+  background: url("../../img/drug-step2__chart-2.png") no-repeat;
   width: 521px;
   height: 414px;
   top: -410px;
@@ -1292,11 +1298,18 @@ i {
   -webkit-transform: translateY(40px);
           transform: translateY(40px);
   margin: 200px auto;
-  text-indent: -99999px;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-weight: 400;
+  color: #fff;
+  height: 117px;
+  font-size: 45px;
+  text-align: center;
   display: block;
-  background: url("../img/meterial-title.png") no-repeat;
-  width: 660px;
-  height: 177px;
+}
+
+.meterial__panel--title strong {
+  font-weight: 700;
 }
 
 .meterial__panel--inner-list-item {
@@ -1317,17 +1330,13 @@ i {
   font-size: 30px;
   line-height: 38px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 500;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   text-align: center;
-  margin-top: 144px;
   width: 100%;
   position: absolute;
   -webkit-transition: color 0.4s;
   transition: color 0.4s;
-}
-
-.meterial__panel--inner-list-item p.line {
   margin-top: 168px;
 }
 
@@ -1346,34 +1355,46 @@ i {
 }
 
 .meterial__panel--inner-list-item .inner-content.left {
-  background: url("../img/inner-content-left.jpg") no-repeat;
+  background: url("../../img/inner-content-left.jpg") no-repeat;
   top: 288px;
   left: 121px;
 }
 
 .meterial__panel--inner-list-item .inner-content.right {
-  background: url("../img/inner-content-right.jpg") no-repeat;
+  background: url("../../img/inner-content-right.jpg") no-repeat;
   top: 253px;
   left: -91px;
 }
 
 .meterial__panel--inner-list-item .inner-content p {
   color: #03007b;
-  font-size: 23px;
-  line-height: 40px;
+  font-size: 19px;
+  line-height: 32px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   margin: 0;
   text-align: left;
   mix-blend-mode: darken;
-  text-align: justify;
-  word-break: break-all;
+  text-align: left;
+  word-break: break-word;
   padding: 40px 40px 0 30px;
 }
 
 .meterial__panel--inner-list-item.active {
   background: #797886;
+}
+
+.meterial__panel--inner-list-item.active.list1 .on {
+  margin-top: 125px;
+}
+
+.meterial__panel--inner-list-item.active.list2 .on {
+  margin-top: 145px;
+}
+
+.meterial__panel--inner-list-item.active.list3 .on {
+  margin-top: 155px;
 }
 
 .meterial__panel--inner-list-item.active .before {
@@ -1383,8 +1404,8 @@ i {
 .meterial__panel--inner-list-item.active .on {
   opacity: 1;
   color: #fff;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 400;
+  font-size: 25px;
+  padding: 0 30px;
 }
 
 .meterial__panel--inner-list-item.active .inner-content {
@@ -1410,23 +1431,28 @@ i {
 
 .meterial__panel--inner-detail-text {
   text-align: center;
-  font-size: 26px;
-  line-height: 55px;
-  letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 24px;
+  line-height: 60px;
+  letter-spacing: -0.06em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+}
+
+.meterial__panel--inner-detail span {
+  margin: 0 20px;
 }
 
 .meterial__panel--inner-detail-hide {
   font-size: 30px;
   line-height: 50px;
-  letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.06em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   padding: 2px 20px;
   background: #000;
   position: relative;
   display: inline-block;
+  margin: 0 10px;
 }
 
 .meterial__panel--inner-detail-hide.mg {
@@ -1452,14 +1478,14 @@ i {
 
 .gv-1001 {
   width: 100%;
-  height: 1420px;
+  height: 1650px;
   z-index: 0;
   position: relative;
   background: #000;
 }
 
 .gv-1001__bg {
-  background: url("../img/gv1001-bg.png") no-repeat;
+  background: url("../../img/gv1001-bg.png") no-repeat;
   background-position: center;
   position: absolute;
   top: -550px;
@@ -1487,11 +1513,15 @@ i {
           transform: translateY(40px);
   margin-left: 50px;
   margin-top: 500px;
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/gv1001-title.png") no-repeat;
-  width: 366px;
+  color: #fff;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
   height: 256px;
+  font-size: 55px;
+}
+
+.gv-1001__panel--title strong {
+  font-weight: 700;
 }
 
 .gv-1001__panel--content {
@@ -1500,12 +1530,12 @@ i {
 
 .gv-1001__panel--content-comment {
   position: absolute;
-  top: 870px;
+  top: 930px;
   left: 80px;
 }
 
 .gv-1001__panel--content-comment .quotation-left {
-  background: url("../img/quotation-left.png") no-repeat;
+  background: url("../../img/quotation-left.png") no-repeat;
   width: 61px;
   height: 42px;
   position: absolute;
@@ -1516,7 +1546,7 @@ i {
 }
 
 .gv-1001__panel--content-comment .quotation-right {
-  background: url("../img/quotation-right.png") no-repeat;
+  background: url("../../img/quotation-right.png") no-repeat;
   width: 61px;
   height: 42px;
   position: absolute;
@@ -1529,9 +1559,11 @@ i {
   opacity: 0;
   font-style: italic;
   font-size: 28px;
-  line-height: 48px;
-  letter-spacing: -0.08em;
+  line-height: 41px;
+  letter-spacing: -0.06em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  font-weight: 600 !important;
   z-index: 1;
   position: relative;
 }
@@ -1544,7 +1576,7 @@ i {
   font-size: 21px;
   line-height: 29px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
@@ -1574,7 +1606,7 @@ i {
           transform: translateY(40px);
   position: absolute;
   right: 50px;
-  width: 500px;
+  width: 550px;
   text-align: justify;
   word-break: break-all;
   margin-top: 40px;
@@ -1585,9 +1617,9 @@ i {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  word-break: break-all;
+  text-align: left;
 }
 
 .gv-1001__panel--content .underline {
@@ -1626,15 +1658,19 @@ i {
 }
 
 .meterial-hope__panel--title {
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/meterial-hope-title.png") no-repeat;
-  width: 356px;
   height: 259px;
+  color: #fff;
   margin: 95px 0px 95px 50px;
   opacity: 0;
   -webkit-transform: translateY(40px);
           transform: translateY(40px);
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  font-size: 55px;
+}
+
+.meterial-hope__panel--title strong {
+  font-weight: 700;
 }
 
 .meterial-hope__panel .table__background {
@@ -1645,7 +1681,7 @@ i {
 }
 
 .meterial-hope__panel .table__background li {
-  height: 50px;
+  height: 65px;
   width: 150vw;
   margin: 15px 0;
   background: #0c0066;
@@ -1664,10 +1700,10 @@ i {
   color: #fff;
   border-top: 4px solid #fff;
   border-bottom: 4px solid #fff;
-  font-size: 19px;
-  line-height: 36px;
-  letter-spacing: -0.02em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.04em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
@@ -1684,9 +1720,11 @@ i {
 }
 
 .meterial-hope__panel--table-cell th {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 500;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   padding: 1px 0;
+  font-size: 20px;
+  line-height: 36px;
 }
 
 .meterial-hope__panel--table-cell tr {
@@ -1695,11 +1733,12 @@ i {
 
 .meterial-hope__panel--table-cell td {
   padding: 14px 0;
+  height: 80px;
 }
 
 .meterial-hope__panel--table-cell td.matter-name {
   color: #06ff7b;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
 }
 
@@ -1711,7 +1750,7 @@ i {
   display: block;
   position: absolute;
   width: 228px;
-  top: 5px;
+  top: 15px;
 }
 
 .meterial-hope__panel--table-cell td.line .block span {
@@ -1727,7 +1766,7 @@ i {
   color: #fff;
   position: absolute;
   width: 1200px;
-  top: 575px;
+  top: 620px;
   left: 50%;
   margin-left: -600px;
 }
@@ -1739,7 +1778,7 @@ i {
   font-size: 26px;
   line-height: 38px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -1763,19 +1802,20 @@ i {
 .meterial-hope__panel--solution .solution--item-head {
   color: #06ff7b;
   border-bottom: 1px solid #06ff7b;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 38px;
   letter-spacing: -0.06em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
 }
 
 .meterial-hope__panel--solution .solution--item-text {
-  font-size: 23px;
-  line-height: 40px;
-  letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  padding: 0 45px;
 }
 
 .meterial-hope__panel--solution .solution--item:nth-of-type(2) {
@@ -1795,6 +1835,7 @@ i {
 }
 
 .meterial-hope__panel--solution .solution--explain {
+  clear: both;
   opacity: 0;
   -webkit-transform: translateY(40px);
           transform: translateY(40px);
@@ -1804,8 +1845,8 @@ i {
   display: block;
   font-size: 26px;
   line-height: 49px;
-  letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.02em;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
@@ -1822,7 +1863,7 @@ i {
 }
 
 .outro__bg {
-  background: url("../img/outro-bg.png") no-repeat;
+  background: url("../../img/outro-bg.png") no-repeat;
   background-position: center;
   position: absolute;
   background-size: 100% 100%;
@@ -1846,12 +1887,14 @@ i {
   opacity: 0;
   -webkit-transform: translateY(40px);
           transform: translateY(40px);
-  text-indent: -99999px;
-  display: block;
-  background: url("../img/outro-title.png") no-repeat;
-  width: 630px;
+  color: #fff;
   height: 186px;
-  margin: 860px auto 85px auto;
+  font-family: 'Noto Serif', serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 55px;
+  margin-top: 860px;
+  margin-bottom: 85px;
 }
 
 .outro__panel--content {
@@ -1865,7 +1908,7 @@ i {
   font-size: 23px;
   line-height: 40px;
   letter-spacing: -0.08em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -1888,9 +1931,9 @@ i {
   position: absolute;
   text-align: left;
   display: block;
-  width: 740px;
+  width: 900px;
   left: 50%;
-  margin-left: -370px;
+  margin-left: -450px;
   top: 1680px;
   padding-bottom: 15px;
   border-bottom: 2px solid;
@@ -1909,12 +1952,12 @@ i {
   font-size: 24px;
   line-height: 35px;
   letter-spacing: -0.04em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   border-bottom: 1px solid #fff;
   padding-bottom: 6px;
   font-style: normal;
-  width: 320px;
+  width: 450px;
   border-top: 1px solid;
   border-bottom: 0;
   text-align: left;
@@ -1931,7 +1974,7 @@ i {
 
 .outro__panel--content-person {
   opacity: 0;
-  background: url("../img/jorgen-winroth.png") no-repeat;
+  background: url("../../img/jorgen-winroth.png") no-repeat;
   width: 233px;
   height: 199px;
   position: absolute;
@@ -1943,7 +1986,7 @@ i {
   position: absolute;
   top: -10px;
   left: -65px;
-  background: url("../img/quotation-left.png") no-repeat;
+  background: url("../../img/quotation-left.png") no-repeat;
   width: 61px;
   height: 42px;
 }
@@ -1952,7 +1995,7 @@ i {
   position: absolute;
   right: -60px;
   top: 0;
-  background: url("../img/quotation-right.png") no-repeat;
+  background: url("../../img/quotation-right.png") no-repeat;
   width: 61px;
   height: 42px;
 }
@@ -1968,10 +2011,14 @@ i {
 
 .brandsolution-logo a {
   display: inline-block;
-  width: 62px;
-  height: 15px;
-  background: url(https://images.joins.com/newsroom/common/logo_svg_new.svg) no-repeat;
-  background-size: contain;
+  width: 156px;
+  height: 23px;
+  background: url("../img/j_logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 156px 23px;
+  -webkit-transform: scale(0.7) translateY(-5px);
+          transform: scale(0.7) translateY(-5px);
   text-indent: -9999px;
 }
 
@@ -1998,7 +2045,7 @@ i {
 .copyright_box {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 120px;
   margin: 0 auto;
   padding: 0;
   background: #222222;
@@ -2018,7 +2065,7 @@ i {
 
 .copyright_box .copyright .copyright_credit {
   position: relative;
-  width: 795px;
+  width: 960px;
   margin: 0 auto;
   bottom: 0px;
   color: #808080;
@@ -2044,7 +2091,7 @@ i {
   background: url("../img/j_logo.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 83px 23px;
+  background-size: 156px 23px;
 }
 
 .copyright_box .copyright .copy_right {
@@ -2052,13 +2099,14 @@ i {
   text-align: left;
   float: right;
   padding-top: 12px;
+  font-size: 12px;
 }
 
 .copyright_box .copyright .copy_right p.p-text {
   font-weight: 400;
   letter-spacing: 0px;
   font-size: 11px;
-  line-height: 5px;
+  line-height: 15px;
 }
 
 @-webkit-keyframes test {
