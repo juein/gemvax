@@ -1160,6 +1160,10 @@ i {
   margin-left: 60px;
 }
 
+.drug-spec__panel--inner .step_3 .explain-text .re-ls {
+  letter-spacing: -0.07em;
+}
+
 .drug-spec__panel--inner .step_3 .chart-1 {
   position: absolute;
   background: url("../img/drug-step2__chart-1.png") no-repeat;

@@ -56,7 +56,7 @@ $white : #fff;
     background: #000;
     &__paper{
         position: absolute;
-        height: calc(1640px + 15vh);
+        height: calc(1600px + 15vh);
         transform-origin: center;
         top: -535px;
         width: 1300px;
@@ -77,6 +77,7 @@ $white : #fff;
                 width: 315px;
                 height: 51px;
                 margin: 120px auto 0 auto;
+                transform: scale(0.8);
             }
             &-dd{
                 //@include textToImage('intro_headline_2.png', 50px, 300px);
@@ -86,8 +87,9 @@ $white : #fff;
                 width: 50px;
                 height: 300px;
                 position: absolute;
-                right: 25px;
-                top: 570px;
+                right: 10px;
+                top: 600px;
+                transform: scale(0.8);
                 
             }
             &-title{
@@ -98,8 +100,11 @@ $white : #fff;
                     width: 100%;
                     height: 75px;
                     text-align: center;
-                    @include serif-regular;
+                    //@include serif-regular;
+                    @include playfair;
                     font-size: 45px;
+                    letter-spacing: -0.5px;
+                    line-height: 80px;
 
                 }
                 &-strong{
@@ -111,7 +116,7 @@ $white : #fff;
                     //@include serif-bold;
                     @include playfair;
                     font-size: 120px;
-                    letter-spacing: -0.06em;
+                    letter-spacing: -0.04em;
 
                 }
             }
@@ -123,14 +128,17 @@ $white : #fff;
                 text-align: center;
                 margin: 400px auto 60px auto;
                 font-size: 44px;
-                @include serif-regular;
+                letter-spacing: -1px;
+                //@include serif-regular;
+
+                @include playfair;
             }
         }
         &--content{
             width: 1120px;
             margin: 0 auto;
             border-bottom: 2px solid #000;
-            padding: 50px 0 60px 0;
+            padding: 10px 0 60px 0;
             &-list{
                 height: 420px;
                 width: 100%;
@@ -144,6 +152,12 @@ $white : #fff;
                     text-align: left;
                     @include fontInfo(18px, 37px, -0.06em);
                     @include serif-regular;
+                    //@include playfair;
+                    sup{
+                        position: absolute;
+                        margin-top: -9px;
+                        font-size: 11px;
+                    }
                     &:after{
                         @include clear;
                     }
@@ -155,6 +169,10 @@ $white : #fff;
             padding: 25px 30px;
             @include fontInfo(15px, 17px, -0.05em);
             @include serif-regular;
+            sup{
+                font-size: 11px;
+            }
+            //@include playfair;
         }
     }
 }
@@ -177,12 +195,15 @@ $white : #fff;
         padding-top: 60px;
         margin-top: 45px;
         &--title{
-            @include textToImage('alzheimer-title.png', 451px, 182px);
+            @include textToImage('alzheimer-title.png', 500px, 182px);
+            //@include serif-bold;
+            @include playfair;
             display: block;
             margin-top: 10px;
             float: left;
-            font-size: 32px;
-            padding-top: 25px;
+            font-size: 40px;
+            padding-top: 5px;
+            letter-spacing: -0.04em;
             &:after{
                 @include clear;
             }
@@ -347,10 +368,13 @@ $white : #fff;
         float: left;
         &-text{
             opacity: 0;
-            @include fontInfo(28px, 48px, -0.08em);
-            font-weight: 400;
+            //@include fontInfo(28px, 48px, -0.08em);
+            //font-weight: 400;
             color: #000;
             font-style: italic;
+            @include fontInfo(28px, 41px, -0.06em);
+            @include fw-regular;
+            font-weight: 600 !important;
             padding-left: 70px;
         }
         .quotation-left{
@@ -368,7 +392,7 @@ $white : #fff;
             width: 61px;
             height: 42px;
             position: absolute;
-            margin-top: 210px;
+            margin-top: 190px;
             margin-left: 310px;
         }
         &-copylight{
@@ -382,6 +406,10 @@ $white : #fff;
             margin-top: 40px;
             padding-top: 15px;
             padding: 15px 2px;
+            font-weight: 600;
+            span{
+                font-weight: 400;
+            }
             &-s{
                 font-size: 18px;
                 display: block;
@@ -401,7 +429,8 @@ $white : #fff;
             margin-top: 170px;
             margin-left: -205px;
             @include textToImage('alzheimer-hope__title.png', 600px, 180px);
-            @include serif-regular;
+            //@include serif-regular;
+            @include playfair;
             font-weight: 700;
             font-size: 45px;
             padding-left: 230px;
@@ -501,14 +530,15 @@ $white : #fff;
                 //@include textToImage('conversion_2.png', 379px, 353px);
                 transform: perspective(500px) rotateY(180deg);
                 color: #03007b;
-                @include serif-regular;
+                //@include serif-regular;
+                @include playfair;
                 font-weight: 400;
                 margin-top: 150px;
                 margin-left: 80px;
                 font-size: 45px;
                 margin-right: 60px;
-                letter-spacing: -0.06em;
-                line-height: 75px;
+                letter-spacing: -0.02em;
+                line-height: 60px;
                 opacity: 0;
                 strong{
                     font-weight: 700;
@@ -524,7 +554,7 @@ $white : #fff;
                 position: relative;
                 span{
                     color: #fff;
-                    @include fontInfo(26px, 35px, -0.08em);
+                    @include fontInfo(26px, 35px, -0.06em);
                     @include fw-bold;
                     position: absolute;
                     width: 100%;
@@ -536,14 +566,14 @@ $white : #fff;
             &-detail{
                 //color: #0600ff;
                 color: #03007b;
-                @include fontInfo(21px, 39px, -0.08em);
+                @include fontInfo(21px, 39px, -0.06em);
                 //@include fw-demilight;
                 @include fw-regular;
                 width: 420px;
                 text-align: justify;
                 word-break: break-all;
                 position: absolute;
-                top: 1045px;
+                top: 995px;
                 left: 120px;
                 text-align: left;
                 word-break: break-word;
@@ -568,7 +598,7 @@ $white : #fff;
                 &--btn{
                     position: absolute;
                     //top: 675px;
-                    top: 620px;
+                    top: 560px;
                     background: none;
                     width: 200px;
                     height: 200px;
@@ -583,14 +613,15 @@ $white : #fff;
             &-title{
                 //@include textToImage('conversion_1.png', 378px, 353px);
                 color: #fff;
-                @include serif-regular;
+                //@include serif-regular;
+                @include playfair;
                 font-weight: 400;
                 margin-top: 150px;
                 margin-left: 80px;
                 font-size: 45px;
                 margin-right: 60px;
-                letter-spacing: -0.06em;
-                line-height: 75px;
+                letter-spacing: -0.02em;
+                line-height: 60px;
                 opacity: 0;
                 strong{
                     font-weight: 700;
@@ -618,7 +649,7 @@ $white : #fff;
                     span{
                         opacity: 0;
                         color: #03007b;
-                        @include fontInfo(20px, 28px, -0.08em);
+                        @include fontInfo(20px, 28px, -0.06em);
                         @include fw-bold;
                         position: absolute;
                         width: 100%;
@@ -632,6 +663,11 @@ $white : #fff;
                     }
                     &.second{
                         bottom: 0;
+                        span{
+                            top: 78px;
+                            font-size: 18px;
+                            line-height: 25px;
+                        }
                     }
                     &.third{
                         bottom: 0;
@@ -644,15 +680,16 @@ $white : #fff;
             }
             &-detail{
                 color: #fff;
-                @include fontInfo(21px, 39px, -0.08em);
+                @include fontInfo(21px, 39px, -0.06em);
                 @include fw-regular;
                 width: 400px;
                 //text-align: justify;
                 //word-break: break-all;
                 position: absolute;
-                top: 1045px;
+                //top: 1045px;
+                top: 995px;
                 right: 110px;
-                text-align: left;
+                text-align: right;
                 word-break: break-word;
             }
             .conversion__now{
@@ -685,9 +722,10 @@ $white : #fff;
         &--title{
             //@include textToImage('drug-spec-title.png', 661px, 171px);
             color: #fff;
-            @include serif-regular;
+            //@include serif-regular;
+            @include playfair;
             font-size: 45px;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.02em;
             font-weight: 700;
             margin-top: 130px;
             margin-left: 50px;
@@ -788,8 +826,8 @@ $white : #fff;
                     chart-2: 414
                 );
                 $cs3Top: (
-                    chart-1: -392,
-                    chart-2: -410
+                    chart-1: -508,
+                    chart-2: -526
                 );
                 $cs3Right: (
                     chart-1: 60,
@@ -798,7 +836,7 @@ $white : #fff;
                 @each $chartStep3 in chart-1, chart-2{
                     .#{$chartStep3}{
                         position: absolute;
-                        background: url('../'+$imgPath + 'drug-step2__#{$chartStep3}.png') no-repeat;
+                        background: url($imgPath + 'drug-step2__#{$chartStep3}.png') no-repeat;
                         width: #{map-get( $cs3Width, $chartStep3 )}px;
                         height: #{map-get( $cs3Height, $chartStep3 )}px;
                         top: #{map-get( $cs3Top, $chartStep3 )}px;
@@ -900,10 +938,12 @@ $white : #fff;
         &--title{
             opacity: 0;
             transform: translateY(40px);
-            margin: 200px auto;
+            margin: 200px auto 130px auto;
             //@include textToImage('meterial-title.png', 660px, 177px);
-            @include serif-regular;
+            //@include serif-regular;
+            @include playfair;
             font-weight: 400;
+            letter-spacing: 0.02em;
             color: #fff;
             height: 117px;
             font-size: 45px;
@@ -927,7 +967,7 @@ $white : #fff;
                     transition: all 0.6s;
                     p{
                         color: #06ff7b;
-                        @include fontInfo(30px, 38px, -0.08em);
+                        @include fontInfo(30px, 38px, -0.06em);
                         //@include fw-medium;
                         @include fw-bold;
                         text-align: center;
@@ -986,7 +1026,7 @@ $white : #fff;
                         }
                         &.list3{
                             .on{
-                                margin-top: 155px;
+                                margin-top: 140px;
                             }
                         }
                         .before{
@@ -1014,15 +1054,17 @@ $white : #fff;
             &-detail{
                 color: #fff;
                 position: absolute;
-                top: 1020px;
+                top: 970px;
+                width: 110%;
+                margin-left: -5%;
                 opacity: 0;
                 &-text{
                     text-align: center;
-                    @include fontInfo(24px, 60px, -0.06em);
+                    @include fontInfo(24px, 65px, -0.04em);
                     @include fw-regular;
                 }
                 span{
-                    margin: 0 20px;
+                    margin: 0 3px;
                 }
                 &-hide{
                     @include fontInfo(30px, 50px, -0.06em);
@@ -1033,7 +1075,7 @@ $white : #fff;
                     display: inline-block;
                     margin: 0 10px;
                     &.mg{
-                        margin: 0 35px;
+                        margin: 0 10px;
                     }
                     &.mg-r{
                         margin-right: 30px;
@@ -1084,9 +1126,11 @@ $white : #fff;
             margin-top: 500px;
             //@include textToImage('gv1001-title.png', 366px, 256px);
             color: #fff;
-            @include serif-regular;
+            //@include serif-regular;
+            @include playfair;
             height: 256px;
             font-size: 55px;
+            letter-spacing: 0em;
             strong{
                 font-weight: 700;
             }
@@ -1113,8 +1157,8 @@ $white : #fff;
                     width: 61px;
                     height: 42px;
                     position: absolute;
-                    top: 255px;
-                    left: 65px;
+                    top: 225px;
+                    left: 345px;
                     opacity: 0;
                 }
             }
@@ -1135,6 +1179,10 @@ $white : #fff;
                 color: #fff;
                 @include fontInfo(21px, 29px, -0.06em);
                 @include fw-regular;
+                font-weight: 600;
+                span{
+                    font-weight: 400;
+                }
                 &-s{
                     font-size: 18px;
                     display: block;
@@ -1164,7 +1212,7 @@ $white : #fff;
                 margin-top: 40px;
                 &-text{
                     color: #fff;
-                    @include fontInfo(23px, 40px, -0.08em);
+                    @include fontInfo(23px, 40px, -0.06em);
                     @include fw-regular;
                     //word-break: break-all;                
                     text-align: left;
@@ -1206,7 +1254,9 @@ $white : #fff;
             margin: 95px 0px 95px 50px;
             opacity: 0;
             transform: translateY(40px);
-            @include serif-regular;
+            //@include serif-regular;
+            @include playfair;
+            letter-spacing: 0px;
             font-size: 55px;
             strong{
                 font-weight: 700;
@@ -1241,10 +1291,10 @@ $white : #fff;
                 @include fw-regular;
                 .table-group{
                     &-1{
-                        width: 128px;
+                        width: 120px;
                     }
                     &-2{
-                        width: 166px;
+                        width: 196px;
                     }
                     &-3{
                         width: 310px;
@@ -1272,7 +1322,7 @@ $white : #fff;
                         .block{
                             display: block;
                             position: absolute;
-                            width: 228px;
+                            width: 260px;
                             top: 15px;
                             span{
                                 font-size: 14px;
@@ -1298,7 +1348,7 @@ $white : #fff;
             .solution--title{
                 opacity: 0;
                 transform: translateY(40px);
-                @include fontInfo(26px, 38px, -0.08em);
+                @include fontInfo(26px, 38px, -0.04em);
                 @include fw-regular;
                 text-align: center;
             }
@@ -1344,7 +1394,7 @@ $white : #fff;
                 top: 170px;
                 text-align: center;
                 display: block;
-                @include fontInfo(26px, 49px, -0.02em);
+                @include fontInfo(26px, 49px, -0.04em);
                 @include fw-regular;
                 .underline{
                     border-bottom: 1px solid #fff;
@@ -1379,7 +1429,9 @@ $white : #fff;
             //@include textToImage('outro-title.png', 630px, 186px);
             color: #fff;
             height: 186px;
-            @include serif-regular;
+            //@include serif-regular;
+            @include playfair;
+            letter-spacing: 0px;
             text-align: center;
             font-size: 55px;
             margin-top: 860px;
@@ -1391,15 +1443,15 @@ $white : #fff;
             &-text{
                 opacity: 0;
                 transform: translateY(40px);
-                @include fontInfo(23px, 40px, -0.08em);
+                @include fontInfo(23px, 40px, -0.06em);
                 @include fw-regular;
                 text-align: center;
             }
             &-strong{
                 opacity: 0;
                 transform: translateY(40px);
-                @include fontInfo(26px, 38px, -0.08em);
-                font-weight: 400;
+                @include fontInfo(23px, 38px, -0.06em);
+                font-weight: 600;
                 text-align: center;
                 display: block;
                 margin-top: 35px;
@@ -1417,14 +1469,21 @@ $white : #fff;
                 top: 1680px;
                 padding-bottom: 15px;
                 border-bottom: 2px solid;
+                
+                
+                
+                
                 .textMotion{
-                    @include fontInfo(28px, 48px, -0.08em);
-                    font-weight: 400;
+                    //@include fontInfo(28px, 48px, -0.08em);
+                    //font-weight: 400;
                     font-style: italic;
+                    @include fontInfo(28px, 41px, -0.06em);
+                    @include fw-regular;
+                    font-weight: 600 !important;
                     display: block;
                 }
                 .underline{                    
-                    @include fontInfo(24px, 35px, -0.04em);
+                    @include fontInfo(24px, 35px, -0.06em);
                     @include fw-regular;
                     border-bottom: 1px solid #fff;
                     padding-bottom: 6px;
@@ -1436,9 +1495,14 @@ $white : #fff;
                     text-align: left;
                     margin-top: 40px;
                     padding-top: 15px;
+                    font-weight: 600;
+                    //span{
+                    //    font-weight: 400;
+                    //}
                     span{
                         display: block;
                         @include fontInfo(20px, 28px, -0.04em);
+                        font-weight: 400;
                     }
                 }
             }

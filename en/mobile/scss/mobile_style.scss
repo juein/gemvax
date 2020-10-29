@@ -1,0 +1,1384 @@
+@import 'mobile_common';
+@import 'mobile_footer';
+
+$imgPath : '../../img/';
+$mimgPath : '../img/';
+$white : #fff;
+
+@mixin clear{
+    clear: both;
+    display: table;
+    content : '';
+}
+
+@mixin box_container( $width: 84vw, $mgTop:0 , $mgRight:0, $mgBottom:0, $mgLeft:-42vw, $top:0, $left:50%){
+    position: absolute;
+    width: $width;
+    top: $top;
+    left: $left;
+    margin: $mgTop $mgRight $mgBottom $mgLeft;
+    //outline: 1px solid #ddd;
+}
+
+@mixin fontInfo($size, $lh, $ls){
+    font-size: $size;
+    line-height: $lh;
+    letter-spacing: $ls;
+}
+
+@mixin textToImage($w:0, $h:0){
+    //text-indent: -99999px;
+    display: block;
+    width: $w;
+    height: $h;
+}
+
+#container{
+    overflow: hidden;
+}
+
+.intro-news{
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    top: 50px;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+    &__paper{
+        position: absolute;
+        transform-origin: center;
+        width: 100%;
+        min-height: calc(100vh - 50px);
+        height: 250vw;
+        transform-origin: top;
+        left: 50%;
+        &--box{
+            transform-origin: center;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+        }
+        &--panel{
+            @include box_container(88vw, 0, 0, 0, -44vw, 0, 50%);
+            height: 100%;
+        }
+        &--headline{
+            &-ad{
+                @include textToImage(25vw, 4vw);
+                background: url('../'+$imgPath + 'intro_headline_1.png') no-repeat;
+                background-size: 100% 100%;
+                text-indent: -99999px;
+                position: relative;
+                margin: 0 auto;
+                top: 15vw;
+            }
+            &-dd{
+                @include textToImage(4vw, 26vw);
+                background: url($imgPath + 'intro_headline_2.png') no-repeat;
+                background-size: 100% 100%;
+                text-indent: -99999px;
+                position: absolute;
+                top: 56vw;
+                right: -2vw;
+            }
+            &-title{
+                @include textToImage(70vw, 22vw);
+                background: url($mimgPath + 'intro_news_title_1.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                position: relative;
+                top: 26vw;
+            }
+            &-sub-title{
+                @include textToImage(77vw, 8vw);
+                background: url($mimgPath + 'intro_news_title_2.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                position: relative;
+                top: 60vw;
+            }
+        }
+        &--content{
+            position: absolute;
+            width: 78vw;
+            left: 7vw;
+            top: 100vw;
+            p{
+                @include fontInfo(3.8vw, 6.5vw, -0.11em);
+                padding-right: 8vw;
+                height: 82vw;
+                overflow: hidden;
+                text-align: justify;
+                word-break: break-all;
+                @include serif-regular;
+            }
+            strong{
+                @include fontInfo(4.1vw, 6.5vw, -0.11em);
+                @include serif-regular;
+                position: relative;
+                top: 5vw;
+            }
+        }
+        &--annexed{
+            @include fontInfo(2.8vw, 4vw, -0.05em);
+            @include serif-regular;
+            border-top: 2px solid #000;
+            border-bottom: 1px solid #000;
+            padding-top: 4vw;
+            padding-bottom: 12vw;
+            position: relative;
+            top: 170vw;
+        }
+    }
+}
+
+.alzheimer{
+    width: 100%;
+    height: 250vw;
+    position: relative;
+    background: #fff;
+    padding: 0;
+    &__panel{
+        @include box_container(88vw, 8vw, 0, 0, -44vw, 0, 50%);
+    }
+    &__headline{
+        &--title{
+            @include textToImage(27vw, 43vw);
+            background: url($mimgPath + 'alzheimer-title.png') no-repeat;
+            background-size: 100% 100%;
+            float: left;
+            opacity: 0;
+            transform: translateY(-40px);
+            &:after{
+                @include clear;
+            }
+        }
+        &--info{
+            color: #535353;
+            @include fontInfo(3.8vw, 6.5vw, -0.06em);
+            @include fw-demilight;
+            text-align: justify;
+            word-break: break-all;
+            float: right;
+            width: 53vw;
+            opacity: 0;
+            transform: translateY(-40px);
+            &:after{
+                @include clear;
+            }
+        }
+    }
+    &__card{
+        &--item{
+            top: 10vw;
+            &-news{
+                outline: 1px solid #c9c9c9;
+                height: 118vw;
+                transition: all 0.6s;
+                &.swiper-slide-active{
+                    box-shadow: 1.5vw 1.5vw 2vw #c9c9c9;
+                }
+                &.swiper-slide-prev, &.swiper-slide-next{
+                    margin-top: 9vw;
+                    height: 100vw;
+                }
+                .explain{
+                    color: #000;
+                    @include fontInfo(3.9vw, 6.4vw, -0.06em);
+                    @include fw-regular;
+                    position: absolute;
+                    top: 5vw;
+                    left: 6vw;
+                }
+                $numImgWidth: (
+                    one: 72,
+                    two: 58,
+                    three: 42,
+                    four: 68
+                );
+                $numImgHeight: (
+                    one: 23,
+                    two: 23, 
+                    three: 23, 
+                    four: 84
+                );
+                $contentWidth:(
+                    one: 72,
+                    two: 69, 
+                    three: 69, 
+                    four: 58 
+                );
+                $contentHeight:(
+                    one: 59,
+                    two: 54, 
+                    three: 55, 
+                    four: 54
+                );
+                $contentTop:(
+                    one: 54,
+                    two: 55, 
+                    three: 56, 
+                    four: 37
+                );
+                $contentLeft:(
+                    one: 8,
+                    two: 9, 
+                    three: 9, 
+                    four: 24
+                );
+
+                @each $numberring in one, two, three, four {
+                    &.#{$numberring}{
+                        .contents{
+                            .page-number{
+                                text-indent: -99999px;
+                                background: url($mimgPath + 'alzheimer__card--page-#{$numberring}.jpg') no-repeat;
+                                background-size: 100% 100%;
+                                width: 8vw;
+                                height: 2.2vw;
+                                position: absolute;
+                                top: 6vw;
+                                right: 5vw;
+                            }
+                            .numberring{
+                                background: url($mimgPath + 'alzheimer__card-#{$numberring}-num.png') no-repeat;
+                                background-size: 100% 100%;
+                                width: #{map-get( $numImgWidth, $numberring )}vw;
+                                height: #{map-get( $numImgHeight, $numberring )}vw;
+                                text-indent: -99999px;
+                                z-index: 1;
+                                display: block;
+                                margin: 22vw auto 0 auto;
+                                opacity: 0.4;
+                                transition: all 1.2s;
+                                @if $numberring == 'four'{
+                                    margin-top: 28vw;
+                                    margin-left: 10vw;
+                                }
+                            }
+                            .graph{
+                                background: url($mimgPath + 'alzheimer__card-#{$numberring}-content.png') no-repeat;
+                                background-size: 100% 100%;
+                                width: #{map-get( $contentWidth, $numberring )}vw;
+                                height: #{map-get( $contentHeight, $numberring )}vw;
+                                top: #{map-get( $contentTop, $numberring )}vw;
+                                left: #{map-get( $contentLeft, $numberring )}vw;
+                                opacity: 0;
+                                transition: all 0.8s;
+                                transition-delay: 0.3s;
+                                position: absolute;
+                            }
+                        }
+                    }
+                }
+
+                &.swiper-slide-active{
+                    transition: all 1s;
+                    .explain{
+                        @include fw-bold;
+                    }
+                    @each $numberring in one, two, three, four {
+                        &.#{$numberring}{
+                            .contents{
+                                .numberring{
+                                    opacity: 1;
+                                }
+                                .graph{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.alzheimer-hope{
+    width: 100%;
+    height: 200vw;
+    position: relative;
+    background: #fff;
+    padding: 0;
+    &__panel{
+        @include box_container(88vw, 8vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+    }
+    &__text{
+        &-title{
+            @include textToImage(80vw, 28vw);
+            background: url($mimgPath + 'alzheimer-hope__title.png') no-repeat;
+            background-size: 100% 100%;
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        &-explain{
+            width: 53vw;
+            margin-top: 6vw;
+            float: right;
+            color: #535353;
+            @include fontInfo(3.8vw, 6.5vw, -0.06em);
+            @include fw-demilight;
+            text-align: justify;
+            word-break: break-all;
+            opacity: 0;
+            transform: translateY(-40px);
+            &:after{
+                @include clear;
+            }
+        }
+    }
+    &__comment{
+        &-text{
+            color: #000;
+            @include fontInfo(4.1vw, 6.7vw, -0.08em);
+            font-weight: 400;
+            transform: scale(0.9);
+            font-style: italic;
+            margin-top: 85vw;
+            opacity: 0;
+        }
+        .quotation-left{
+            background: url($mimgPath + 'quotation-left.png') no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            width: 9vw;
+            height: 6.5vw;
+            margin-top: -6vw;
+            margin-left: -2vw;
+            opacity: 0;
+        }
+        .quotation-right{
+            background: url($mimgPath + 'quotation-right.png') no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            width: 9vw;
+            height: 6.5vw;
+            margin-top: -5vw;
+            margin-left: 20vw;
+            opacity: 0;
+        }
+        .underline{
+            height: 1px;
+            width: 24vw;
+            display: inline-block;
+            background: #000;
+            margin-top: 4vw;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        &-copylight{
+            opacity: 0;
+            color: #000;
+            @include fontInfo(3.2vw, 4.5vw, -0.06em);
+            @include fw-regular;
+            &-s{
+                display: block;
+                font-size: 2.8vw;
+            }
+        }
+    }
+}
+
+.conversion{
+    width: 100%;
+    height: 235vw;
+    position: relative;
+    padding: 0;
+    &__swiper{
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 2;
+    }
+    &__content{
+        &--before{
+            width: 100%;
+            z-index: 2;
+            background: #03007b;
+            color: #fff;
+            position: relative;
+            &-box{
+                width: 76vw;
+                left: 12vw;
+                position: relative;
+            }
+            &-title{
+                opacity: 0;
+                transform: translateY(-40px);
+                @include textToImage(60vw, 30vw);
+                background: url($mimgPath + 'conversion_1.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                margin-top: 17vw;
+                margin-bottom: 10vw;
+                
+            }
+            &-graph{
+                background-size: 100% 100%;
+                margin: 0 auto;
+                width: 68vw;
+                height: 62vw;
+                position: relative;
+                .round{
+                    position: absolute;
+                    width: 36vw;
+                    height: 36vw;
+                    transform: scale(0);
+                    i{
+                        background: #fff;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        opacity: 0.7;
+                        display: inline-block;
+                    }
+                    span{
+                        opacity: 0;
+                        color: #03007b;
+                        @include fontInfo(4.1vw, 5.5vw, -0.08em);
+                        @include fw-bold;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 12vw;
+                        left: 0;
+                        text-align: center;
+                    }
+                    &.first{
+                        left: 16vw;
+                    }
+                    &.second{
+                        bottom: 0;
+                    }
+                    &.third{
+                        bottom: 0;
+                        right: 0;
+                        span{
+                            top: 15vw;
+                        }
+                    }
+                }
+            }
+            
+            .cover-btn__before{
+                opacity: 0;
+                @include textToImage(13vw, 3.2vw);
+                background: url($mimgPath + 'cover-btn__before.png') no-repeat;
+                background-size: 100% 100%;
+                display: inline-block;
+                margin-top: 9vw;
+                text-indent: -99999px;
+            }
+            .conversion__now{
+                opacity: 0;
+                right: 0;
+                margin-top: 8vw;
+            }
+            &-detail{
+                opacity: 0;
+                @include fontInfo(3.8vw, 6.5vw, -0.06em);
+                @include fw-demilight;
+                text-align: justify;
+                word-break: break-all;
+                margin-top: 7vw;
+            }
+        }
+        &--after{
+            width: 100%;
+            background: #e5e5e5;
+            color: #0400b3;
+            position: relative;
+            &-box{
+                width: 76vw;
+                left: 12vw;
+                position: relative;
+            }
+            
+            &-title{
+                @include textToImage(60vw, 30vw);
+                background: url($mimgPath + 'conversion_2.png') no-repeat;
+                background-size: 100% 100%;
+                margin: 0 auto;
+                margin-top: 17vw;
+                margin-bottom: 10vw;
+                
+            }
+            &-graph{
+                background: #03007b;
+                border-radius: 50%;
+                margin: 0 auto;
+                width: 62vw;
+                height: 62vw;
+                position: relative;
+                span{
+                    @include fontInfo(4.1vw, 5.5vw, -0.08em);
+                    @include fw-bold;
+                    color: #fff;
+                    position: absolute;
+                    width: 100%;
+                    top: 27vw;
+                    text-align: center;
+                }
+            }
+            &-detail{
+                @include fontInfo(3.8vw, 6.5vw, -0.06em);
+                @include fw-demilight;
+                text-align: justify;
+                word-break: break-all;
+                margin-top: 19vw;
+            }
+            .conversion__now{
+                margin-top: 8vw;
+            }
+            .cover-btn__after{
+                @include textToImage(13.5vw, 3.2vw);
+                background: url($mimgPath + 'cover-btn__after.png') no-repeat;
+                background-size: 100% 100%;
+                position: absolute;
+                right: 0;
+                margin-top: 10vw;
+                text-indent: -99999px;
+            }
+        }
+    }
+    .conversion__now{
+        @include fontInfo(3.7vw, 5vw, -0.08em);
+        @include fw-bold;
+        border-bottom: 1px solid;
+        padding-bottom: 1vw;
+        position: absolute;
+    }
+}
+
+.drug-spec{
+    background: #000;
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 200vw;
+    &__offset{
+        position: absolute;
+        height: 52vw;
+    }
+    &__background{
+        background: url($imgPath + 'drug-spec-background.png') no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        width: 140vw;
+        height: 128vw;
+    }
+    &__panel{
+        @include box_container(88vw, 18vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            opacity: 0;
+            transform: translateY(-40px);
+            @include textToImage(51vw, 31vw);
+            background: url($mimgPath + 'drug-spec-title.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        &--cover{
+            opacity: 0;
+        }
+        &--inner{
+            color: #fff;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+            &.step_1{
+                top: 88vw;
+            }
+            .explain-text{
+                position: absolute;
+                color: #eee;
+                text-align: justify;
+                word-break: break-all;
+                @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                @include fw-regular;
+                span{
+                    border-bottom: 1px solid #fff;
+                    padding-bottom: 0.4vw;
+                    display: inline-block;
+                    position: relative;
+                    i{
+                        background: #bb2bbb;
+                        display: inline-block;
+                        width: 100%;
+                        height: 4vw;
+                        z-index: -1;
+                        top: 1.2vw;
+                        position: absolute;
+                        opacity: 0;
+                        transition: all 0.3s;
+                    }
+                    &.re-ls{
+                        letter-spacing: -0.06em;
+                    }
+                    &.active{
+                        i{
+                            opacity: 1;
+                        }
+                    }
+                }
+                
+            }
+            .step_1, .step_2, .step_3{
+                opacity: 0;    
+                transition: all 0.5s;
+                pointer-events: none;
+                z-index: 1;
+                &.active{
+                    opacity: 1;
+                    pointer-events: visible;
+                    z-index: 10;
+                }
+            }
+            .step_2{
+                top: 12vw;
+                .explain-text{
+                    padding: 0 6vw;
+                    top: 85vw;
+                }
+                @each $chartStep2 in chart-1, chart-2, chart-3 {
+                    .#{$chartStep2}{
+                        background: url($imgPath + 'drug-step1__#{$chartStep2}.png') no-repeat;
+                        background-size: 100% 100%;
+                        width: 62vw;
+                        height: 68vw;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .step_3{
+                top: 15vw;
+                .explain-text{
+                    top: 82vw;
+                }
+                $cs3Width: (
+                    chart-1: 80,
+                    chart-2: 82
+                );
+
+                $cs3Height: (
+                    chart-1: 62,
+                    chart-2: 65
+                );
+
+                $cs3Top: (
+                    chart-1: 0,
+                    chart-2: -3
+                );
+                $cs3Left: (
+                    chart-1: 0,
+                    chart-2: 0
+                );
+                @each $chartStep3 in chart-1, chart-2{
+                    .#{$chartStep3}{
+                        margin: 0 auto;
+                        background: url($imgPath + 'drug-step2__#{$chartStep3}.png') no-repeat;
+                        background-size: 100% 100%;
+                        width: #{map-get( $cs3Width, $chartStep3 )}vw;
+                        height: #{map-get( $cs3Height, $chartStep3 )}vw;
+                        margin-top: #{map-get( $cs3Top, $chartStep3 )}vw;
+                        left: #{map-get( $cs3Left, $chartStep3 )}vw;
+                    }
+                }
+            }
+        }
+        &--navigation{
+            position: absolute;
+            top: 50vw;
+            left: 9vw;
+            opacity: 0;
+            .navigation--item{
+                border: 1px solid #fff;
+                background: none;
+                display: inline-block;
+                text-indent: -99999px;
+                width: 2.5vw;
+                height: 2.5vw;
+                border-radius: 50%;
+                
+            }
+            .navigation__first, .navigation__second, .navigation__thrid{
+                transition: all 0.6s;
+                margin: 3vw 0;
+                &.active{
+                    .navigation--item{
+                        background: #fff;
+                    }
+                }
+            }
+        }
+        .buttonArea{
+            position: absolute;
+            width: 100%;
+            margin-top: 7vw;
+            left: 2vw;
+            z-index: 3;
+            .swiper-pagination-bullet{
+                width: 2.5vw;
+                height: 2.5vw;
+                background: #ff00ff;
+                opacity: 1;
+                position: absolute;
+                &:nth-of-type(2){
+                    left: 8vw;
+                }
+                &:nth-of-type(3){
+                    left: 16vw;
+                }
+                &.swiper-pagination-bullet-active{
+                    &:after{
+                        content: '';
+                        display: inline-block;
+                        border: 1px solid #ff00ff;
+                        width: 7vw;
+                        height: 7vw;
+                        border-radius: 50%;
+                        pointer-events: none;
+                        position: relative;
+                        margin-top: -2.4vw;
+                        margin-left: -2.4vw;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+
+.meterial{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 330vw;
+    z-index: 2;
+    background: linear-gradient(black, 50%, rgba(3, 0, 123, 1), transparent);
+    &__panel{
+        @include box_container(88vw, 24vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            opacity: 0;
+            @include textToImage(78vw, 21vw);
+            background: url($mimgPath + 'meterial-title.png') no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            margin-bottom: 15vw;
+        }
+        &--inner{
+            &-list{
+                &-item{
+                    .round{
+                        opacity: 0;
+                        border-radius: 50%;
+                        width: 60vw;
+                        height: 60vw;
+                        background: rgba(7, 0, 195, 0.8);
+                        margin: 0 auto;
+                        text-align: center;
+                        .before{
+                            color: #06ff7b;
+                            @include fontInfo(4.3vw, 6.7vw, -0.08em);
+                            @include fw-bold;
+                            position: relative;
+                            top: 19vw;
+                            &.two{
+                                top: 12vw;
+                            }
+                        }
+                        .on{
+                            color: #fff;
+                            @include fontInfo(4vw, 6.5vw, -0.08em);
+                            @include fw-regular;
+                            position: absolute;
+                            width: 60vw;
+                            top: 32vw;
+                        }
+                        i{
+                           background: #fff;
+                            height: 1px;
+                            width: 43vw;
+                            display: inline-block;
+                            transform-origin: left;
+                            position: absolute;
+                            left: 23vw;
+                            top: 29vw;
+                        }
+                    }
+                    .inner-content{
+                        opacity: 0;
+                        background: #fff;
+                        color: #03007b;
+                        text-align: justify;
+                        word-break: break-all;
+                        width: 64vw;
+                        margin-left: 12vw;
+                        margin-top: 5vw;
+                        padding: 5vw;
+                        height: 78vw;
+                        p{
+                            @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                            @include fw-demilight;
+                            word-break: break-all;
+                        }
+                    }
+                }
+            }
+            &-detail{
+                opacity: 0;
+                color: #fff;
+                text-align: center;
+                margin-top: 10vw;
+                &-text{
+                    @include fontInfo(3.9vw, 6.8vw, -0.08em);
+                    @include fw-demilight;
+                    margin: 2vw 0;
+                }
+                &-hide{
+                    @include fontInfo(4.8vw, 9vw, -0.08em);
+                    @include fw-bold;
+                    background: #000;
+                    position: relative;
+                    display: inline-block;
+                    box-shadow: 0.6vw 0.6vw 0vw #06ff7b;
+                    margin: 0.6vw 0;
+                    padding: 0 2vw;
+                }
+            }
+        }
+        .swiper-button-prev, .swiper-button-next{
+            background: url($mimgPath + 'swiper-arrow-btn.png') no-repeat;
+            background-size: 100% 100%;
+            transition: all 0.6s;
+            width: 6vw;
+            height: 11.5vw;
+            top: 135vw;
+        }
+        .swiper-button-next{
+            transform: rotate(180deg);
+        }
+        .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+            opacity: 0;
+        }
+    }
+}
+
+.gv-1001{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 266vw;
+    background: #000;
+    z-index: 0;
+    &__bg{
+        background: url($imgPath + 'gv1001-bg.png') no-repeat;
+        background-position: center;
+        position: absolute;
+        background-size: 100% 100%;
+        width: 150vw;
+        height: 150vw;
+        top: -85vw;
+        left: -18vw;
+    }
+    &__panel{
+        @include box_container(88vw, 0vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage(43vw, 29vw);
+            background: url($mimgPath + 'gv1001-title.png') no-repeat;
+            background-size: 100% 100%;
+            margin-top: 28vw;
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        &--content{
+            border-top: 2px solid #fff;
+            color: #fff;
+            margin-top: 3vw;
+            padding-top: 3vw;
+            &-detail{
+                &-text{
+                    opacity: 0;
+                    transform: translateY(-40px);
+                    @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                    font-weight: 400;
+                    word-break: break-all;
+                    text-align: justify;
+                    width: 52vw;
+                    position: absolute;
+                    right: 0;
+                    z-index: 2;
+                    .underline{
+                        border-bottom: 1px solid #fff;
+                        padding-bottom: 0.5vw;
+                        display: inline-block;
+                        position: relative;
+                        i{
+                            position: absolute;
+                            background: #03007b;
+                            display: inline-block;
+                            width: 100%;
+                            z-index: -1;
+                            height: 5vw;
+                            top: 1vw;
+                        }
+                    }
+                }
+            }
+            &-text{
+                opacity: 0;
+            }
+            &-video{
+                position: absolute;
+                width: 68vw;
+                height: 38vw;
+                left: -6vw;
+                top: 95vw;
+                opacity: 0;
+            }
+            &-comment{
+                position: absolute;
+                top: 180vw;
+                left: 4vw;
+                @include fontInfo(4.1vw, 6.7vw, -0.08em);
+                @include fw-bold;
+                font-style: italic;
+                .quotation-left{
+                    background: url($mimgPath + 'quotation-left-s.png') no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    width: 9vw;
+                    height: 6.5vw;
+                    top: -2vw;
+                    left: -5vw;
+                    z-index: -1;
+                    opacity: 0;
+                }
+                .quotation-right{
+                    background: url($mimgPath + 'quotation-right-s.png') no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    width: 9vw;
+                    height: 6.5vw;
+                    left: 19vw;
+                    margin-top: -7vw;
+                    z-index: -1;
+                    opacity: 0;
+                }
+                .border{
+                    background: #fff;
+                    height: 1px;
+                    width: 22vw;
+                    display: inline-block;
+                    position: relative;
+                    top: -2vw;
+                    opacity: 0;
+                }
+            }
+            &-copylight{
+                opacity: 0;
+                margin-top: -1vw;
+                font-style: normal;
+                @include fontInfo(3.2vw, 4.5vw, -0.06em);
+                @include fw-regular;
+                &-s{
+                    font-size: 2.8vw;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.meterial-hope{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 250vw;
+    background: #000;
+    &__panel{
+        @include box_container(88vw, 0vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            opacity: 0;
+            transform: translateY(-40px);
+            position: relative;
+            @include textToImage(59vw, 21vw);
+            background: url($mimgPath + 'meterial-hope-title.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        .solution--title{
+            opacity: 0;
+            transform: translateY(-40px);
+            color: #fff;
+            @include fontInfo(3.8vw, 6.5vw, -0.08em);
+            @include fw-regular;
+            margin-top: 7vw;
+        }
+        .solution--list{
+            position: relative;
+            top: 32vw;
+            .solution--item{
+                opacity: 0;
+                position: absolute;
+                color: #fff;
+                text-align: justify;
+                word-break: break-all;
+                &-head{
+                    @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                    @include fw-bold;
+                    display: block;
+                    background: #03007b;
+                    position: absolute;
+                    width: 80vw;
+                }
+                &-text{
+                    @include fw-regular;
+                    @include fontInfo(3.8vw, 6.5vw, -0.08em);
+                    width: 52vw;
+                    word-break: break-all;
+                    margin-top: 7vw;
+                }
+                &.one{
+                    right: 3vw;
+                    i{
+                        position: absolute;
+                        border-bottom: 1px solid #fff;
+                        width: 54vw;
+                        top: 7.5vw;
+                    }
+                }
+                &.two{
+                    top: 40vw;
+                    left: 3vw;
+                    .solution--item-head{
+                        text-align: right;
+                        left: -46vw;
+                    }
+                    i{
+                        position: absolute;
+                        border-bottom: 1px solid #fff;
+                        width: 34vw;
+                        top: 7.5vw;
+                    }
+                }
+                &.three{
+                    top: 80vw;
+                    right: 3vw;
+                    i{
+                        position: absolute;
+                        border-bottom: 1px solid #fff;
+                        width: 57vw;
+                        top: 7.5vw;
+                    }
+                }
+            }
+        }
+        .solution--explain{
+            opacity: 0;
+            transform: translateY(-40px);
+            color: #fff;
+            @include fontInfo(3.8vw, 6.5vw, -0.08em);
+            @include fw-demilight;
+            position: relative;
+            top: 165vw;
+            z-index: 2;
+            .underline{
+                border-bottom: 1px solid #fff;
+                padding-bottom: 0.5vw;
+                display: inline-block;
+                position: relative;
+            }
+        }
+        &--table{
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            z-index: 2;
+            top: 48vw;
+            &-cell{
+                border-top: 3px solid #fff;
+                &.before{
+                    border-bottom: 0;
+                }
+                &.more{
+                    opacity: 0;
+                    pointer-events: none;
+                    border-top: 0;
+                    border-bottom: 3px solid #fff;
+                }
+            }
+            .table-group{
+                &-1{
+                    width: 25%;
+                }
+                &-2{
+                    width: 25%;
+                }
+                &-3{
+                    width: 20%;
+                }
+                &-4{
+                    width: 30%;
+                }
+            }
+            th{
+                color: #06ff7b;
+                @include fontInfo(3.6vw, 6vw, -0.06em);
+                @include fw-medium;
+                border: 1px solid #fff;
+            }
+            td{
+                color: #fff;
+                border: 1px solid #fff;
+                padding: 2vw 0;
+                span{
+                    display: block;
+                    font-size: 2.2vw;
+                }
+            }
+            tr{
+                @include fontInfo(3vw, 4.5vw, -0.06em);
+                @include fw-demilight;
+            }
+            .block{
+                @include fw-medium;
+                td{
+                    padding: 0;
+                    line-height: 5vw;
+                }
+            }
+            .bdl-n{
+                border-left: 0;
+            }
+            .bdr-n{
+                border-right: 0;
+            }
+            .table-more{
+                background: url($mimgPath + 'table-controls.png') no-repeat;
+                background-size: 100% 100%;
+                width: 4vw;
+                height: 4vw;
+                position: absolute;
+                text-indent: -99999px;
+                left: 3vw;
+                top: 10vw;
+            }
+            .table-hide{
+                background: url($mimgPath + 'table-controls.png') no-repeat;
+                background-size: 100% 100%;
+                width: 4vw;
+                height: 4vw;
+                position: absolute;
+                text-indent: -99999px;
+                left: 3vw;
+                top: 50vw;
+                transform: rotate(45deg);
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.outro{
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 320vw;
+    background: linear-gradient(#000, #03007b, 50%, #000);
+    &__bg{
+        background: url($mimgPath + 'outro-bg.png') no-repeat;
+        background-position: center;
+        position: absolute;
+        background-size: 100% 100%;
+        width: 100vw;
+        height: 150vw;
+        top: -35vw;
+    }
+    &__panel{
+        @include box_container(88vw, 64vw, 0, 0, -44vw, 0, 50%);
+        height: 100%;
+        &--title{
+            @include textToImage(64vw, 35vw);
+            background: url($mimgPath + 'outro-title.png') no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        &--content{
+            color: #fff;
+            text-align: center;
+            &-text{
+                opacity: 0;
+                transform: translateY(-40px);
+                @include fontInfo(3.8vw, 6.7vw, -0.06em);
+                @include fw-demilight;
+                margin-top: 10vw;
+                margin-bottom: 6vw;
+            }
+            &-strong{
+                opacity: 0;
+                @include fontInfo(4.3vw, 6.5vw, -0.08em);
+                @include fw-bold;
+            }
+            &-comment{
+                position: absolute;
+                left: 0;
+                text-align: left;
+                color: #fff;
+                font-style: italic;
+                @include fontInfo(4.3vw, 7.5vw, -0.08em);
+                top: 150vw;
+                padding-left: 5vw;
+                padding-bottom: 3vw;
+                width: 95vw;
+                border-bottom: 2px solid;
+                span{
+                    opacity: 0;
+                    font-weight: 400;
+                    display: block;
+                }
+                .quotation-left{
+                    opacity: 0;
+                    background: url($mimgPath + 'quotation-left-s.png') no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    width: 9vw;
+                    height: 6.5vw;
+                    top: -12vw;
+                    left: 0;
+                }
+                .quotation-right{
+                    opacity: 0;
+                    background: url($mimgPath + 'quotation-right-s.png') no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    width: 9vw;
+                    height: 6.5vw;
+                    margin-top: -20vw;
+                    left: 0;
+                }
+                .underline{
+                    opacity: 0;
+                    border-top: 1px solid #fff;
+                    font-style: normal;
+                    @include fontInfo(3.2vw, 4.5vw, -0.06em);
+                    @include fw-regular;
+                    width: 40vw;
+                    margin-top: 14vw;
+                    margin-left: -5vw;
+                    padding-top: 2vw;
+                    padding-left: 1vw;
+                    span{
+                        display: block;
+                        font-size: 2.8vw;
+                    }
+                }
+            }
+            &-person{
+                opacity: 0;
+                background: url($mimgPath + 'jorgen-winroth.png') no-repeat;
+                position: absolute;
+                bottom: 0;
+                background-size: 100% 100%;
+                width: 36vw;
+                height: 31vw;
+                right: 7vw;
+            }
+        }
+    }
+}
+
+.brandsolution-logo{
+    left: 0;
+}
+.brandsolution-logo a{
+    display: inline-block;
+    //width: 62px;
+    //height: 15px;
+    width: 156px;
+    height: 23px;
+    //background: url(https://images.joins.com/newsroom/common/logo_svg_new.svg) no-repeat;
+    //background-size: contain;
+    text-indent: -9999px;
+    background: url($imgPath + 'j_logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 156px 23px;
+    transform: scale(0.7) translateY(-5px);
+}
+.rooftop{
+    background: #222;
+}
+.sns-share-box{
+    margin: 5px 14px;
+    position: absolute;
+    top: 7px;
+    right: 0px;
+    width: 95px;
+    height: 36px;
+    li{
+        display: inline-block;
+        position: relative;
+        margin-right: 3px;
+        width: 25px;
+        height: 25px;
+        a{
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+        }
+    }
+}
+.sns-share-box a.sns-fb{
+    background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat 0 -41px;
+    background-size: 200px 200px;
+}
+.sns-share-box a.sns-tw{
+    background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -25px 0;
+}
+.sns-share-box a.kakao{
+    background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -51px 0;
+}
+.sns-share-box a.sns-fb:hover{
+    background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat 0 -41px;
+    background-size: 200px 200px;
+}
+.sns-share-box a.sns-tw:hover{
+    background-position: -25px 0px;
+}
+
+.copyright{
+    background: #222;
+    .ls{
+        line-height: 70px;
+    }
+}
+.copyright p .bold{
+    color: #ddd;
+}
+.copyright p.p-text{
+    padding: 0 8px;
+}
+.copyright p{
+    margin-top: 20px;
+}
+.copyright .copy_logo{
+    width: 156px;
+    height: 40px;
+    background: url($imgPath + 'j_logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 156px 23px;
+    transform: scale(0.8);
+    display: block;
+    margin: 0 auto;
+}

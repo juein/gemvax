@@ -1,0 +1,2002 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@500;600&display=swap");
+body {
+  height: 100vh;
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.4;
+  letter-spacing: -0.08em;
+}
+
+h2, h3 {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+h2 {
+  font-size: 1.563rem;
+  line-height: 1.25;
+  letter-spacing: -0.062em;
+  color: #1d1d1d;
+  font-weight: normal;
+}
+
+h2 + p {
+  max-width: 600px;
+  font-size: 1rem;
+}
+
+h2 strong {
+  font-weight: 600;
+}
+
+section {
+  position: relative;
+  padding: 2.8125rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
+button {
+  padding: 0;
+  border: 0 none;
+  cursor: pointer;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+p {
+  word-break: keep-all;
+}
+
+.hide {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font: 0/0 Sans-serif;
+  visibility: hidden;
+}
+
+:focus {
+  outline: none;
+}
+
+.sns-modal .modal-head {
+  height: 50px;
+  font-size: 1.1em;
+}
+
+.brand-identity img {
+  top: 0;
+}
+
+.video_wrap {
+  font: 0/0 arial;
+}
+
+video {
+  display: block;
+  width: 100%;
+}
+
+/* 하단 카피라이트 관련 클레스 영역 */
+.copyright {
+  font-family: sans-serif;
+  position: relative;
+  padding: 40px 0;
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 200;
+  background: #efefef;
+  color: #818181;
+}
+
+.copyright p {
+  letter-spacing: 0;
+  height: 16px;
+  font-size: .688rem;
+  margin: 8px 0;
+}
+
+.copyright p .bold {
+  font-weight: 700;
+}
+
+.copyright p.p-text {
+  font-weight: 400;
+  letter-spacing: 1px;
+  height: 15px;
+  margin: 8px 0;
+  color: #818181;
+}
+
+.copyright p.eng01 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  height: 24px;
+  font-size: .6rem;
+  padding-top: 0px;
+  margin: 0px 0 30px 0;
+}
+
+.copyright .copyrightfooter_btnset {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.copyright .copyrightfooter_btnset:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.copyright .copyrightfooter_btnset .copy_footer_btn1 {
+  text-align: center;
+  min-height: 40px;
+  line-height: 40px;
+  letter-spacing: .5px;
+  border-top: 1px solid #ccc;
+}
+
+.copyright .copyrightfooter_btnset .copy_footer_btn2 {
+  float: left;
+  position: relative;
+  width: 50%;
+  text-align: center;
+  min-height: 40px;
+  line-height: 40px;
+  letter-spacing: .5px;
+  border-top: 1px solid #ccc;
+}
+
+.copyright .copyrightfooter_btnset .copy_footer_btn2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: #ccc;
+}
+
+.copyright .copyrightfooter_btnset .footer_tel {
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  color: #818181;
+  text-decoration: none;
+}
+
+.copyright .copyrightfooter_btnset .footer_tel i {
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background: url(/ilab/img/sprite.png?v=2) no-repeat -170px 0;
+  background-size: 200px;
+  position: relative;
+  display: inline-block;
+  margin-right: 0px;
+  vertical-align: baseline;
+  margin-left: 10px;
+  opacity: 0.5;
+}
+
+.copyright .footer_mail {
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  color: #666;
+  text-decoration: none;
+}
+
+.copyright .footer_mail i {
+  width: 18px;
+  height: 12px;
+  background: url(/ilab/img/sprite.png?v=2) no-repeat -150px 0;
+  background-size: 200px;
+  position: relative;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: baseline;
+  opacity: 0.5;
+}
+
+/* 하단 카피라이트 관련 클레스 영역 끝 */
+#container {
+  overflow: hidden;
+}
+
+.intro-news {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  top: 50px;
+  padding: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.intro-news__paper {
+  position: absolute;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  height: 250vw;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  left: 50%;
+}
+
+.intro-news__paper--box {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-news__paper--panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -44vw;
+  height: 100%;
+}
+
+.intro-news__paper--headline-ad {
+  display: block;
+  width: 25vw;
+  height: 4vw;
+  background: url("../../../img/intro_headline_1.png") no-repeat;
+  background-size: 100% 100%;
+  text-indent: -99999px;
+  position: relative;
+  margin: 0 auto;
+  top: 15vw;
+}
+
+.intro-news__paper--headline-dd {
+  display: block;
+  width: 4vw;
+  height: 26vw;
+  background: url("../../img/intro_headline_2.png") no-repeat;
+  background-size: 100% 100%;
+  text-indent: -99999px;
+  position: absolute;
+  top: 56vw;
+  right: -2vw;
+}
+
+.intro-news__paper--headline-title {
+  display: block;
+  width: 70vw;
+  height: 22vw;
+  background: url("../img/intro_news_title_1.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 26vw;
+}
+
+.intro-news__paper--headline-sub-title {
+  display: block;
+  width: 77vw;
+  height: 8vw;
+  background: url("../img/intro_news_title_2.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 60vw;
+}
+
+.intro-news__paper--content {
+  position: absolute;
+  width: 78vw;
+  left: 7vw;
+  top: 100vw;
+}
+
+.intro-news__paper--content p {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.11em;
+  padding-right: 8vw;
+  height: 82vw;
+  overflow: hidden;
+  text-align: justify;
+  word-break: break-all;
+  font-family: 'Noto Serif KR', sans-serif;
+  font-weight: 400;
+}
+
+.intro-news__paper--content strong {
+  font-size: 4.1vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.11em;
+  font-family: 'Noto Serif KR', sans-serif;
+  font-weight: 400;
+  position: relative;
+  top: 5vw;
+}
+
+.intro-news__paper--annexed {
+  font-size: 2.8vw;
+  line-height: 4vw;
+  letter-spacing: -0.05em;
+  font-family: 'Noto Serif KR', sans-serif;
+  font-weight: 400;
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #000;
+  padding-top: 4vw;
+  padding-bottom: 12vw;
+  position: relative;
+  top: 170vw;
+}
+
+.alzheimer {
+  width: 100%;
+  height: 250vw;
+  position: relative;
+  background: #fff;
+  padding: 0;
+}
+
+.alzheimer__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 8vw 0 0 -44vw;
+}
+
+.alzheimer__headline--title {
+  display: block;
+  width: 27vw;
+  height: 43vw;
+  background: url("../img/alzheimer-title.png") no-repeat;
+  background-size: 100% 100%;
+  float: left;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+.alzheimer__headline--title:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer__headline--info {
+  color: #535353;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  word-break: break-all;
+  float: right;
+  width: 53vw;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+.alzheimer__headline--info:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer__card--item {
+  top: 10vw;
+}
+
+.alzheimer__card--item-news {
+  outline: 1px solid #c9c9c9;
+  height: 118vw;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.alzheimer__card--item-news.swiper-slide-active {
+  -webkit-box-shadow: 1.5vw 1.5vw 2vw #c9c9c9;
+          box-shadow: 1.5vw 1.5vw 2vw #c9c9c9;
+}
+
+.alzheimer__card--item-news.swiper-slide-prev, .alzheimer__card--item-news.swiper-slide-next {
+  margin-top: 9vw;
+  height: 100vw;
+}
+
+.alzheimer__card--item-news .explain {
+  color: #000;
+  font-size: 3.9vw;
+  line-height: 6.4vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  position: absolute;
+  top: 5vw;
+  left: 6vw;
+}
+
+.alzheimer__card--item-news.one .contents .page-number {
+  text-indent: -99999px;
+  background: url("../img/alzheimer__card--page-one.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 8vw;
+  height: 2.2vw;
+  position: absolute;
+  top: 6vw;
+  right: 5vw;
+}
+
+.alzheimer__card--item-news.one .contents .numberring {
+  background: url("../img/alzheimer__card-one-num.png") no-repeat;
+  background-size: 100% 100%;
+  width: 72vw;
+  height: 23vw;
+  text-indent: -99999px;
+  z-index: 1;
+  display: block;
+  margin: 22vw auto 0 auto;
+  opacity: 0.4;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+}
+
+.alzheimer__card--item-news.one .contents .graph {
+  background: url("../img/alzheimer__card-one-content.png") no-repeat;
+  background-size: 100% 100%;
+  width: 72vw;
+  height: 59vw;
+  top: 54vw;
+  left: 8vw;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  position: absolute;
+}
+
+.alzheimer__card--item-news.two .contents .page-number {
+  text-indent: -99999px;
+  background: url("../img/alzheimer__card--page-two.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 8vw;
+  height: 2.2vw;
+  position: absolute;
+  top: 6vw;
+  right: 5vw;
+}
+
+.alzheimer__card--item-news.two .contents .numberring {
+  background: url("../img/alzheimer__card-two-num.png") no-repeat;
+  background-size: 100% 100%;
+  width: 58vw;
+  height: 23vw;
+  text-indent: -99999px;
+  z-index: 1;
+  display: block;
+  margin: 22vw auto 0 auto;
+  opacity: 0.4;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+}
+
+.alzheimer__card--item-news.two .contents .graph {
+  background: url("../img/alzheimer__card-two-content.png") no-repeat;
+  background-size: 100% 100%;
+  width: 69vw;
+  height: 54vw;
+  top: 55vw;
+  left: 9vw;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  position: absolute;
+}
+
+.alzheimer__card--item-news.three .contents .page-number {
+  text-indent: -99999px;
+  background: url("../img/alzheimer__card--page-three.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 8vw;
+  height: 2.2vw;
+  position: absolute;
+  top: 6vw;
+  right: 5vw;
+}
+
+.alzheimer__card--item-news.three .contents .numberring {
+  background: url("../img/alzheimer__card-three-num.png") no-repeat;
+  background-size: 100% 100%;
+  width: 42vw;
+  height: 23vw;
+  text-indent: -99999px;
+  z-index: 1;
+  display: block;
+  margin: 22vw auto 0 auto;
+  opacity: 0.4;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+}
+
+.alzheimer__card--item-news.three .contents .graph {
+  background: url("../img/alzheimer__card-three-content.png") no-repeat;
+  background-size: 100% 100%;
+  width: 69vw;
+  height: 55vw;
+  top: 56vw;
+  left: 9vw;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  position: absolute;
+}
+
+.alzheimer__card--item-news.four .contents .page-number {
+  text-indent: -99999px;
+  background: url("../img/alzheimer__card--page-four.jpg") no-repeat;
+  background-size: 100% 100%;
+  width: 8vw;
+  height: 2.2vw;
+  position: absolute;
+  top: 6vw;
+  right: 5vw;
+}
+
+.alzheimer__card--item-news.four .contents .numberring {
+  background: url("../img/alzheimer__card-four-num.png") no-repeat;
+  background-size: 100% 100%;
+  width: 68vw;
+  height: 84vw;
+  text-indent: -99999px;
+  z-index: 1;
+  display: block;
+  margin: 22vw auto 0 auto;
+  opacity: 0.4;
+  -webkit-transition: all 1.2s;
+  transition: all 1.2s;
+  margin-top: 28vw;
+  margin-left: 10vw;
+}
+
+.alzheimer__card--item-news.four .contents .graph {
+  background: url("../img/alzheimer__card-four-content.png") no-repeat;
+  background-size: 100% 100%;
+  width: 58vw;
+  height: 54vw;
+  top: 37vw;
+  left: 24vw;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+  position: absolute;
+}
+
+.alzheimer__card--item-news.swiper-slide-active {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.alzheimer__card--item-news.swiper-slide-active .explain {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.one .contents .numberring {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.one .contents .graph {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.two .contents .numberring {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.two .contents .graph {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.three .contents .numberring {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.three .contents .graph {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.four .contents .numberring {
+  opacity: 1;
+}
+
+.alzheimer__card--item-news.swiper-slide-active.four .contents .graph {
+  opacity: 1;
+}
+
+.alzheimer-hope {
+  width: 100%;
+  height: 200vw;
+  position: relative;
+  background: #fff;
+  padding: 0;
+}
+
+.alzheimer-hope__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 8vw 0 0 -44vw;
+  height: 100%;
+}
+
+.alzheimer-hope__text-title {
+  display: block;
+  width: 80vw;
+  height: 28vw;
+  background: url("../img/alzheimer-hope__title.png") no-repeat;
+  background-size: 100% 100%;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+.alzheimer-hope__text-explain {
+  width: 53vw;
+  margin-top: 6vw;
+  float: right;
+  color: #535353;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  word-break: break-all;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+.alzheimer-hope__text-explain:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+.alzheimer-hope__comment-text {
+  color: #000;
+  font-size: 4.1vw;
+  line-height: 6.7vw;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  font-style: italic;
+  margin-top: 85vw;
+  opacity: 0;
+}
+
+.alzheimer-hope__comment .quotation-left {
+  background: url("../img/quotation-left.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  margin-top: -6vw;
+  margin-left: -2vw;
+  opacity: 0;
+}
+
+.alzheimer-hope__comment .quotation-right {
+  background: url("../img/quotation-right.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  margin-top: -5vw;
+  margin-left: 20vw;
+  opacity: 0;
+}
+
+.alzheimer-hope__comment .underline {
+  height: 1px;
+  width: 24vw;
+  display: inline-block;
+  background: #000;
+  margin-top: 4vw;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.alzheimer-hope__comment-copylight {
+  opacity: 0;
+  color: #000;
+  font-size: 3.2vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+}
+
+.alzheimer-hope__comment-copylight-s {
+  display: block;
+  font-size: 2.8vw;
+}
+
+.conversion {
+  width: 100%;
+  height: 235vw;
+  position: relative;
+  padding: 0;
+}
+
+.conversion__swiper {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 2;
+}
+
+.conversion__content--before {
+  width: 100%;
+  z-index: 2;
+  background: #03007b;
+  color: #fff;
+  position: relative;
+}
+
+.conversion__content--before-box {
+  width: 76vw;
+  left: 12vw;
+  position: relative;
+}
+
+.conversion__content--before-title {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  display: block;
+  width: 60vw;
+  height: 30vw;
+  background: url("../img/conversion_1.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-top: 17vw;
+  margin-bottom: 10vw;
+}
+
+.conversion__content--before-graph {
+  background-size: 100% 100%;
+  margin: 0 auto;
+  width: 68vw;
+  height: 62vw;
+  position: relative;
+}
+
+.conversion__content--before-graph .round {
+  position: absolute;
+  width: 36vw;
+  height: 36vw;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.conversion__content--before-graph .round i {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.7;
+  display: inline-block;
+}
+
+.conversion__content--before-graph .round span {
+  opacity: 0;
+  color: #03007b;
+  font-size: 4.1vw;
+  line-height: 5.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 12vw;
+  left: 0;
+  text-align: center;
+}
+
+.conversion__content--before-graph .round.first {
+  left: 16vw;
+}
+
+.conversion__content--before-graph .round.second {
+  bottom: 0;
+}
+
+.conversion__content--before-graph .round.third {
+  bottom: 0;
+  right: 0;
+}
+
+.conversion__content--before-graph .round.third span {
+  top: 15vw;
+}
+
+.conversion__content--before .cover-btn__before {
+  opacity: 0;
+  display: block;
+  width: 13vw;
+  height: 3.2vw;
+  background: url("../img/cover-btn__before.png") no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-top: 9vw;
+  text-indent: -99999px;
+}
+
+.conversion__content--before .conversion__now {
+  opacity: 0;
+  right: 0;
+  margin-top: 8vw;
+}
+
+.conversion__content--before-detail {
+  opacity: 0;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  word-break: break-all;
+  margin-top: 7vw;
+}
+
+.conversion__content--after {
+  width: 100%;
+  background: #e5e5e5;
+  color: #0400b3;
+  position: relative;
+}
+
+.conversion__content--after-box {
+  width: 76vw;
+  left: 12vw;
+  position: relative;
+}
+
+.conversion__content--after-title {
+  display: block;
+  width: 60vw;
+  height: 30vw;
+  background: url("../img/conversion_2.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-top: 17vw;
+  margin-bottom: 10vw;
+}
+
+.conversion__content--after-graph {
+  background: #03007b;
+  border-radius: 50%;
+  margin: 0 auto;
+  width: 62vw;
+  height: 62vw;
+  position: relative;
+}
+
+.conversion__content--after-graph span {
+  font-size: 4.1vw;
+  line-height: 5.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  top: 27vw;
+  text-align: center;
+}
+
+.conversion__content--after-detail {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  word-break: break-all;
+  margin-top: 19vw;
+}
+
+.conversion__content--after .conversion__now {
+  margin-top: 8vw;
+}
+
+.conversion__content--after .cover-btn__after {
+  display: block;
+  width: 13.5vw;
+  height: 3.2vw;
+  background: url("../img/cover-btn__after.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0;
+  margin-top: 10vw;
+  text-indent: -99999px;
+}
+
+.conversion .conversion__now {
+  font-size: 3.7vw;
+  line-height: 5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  border-bottom: 1px solid;
+  padding-bottom: 1vw;
+  position: absolute;
+}
+
+.drug-spec {
+  background: #000;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 200vw;
+}
+
+.drug-spec__offset {
+  position: absolute;
+  height: 52vw;
+}
+
+.drug-spec__background {
+  background: url("../../img/drug-spec-background.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 140vw;
+  height: 128vw;
+}
+
+.drug-spec__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 18vw 0 0 -44vw;
+  height: 100%;
+}
+
+.drug-spec__panel--title {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  display: block;
+  width: 51vw;
+  height: 31vw;
+  background: url("../img/drug-spec-title.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.drug-spec__panel--cover {
+  opacity: 0;
+}
+
+.drug-spec__panel--inner {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.drug-spec__panel--inner.step_1 {
+  top: 88vw;
+}
+
+.drug-spec__panel--inner .explain-text {
+  position: absolute;
+  color: #eee;
+  text-align: justify;
+  word-break: break-all;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+}
+
+.drug-spec__panel--inner .explain-text span {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.4vw;
+  display: inline-block;
+  position: relative;
+}
+
+.drug-spec__panel--inner .explain-text span i {
+  background: #bb2bbb;
+  display: inline-block;
+  width: 100%;
+  height: 4vw;
+  z-index: -1;
+  top: 1.2vw;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.drug-spec__panel--inner .explain-text span.re-ls {
+  letter-spacing: -0.06em;
+}
+
+.drug-spec__panel--inner .explain-text span.active i {
+  opacity: 1;
+}
+
+.drug-spec__panel--inner .step_1, .drug-spec__panel--inner .step_2, .drug-spec__panel--inner .step_3 {
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.drug-spec__panel--inner .step_1.active, .drug-spec__panel--inner .step_2.active, .drug-spec__panel--inner .step_3.active {
+  opacity: 1;
+  pointer-events: visible;
+  z-index: 10;
+}
+
+.drug-spec__panel--inner .step_2 {
+  top: 12vw;
+}
+
+.drug-spec__panel--inner .step_2 .explain-text {
+  padding: 0 6vw;
+  top: 85vw;
+}
+
+.drug-spec__panel--inner .step_2 .chart-1 {
+  background: url("../../img/drug-step1__chart-1.png") no-repeat;
+  background-size: 100% 100%;
+  width: 62vw;
+  height: 68vw;
+  margin: 0 auto;
+}
+
+.drug-spec__panel--inner .step_2 .chart-2 {
+  background: url("../../img/drug-step1__chart-2.png") no-repeat;
+  background-size: 100% 100%;
+  width: 62vw;
+  height: 68vw;
+  margin: 0 auto;
+}
+
+.drug-spec__panel--inner .step_2 .chart-3 {
+  background: url("../../img/drug-step1__chart-3.png") no-repeat;
+  background-size: 100% 100%;
+  width: 62vw;
+  height: 68vw;
+  margin: 0 auto;
+}
+
+.drug-spec__panel--inner .step_3 {
+  top: 15vw;
+}
+
+.drug-spec__panel--inner .step_3 .explain-text {
+  top: 82vw;
+}
+
+.drug-spec__panel--inner .step_3 .chart-1 {
+  margin: 0 auto;
+  background: url("../../img/drug-step2__chart-1.png") no-repeat;
+  background-size: 100% 100%;
+  width: 80vw;
+  height: 62vw;
+  margin-top: 0vw;
+  left: 0vw;
+}
+
+.drug-spec__panel--inner .step_3 .chart-2 {
+  margin: 0 auto;
+  background: url("../../img/drug-step2__chart-2.png") no-repeat;
+  background-size: 100% 100%;
+  width: 82vw;
+  height: 65vw;
+  margin-top: -3vw;
+  left: 0vw;
+}
+
+.drug-spec__panel--navigation {
+  position: absolute;
+  top: 50vw;
+  left: 9vw;
+  opacity: 0;
+}
+
+.drug-spec__panel--navigation .navigation--item {
+  border: 1px solid #fff;
+  background: none;
+  display: inline-block;
+  text-indent: -99999px;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+}
+
+.drug-spec__panel--navigation .navigation__first, .drug-spec__panel--navigation .navigation__second, .drug-spec__panel--navigation .navigation__thrid {
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  margin: 3vw 0;
+}
+
+.drug-spec__panel--navigation .navigation__first.active .navigation--item, .drug-spec__panel--navigation .navigation__second.active .navigation--item, .drug-spec__panel--navigation .navigation__thrid.active .navigation--item {
+  background: #fff;
+}
+
+.drug-spec__panel .buttonArea {
+  position: absolute;
+  width: 100%;
+  margin-top: 7vw;
+  left: 2vw;
+  z-index: 3;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet {
+  width: 2.5vw;
+  height: 2.5vw;
+  background: #ff00ff;
+  opacity: 1;
+  position: absolute;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet:nth-of-type(2) {
+  left: 8vw;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet:nth-of-type(3) {
+  left: 16vw;
+}
+
+.drug-spec__panel .buttonArea .swiper-pagination-bullet.swiper-pagination-bullet-active:after {
+  content: '';
+  display: inline-block;
+  border: 1px solid #ff00ff;
+  width: 7vw;
+  height: 7vw;
+  border-radius: 50%;
+  pointer-events: none;
+  position: relative;
+  margin-top: -2.4vw;
+  margin-left: -2.4vw;
+}
+
+.meterial {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 330vw;
+  z-index: 2;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(50%), color-stop(#03007b), to(transparent));
+  background: linear-gradient(black, 50%, #03007b, transparent);
+}
+
+.meterial__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 24vw 0 0 -44vw;
+  height: 100%;
+}
+
+.meterial__panel--title {
+  opacity: 0;
+  display: block;
+  width: 78vw;
+  height: 21vw;
+  background: url("../img/meterial-title.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-bottom: 15vw;
+}
+
+.meterial__panel--inner-list-item .round {
+  opacity: 0;
+  border-radius: 50%;
+  width: 60vw;
+  height: 60vw;
+  background: rgba(7, 0, 195, 0.8);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.meterial__panel--inner-list-item .round .before {
+  color: #06ff7b;
+  font-size: 4.3vw;
+  line-height: 6.7vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  position: relative;
+  top: 19vw;
+}
+
+.meterial__panel--inner-list-item .round .before.two {
+  top: 12vw;
+}
+
+.meterial__panel--inner-list-item .round .on {
+  color: #fff;
+  font-size: 4vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  position: absolute;
+  width: 60vw;
+  top: 32vw;
+}
+
+.meterial__panel--inner-list-item .round i {
+  background: #fff;
+  height: 1px;
+  width: 43vw;
+  display: inline-block;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  position: absolute;
+  left: 23vw;
+  top: 29vw;
+}
+
+.meterial__panel--inner-list-item .inner-content {
+  opacity: 0;
+  background: #fff;
+  color: #03007b;
+  text-align: justify;
+  word-break: break-all;
+  width: 64vw;
+  margin-left: 12vw;
+  margin-top: 5vw;
+  padding: 5vw;
+  height: 78vw;
+}
+
+.meterial__panel--inner-list-item .inner-content p {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  word-break: break-all;
+}
+
+.meterial__panel--inner-detail {
+  opacity: 0;
+  color: #fff;
+  text-align: center;
+  margin-top: 10vw;
+}
+
+.meterial__panel--inner-detail-text {
+  font-size: 3.9vw;
+  line-height: 6.8vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  margin: 2vw 0;
+}
+
+.meterial__panel--inner-detail-hide {
+  font-size: 4.8vw;
+  line-height: 9vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  background: #000;
+  position: relative;
+  display: inline-block;
+  -webkit-box-shadow: 0.6vw 0.6vw 0vw #06ff7b;
+          box-shadow: 0.6vw 0.6vw 0vw #06ff7b;
+  margin: 0.6vw 0;
+  padding: 0 2vw;
+}
+
+.meterial__panel .swiper-button-prev, .meterial__panel .swiper-button-next {
+  background: url("../img/swiper-arrow-btn.png") no-repeat;
+  background-size: 100% 100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  width: 6vw;
+  height: 11.5vw;
+  top: 135vw;
+}
+
+.meterial__panel .swiper-button-next {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.meterial__panel .swiper-button-next.swiper-button-disabled, .meterial__panel .swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
+
+.gv-1001 {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 266vw;
+  background: #000;
+  z-index: 0;
+}
+
+.gv-1001__bg {
+  background: url("../../img/gv1001-bg.png") no-repeat;
+  background-position: center;
+  position: absolute;
+  background-size: 100% 100%;
+  width: 150vw;
+  height: 150vw;
+  top: -85vw;
+  left: -18vw;
+}
+
+.gv-1001__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 0vw 0 0 -44vw;
+  height: 100%;
+}
+
+.gv-1001__panel--title {
+  display: block;
+  width: 43vw;
+  height: 29vw;
+  background: url("../img/gv1001-title.png") no-repeat;
+  background-size: 100% 100%;
+  margin-top: 28vw;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+.gv-1001__panel--content {
+  border-top: 2px solid #fff;
+  color: #fff;
+  margin-top: 3vw;
+  padding-top: 3vw;
+}
+
+.gv-1001__panel--content-detail-text {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-weight: 400;
+  word-break: break-all;
+  text-align: justify;
+  width: 52vw;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.gv-1001__panel--content-detail-text .underline {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.5vw;
+  display: inline-block;
+  position: relative;
+}
+
+.gv-1001__panel--content-detail-text .underline i {
+  position: absolute;
+  background: #03007b;
+  display: inline-block;
+  width: 100%;
+  z-index: -1;
+  height: 5vw;
+  top: 1vw;
+}
+
+.gv-1001__panel--content-text {
+  opacity: 0;
+}
+
+.gv-1001__panel--content-video {
+  position: absolute;
+  width: 68vw;
+  height: 38vw;
+  left: -6vw;
+  top: 95vw;
+  opacity: 0;
+}
+
+.gv-1001__panel--content-comment {
+  position: absolute;
+  top: 180vw;
+  left: 4vw;
+  font-size: 4.1vw;
+  line-height: 6.7vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.gv-1001__panel--content-comment .quotation-left {
+  background: url("../img/quotation-left-s.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  top: -2vw;
+  left: -5vw;
+  z-index: -1;
+  opacity: 0;
+}
+
+.gv-1001__panel--content-comment .quotation-right {
+  background: url("../img/quotation-right-s.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  left: 19vw;
+  margin-top: -7vw;
+  z-index: -1;
+  opacity: 0;
+}
+
+.gv-1001__panel--content-comment .border {
+  background: #fff;
+  height: 1px;
+  width: 22vw;
+  display: inline-block;
+  position: relative;
+  top: -2vw;
+  opacity: 0;
+}
+
+.gv-1001__panel--content-copylight {
+  opacity: 0;
+  margin-top: -1vw;
+  font-style: normal;
+  font-size: 3.2vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+}
+
+.gv-1001__panel--content-copylight-s {
+  font-size: 2.8vw;
+  display: block;
+}
+
+.meterial-hope {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 250vw;
+  background: #000;
+}
+
+.meterial-hope__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 0vw 0 0 -44vw;
+  height: 100%;
+}
+
+.meterial-hope__panel--title {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  position: relative;
+  display: block;
+  width: 59vw;
+  height: 21vw;
+  background: url("../img/meterial-hope-title.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.meterial-hope__panel .solution--title {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  color: #fff;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  margin-top: 7vw;
+}
+
+.meterial-hope__panel .solution--list {
+  position: relative;
+  top: 32vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item {
+  opacity: 0;
+  position: absolute;
+  color: #fff;
+  text-align: justify;
+  word-break: break-all;
+}
+
+.meterial-hope__panel .solution--list .solution--item-head {
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  display: block;
+  background: #03007b;
+  position: absolute;
+  width: 80vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item-text {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  width: 52vw;
+  word-break: break-all;
+  margin-top: 7vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.one {
+  right: 3vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.one i {
+  position: absolute;
+  border-bottom: 1px solid #fff;
+  width: 54vw;
+  top: 7.5vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.two {
+  top: 40vw;
+  left: 3vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.two .solution--item-head {
+  text-align: right;
+  left: -46vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.two i {
+  position: absolute;
+  border-bottom: 1px solid #fff;
+  width: 34vw;
+  top: 7.5vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.three {
+  top: 80vw;
+  right: 3vw;
+}
+
+.meterial-hope__panel .solution--list .solution--item.three i {
+  position: absolute;
+  border-bottom: 1px solid #fff;
+  width: 57vw;
+  top: 7.5vw;
+}
+
+.meterial-hope__panel .solution--explain {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  color: #fff;
+  font-size: 3.8vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  position: relative;
+  top: 165vw;
+  z-index: 2;
+}
+
+.meterial-hope__panel .solution--explain .underline {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.5vw;
+  display: inline-block;
+  position: relative;
+}
+
+.meterial-hope__panel--table {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  top: 48vw;
+}
+
+.meterial-hope__panel--table-cell {
+  border-top: 3px solid #fff;
+}
+
+.meterial-hope__panel--table-cell.before {
+  border-bottom: 0;
+}
+
+.meterial-hope__panel--table-cell.more {
+  opacity: 0;
+  pointer-events: none;
+  border-top: 0;
+  border-bottom: 3px solid #fff;
+}
+
+.meterial-hope__panel--table .table-group-1 {
+  width: 25%;
+}
+
+.meterial-hope__panel--table .table-group-2 {
+  width: 25%;
+}
+
+.meterial-hope__panel--table .table-group-3 {
+  width: 20%;
+}
+
+.meterial-hope__panel--table .table-group-4 {
+  width: 30%;
+}
+
+.meterial-hope__panel--table th {
+  color: #06ff7b;
+  font-size: 3.6vw;
+  line-height: 6vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  border: 1px solid #fff;
+}
+
+.meterial-hope__panel--table td {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 2vw 0;
+}
+
+.meterial-hope__panel--table td span {
+  display: block;
+  font-size: 2.2vw;
+}
+
+.meterial-hope__panel--table tr {
+  font-size: 3vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+}
+
+.meterial-hope__panel--table .block {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+}
+
+.meterial-hope__panel--table .block td {
+  padding: 0;
+  line-height: 5vw;
+}
+
+.meterial-hope__panel--table .bdl-n {
+  border-left: 0;
+}
+
+.meterial-hope__panel--table .bdr-n {
+  border-right: 0;
+}
+
+.meterial-hope__panel--table .table-more {
+  background: url("../img/table-controls.png") no-repeat;
+  background-size: 100% 100%;
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  text-indent: -99999px;
+  left: 3vw;
+  top: 10vw;
+}
+
+.meterial-hope__panel--table .table-hide {
+  background: url("../img/table-controls.png") no-repeat;
+  background-size: 100% 100%;
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  text-indent: -99999px;
+  left: 3vw;
+  top: 50vw;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.outro {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 320vw;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), color-stop(#03007b), color-stop(50%), to(#000));
+  background: linear-gradient(#000, #03007b, 50%, #000);
+}
+
+.outro__bg {
+  background: url("../img/outro-bg.png") no-repeat;
+  background-position: center;
+  position: absolute;
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 150vw;
+  top: -35vw;
+}
+
+.outro__panel {
+  position: absolute;
+  width: 88vw;
+  top: 0;
+  left: 50%;
+  margin: 64vw 0 0 -44vw;
+  height: 100%;
+}
+
+.outro__panel--title {
+  display: block;
+  width: 64vw;
+  height: 35vw;
+  background: url("../img/outro-title.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+.outro__panel--content {
+  color: #fff;
+  text-align: center;
+}
+
+.outro__panel--content-text {
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  font-size: 3.8vw;
+  line-height: 6.7vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  margin-top: 10vw;
+  margin-bottom: 6vw;
+}
+
+.outro__panel--content-strong {
+  opacity: 0;
+  font-size: 4.3vw;
+  line-height: 6.5vw;
+  letter-spacing: -0.08em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+}
+
+.outro__panel--content-comment {
+  position: absolute;
+  left: 0;
+  text-align: left;
+  color: #fff;
+  font-style: italic;
+  font-size: 4.3vw;
+  line-height: 7.5vw;
+  letter-spacing: -0.08em;
+  top: 150vw;
+  padding-left: 5vw;
+  padding-bottom: 3vw;
+  width: 95vw;
+  border-bottom: 2px solid;
+}
+
+.outro__panel--content-comment span {
+  opacity: 0;
+  font-weight: 400;
+  display: block;
+}
+
+.outro__panel--content-comment .quotation-left {
+  opacity: 0;
+  background: url("../img/quotation-left-s.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  top: -12vw;
+  left: 0;
+}
+
+.outro__panel--content-comment .quotation-right {
+  opacity: 0;
+  background: url("../img/quotation-right-s.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  width: 9vw;
+  height: 6.5vw;
+  margin-top: -20vw;
+  left: 0;
+}
+
+.outro__panel--content-comment .underline {
+  opacity: 0;
+  border-top: 1px solid #fff;
+  font-style: normal;
+  font-size: 3.2vw;
+  line-height: 4.5vw;
+  letter-spacing: -0.06em;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  width: 40vw;
+  margin-top: 14vw;
+  margin-left: -5vw;
+  padding-top: 2vw;
+  padding-left: 1vw;
+}
+
+.outro__panel--content-comment .underline span {
+  display: block;
+  font-size: 2.8vw;
+}
+
+.outro__panel--content-person {
+  opacity: 0;
+  background: url("../img/jorgen-winroth.png") no-repeat;
+  position: absolute;
+  bottom: 0;
+  background-size: 100% 100%;
+  width: 36vw;
+  height: 31vw;
+  right: 7vw;
+}
+
+.brandsolution-logo {
+  left: 0;
+}
+
+.brandsolution-logo a {
+  display: inline-block;
+  width: 156px;
+  height: 23px;
+  text-indent: -9999px;
+  background: url("../../img/j_logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 156px 23px;
+  -webkit-transform: scale(0.7) translateY(-5px);
+          transform: scale(0.7) translateY(-5px);
+}
+
+.rooftop {
+  background: #222;
+}
+
+.sns-share-box {
+  margin: 5px 14px;
+  position: absolute;
+  top: 7px;
+  right: 0px;
+  width: 95px;
+  height: 36px;
+}
+
+.sns-share-box li {
+  display: inline-block;
+  position: relative;
+  margin-right: 3px;
+  width: 25px;
+  height: 25px;
+}
+
+.sns-share-box li a {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+.sns-share-box a.sns-fb {
+  background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat 0 -41px;
+  background-size: 200px 200px;
+}
+
+.sns-share-box a.sns-tw {
+  background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -25px 0;
+}
+
+.sns-share-box a.kakao {
+  background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat -51px 0;
+}
+
+.sns-share-box a.sns-fb:hover {
+  background: url(https://images.joins.com/newsroom/common/j_special_icon.png) no-repeat 0 -41px;
+  background-size: 200px 200px;
+}
+
+.sns-share-box a.sns-tw:hover {
+  background-position: -25px 0px;
+}
+
+.copyright {
+  background: #222;
+}
+
+.copyright .ls {
+  line-height: 70px;
+}
+
+.copyright p .bold {
+  color: #ddd;
+}
+
+.copyright p.p-text {
+  padding: 0 8px;
+}
+
+.copyright p {
+  margin-top: 20px;
+}
+
+.copyright .copy_logo {
+  width: 156px;
+  height: 40px;
+  background: url("../../img/j_logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 156px 23px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  display: block;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=mobile_style.css.map */
